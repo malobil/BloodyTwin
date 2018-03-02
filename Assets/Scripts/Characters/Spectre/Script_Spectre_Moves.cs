@@ -21,6 +21,8 @@ public class Script_Spectre_Moves : MonoBehaviour {
         float horizontalInput = Input.GetAxis("Horizontal"); // touche Q & D
         float forwardInput = Input.GetAxis("Vertical"); // touche Z & S
 
+        transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, transform.up); //déplacement en fonction du regard du spectre
+        
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // déplacement Q & D
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); // déplacement Z & S
 
