@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scenes_Personal/Scene_Kevin_Lobby.unity
+    path: Assets/Scenes/Scenes_Personal/Kevin/Scene_Kevin_Lobby.unity
     guid: abcb08e355cfeb6408a543d8bbcbf5bb
   - enabled: 1
-    path: Assets/Scenes/Scenes_Personal/Scene_Kevin.unity
+    path: Assets/Scenes/Scenes_Personal/Kevin/Scene_Kevin.unity
     guid: 3c8bda719fb043d4aaabae6cfe6a0f55
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Personal/Arthur/Scene_Arthur_ProtoSalon.unity
+    guid: b5721608b96e097479b2c3310b1d690e

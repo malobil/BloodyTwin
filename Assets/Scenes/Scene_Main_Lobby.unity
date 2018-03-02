@@ -195,13 +195,13 @@ MonoBehaviour:
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
-  m_LogLevel: 2
+  m_LogLevel: 0
   m_PlayerPrefab: {fileID: 1301648536905406, guid: 3754ef0c3114c22409f76b9646e6bfa8,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
   m_OfflineScene: Scene_Kevin_Lobby
-  m_OnlineScene: Scene_Kevin
+  m_OnlineScene: Scene_Arthur_ProtoSalon
   m_SpawnPrefabs: []
   m_CustomConfig: 0
   m_MaxConnections: 4
