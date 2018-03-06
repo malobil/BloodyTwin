@@ -1,12 +1,23 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Networking;
+
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
     [RequireComponent(typeof (ThirdPersonCharacter))]
-    public class ThirdPersonUserControl : MonoBehaviour
+    public class ThirdPersonUserControl : NetworkBehaviour
     {
+        public float walkSpeedMultiply;
+        public float runSpeed;
+        public float runDuration;
+        public float runCooldown;
+
+        private float currentRunDuration ;
+        private float currentRunCooldown;
+
+
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
@@ -16,6 +27,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         
         private void Start()
         {
+            if (!isLocalPlayer)
+            {
+                this.enabled = false ;
+            }
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -35,9 +50,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
-            if (!m_Jump)
+        
+            if(currentRunCooldown > 0)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                currentRunCooldown -= Time.deltaTime;
+                Debug.Log(currentRunCooldown);
+            }
+            else
+            {
+               // Debug.Log("READY");
             }
         }
 
@@ -46,8 +67,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void FixedUpdate()
         {
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
+            float h = CrossPlatformInputManager.GetAxis("Horizontal") * walkSpeedMultiply;
+            float v = CrossPlatformInputManager.GetAxis("Vertical") * walkSpeedMultiply;
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
@@ -55,16 +76,26 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 // calculate camera relative direction to move:
                 m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-                m_Move = v*m_CamForward + h*m_Cam.right;
+                m_Move = v*m_CamForward + h*m_Cam.right ;
             }
             else
             {
                 // we use world-relative directions in the case of no main camera
-                m_Move = v*Vector3.forward + h*Vector3.right;
+                m_Move = v*Vector3.forward + h*Vector3.right ;
             }
 #if !MOBILE_INPUT
-			// walk speed multiplier
-	        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
+            // walk speed multiplier
+            if (Input.GetKey(KeyCode.LeftShift) && currentRunCooldown <= 0 && currentRunDuration <= runDuration)
+            {
+                m_Move *= runSpeed;
+                currentRunDuration += Time.deltaTime;
+            }
+            else if(Input.GetKeyUp(KeyCode.LeftShift) && currentRunCooldown <= 0 || currentRunDuration >= runDuration && currentRunCooldown <= 0)
+            {
+                currentRunCooldown = currentRunDuration ;
+                currentRunDuration = 0;
+                //Debug.Log("up");
+            }
 #endif
 
             // pass all parameters to the character control script
