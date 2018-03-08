@@ -349,10 +349,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1935176631834224, guid: 4e3ea9647371a984e8b877cfc2d2a186, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e3ea9647371a984e8b877cfc2d2a186, type: 2}
   m_IsPrefabParent: 0
@@ -404,7 +400,7 @@ Prefab:
         type: 2}
       propertyPath: spectre_camera
       value: 
-      objectReference: {fileID: 2008112350}
+      objectReference: {fileID: 0}
     - target: {fileID: 114849226319220648, guid: 6f924875914ee514895d8d6c02b2bddc,
         type: 2}
       propertyPath: objet_camera
@@ -413,11 +409,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f924875914ee514895d8d6c02b2bddc, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2008112350 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 584120556}
 --- !u!1 &2103621584
 GameObject:
   m_ObjectHideFlags: 0
