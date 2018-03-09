@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Script_Intruder_Fear : MonoBehaviour {
 
+    public float fearAdd;
+    public float maxFear;
+    public float currentFear;
+
 	// Use this for initialization
 	void Start ()
     {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -24,13 +28,18 @@ public class Script_Intruder_Fear : MonoBehaviour {
         }
     }
 
+    void OnGUI()
+    {
+        GUI.Box(new Rect(700, 10, maxFear, 20), currentFear + "/" + maxFear);
+    }
+
     public void Feared()
     {
-       Script_Global_Fear.Instance.UpFear(10f); 
+       Script_Global_Fear.Instance.UpFear(fearAdd); 
     }
 
     public void Appeased()
     {
-        Script_Global_Fear.Instance.DownFear(10f);
+        Script_Global_Fear.Instance.DownFear(1f);
     }
 }
