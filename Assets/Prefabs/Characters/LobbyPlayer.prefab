@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4863771180964706}
   - component: {fileID: 114768607062520766}
-  - component: {fileID: 114622589341071062}
+  - component: {fileID: 114335293315094246}
   m_Layer: 0
   m_Name: LobbyPlayer
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114622589341071062
+--- !u!114 &114335293315094246
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50794ee3d7c26e4d93adf8c791863a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLobbyGUI: 1
+  ShowLobbyGUI: 0
 --- !u!114 &114768607062520766
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,14 +6,9 @@ using UnityEngine.Networking;
 public class Lobby_Player_Accueil : NetworkLobbyPlayer 
 {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
 	public override void OnStartLocalPlayer()
 	{
-		// SendReadyToBeginMessage();
+		SendReadyToBeginMessage();
 	}
 	
 	// Update is called once per frame

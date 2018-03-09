@@ -1367,7 +1367,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1979053594}
   - component: {fileID: 1979053593}
-  - component: {fileID: 1979053595}
   m_Layer: 0
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -1458,11 +1457,11 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
-  m_ShowLobbyGUI: 1
+  m_ShowLobbyGUI: 0
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
   m_MinPlayers: 1
-  m_LobbyPlayerPrefab: {fileID: 114622589341071062, guid: 7db76c866371ace47ad9ca2d1a7e50f0,
+  m_LobbyPlayerPrefab: {fileID: 114335293315094246, guid: 7db76c866371ace47ad9ca2d1a7e50f0,
     type: 2}
   m_GamePlayerPrefab: {fileID: 1895591458219714, guid: 5e045f873a18dd540a7bfb769fdbe2ee,
     type: 2}
@@ -1482,21 +1481,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1979053595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1979053592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0
 --- !u!1 &2075410269
 GameObject:
   m_ObjectHideFlags: 0
