@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 1379280838}
   - component: {fileID: 1379280840}
   - component: {fileID: 1379280839}
+  - component: {fileID: 1379280841}
   m_Layer: 5
   m_Name: Niveau_Peur_Globale
   m_TagString: Untagged
@@ -474,7 +475,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.565
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1379280840
@@ -483,6 +484,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1379280837}
+--- !u!114 &1379280841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1379280837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87e7fc4465e42848a5c44011fef3f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681503547
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,8 +592,9 @@ GameObject:
   - component: {fileID: 1693926449}
   - component: {fileID: 1693926448}
   - component: {fileID: 1693926447}
+  - component: {fileID: 1693926451}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Intrus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,3 +666,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1693926451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693926446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38bc95218c910d458a58d969fea04ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
