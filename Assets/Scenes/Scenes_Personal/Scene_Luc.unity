@@ -425,9 +425,8 @@ GameObject:
   - component: {fileID: 1379280838}
   - component: {fileID: 1379280840}
   - component: {fileID: 1379280839}
-  - component: {fileID: 1379280841}
   m_Layer: 5
-  m_Name: Niveau_Peur_Globale
+  m_Name: Jauge_Niveau_Peur_Globale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +474,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.565
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1379280840
@@ -484,17 +483,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1379280837}
---- !u!114 &1379280841
+--- !u!1 &1539112241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1539112243}
+  - component: {fileID: 1539112242}
+  m_Layer: 0
+  m_Name: FearManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1539112242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1379280837}
+  m_GameObject: {fileID: 1539112241}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b87e7fc4465e42848a5c44011fef3f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image_Fear: {fileID: 1379280839}
+--- !u!4 &1539112243
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539112241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 247.18405, y: -210.60414, z: 45.881214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681503547
 GameObject:
   m_ObjectHideFlags: 0

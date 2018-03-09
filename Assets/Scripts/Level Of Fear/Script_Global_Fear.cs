@@ -1,28 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Script_Global_Fear : MonoBehaviour {
 
-    public static Script_Global_Fear Instance { get; private set; } // tu peux déclaré une instance comme ça c'est plus simple
-    /*private static Script_Global_Fear instance;
-    public static Script_Global_Fear Instance()
-    {
-        return instance;
-    }*/
+    public Image image_Fear;
+
+    public static Script_Global_Fear Instance { get; private set; } 
 
     void Awake()
     {
-        Instance = this; // pas oublié de lui dire que l'instance c'est ce script 
-        /*if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }*/
+        Instance = this; 
     }
     // Use this for initialization
     void Start ()
@@ -36,8 +26,13 @@ public class Script_Global_Fear : MonoBehaviour {
 		
 	}
 
-    public void UpFear(float fearToAdd) // Faut que tu mette ta fonction en public c'est pour ça que ça marché pas
+    public void UpFear(float fearToAdd) 
     {
+        image_Fear.fillAmount += fearToAdd/100;
+    }
 
+    public void DownFear(float fearToRemove)
+    {
+        image_Fear.fillAmount -= fearToRemove/100;
     }
 }

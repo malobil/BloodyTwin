@@ -13,11 +13,24 @@ public class Script_Intruder_Fear : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Fear();
-	}
+        if(Input.GetKeyDown("f"))
+        {
+            Feared();
+        }
 
-    public void Fear()
+        if (Input.GetKeyDown("g"))
+        {
+            Appeased();
+        }
+    }
+
+    public void Feared()
     {
-       Script_Global_Fear.Instance.UpFear(10f); // niquel
+       Script_Global_Fear.Instance.UpFear(10f); 
+    }
+
+    public void Appeased()
+    {
+        Script_Global_Fear.Instance.DownFear(10f);
     }
 }
