@@ -48,6 +48,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
+		public override void OnStartLocalPlayer ()
+		{
+			gameObject.tag = "Player";
+		}
+
         private void Update()
         {
         }

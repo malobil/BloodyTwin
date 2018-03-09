@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Script_Spectre_Moves : MonoBehaviour {
+public class Script_Spectre_Moves : NetworkBehaviour {
 
     public float speed = 5.0f;
 
@@ -11,6 +12,11 @@ public class Script_Spectre_Moves : MonoBehaviour {
 		
 	}
 	
+    public override void OnStartLocalPlayer ()
+    {
+        gameObject.tag = "Player";
+    }    
+
 	void Update ()
     {
         Mouvement();
