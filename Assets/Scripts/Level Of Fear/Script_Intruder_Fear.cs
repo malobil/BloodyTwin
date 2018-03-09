@@ -8,6 +8,10 @@ public class Script_Intruder_Fear : MonoBehaviour {
     public float maxFear;
     public float currentFear;
 
+    public bool upFear = false;
+    public bool downFear = false;
+    public bool limitFearOff = false;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -17,14 +21,27 @@ public class Script_Intruder_Fear : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetKeyDown("f"))
+        Adjust_Fear_Level();
+        if(Input.GetKeyDown("f") && limitFearOff == false)
         {
+            upFear = true;
             Feared();
         }
 
         if (Input.GetKeyDown("g"))
         {
             Appeased();
+            downFear = true;
+        }
+
+        if (currentFear >= 100)
+        {
+            limitFearOff = true;
+            LimitFear();
+        }
+        else 
+        {
+            limitFearOff = false;
         }
     }
 
@@ -41,5 +58,25 @@ public class Script_Intruder_Fear : MonoBehaviour {
     public void Appeased()
     {
         Script_Global_Fear.Instance.DownFear(1f);
+    }
+
+    public void Adjust_Fear_Level()
+    {
+        if(upFear == true)
+        {
+            currentFear += fearAdd;
+            upFear = false;
+        }
+
+        if (downFear == true)
+        {
+            currentFear -= 1f;
+            downFear = false;
+        }
+    }
+
+    void LimitFear()
+    {
+        currentFear = maxFear;
     }
 }
