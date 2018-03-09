@@ -18,6 +18,6 @@ public class Script_Intruder_Fear : MonoBehaviour {
 
     public void Fear()
     {
-       // Script_Global_Fear.Instance.UpFear(10f);
+       Script_Global_Fear.Instance.UpFear(10f); // niquel
     }
 }

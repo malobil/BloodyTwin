@@ -5,22 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Script_Global_Fear : MonoBehaviour {
 
-    private static Script_Global_Fear instance;
+    public static Script_Global_Fear Instance { get; private set; } // tu peux déclaré une instance comme ça c'est plus simple
+    /*private static Script_Global_Fear instance;
     public static Script_Global_Fear Instance()
     {
         return instance;
-    }
+    }*/
 
     void Awake()
     {
-        if (instance != null)
+        Instance = this; // pas oublié de lui dire que l'instance c'est ce script 
+        /*if (instance != null)
         {
             Destroy(gameObject);
         }
         else
         {
             instance = this;
-        }
+        }*/
     }
     // Use this for initialization
     void Start ()
@@ -34,7 +36,7 @@ public class Script_Global_Fear : MonoBehaviour {
 		
 	}
 
-    void UpFear(float fearToAdd)
+    public void UpFear(float fearToAdd) // Faut que tu mette ta fonction en public c'est pour ça que ça marché pas
     {
 
     }
