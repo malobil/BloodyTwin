@@ -72,9 +72,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 currentAttackCooldown -= Time.deltaTime;
             }
 
-            if(Input.GetButtonDown("Fire1"))
+            if(Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
                 CmdAttack();
+                currentAttackCooldown = attackCooldown;
             }
         }
 
@@ -124,6 +125,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
             NetworkServer.Spawn(tempAttack);
+            Destroy(tempAttack, 2f);
+            //NetworkServer.UnSpawn(tempAttack);
         }
     }
 
