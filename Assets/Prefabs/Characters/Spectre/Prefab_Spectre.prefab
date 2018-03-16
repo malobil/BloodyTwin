@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 135709415755289948}
   - component: {fileID: 114511623197890070}
   - component: {fileID: 114630386339972210}
+  - component: {fileID: 114118656943792600}
+  - component: {fileID: 114130360467020262}
   m_Layer: 0
   m_Name: Prefab_Spectre
   m_TagString: Player
@@ -44,6 +46,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114118656943792600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935176631834224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.05263158
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114130360467020262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935176631834224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f00da9c162b0f43ae51358192f3341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToInstantiate: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
+    type: 2}
 --- !u!114 &114511623197890070
 MonoBehaviour:
   m_ObjectHideFlags: 1

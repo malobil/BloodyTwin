@@ -6,15 +6,13 @@ using UnityEngine.Networking;
 public class Script_Spectre_Moves : NetworkBehaviour {
 
     public float speed = 5.0f;
-
-	void Start ()
-    {
-		
-	}
 	
-    public override void OnStartLocalPlayer ()
+    private void Start()
     {
-        gameObject.tag = "Player";
+        if(!isLocalPlayer)
+        {
+            this.enabled = false;
+        }
     }    
 
 	void Update ()
