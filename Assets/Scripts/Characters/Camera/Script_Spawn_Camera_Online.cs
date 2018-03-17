@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityStandardAssets.Cameras;
 
-public class Script_Bourreau_Camera : NetworkBehaviour {
+public class Script_Spawn_Camera_Online : NetworkBehaviour {
 
     public GameObject cameraToInstantiate;
 

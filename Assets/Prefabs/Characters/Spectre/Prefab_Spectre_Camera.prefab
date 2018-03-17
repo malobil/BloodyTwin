@@ -205,7 +205,7 @@ MonoBehaviour:
   m_TurnSmoothing: 0
   m_TiltMax: 75
   m_TiltMin: 45
-  m_LockCursor: 1
+  m_LockCursor: 0
   m_VerticalAutoReturn: 0
 --- !u!124 &124829348440219852
 Behaviour:
