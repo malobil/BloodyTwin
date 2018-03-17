@@ -12,6 +12,7 @@ public class Script_Bourreau_Camera : NetworkBehaviour {
     {
         GameObject cameraI = Instantiate(cameraToInstantiate, transform.position, transform.rotation);
         cameraI.GetComponent<FreeLookCam>().SetCamera(transform);
+        cameraI.tag = "MainCamera" ;
     }
 
     // Use this for initialization

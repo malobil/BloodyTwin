@@ -22,10 +22,9 @@ GameObject:
   - component: {fileID: 198469881127377024}
   - component: {fileID: 199972807336643582}
   - component: {fileID: 135709415755289948}
-  - component: {fileID: 114511623197890070}
   - component: {fileID: 114630386339972210}
   - component: {fileID: 114118656943792600}
-  - component: {fileID: 114130360467020262}
+  - component: {fileID: 114163783749122484}
   m_Layer: 0
   m_Name: Prefab_Spectre
   m_TagString: Player
@@ -67,20 +66,7 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114130360467020262
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1935176631834224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f00da9c162b0f43ae51358192f3341, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraToInstantiate: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
-    type: 2}
---- !u!114 &114511623197890070
+--- !u!114 &114163783749122484
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

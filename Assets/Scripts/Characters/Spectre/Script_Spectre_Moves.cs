@@ -9,14 +9,15 @@ public class Script_Spectre_Moves : NetworkBehaviour {
 	
     private void Start()
     {
-        if(!isLocalPlayer)
-        {
-            this.enabled = false;
-        }
+        
     }    
 
 	void Update ()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         Mouvement();
 	}
 
@@ -30,13 +31,13 @@ public class Script_Spectre_Moves : NetworkBehaviour {
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // déplacement Q & D
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); // déplacement Z & S
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        /*if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate(Vector3.up * Time.deltaTime * speed);
         }
         else if (Input.GetKey(KeyCode.LeftControl))
         {
             transform.Translate(Vector3.down * Time.deltaTime * speed);
-        }
+        }*/
     }
 }
