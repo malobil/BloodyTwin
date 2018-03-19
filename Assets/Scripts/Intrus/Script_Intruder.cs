@@ -33,6 +33,11 @@ public class Script_Intruder : MonoBehaviour {
         
     }
 
+    public void DestroyIntruder()
+    {
+        Destroy(this.gameObject);
+    }
+
     public void FearedImpact (float fearState)
     {
         
