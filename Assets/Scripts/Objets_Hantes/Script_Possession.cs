@@ -32,7 +32,7 @@ public class Script_Possession : MonoBehaviour {
 
             player.transform.parent = gameObject.transform.parent;
             player.SetActive(false); // désactive le spectre
-            // spectre_camera.SetActive(false); // désactive la camera spectre
+            spectre_camera.SetActive(false); // désactive la camera spectre
 
             objet_camera.SetActive(true);
 
@@ -52,7 +52,7 @@ public class Script_Possession : MonoBehaviour {
 
             player.transform.parent = null;
             player.SetActive(true); // active le spectre
-            // spectre_camera.SetActive(true); // actice la camera spectre
+            spectre_camera.SetActive(true); // actice la camera spectre
 
             objet_camera.SetActive(false);
 
