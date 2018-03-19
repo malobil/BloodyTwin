@@ -74,8 +74,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if(Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
+                currentAttackCooldown = attackCooldown / (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100));
                 CmdAttack();
-                currentAttackCooldown = attackCooldown;
             }
         }
 
@@ -133,7 +133,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
             NetworkServer.Spawn(tempAttack);
-            Destroy(tempAttack, 2f);
+            Destroy(tempAttack, currentAttackCooldown);
             //NetworkServer.UnSpawn(tempAttack);
         }
     }

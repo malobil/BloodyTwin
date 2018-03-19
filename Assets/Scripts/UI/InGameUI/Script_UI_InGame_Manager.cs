@@ -13,7 +13,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public Text timerText;
     public Image globalFearImage;
-    public GameObject gameOverPanel;
+    public GameObject gameOverPanel, gameWinPanel;
 
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
@@ -47,9 +47,13 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             minutes--;
         }
 
-        if(seconds <= 0 && minutes <= 0)
+        if(seconds <= 0 && minutes <= 0 && Script_Global_Fear_Online.Instance.ReturnNumberOfIntrus() > 0)
         {
             RpcGameOver();
+        }
+        else if(seconds <= 0 && minutes <= 0 && Script_Global_Fear_Online.Instance.ReturnNumberOfIntrus() <= 0)
+        {
+            RpcGameWin();
         }
     }
 
@@ -67,12 +71,18 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     }
 
     [ClientRpc]
+    public void RpcGameWin()
+    {
+        gameWinPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    [ClientRpc]
     public void RpcUpdateGlobalFear(float globalFear)
     {
         globalFearImage.fillAmount = globalFear / 100;
     }
 
-    
     public void DisconnectPlayer()
     {
         Debug.Log("Disconnect");

@@ -9,7 +9,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
     public float fearAdd;
     public float fearRemoved;
 
-    public int intruderNum;
     public Image fearLevel;
 
     [SyncVar(hook = "UpdateFearFeedback")]
@@ -53,7 +52,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
             NetworkServer.UnSpawn(gameObject);
             Destroy(gameObject);  
         }
-       
     }
 
     public void FearedImpact(float fearState)
@@ -69,7 +67,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
                 currentFear = 0;
             }
             Script_Global_Fear_Online.Instance.FearGlobalState();
-            //UpdateFearFeedback();
     }
 
     public float CurrentFearState()

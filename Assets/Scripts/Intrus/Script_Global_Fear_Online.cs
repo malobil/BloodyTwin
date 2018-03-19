@@ -52,6 +52,8 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
 
     public void IntruderDead(Script_Intruder_Online scriptToRelease, float fearBase)
     {
+       /* Call by  Script_Intruder_Online on server*/
+
         intruderNumberTot--;
         intruders.Remove(scriptToRelease);
 
@@ -60,6 +62,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
             intruderFear.FearedImpact(baseFearWhenDead+ (fearBase * (fearPurcentWhenDead / 100f)));
         }
 
+        CheckVictory();
         Debug.Log(intruderNumberTot);
     }
 
@@ -89,5 +92,18 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
     public float ReturnGlobalFear()
     {
         return currentFearState;
+    }
+
+    public int ReturnNumberOfIntrus()
+    {
+        return intruderNumberTot;
+    }
+
+    void CheckVictory()
+    {
+        if(intruderNumberTot <= 0)
+        {
+            Script_UI_InGame_Manager.Instance.RpcGameWin();
+        } 
     }
 }
