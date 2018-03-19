@@ -11,7 +11,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
     [SyncVar]
     private int intruderNumberTot;
 
-    public List<Script_Intruder> intruders = new List<Script_Intruder>();
+    public List<Script_Intruder_Online> intruders = new List<Script_Intruder_Online>();
 
     [SyncVar]
     private float currentFearState;
@@ -25,7 +25,12 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
 
     private void Start()
     {
-        //FearGlobalState();
+        if(!isServer)
+        {
+            this.enabled = false;
+        }
+
+        Debug.Log(intruderNumberTot);
     }
 
     void Update()
@@ -42,10 +47,18 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
        Debug.Log(intruderNumberTot);
     }
 
+    public void IntruderDead(Script_Intruder_Online scriptToRelease)
+    {
+        intruderNumberTot--;
+        intruders.Remove(scriptToRelease);
+        Debug.Log(intruderNumberTot);
+    }
+
     public void FearGlobalState()
     {
         currentFearState = 0;
-        foreach (Script_Intruder intruderFear in intruders)
+
+        foreach (Script_Intruder_Online intruderFear in intruders)
         {
             currentFearState += intruderFear.CurrentFearState();
         }

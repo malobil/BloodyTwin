@@ -12,52 +12,63 @@ public class Script_Intruder_Online : NetworkBehaviour {
     public int intruderNum;
     public Image fearLevel;
 
-    [SyncVar]
-    public float currentFear;
+    [SyncVar(hook = "UpdateFearFeedback")]
+    public float currentFear = 0f;
 
     // Use this for initialization
     void Start()
     {
-        if(isServer)
+        if(!isServer)
         {
-            Script_Global_Fear_Online.Instance.IntruderAmount();
+            return;
         }
-    }
 
+        Script_Global_Fear_Online.Instance.IntruderAmount();
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (!isServer)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown("f") && currentFear < 100)
         {
             FearedImpact(fearAdd);
         }
 
-        if (Input.GetKeyDown("g"))
+        if (Input.GetKeyDown("g") && currentFear > 0)
         {
-            FearedImpact(fearRemoved);
+           FearedImpact(fearRemoved);
         }
-
     }
 
     public void IntruderDeath()
     {
-        Destroy(this.gameObject);
+        if(isServer)
+        {
+            Script_Global_Fear_Online.Instance.IntruderDead(this);
+            Destroy(transform.parent.gameObject); 
+        }
+       
     }
 
     public void FearedImpact(float fearState)
     {
+            currentFear += fearState;
 
-        currentFear += fearState;
-        if (currentFear >= 100)
-        {
-            currentFear = 100;
-        }
-        else if (currentFear <= 0)
-        {
-            currentFear = 0;
-        }
-        Script_Global_Fear_Online.Instance.FearGlobalState();
-        UpdateFearFeedback();
+            if (currentFear >= 100)
+            {
+                currentFear = 100;
+            }
+            else if (currentFear <= 0)
+            {
+                currentFear = 0;
+            }
+            Script_Global_Fear_Online.Instance.FearGlobalState();
+            //UpdateFearFeedback();
     }
 
     public float CurrentFearState()
@@ -65,8 +76,9 @@ public class Script_Intruder_Online : NetworkBehaviour {
         return currentFear;
     }
 
-    private void UpdateFearFeedback()
+    private void UpdateFearFeedback(float fear) 
     {
-        fearLevel.fillAmount = currentFear / 100;
+        fearLevel.fillAmount = fear / 100 ;
+        Debug.Log("testinh");
     }
 }
