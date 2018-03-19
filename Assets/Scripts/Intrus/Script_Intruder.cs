@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_Intruder_Fear : MonoBehaviour {
+public class Script_Intruder : MonoBehaviour {
 
     public float fearAdd;
     public float maxFear;
@@ -12,10 +12,12 @@ public class Script_Intruder_Fear : MonoBehaviour {
     public bool downFear = false;
     public bool limitFearOff = false;
 
+    public int intruderNum;
+
 	// Use this for initialization
 	void Start ()
     {
-        
+        Script_Global_Fear.Instance.IntruderAmount(intruderNum);
 	}
 	
 	// Update is called once per frame
@@ -43,11 +45,12 @@ public class Script_Intruder_Fear : MonoBehaviour {
         {
             limitFearOff = false;
         }
+        
     }
 
     void OnGUI()
     {
-        GUI.Box(new Rect(700, 10, maxFear, 20), currentFear + "/" + maxFear);
+        GUI.Box(new Rect(60, 10, maxFear, 20), currentFear + "/" + maxFear);
     }
 
     public void Feared()

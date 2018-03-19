@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Script_Global_Fear : MonoBehaviour {
 
     public Image image_Fear;
+    public int intruderNumberTot;
 
     public static Script_Global_Fear Instance { get; private set; } 
 
@@ -14,25 +15,24 @@ public class Script_Global_Fear : MonoBehaviour {
     {
         Instance = this; 
     }
-    // Use this for initialization
-    void Start ()
+
+    void Update()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        Debug.Log(intruderNumberTot);
+    }
+
+    public void IntruderAmount(int intruderNum)
     {
-		
-	}
+        intruderNumberTot += intruderNum;
+    }
 
     public void UpFear(float fearToAdd) 
     {
-        image_Fear.fillAmount += fearToAdd/100;
+        image_Fear.fillAmount += (fearToAdd/intruderNumberTot)/100;
     }
 
     public void DownFear(float fearToRemove)
     {
-        image_Fear.fillAmount -= fearToRemove/100;
+        image_Fear.fillAmount -= (fearToRemove/intruderNumberTot)/100;
     }
 }
