@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Script_Global_Fear : MonoBehaviour {
 
-    public Image image_Fear;
-    public int intruderNumberTot;
+    public Image imgFearState;
+    private int intruderNumberTot;
+    public List<Script_Intruder> intruders = new List<Script_Intruder>();
+
+    private float currentFearState;
 
     public static Script_Global_Fear Instance { get; private set; } 
 
@@ -16,23 +19,37 @@ public class Script_Global_Fear : MonoBehaviour {
         Instance = this; 
     }
 
+    private void Start()
+    {
+        FearGlobalState();
+    }
+
     void Update()
     {
+       
+    }
+
+    public void IntruderAmount()
+    {
         Debug.Log(intruderNumberTot);
+        intruderNumberTot ++;
     }
 
-    public void IntruderAmount(int intruderNum)
+    public void FearGlobalState ()
     {
-        intruderNumberTot += intruderNum;
+        currentFearState = 0;
+            foreach(Script_Intruder intruderFear in intruders)
+                {
+                    currentFearState += intruderFear.CurrentFearState();
+                }
+
+        currentFearState /= intruderNumberTot;
+        Debug.Log("moyenne:" + currentFearState);
+        FearGraphics();
     }
 
-    public void UpFear(float fearToAdd) 
+    public void FearGraphics()
     {
-        image_Fear.fillAmount += (fearToAdd/intruderNumberTot)/100;
-    }
-
-    public void DownFear(float fearToRemove)
-    {
-        image_Fear.fillAmount -= (fearToRemove/intruderNumberTot)/100;
+        imgFearState.fillAmount = currentFearState / 100;
     }
 }

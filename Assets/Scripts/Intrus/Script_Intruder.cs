@@ -1,85 +1,61 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Script_Intruder : MonoBehaviour {
 
     public float fearAdd;
-    public float maxFear;
-    public float currentFear;
-
-    public bool upFear = false;
-    public bool downFear = false;
-    public bool limitFearOff = false;
+    public float fearRemoved;
 
     public int intruderNum;
+    public Image fearLevel;
+    public float currentFear;
 
 	// Use this for initialization
 	void Start ()
     {
-        Script_Global_Fear.Instance.IntruderAmount(intruderNum);
-	}
+        Script_Global_Fear.Instance.IntruderAmount();
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Adjust_Fear_Level();
-        if(Input.GetKeyDown("f") && limitFearOff == false)
+        if(Input.GetKeyDown("f"))
         {
-            upFear = true;
-            Feared();
+            FearedImpact(fearAdd);
         }
 
         if (Input.GetKeyDown("g"))
         {
-            Appeased();
-            downFear = true;
-        }
-
-        if (currentFear >= 100)
-        {
-            limitFearOff = true;
-            LimitFear();
-        }
-        else 
-        {
-            limitFearOff = false;
+            FearedImpact(fearRemoved);
         }
         
     }
 
-    void OnGUI()
+    public void FearedImpact (float fearState)
     {
-        GUI.Box(new Rect(60, 10, maxFear, 20), currentFear + "/" + maxFear);
-    }
-
-    public void Feared()
-    {
-       Script_Global_Fear.Instance.UpFear(fearAdd); 
-    }
-
-    public void Appeased()
-    {
-        Script_Global_Fear.Instance.DownFear(1f);
-    }
-
-    public void Adjust_Fear_Level()
-    {
-        if(upFear == true)
+        
+        currentFear += fearState;
+        if (currentFear >= 100)
         {
-            currentFear += fearAdd;
-            upFear = false;
+            currentFear = 100;
         }
-
-        if (downFear == true)
+        else if(currentFear <= 0)
         {
-            currentFear -= 1f;
-            downFear = false;
+            currentFear = 0;
         }
+        Script_Global_Fear.Instance.FearGlobalState();
+        UpdateFearFeedback();
     }
 
-    void LimitFear()
+    public float CurrentFearState()
     {
-        currentFear = maxFear;
+        return currentFear;
+    }
+
+    private void UpdateFearFeedback()
+    {
+        fearLevel.fillAmount = currentFear / 100;
     }
 }
