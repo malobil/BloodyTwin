@@ -50,7 +50,8 @@ public class Script_Intruder_Online : NetworkBehaviour {
         if(isServer)
         {
             Script_Global_Fear_Online.Instance.IntruderDead(this, currentFear);
-            Destroy(transform.parent.gameObject); 
+            NetworkServer.UnSpawn(gameObject);
+            Destroy(gameObject);  
         }
        
     }
