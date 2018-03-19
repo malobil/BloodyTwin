@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
 public class Script_UI_InGame_Manager : NetworkBehaviour {
@@ -61,6 +60,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     void RpcGameOver()
     {
         gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     
@@ -68,6 +68,5 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         Debug.Log("Disconnect");
         NetworkManager.singleton.StopHost();
-        //SceneManager.LoadScene(sceneToLoad);
     }
 }
