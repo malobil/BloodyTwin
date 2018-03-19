@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class Script_Intruder : MonoBehaviour {
 
@@ -12,10 +13,26 @@ public class Script_Intruder : MonoBehaviour {
     public Image fearLevel;
     public float currentFear;
 
+    // AI //
+
+    [SerializeField]
+
+    public Transform destination;
+
+    public NavMeshAgent intruderAI;
+
+
+
+
+
 	// Use this for initialization
 	void Start ()
     {
         Script_Global_Fear.Instance.IntruderAmount();
+
+        intruderAI = this.GetComponent<NavMeshAgent>();
+
+        SetDestination();
     }
 	
 	// Update is called once per frame
@@ -62,5 +79,14 @@ public class Script_Intruder : MonoBehaviour {
     private void UpdateFearFeedback()
     {
         fearLevel.fillAmount = currentFear / 100;
+    }
+
+    void SetDestination()
+    {
+        if(destination != null)
+        {
+            Vector3 targetVector = destination.transform.position;
+            intruderAI.SetDestination(targetVector);
+        }
     }
 }
