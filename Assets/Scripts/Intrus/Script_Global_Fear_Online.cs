@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 
 public class Script_Global_Fear_Online : NetworkBehaviour {
 
+
     public Image imgFearState;
     public float baseFearWhenDead;
     public float fearPurcentWhenDead;
@@ -72,6 +73,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         }
 
         currentFearState /= intruderNumberTot;
+        Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(currentFearState);
         Debug.Log("moyenne:" + currentFearState);
         FearGraphics();
     }
@@ -82,6 +84,10 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         {
             imgFearState.fillAmount = currentFearState / 100;
         }
-        
+    }
+
+    public float ReturnGlobalFear()
+    {
+        return currentFearState;
     }
 }

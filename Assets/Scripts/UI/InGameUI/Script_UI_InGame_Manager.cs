@@ -12,12 +12,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public float seconds;
 
     public Text timerText;
+    public Image globalFearImage;
     public GameObject gameOverPanel;
+
+    public static Script_UI_InGame_Manager Instance { get; private set; }
 
 	// Use this for initialization
 	void Start ()
     {
-		
+        Instance = this;
 	}
 	
 	// Update is called once per frame
@@ -61,6 +64,12 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    [ClientRpc]
+    public void RpcUpdateGlobalFear(float globalFear)
+    {
+        globalFearImage.fillAmount = globalFear / 100;
     }
 
     
