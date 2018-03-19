@@ -22,9 +22,10 @@ public class Lobby_Manager : NetworkLobbyManager {
 		
 	}
 
-	public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId) {
+	public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+    {
         Transform startPos = GetStartPosition();
-
+        
         if (startPos != null)
         {
             gpti = Instantiate(spawnPrefabs[playerIdx], startPos.position, startPos.rotation);
@@ -42,6 +43,7 @@ public class Lobby_Manager : NetworkLobbyManager {
     	UI_Accueil_Manager.s_Instance.DisplayWaitScreen();
     	StartMatchMaker();
     	ListGames();
+        Debug.Log(playerIdx);
     }
 
     void ListGames ()
@@ -88,7 +90,9 @@ public class Lobby_Manager : NetworkLobbyManager {
 
     public override void OnMatchJoined (bool success, string extendedInfo, MatchInfo matchInfo)
     {
+        
     	if (success){
+            Debug.Log("JOIN");
             Utility.SetAccessTokenForNetwork(matchInfo.networkId, matchInfo.accessToken);
             StartClient(matchInfo);
         }
