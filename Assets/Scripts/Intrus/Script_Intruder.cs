@@ -33,7 +33,7 @@ public class Script_Intruder : MonoBehaviour {
         
     }
 
-    public void DestroyIntruder()
+    public void IntruderDeath()
     {
         Destroy(this.gameObject);
     }
