@@ -54,6 +54,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4020749905923270}
+  - component: {fileID: 114171840995622138}
   m_Layer: 0
   m_Name: Prefab_Intrus
   m_TagString: Untagged
@@ -72,7 +73,6 @@ GameObject:
   - component: {fileID: 33278956719049630}
   - component: {fileID: 65531023557088258}
   - component: {fileID: 23908580842809312}
-  - component: {fileID: 114278573707759322}
   m_Layer: 0
   m_Name: Intrus
   m_TagString: Untagged
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706107610104020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 193.58, y: -207.85, z: -7.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428585823845454}
@@ -102,8 +102,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852131856537042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3.6946363, z: 1}
+  m_LocalPosition: {x: 0, y: -0.97, z: -0.43}
+  m_LocalScale: {x: 0.45207602, y: 1.6702565, z: 0.45207602}
   m_Children: []
   m_Father: {fileID: 4020749905923270}
   m_RootOrder: 0
@@ -161,12 +161,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114278573707759322
+--- !u!114 &114171840995622138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852131856537042}
+  m_GameObject: {fileID: 1706107610104020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a38bc95218c910d458a58d969fea04ab, type: 3}
