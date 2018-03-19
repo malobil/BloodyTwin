@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 public class Script_Global_Fear_Online : NetworkBehaviour {
 
     public Image imgFearState;
+    public float baseFearWhenDead;
+    public float fearPurcentWhenDead;
 
     [SyncVar]
     private int intruderNumberTot;
@@ -47,10 +49,16 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
        Debug.Log(intruderNumberTot);
     }
 
-    public void IntruderDead(Script_Intruder_Online scriptToRelease)
+    public void IntruderDead(Script_Intruder_Online scriptToRelease, float fearBase)
     {
         intruderNumberTot--;
         intruders.Remove(scriptToRelease);
+
+        foreach (Script_Intruder_Online intruderFear in intruders)
+        {
+            intruderFear.FearedImpact(baseFearWhenDead+ (fearBase * (fearPurcentWhenDead / 100f)));
+        }
+
         Debug.Log(intruderNumberTot);
     }
 
