@@ -20,7 +20,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
 
     void Awake()
     {
-        Instance = this;
+         Instance = this;
     }
 
     private void Start()

@@ -11,6 +11,8 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     public int intruderNum;
     public Image fearLevel;
+
+    [SyncVar]
     public float currentFear;
 
     // Use this for initialization
