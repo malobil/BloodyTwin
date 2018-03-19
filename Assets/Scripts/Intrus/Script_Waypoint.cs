@@ -7,9 +7,11 @@ public class Script_Waypoint : MonoBehaviour
     [SerializeField]
     protected float debugDrawnRadius;
 
+    public Color wayPointColor;
+
     public virtual void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = wayPointColor;
         Gizmos.DrawWireSphere(transform.position, debugDrawnRadius);
     }
 

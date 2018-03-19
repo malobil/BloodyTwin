@@ -21,18 +21,30 @@ public class Script_Intruder : MonoBehaviour {
     public GameObject intruderGO;
     public NavMeshAgent intruderAI;
 
+    private int currentWayPoint;
+    public List<Script_Waypoint> wayPoints = new List<Script_Waypoint>();
 
+    public float switchWay = 0.2f;
 
+    private bool travelling;
+    private bool waiting;
+    private bool wayForward;
+    public bool patrolWayting;
 
+    public float waitTimer;
 
 	// Use this for initialization
-	void Start ()
+	public void Start ()
     {
+        intruderAI = intruderGO.GetComponent<NavMeshAgent>();
         Script_Global_Fear.Instance.IntruderAmount();
 
-        intruderAI = intruderGO.GetComponent<NavMeshAgent>();
-
-        SetDestination();
+        if(wayPoints != null && wayPoints.Count >= 2)
+        {
+            currentWayPoint = 0;
+            SetDestination();
+        }
+        
     }
 	
 	// Update is called once per frame
@@ -48,6 +60,15 @@ public class Script_Intruder : MonoBehaviour {
             FearedImpact(fearRemoved);
         }
         
+        if(travelling = true && intruderAI.remainingDistance <= 1.0f)
+        {
+            travelling = false;
+            ChangeWayPoint();
+            SetDestination();
+        }
+  
+           
+    
     }
 
     public void IntruderDeath()
@@ -81,12 +102,34 @@ public class Script_Intruder : MonoBehaviour {
         fearLevel.fillAmount = currentFear / 100;
     }
 
-    void SetDestination()
+    private void SetDestination()
     {
-        if(destination != null)
+        if(wayPoints != null)
         {
-            Vector3 targetVector = destination.transform.position;
+            Vector3 targetVector = wayPoints[currentWayPoint].transform.position;
             intruderAI.SetDestination(targetVector);
+            travelling = true;
         }
+    }
+
+    private void ChangeWayPoint()
+    {
+         if(UnityEngine.Random.Range(0f, 1f) <= switchWay)
+         {
+            wayForward = !wayForward;
+         }
+
+        if(wayForward)
+        {
+            currentWayPoint = (currentWayPoint + 1) % wayPoints.Count;
+        }
+        else
+        {
+            if (--currentWayPoint < 0)
+            {
+                currentWayPoint = wayPoints.Count - 1;
+            }
+        }
+        
     }
 }
