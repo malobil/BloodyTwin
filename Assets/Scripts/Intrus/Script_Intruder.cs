@@ -18,7 +18,7 @@ public class Script_Intruder : MonoBehaviour {
     [SerializeField]
 
     public Transform destination;
-
+    public GameObject intruderGO;
     public NavMeshAgent intruderAI;
 
 
@@ -30,7 +30,7 @@ public class Script_Intruder : MonoBehaviour {
     {
         Script_Global_Fear.Instance.IntruderAmount();
 
-        intruderAI = this.GetComponent<NavMeshAgent>();
+        intruderAI = intruderGO.GetComponent<NavMeshAgent>();
 
         SetDestination();
     }

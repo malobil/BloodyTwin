@@ -152,6 +152,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114171840995622138, guid: 15220cfe609eeb94d90218f8fef3dac7,
+        type: 2}
+      propertyPath: intruderAI
+      value: 
+      objectReference: {fileID: 2018664245}
+    - target: {fileID: 114171840995622138, guid: 15220cfe609eeb94d90218f8fef3dac7,
+        type: 2}
+      propertyPath: destination
+      value: 
+      objectReference: {fileID: 2002309326}
+    - target: {fileID: 114171840995622138, guid: 15220cfe609eeb94d90218f8fef3dac7,
+        type: 2}
+      propertyPath: intruderGO
+      value: 
+      objectReference: {fileID: 2018664244}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15220cfe609eeb94d90218f8fef3dac7, type: 2}
   m_IsPrefabParent: 0
@@ -831,6 +846,34 @@ Transform:
   - {fileID: 1681503551}
   m_Father: {fileID: 677251502}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2002309325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2002309326}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2002309326
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002309325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 183.69, y: -207.68948, z: -19.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2018664244 stripped
 GameObject:
