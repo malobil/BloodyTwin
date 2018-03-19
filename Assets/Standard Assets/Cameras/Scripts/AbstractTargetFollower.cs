@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Cameras
         }
 
         [SerializeField] protected Transform m_Target;            // The target object to follow
+        [SerializeField] public bool m_TargetIntrus = false;      
         [SerializeField] private bool m_AutoTargetPlayer = true;  // Whether the rig should automatically target the player.
         [SerializeField] private UpdateType m_UpdateType;         // stores the selected update type
 
@@ -82,7 +83,16 @@ namespace UnityStandardAssets.Cameras
         public void FindAndTargetPlayer()
         {
             // auto target an object tagged player, if no target has been assigned
-            var targetObj = GameObject.FindGameObjectWithTag("Player");
+            GameObject targetObj;
+            if (m_TargetIntrus)
+            {
+                targetObj = GameObject.FindGameObjectWithTag("Intru");
+            }
+            else
+            {
+                targetObj = GameObject.FindGameObjectWithTag("Player");
+            }
+
             if (targetObj)
             {
                 SetTarget(targetObj.transform);
