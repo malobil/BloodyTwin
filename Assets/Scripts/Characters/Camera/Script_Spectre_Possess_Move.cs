@@ -7,7 +7,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof(Rigidbody))]
     public class Script_Spectre_Possess_Move : MonoBehaviour
     {
-        public Transform intruTest;
+        private float refreshingCalculNearestIntruder = 3f;
+        private Transform nearestIntru;
+
         [Serializable]
         public class MovementSettings
         {
@@ -77,7 +79,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        public Camera cam;
+        private Camera cam;
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
@@ -117,6 +119,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        private void OnEnable()
+        {
+            InvokeRepeating("CalculNearestIntru",0.1f, refreshingCalculNearestIntruder) ;
+        }
 
         private void Start()
         {
@@ -225,8 +231,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get the rotation before it's changed
             float oldYRotation = transform.eulerAngles.y;
                 
-            cam.transform.LookAt(intruTest);
-            transform.LookAt(intruTest);
+            cam.transform.LookAt(nearestIntru);
+            transform.LookAt(nearestIntru);
 
             //mouseLook.LookRotation(transform, cam.transform);
 
@@ -237,5 +243,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_RigidBody.velocity = velRotation * m_RigidBody.velocity;
             }*/
         }
+
+        public void SettingCam(Camera cameraToSet)
+        {
+            cam = cameraToSet;
+        }
+
+        void CalculNearestIntru()
+        {
+            Intruders_Manager_Offline.Instance.ReturnNearestIntruder(transform);
+            Debug.Log("CALCUL");
+        }
+
+        public void SettingNearestIntru(Transform nearest)
+        {
+            nearestIntru = nearest;
+            Debug.Log("SETTING");
+            //CalculNearestIntru();
+        }
+
     }
 }

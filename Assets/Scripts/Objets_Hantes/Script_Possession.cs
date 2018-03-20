@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Script_Possession : MonoBehaviour {
 
-    public GameObject player;
-    public GameObject spectre_camera;
+    private GameObject player;
     public Transform objet_hante;
-    public GameObject objet_camera;
+    public Transform cameraPoint;
 
     private bool can_possession; // peut prendre possession de l'objet
     private bool is_possession; // l'obet est possédé
@@ -30,13 +30,12 @@ public class Script_Possession : MonoBehaviour {
 
             is_possession = true;
 
-            player.transform.parent = gameObject.transform.parent;
+            player.transform.SetParent(transform); // met le spectre en parent de l'objet
             player.SetActive(false); // désactive le spectre
-            spectre_camera.SetActive(false); // désactive la camera spectre
-
-            objet_camera.SetActive(true);
-
-            //objet_hante.GetComponent<Script_Moves>().enabled = true;
+            player.GetComponent<Script_Spectre_Moves_Offline>().DisableCamera();
+            player.GetComponent<Script_Spectre_Moves_Offline>().EnablePossessCamera(cameraPoint) ;
+            GetComponent<Script_Spectre_Possess_Move>().SettingCam(player.GetComponent<Script_Spectre_Moves_Offline>().ReturnPossessCamera());
+            GetComponent<Script_Spectre_Possess_Move>().enabled = true;
 
             timeLeft = 1f;
         }
@@ -52,11 +51,10 @@ public class Script_Possession : MonoBehaviour {
 
             player.transform.parent = null;
             player.SetActive(true); // active le spectre
-            spectre_camera.SetActive(true); // actice la camera spectre
 
-            objet_camera.SetActive(false);
-
-            objet_hante.GetComponent<Script_Moves>().enabled = false;
+            player.GetComponent<Script_Spectre_Moves_Offline>().EnableCamera();
+            player.GetComponent<Script_Spectre_Moves_Offline>().DisablePossessCamera();
+            objet_hante.GetComponent<Script_Spectre_Possess_Move>().enabled = false;
 
             timeLeft = 1f;
         }
@@ -79,6 +77,7 @@ public class Script_Possession : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            player = other.gameObject;
             print("Spectre entré");
             can_possession = true;
         }
@@ -88,6 +87,7 @@ public class Script_Possession : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            player = null;
             print("Spectre sorti");
             can_possession = false;
         }

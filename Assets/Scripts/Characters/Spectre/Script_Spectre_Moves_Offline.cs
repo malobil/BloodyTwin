@@ -6,6 +6,8 @@ using UnityEngine.Networking;
 public class Script_Spectre_Moves_Offline : MonoBehaviour {
 
     public float speed = 5.0f;
+    public GameObject playerCamera;
+    public Transform possessCamera;
 	
     private void Start()
     {
@@ -39,5 +41,33 @@ public class Script_Spectre_Moves_Offline : MonoBehaviour {
         {
             transform.Translate(Vector3.down * Time.deltaTime * speed);
         }*/
+    }
+
+    public void DisableCamera()
+    {
+        playerCamera.SetActive(false);
+    }
+
+    public void EnableCamera()
+    {
+        playerCamera.SetActive(true);
+    }
+
+    public void EnablePossessCamera(Transform cameraPoint)
+    {
+        possessCamera.transform.position = cameraPoint.position;
+        possessCamera.SetParent(cameraPoint);
+        possessCamera.gameObject.SetActive(true);
+    }
+
+    public void DisablePossessCamera()
+    {
+        possessCamera.SetParent(null);
+        possessCamera.gameObject.SetActive(false);
+    }
+
+    public Camera ReturnPossessCamera()
+    {
+        return possessCamera.GetComponent<Camera>() ;
     }
 }
