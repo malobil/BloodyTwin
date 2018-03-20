@@ -84,7 +84,7 @@ public class Lobby_Manager : NetworkLobbyManager {
 
     public override void OnMatchCreate (bool success, string extendedInfo, MatchInfo matchInfo){
         if (success) {
-            StartHost(matchInfo);
+           StartHost(matchInfo);
         }
     }
 

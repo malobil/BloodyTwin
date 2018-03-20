@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4385434153185862}
-  - component: {fileID: 114882025500242484}
   - component: {fileID: 114421447969151910}
+  - component: {fileID: 114496982419826800}
   m_Layer: 0
   m_Name: Prefab_Lobby_Manager
   m_TagString: Untagged
@@ -61,13 +61,14 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 0
-  m_PlayerPrefab: {fileID: 1301648536905406, guid: 3754ef0c3114c22409f76b9646e6bfa8,
+  m_PlayerPrefab: {fileID: 1242737487146092, guid: 8ac22113ce0988e44bdd05167a97ac60,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
-  m_OfflineScene: Scene_Main_Lobby
-  m_OnlineScene: Scene_Arthur_ProtoSalon
-  m_SpawnPrefabs: []
+  m_OfflineScene: Scene_Kevin_Lobby
+  m_OnlineScene: Scene_Kevin
+  m_SpawnPrefabs:
+  - {fileID: 1519718916192652, guid: 0964f3e0546d62043933a019629f1591, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -123,7 +124,7 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
---- !u!114 &114882025500242484
+--- !u!114 &114496982419826800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

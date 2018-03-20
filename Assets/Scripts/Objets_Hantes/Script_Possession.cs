@@ -6,7 +6,7 @@ public class Script_Possession : MonoBehaviour {
 
     public GameObject player;
     public GameObject spectre_camera;
-    public GameObject objet_hante;
+    public Transform objet_hante;
     public GameObject objet_camera;
 
     private bool can_possession; // peut prendre possession de l'objet
@@ -17,7 +17,7 @@ public class Script_Possession : MonoBehaviour {
 
     void Start ()
     {
-        objet_hante = transform.parent.gameObject; // objet_hante est son parent
+        //objet_hante = transform.parent.gameObject; // objet_hante est son parent
         timeLeft = 1f;
 	}
 	
@@ -36,7 +36,7 @@ public class Script_Possession : MonoBehaviour {
 
             objet_camera.SetActive(true);
 
-            objet_hante.GetComponent<Script_Moves>().enabled = true;
+            //objet_hante.GetComponent<Script_Moves>().enabled = true;
 
             timeLeft = 1f;
         }
