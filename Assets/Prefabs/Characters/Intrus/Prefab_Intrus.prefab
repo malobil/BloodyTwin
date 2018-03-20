@@ -200,8 +200,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  hidePoints:
   - {fileID: 0}
-  switchWay: 0
+  switchWay: 0.2
   patrolWayting: 0
   currentState: 1
   waitTimer: 0
