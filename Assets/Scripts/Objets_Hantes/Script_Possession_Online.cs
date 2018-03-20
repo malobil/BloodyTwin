@@ -46,9 +46,9 @@ public class Script_Possession_Online : NetworkBehaviour {
 
             player.transform.parent = null;
             player.SetActive(true); // active le spectre
-
-            player.GetComponent<Script_Spectre_Moves_Offline>().EnableCamera();
-            player.GetComponent<Script_Spectre_Moves_Offline>().DisablePossessCamera();
+            CmdGiveAuthority();
+            player.GetComponent<Script_Spectre_Moves_Online>().EnableCamera();
+            player.GetComponent<Script_Spectre_Moves_Online>().DisablePossessCamera();
             objet_hante.GetComponent<Script_Spectre_Possess_Move_Online>().enabled = false;
 
             timeLeft = 1f;
@@ -102,5 +102,11 @@ public class Script_Possession_Online : NetworkBehaviour {
             print("Spectre sorti");
             can_possession = false;
         }
+    }
+
+    [Command]
+    public void CmdGiveAuthority()
+    {
+        player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
 }
