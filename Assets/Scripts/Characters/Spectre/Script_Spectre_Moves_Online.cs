@@ -28,12 +28,13 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         if(Input.GetKeyDown("e") && objectToPossess!= null)
         {
             PossessObject();
-            CmdGiveAuthority();
 
             if(isServer)
             {
                 RpcDisablePlayer();
             }
+
+            CmdGiveAuthority();
         }
 	}
 
@@ -75,7 +76,11 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         possessCamera.SetParent(null);
         possessCamera.gameObject.SetActive(false);
-        RpcEnablePlayer();
+        
+        if(isServer)
+        {
+            RpcEnablePlayer();
+        }
     }
 
     public Camera ReturnPossessCamera()
