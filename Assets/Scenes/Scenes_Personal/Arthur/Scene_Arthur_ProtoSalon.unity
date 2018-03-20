@@ -1640,6 +1640,82 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378793178}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &397329282
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628821362343208, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_TransformSyncMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157843709100084, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361508442560614, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_ServerOnly
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361508442560614, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_LocalPlayerAuthority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628821362343208, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_SyncRotationAxis
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 54848427769673726, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901846777318568, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_Name
+      value: Prefab_Objet_Hante_Online (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &403242203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,6 +4922,82 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d67bc41212676ab49bc05ef9c2c5b223, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1646609237
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -19.219196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658383020180624, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628821362343208, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_TransformSyncMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157843709100084, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361508442560614, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_ServerOnly
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114361508442560614, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_LocalPlayerAuthority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114628821362343208, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_SyncRotationAxis
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 54848427769673726, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901846777318568, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+      propertyPath: m_Name
+      value: Prefab_Objet_Hante_Online (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1661450025
 GameObject:
