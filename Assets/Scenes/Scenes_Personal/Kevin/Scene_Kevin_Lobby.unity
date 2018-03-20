@@ -152,6 +152,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
+        type: 2}
+      propertyPath: m_MinPlayers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
+        type: 2}
+      propertyPath: m_OfflineScene
+      value: Scene_Kevin
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
+        type: 2}
+      propertyPath: m_LobbyScene
+      value: Scene_Kevin
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
+        type: 2}
+      propertyPath: m_PlayScene
+      value: Scene_Kevin_Lobby
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8fef4c5c7926ab429b358ccc60f4943, type: 2}
   m_IsPrefabParent: 0
