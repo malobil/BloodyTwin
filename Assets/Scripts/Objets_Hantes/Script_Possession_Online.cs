@@ -30,7 +30,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCamera();
             player.GetComponent<Script_Spectre_Moves_Online>().EnablePossessCamera(cameraPoint) ;
             GetComponent<Script_Spectre_Possess_Move_Online>().SettingCam(player.GetComponent<Script_Spectre_Moves_Online>().ReturnPossessCamera());
-            player.GetComponent<Script_Spectre_Possess_Move_Online>().enabled = true;
+            GetComponent<Script_Spectre_Possess_Move_Online>().enabled = true;
             is_possession = true;
 
             timeLeft = 1f;
