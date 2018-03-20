@@ -25,7 +25,7 @@ public class Script_Possession_Online : NetworkBehaviour {
 	
 	public void PossessObject()
     {
-            //player.transform.SetParent(transform); // met le spectre en parent de l'objet
+            player.transform.SetParent(transform); // met le spectre en parent de l'objet
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCharacter() ; // désactive le spectre                      
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCamera();
             player.GetComponent<Script_Spectre_Moves_Online>().EnablePossessCamera(cameraPoint) ;
@@ -67,6 +67,11 @@ public class Script_Possession_Online : NetworkBehaviour {
         else if (timeLeft <= 0 && is_possession)
         {
             can_leave = true;
+        }
+
+        if (Input.GetKeyDown("e"))
+        {
+            UnPossessObject();
         }
 
         /*if(is_possession)

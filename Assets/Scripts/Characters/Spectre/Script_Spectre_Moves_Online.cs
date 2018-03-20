@@ -41,11 +41,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // déplacement Q & D
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); // déplacement Z & S
-
-        if(Input.GetKeyDown("e"))
-        {
-            Debug.Log("oooo");
-        }
     }
 
     public void SettingCamera(GameObject camToSet)
