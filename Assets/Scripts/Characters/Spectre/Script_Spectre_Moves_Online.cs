@@ -28,12 +28,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         if(Input.GetKeyDown("e") && objectToPossess!= null)
         {
             PossessObject();
-
-            if(isServer)
-            {
-                RpcDisablePlayer();
-            }
-
+            CmdDisablePlayer();
             CmdGiveAuthority();
         }
 	}
@@ -114,6 +109,13 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         //var otherOwner = GetComponent<NetworkIdentity>().clientAuthorityOwner;
         //GetComponent<NetworkIdentity>().RemoveClientAuthority(otherOwner);
         objectToPossess.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+    }
+    
+    [Command]
+    void CmdDisablePlayer()
+    {
+        gameObject.SetActive(false);
+        RpcDisablePlayer();
     }
 
     [ClientRpc]
