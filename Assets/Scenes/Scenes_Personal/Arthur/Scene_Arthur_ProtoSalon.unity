@@ -3086,6 +3086,11 @@ Prefab:
       propertyPath: m_TransformSyncMode
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114157843709100084, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
   m_IsPrefabParent: 0
