@@ -1,12 +1,11 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class Script_Spectre_Possess_Move_Online : NetworkBehaviour
+    public class Script_Spectre_Possess_Move_Online : MonoBehaviour
     {
         private float refreshingCalculNearestIntruder = 3f;
         private Transform nearestIntru;
