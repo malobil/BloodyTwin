@@ -97,7 +97,7 @@ public class Script_Possession_Online : NetworkBehaviour {
     {
         if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>())
         {
-            player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
+            //player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
             player = null;
             print("Spectre sorti");
             can_possession = false;
@@ -107,6 +107,7 @@ public class Script_Possession_Online : NetworkBehaviour {
     [Command]
     public void CmdGiveAuthority()
     {
+        GetComponent<NetworkIdentity>().RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
         player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
 }
