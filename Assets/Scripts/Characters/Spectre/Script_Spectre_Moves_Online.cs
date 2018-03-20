@@ -84,6 +84,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public void SettingPossessTarget(Script_Possession_Online targetToSet)
     {
         objectToPossess = targetToSet;
+        targetToSet.gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
 
     public void UnSettingPossessTarget()
