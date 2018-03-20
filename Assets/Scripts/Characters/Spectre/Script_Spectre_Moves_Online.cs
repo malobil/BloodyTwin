@@ -71,11 +71,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         possessCamera.SetParent(null);
         possessCamera.gameObject.SetActive(false);
-        
-        if(isServer)
-        {
-            RpcEnablePlayer();
-        }
+        CmdEnablePlayer();
     }
 
     public Camera ReturnPossessCamera()
@@ -122,6 +118,13 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     void RpcDisablePlayer()
     {
         gameObject.SetActive(false);
+    }
+
+    [Command]
+    void CmdEnablePlayer()
+    {
+        gameObject.SetActive(true);
+        RpcEnablePlayer();
     }
 
     [ClientRpc]
