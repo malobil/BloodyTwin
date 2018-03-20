@@ -111,7 +111,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     [Command]
     public void CmdGiveAuthority()
     {
-        GetComponent<NetworkIdentity>().RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+        var otherOwner = GetComponent<NetworkIdentity>().clientAuthorityOwner;
+        GetComponent<NetworkIdentity>().RemoveClientAuthority(otherOwner);
         objectToPossess.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
 
