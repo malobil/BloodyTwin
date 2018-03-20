@@ -71,7 +71,12 @@ public class Lobby_Manager : NetworkLobbyManager {
     public void SetPlayerIdx (int idx)
     {
     	playerIdx = idx;
-    	UI_Accueil_Manager.s_Instance.DisplayWaitScreen();
+
+        if(UI_Accueil_Manager.s_Instance != null)
+        {
+            UI_Accueil_Manager.s_Instance.DisplayWaitScreen();
+        }
+    	
     	StartMatchMaker();
     	ListGames();
         Debug.Log(playerIdx);
