@@ -31,6 +31,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             player.GetComponent<Script_Spectre_Moves_Online>().EnablePossessCamera(cameraPoint) ;
             GetComponent<Script_Spectre_Possess_Move_Online>().SettingCam(player.GetComponent<Script_Spectre_Moves_Online>().ReturnPossessCamera());
             GetComponent<Script_Spectre_Possess_Move_Online>().enabled = true;
+            is_possession = true;
 
             timeLeft = 1f;
     }
@@ -66,6 +67,11 @@ public class Script_Possession_Online : NetworkBehaviour {
         else if (timeLeft <= 0 && is_possession)
         {
             can_leave = true;
+        }
+
+        if(is_possession)
+        {
+            player.GetComponent<Script_Spectre_Moves_Online>().CmdUpdatePossessTransform(transform, transform.position);
         }
     }
         

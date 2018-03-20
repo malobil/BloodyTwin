@@ -139,7 +139,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }*/
-            CmdLocation(transform.position);
+            
             Debug.Log(GetInput());
             RotateView();
         }
@@ -274,12 +274,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             nearestIntru = nearest;
             Debug.Log("SETTING");
             //CalculNearestIntru();
-        }
-
-        [Command]
-        void CmdLocation(Vector3 newPosition)
-        {
-            transform.position = newPosition; 
         }
     }
 }
