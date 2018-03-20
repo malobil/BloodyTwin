@@ -28,6 +28,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         if(Input.GetKeyDown("e") && objectToPossess!= null)
         {
             PossessObject();
+            CmdGiveAuthority();
         }
 	}
 
@@ -102,8 +103,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdUpdatePossessTransform(Transform objectPosses, Vector3 newPosition)
+    public void CmdGiveAuthority()
     {
-        objectPosses.position = newPosition;
+        objectToPossess.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
 }
