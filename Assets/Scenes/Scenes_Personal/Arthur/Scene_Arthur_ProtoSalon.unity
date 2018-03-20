@@ -3101,6 +3101,16 @@ Prefab:
       propertyPath: m_LocalPlayerAuthority
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114628821362343208, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_SyncRotationAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54848427769673726, guid: 22df54488d7b239418da8f038f8e6039,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
   m_IsPrefabParent: 0
