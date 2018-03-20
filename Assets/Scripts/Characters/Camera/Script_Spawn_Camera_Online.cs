@@ -12,6 +12,10 @@ public class Script_Spawn_Camera_Online : NetworkBehaviour {
     {
         GameObject cameraI = Instantiate(cameraToInstantiate, transform.position, transform.rotation);
         cameraI.GetComponent<FreeLookCam>().SetCamera(transform);
+        if(GetComponent<Script_Spectre_Moves_Online>() != null)
+        {
+            GetComponent<Script_Spectre_Moves_Online>().SettingCamera(cameraI);
+        }
         cameraI.tag = "MainCamera" ;
     }
 

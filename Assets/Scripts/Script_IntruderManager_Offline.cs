@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.Networking;
 
-public class Intruders_Manager_Offline : MonoBehaviour {
+public class Script_IntruderManager_Offline : NetworkBehaviour
+{
 
     public List<Transform> intruderList = new List<Transform>();
-    private float smallestDistance ;
+    private float smallestDistance;
     private Transform nearestIntruder;
 
-    public static Intruders_Manager_Offline Instance { get; private set; }
+    public static Script_IntruderManager_Offline Instance { get; private set; }
 
     private void Awake()
     {
@@ -23,8 +25,8 @@ public class Intruders_Manager_Offline : MonoBehaviour {
         foreach (Transform intruder in intruderList)
         {
             float dist = Vector3.Distance(intruder.position, obj.position);
-            
-            if(dist < smallestDistance)
+
+            if (dist < smallestDistance)
             {
                 smallestDistance = dist;
                 nearestIntruder = intruder;
