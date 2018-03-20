@@ -3099,7 +3099,7 @@ Prefab:
     - target: {fileID: 114361508442560614, guid: 22df54488d7b239418da8f038f8e6039,
         type: 2}
       propertyPath: m_LocalPlayerAuthority
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114628821362343208, guid: 22df54488d7b239418da8f038f8e6039,
         type: 2}
