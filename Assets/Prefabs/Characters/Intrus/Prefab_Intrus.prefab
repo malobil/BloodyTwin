@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1345721699793100
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -73,6 +73,8 @@ GameObject:
   - component: {fileID: 33278956719049630}
   - component: {fileID: 65531023557088258}
   - component: {fileID: 23908580842809312}
+  - component: {fileID: 65213325851115058}
+  - component: {fileID: 195881852773156130}
   m_Layer: 0
   m_Name: Intrus
   m_TagString: Untagged
@@ -86,15 +88,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706107610104020}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 193.58, y: -207.85, z: -7.43}
+  m_LocalRotation: {x: -0, y: 0.32722706, z: -0, w: 0.94494575}
+  m_LocalPosition: {x: 187.51, y: -207.85, z: -5.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428585823845454}
-  - {fileID: 224862307013233052}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 38.201, z: 0}
 --- !u!4 &4428585823845454
 Transform:
   m_ObjectHideFlags: 1
@@ -104,7 +105,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.97, z: -0.43}
   m_LocalScale: {x: 0.45207602, y: 1.6702565, z: 0.45207602}
-  m_Children: []
+  m_Children:
+  - {fileID: 224862307013233052}
   m_Father: {fileID: 4020749905923270}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,6 +151,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852131856537042}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65213325851115058
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852131856537042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.35643, y: 1.3483657, z: 6.7560935}
+  m_Center: {x: 0.12196358, y: 0.17418513, z: 0.19836438}
 --- !u!65 &65531023557088258
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -177,6 +191,20 @@ MonoBehaviour:
   intruderNum: 0
   fearLevel: {fileID: 114453683466244058}
   currentFear: 0
+  destination: {fileID: 0}
+  intruderGO: {fileID: 1852131856537042}
+  intruderAI: {fileID: 195881852773156130}
+  railPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  switchWay: 0
+  patrolWayting: 0
+  currentState: 1
+  waitTimer: 0
 --- !u!114 &114453683466244058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,6 +269,27 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!195 &195881852773156130
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852131856537042}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.50000006
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.99999994
+  m_BaseOffset: 0.49999997
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!222 &222878142734123720
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -292,15 +341,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345721699793100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.9511676}
+  m_LocalScale: {x: 2.2120175, y: 0.5987104, z: 2.2120175}
   m_Children:
   - {fileID: 224760134951357002}
-  m_Father: {fileID: 4020749905923270}
-  m_RootOrder: 1
+  m_Father: {fileID: 4428585823845454}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.568}
+  m_AnchoredPosition: {x: 0, y: 2.1182365}
   m_SizeDelta: {x: 1.624, y: 0.914}
   m_Pivot: {x: 0.5, y: 0.5}

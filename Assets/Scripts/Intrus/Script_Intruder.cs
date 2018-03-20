@@ -22,7 +22,8 @@ public class Script_Intruder : MonoBehaviour {
     public NavMeshAgent intruderAI;
 
     private int currentWayPoint;
-    public List<Script_Waypoint> wayPoints = new List<Script_Waypoint>();
+
+    public List<GameObject> railPoints = new List<GameObject>();
 
     public float switchWay = 0.2f;
 
@@ -30,6 +31,9 @@ public class Script_Intruder : MonoBehaviour {
     private bool waiting;
     private bool wayForward;
     public bool patrolWayting;
+
+    public enum IntruderState {Armed, Composed, Scared, Panic};
+    public IntruderState currentState;
 
     public float waitTimer;
 
@@ -39,7 +43,7 @@ public class Script_Intruder : MonoBehaviour {
         intruderAI = intruderGO.GetComponent<NavMeshAgent>();
         Script_Global_Fear.Instance.IntruderAmount();
 
-        if(wayPoints != null && wayPoints.Count >= 2)
+        if(railPoints != null && railPoints.Count >= 2)
         {
             currentWayPoint = 0;
             SetDestination();
@@ -59,16 +63,14 @@ public class Script_Intruder : MonoBehaviour {
         {
             FearedImpact(fearRemoved);
         }
-        
+
+
         if(travelling = true && intruderAI.remainingDistance <= 1.0f)
         {
             travelling = false;
             ChangeWayPoint();
             SetDestination();
         }
-  
-           
-    
     }
 
     public void IntruderDeath()
@@ -104,9 +106,9 @@ public class Script_Intruder : MonoBehaviour {
 
     private void SetDestination()
     {
-        if(wayPoints != null)
+        if(railPoints != null)
         {
-            Vector3 targetVector = wayPoints[currentWayPoint].transform.position;
+            Vector3 targetVector = railPoints[currentWayPoint].transform.position;
             intruderAI.SetDestination(targetVector);
             travelling = true;
         }
@@ -114,22 +116,16 @@ public class Script_Intruder : MonoBehaviour {
 
     private void ChangeWayPoint()
     {
-         if(UnityEngine.Random.Range(0f, 1f) <= switchWay)
-         {
-            wayForward = !wayForward;
-         }
-
-        if(wayForward)
+        if(currentState == IntruderState.Composed)
         {
-            currentWayPoint = (currentWayPoint + 1) % wayPoints.Count;
+            currentWayPoint = (currentWayPoint + 1) % railPoints.Count;
         }
         else
         {
             if (--currentWayPoint < 0)
             {
-                currentWayPoint = wayPoints.Count - 1;
+                currentWayPoint = railPoints.Count - 1;
             }
         }
-        
     }
 }
