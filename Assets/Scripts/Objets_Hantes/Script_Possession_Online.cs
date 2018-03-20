@@ -69,10 +69,10 @@ public class Script_Possession_Online : NetworkBehaviour {
             can_leave = true;
         }
 
-        if(is_possession)
+        /*if(is_possession)
         {
             player.GetComponent<Script_Spectre_Moves_Online>().CmdUpdatePossessTransform(transform, transform.position);
-        }
+        }*/
     }
         
 
