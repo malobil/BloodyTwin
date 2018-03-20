@@ -48,11 +48,11 @@ public class Lobby_Manager : NetworkLobbyManager {
 
     void ListGames ()
     {
-    	if (playerIdx == 0)
+    	if (playerIdx == 1)
     	{
     		matchMaker.ListMatches(0,10,"Spectre",false, 0, 0, OnMatchList); // Recherche Spectre
     	}
-    	else  if (playerIdx == 1)
+    	else  if (playerIdx == 0)
     	{
     		matchMaker.ListMatches(0,10,"Bourreau",false, 0, 0, OnMatchList); // Recherche Bourreau
     	}
@@ -60,6 +60,7 @@ public class Lobby_Manager : NetworkLobbyManager {
 
     public override void OnMatchList (bool sucess, string extendedInfo, List<MatchInfoSnapshot> matchList)
     {
+    	Debug.Log(matchList.Count);
 		for (var i = 0; i < matchList.Count; i++)
 		{
             if (matchList[i].currentSize < minPlayers){
