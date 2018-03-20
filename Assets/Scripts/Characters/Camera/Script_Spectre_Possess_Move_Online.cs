@@ -122,7 +122,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnEnable()
         {
-            CmdActiveOnServer();
             //InvokeRepeating("CalculNearestIntru",0.1f, refreshingCalculNearestIntruder) ;
         }
 
@@ -140,7 +139,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }*/
-            //CmdTransform(transform.position);
+            CmdLocation(transform.position);
             Debug.Log(GetInput());
             RotateView();
         }
@@ -278,16 +277,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         [Command]
-        public void CmdActiveOnServer()
+        void CmdLocation(Vector3 newPosition)
         {
-            this.enabled = true;
+            transform.position = newPosition; 
         }
-
-        [Command]
-        void CmdTransform(Vector3 newPosition)
-        {
-            transform.position = newPosition;
-        }
-
     }
 }
