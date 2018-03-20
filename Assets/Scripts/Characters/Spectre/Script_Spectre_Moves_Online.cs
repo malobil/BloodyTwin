@@ -29,6 +29,11 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             PossessObject();
             CmdGiveAuthority();
+
+            if(isServer)
+            {
+                RpcDisablePlayer();
+            }
         }
 	}
 
@@ -101,5 +106,11 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public void CmdGiveAuthority()
     {
         objectToPossess.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+    }
+
+    [ClientRpc]
+    void RpcDisablePlayer()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -97,8 +97,8 @@ public class Script_Possession_Online : NetworkBehaviour {
     {
         if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>())
         {
-            player = null;
             player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
+            player = null;
             print("Spectre sorti");
             can_possession = false;
         }
