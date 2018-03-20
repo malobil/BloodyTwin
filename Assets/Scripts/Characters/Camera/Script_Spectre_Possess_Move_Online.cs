@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class Script_Spectre_Possess_Move_Online : MonoBehaviour
+    public class Script_Spectre_Possess_Move_Online : NetworkBehaviour
     {
         private float refreshingCalculNearestIntruder = 3f;
         private Transform nearestIntru;
@@ -121,6 +122,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnEnable()
         {
+            CmdActiveOnServer();
             //InvokeRepeating("CalculNearestIntru",0.1f, refreshingCalculNearestIntruder) ;
         }
 
@@ -138,7 +140,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }*/
-
+            //CmdTransform(transform.position);
             Debug.Log(GetInput());
             RotateView();
         }
@@ -273,6 +275,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             nearestIntru = nearest;
             Debug.Log("SETTING");
             //CalculNearestIntru();
+        }
+
+        [Command]
+        public void CmdActiveOnServer()
+        {
+            this.enabled = true;
+        }
+
+        [Command]
+        void CmdTransform(Vector3 newPosition)
+        {
+            transform.position = newPosition;
         }
 
     }
