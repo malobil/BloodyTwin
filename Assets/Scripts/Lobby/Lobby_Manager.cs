@@ -9,6 +9,7 @@ public class Lobby_Manager : NetworkLobbyManager {
 
 	private GameObject gpti;
 	private int playerIdx = -1;
+	private int nbSpawn = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -26,14 +27,44 @@ public class Lobby_Manager : NetworkLobbyManager {
     {
         Transform startPos = GetStartPosition();
         
-        if (startPos != null)
+        if (nbSpawn == 0)
         {
-            gpti = Instantiate(spawnPrefabs[playerIdx], startPos.position, startPos.rotation);
+        	if (startPos != null)
+	        {
+	            gpti = Instantiate(spawnPrefabs[playerIdx], startPos.position, startPos.rotation);
+	        }
+	        else
+	        {
+	             gpti = Instantiate(spawnPrefabs[playerIdx], Vector3.zero, Quaternion.identity);
+	        }
         }
-        else
+        else if (nbSpawn == 1)
         {
-             gpti = Instantiate(spawnPrefabs[playerIdx], Vector3.zero, Quaternion.identity);
+        	if (playerIdx == 0)
+        	{
+        		if (startPos != null)
+		        {
+		            gpti = Instantiate(spawnPrefabs[1], startPos.position, startPos.rotation);
+		        }
+		        else
+		        {
+		             gpti = Instantiate(spawnPrefabs[1], Vector3.zero, Quaternion.identity);
+		        }
+        	}
+        	else if (playerIdx == 1)
+        	{
+        		if (startPos != null)
+		        {
+		            gpti = Instantiate(spawnPrefabs[0], startPos.position, startPos.rotation);
+		        }
+		        else
+		        {
+		             gpti = Instantiate(spawnPrefabs[0], Vector3.zero, Quaternion.identity);
+		        }
+        	}
         }
+
+	    nbSpawn++;    
         return gpti;
     }
 
@@ -60,8 +91,7 @@ public class Lobby_Manager : NetworkLobbyManager {
 
     public override void OnMatchList (bool sucess, string extendedInfo, List<MatchInfoSnapshot> matchList)
     {
-    	Debug.Log(matchList.Count);
-		for (var i = 0; i < matchList.Count; i++)
+    	for (var i = 0; i < matchList.Count; i++)
 		{
             if (matchList[i].currentSize < minPlayers){
                 matchMaker.JoinMatch(matchList[i].networkId, " "," ", " ", 0, 0, OnMatchJoined);
