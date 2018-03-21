@@ -4376,7 +4376,15 @@ Prefab:
       propertyPath: wayPoint
       value: 
       objectReference: {fileID: 673587281}
-    m_RemovedComponents: []
+    - target: {fileID: 114788254285901196, guid: 48ae0ade5454db14c8bc984b321badbb,
+        type: 2}
+      propertyPath: m_LocalPlayerAuthority
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114788254285901196, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
+    - {fileID: 114681040211653758, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
+    - {fileID: 114510763146275032, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1365553999 stripped

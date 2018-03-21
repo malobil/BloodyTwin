@@ -38,6 +38,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 return;
             }
+
+            gameObject.tag = "Player";
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -64,7 +66,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (currentRunCooldown > 0)
             {
                 currentRunCooldown -= Time.deltaTime;
-                Debug.Log(currentRunCooldown);
+                //Debug.Log(currentRunCooldown);
             }
             else
             {
@@ -81,7 +83,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 currentAttackCooldown = attackCooldown / (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100));
                 CmdAttack();
             }
-
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -154,6 +155,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         void SetPauseMenu()
         {
             Script_UI_InGame_Manager.Instance.PauseMenu();
+        }
+
+        public void AddFearToIntruder(float fearToAdd, GameObject intruderToFear)
+        {
+            CmdFearOnIntruder(fearToAdd, intruderToFear);
+        }
+
+        [Command]
+        void CmdFearOnIntruder(float fearAdded, GameObject _target)
+        {
+            _target.GetComponent<Script_Intruder_Online>().FearedImpact(fearAdded);
         }
     }
 }

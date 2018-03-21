@@ -16,32 +16,14 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
 
     public List<Script_Intruder_Online> intruders = new List<Script_Intruder_Online>();
 
-    [SyncVar]
-    private float currentFearState;
+    [SyncVar(hook = ("OnFearChange"))]
+    public float currentFearState;
 
     public static Script_Global_Fear_Online Instance { get; private set; }
 
     void Awake()
     {
          Instance = this;
-    }
-
-    private void Start()
-    {
-        if(!isServer)
-        {
-            this.enabled = false;
-        }
-
-        Debug.Log(intruderNumberTot);
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log(intruderNumberTot);
-        }
     }
 
     public void IntruderAmount()
@@ -66,8 +48,11 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         Debug.Log(intruderNumberTot);
     }
 
+
+    //command depuis le(s) joueur(s) (only on serveur)
     public void FearGlobalState()
     {
+
         currentFearState = 0;
 
         foreach (Script_Intruder_Online intruderFear in intruders)
@@ -75,9 +60,17 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
             currentFearState += intruderFear.CurrentFearState();
         }
         currentFearState /= intruderNumberTot;
-        Script_UI_InGame_Manager.Instance.UpdateFear(currentFearState);
         Debug.Log("moyenne:" + currentFearState);
-        FearGraphics();
+        FearGraphics();        
+    }
+
+    void OnFearChange(float thisfear)
+    {
+        if(!isServer)
+        { return; }
+        Debug.Log(thisfear);
+        RpcSendFearToAll(thisfear);
+         Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(thisfear);
     }
 
     public void FearGraphics()
@@ -104,5 +97,11 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         {
             Script_UI_InGame_Manager.Instance.RpcGameWin();
         } 
+    }
+
+    [ClientRpc]
+    void RpcSendFearToAll(float fearToSet)
+    {
+        currentFearState = fearToSet;
     }
 }

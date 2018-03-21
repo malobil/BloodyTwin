@@ -26,16 +26,16 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        Timer(); 
+	}
+
+    void Timer()
+    {
         if(!isServer)
         {
             return;
         }
 
-        Timer();
-	}
-
-    void Timer()
-    {
         if(seconds > 0)
         {
             seconds -= Time.deltaTime;
@@ -77,14 +77,10 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         Time.timeScale = 0f;
     }
 
-    public void UpdateFear(float fearToUp)
-    {
-        RpcUpdateGlobalFear(fearToUp);
-    }
-
     [ClientRpc]
     public void RpcUpdateGlobalFear(float globalFear)
     {
+        Debug.Log("Update fear" + globalFear);
         globalFearImage.fillAmount = globalFear / 100;
     }
 
@@ -96,6 +92,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void DisconnectPlayer()
     {
         Debug.Log("Disconnect");
-        NetworkManager.singleton.StopHost();
+        if(isServer)
+        {
+            NetworkManager.singleton.StopMatchMaker();
+            NetworkManager.singleton.StopHost();
+        }
+        else
+        {
+            NetworkManager.singleton.StopClient();
+        }
+        
     }
 }

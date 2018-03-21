@@ -12,9 +12,8 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     public Image fearLevel;
 
-    [SyncVar(hook = "UpdateFearFeedback")]
+    [SyncVar(hook = ("UpdateFearFeedback"))]
     public float currentFear = 0f;
-
 
     public enum IntruderState { Neutral, Fleeing, Chasing };
     public IntruderState currentState;
@@ -30,7 +29,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
     private GameObject objectSeen;
     private GameObject objectHeard;
 
-    public float smoothness;
     public Transform body;
 
     public NavMeshAgent navMeshAI;
@@ -42,10 +40,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
     // Use this for initialization
     void Start()
     {
-        if(!isServer)
-        {
-            return;
-        }
         NavPosition(wayPoint.position);
         Script_Global_Fear_Online.Instance.IntruderAmount();
     }
@@ -53,7 +47,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-
         if (navMeshAI.remainingDistance <= 0)
         {
             isMoving = false;
@@ -64,16 +57,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
                 CalculateNearestPath();
             }
         }
-
-        if (Input.GetKeyDown("f") && currentFear < 100)
-        {
-            FearedImpact(fearAdd);
-        }
-
-        if (Input.GetKeyDown("g") && currentFear > 0)
-        {
-           FearedImpact(fearRemoved);
-        }
     }
 
     public void IntruderDeath()
@@ -83,9 +66,10 @@ public class Script_Intruder_Online : NetworkBehaviour {
             Destroy(gameObject);  
     }
 
+    // command depuis joueur
     public void FearedImpact(float fearState)
     {
-        Debug.Log("JAI PEUR");
+            Debug.Log("JAI PEUR");
             currentFear += fearState;
 
             if (currentFear >= 100)
@@ -96,6 +80,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
             {
                 currentFear = 0;
             }
+            
             Script_Global_Fear_Online.Instance.FearGlobalState();
     }
 
@@ -106,8 +91,15 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void UpdateFearFeedback(float fear) 
     {
-        fearLevel.fillAmount = fear / 100 ;
+        RpcUpdateFearValorForAll(fear);
+        fearLevel.fillAmount = fear / 100;
         Debug.Log("testinh");
+    }
+
+    [ClientRpc]
+    void RpcUpdateFearValorForAll(float settingFear)
+    {
+        currentFear = settingFear;
     }
 
     public void SeeSomething(GameObject target)
@@ -142,10 +134,9 @@ public class Script_Intruder_Online : NetworkBehaviour {
         foreach (Transform wayPointM in Script_WayPoint_Manager.Instance.wayPoints)
         {
             float tempDist = Mathf.Abs(Vector3.Distance(body.position, wayPointM.position));
-            Debug.Log(tempDist);
+            //Debug.Log(tempDist);
             if (tempDist > distance)
             {
-
                 distance = tempDist;
                 moveTo = wayPointM.position;
                 wayPoint = wayPointM;
@@ -158,7 +149,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void CalculateNearestPath()
     {
-        Debug.Log("CalculateNearestPath");
+        //Debug.Log("CalculateNearestPath");
         navMeshAI.isStopped = true;
         distance = 9999;
 
@@ -172,7 +163,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
             if (!wayPointsVisited.Contains(wayPointN))
             {
                 float tempDist = Mathf.Abs(Vector3.Distance(body.position, wayPointN.position));
-                Debug.Log(tempDist);
+                //Debug.Log(tempDist);
                 if (tempDist < distance && tempDist > 1)
                 {
                     distance = tempDist;
@@ -182,7 +173,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
             }
             else
             {
-                Debug.Log("POINT ALREADY VISITED");
+                //Debug.Log("POINT ALREADY VISITED");
             }
         }
 
