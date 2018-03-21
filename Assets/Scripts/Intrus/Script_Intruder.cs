@@ -18,10 +18,8 @@ public class Script_Intruder : MonoBehaviour
     public enum IntruderState { Neutral, Fleeing, Chasing};
     public IntruderState currentState;
 
-    private bool composed;
-    private bool armed;
-    private bool scared;
-    private bool panicked;
+    public enum IntruderFear{ Armed, Composed, Scared, Panicked};
+    public IntruderFear currentFearState;
 
     private List<Transform> wayPointsVisited = new List<Transform>();
 
@@ -90,16 +88,17 @@ public class Script_Intruder : MonoBehaviour
 
         if (currentFear <= 20)
         {
-            
-
+            currentFearState = IntruderFear.Composed;
         }
         else if (currentFear <= 75)
         {
-           
+            currentFearState = IntruderFear.Scared;
+            navMeshAI.isStopped = false;
         }
         else
         {
-            
+            currentFearState = IntruderFear.Panicked;
+            navMeshAI.isStopped = true;
         }
 
         if (currentFear >= 100)
@@ -160,7 +159,6 @@ public class Script_Intruder : MonoBehaviour
             Debug.Log(tempDist);
             if (tempDist > distance)
             {
-                
                 distance = tempDist;
                 moveTo = wayPointM.position;
                 wayPoint = wayPointM;
