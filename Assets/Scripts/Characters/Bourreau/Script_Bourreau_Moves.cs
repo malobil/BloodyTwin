@@ -36,7 +36,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (!isLocalPlayer)
             {
-                this.enabled = false ;
+                return;
             }
             // get the transform of the main camera
             if (Camera.main != null)
@@ -57,7 +57,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
-            if(currentRunCooldown > 0)
+            if (!isLocalPlayer)
+            {
+                return;
+            }
+            if (currentRunCooldown > 0)
             {
                 currentRunCooldown -= Time.deltaTime;
                 Debug.Log(currentRunCooldown);
@@ -89,6 +93,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            if (!isLocalPlayer)
+            {
+                return;
+            }
             if (currentAttackCooldown <= 0)
             {
                 // read inputs
