@@ -69,7 +69,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         if(!isServer)
         { return; }
         Debug.Log(thisfear);
-        RpcSendFearToAll(thisfear);
+        SendFearToAll(thisfear);
         Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(thisfear);
     }
 
@@ -99,8 +99,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         } 
     }
 
-    [ClientRpc]
-    void RpcSendFearToAll(float fearToSet)
+    void SendFearToAll(float fearToSet)
     {
         currentFearState = fearToSet;
     }

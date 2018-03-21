@@ -91,17 +91,13 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void UpdateFearFeedback(float fear) 
     {
+        RpcUpdateFearValorForAll(fear);
         fearLevel.fillAmount = fear / 100;
-
-        if(!isServer)
-        {
-            UpdateFearValorForAll(fear);
-        }
-        
         Debug.Log("testinh");
     }
 
-    void UpdateFearValorForAll(float settingFear)
+    [ClientRpc]
+    void RpcUpdateFearValorForAll(float settingFear)
     {
         currentFear = settingFear;
     }
