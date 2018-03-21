@@ -77,6 +77,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         Time.timeScale = 0f;
     }
 
+    public void UpdateFear(float fearToUp)
+    {
+        RpcUpdateGlobalFear(fearToUp);
+    }
+
     [ClientRpc]
     public void RpcUpdateGlobalFear(float globalFear)
     {
