@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         private float refreshingCalculNearestIntruder = 3f;
         private Transform nearestIntru;
+        private bool isMoving;
 
         [Serializable]
         public class MovementSettings
@@ -151,9 +152,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }*/
-
+            
             //GroundCheck();
             Vector2 input = GetInput();
+
+            if (input != new Vector2(0,0))
+            {
+                isMoving = true;
+            }
+            else
+            {
+                isMoving = false;
+            }
 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
@@ -274,6 +284,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             nearestIntru = nearest;
             Debug.Log("SETTING");
             //CalculNearestIntru();
+        }
+
+        public bool ReturnIsMoving()
+        {
+            return isMoving;
         }
     }
 }
