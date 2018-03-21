@@ -15,57 +15,31 @@ public class Script_Intruder : MonoBehaviour
 
     // AI //
 
-    [SerializeField]
-
-    public Transform destination;
-    public GameObject intruderGO;
-    public NavMeshAgent intruderAI;
-
-    private int currentWayPoint;
-
-    private List<Transform> currentPointsType = new List<Transform>();
-    public List<Transform> railPoints = new List<Transform>();
-    public List<Transform> hidePoints = new List<Transform>();
-
-    public float switchWay = 0.2f;
-
-    private bool travelling;
-    private bool waiting;
-    public float waitTimer;
-    private bool wayForward;
-    public bool patrolWayting;
-
     public enum IntruderState { Armed, Composed, Scared, Panic };
     public IntruderState currentState;
 
-    public float smallestDistance;
-    public Transform nearestWayPoint;
+    private GameObject objectSeen;
+    private GameObject objectHeard;
 
-    public GameObject target;
-    public float minRange;
-    public float maxRange;
+    public float smoothness;
+    public Transform body;
 
-    public bool feared;
+    public NavMeshAgent navMeshAI;
+    public Transform waypoint;
+    private Vector3 moveTo;
 
     // Use this for initialization
     public void Start()
     {
-        currentPointsType = railPoints;
-        intruderAI = intruderGO.GetComponent<NavMeshAgent>();
+        ChooseRandomPoint(); 
+      //navMeshAI.SetDestination(waypoint.position);
         Script_Global_Fear.Instance.IntruderAmount();
-
-        if (currentPointsType != null && currentPointsType.Count >= 2)
-        {
-            currentWayPoint = 0;
-            //SetDestination();
-        }
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Detection();
 
         if (Input.GetKeyDown("f"))
         {
@@ -78,12 +52,7 @@ public class Script_Intruder : MonoBehaviour
         }
 
 
-        //if (travelling = true && intruderAI.remainingDistance <= 1.0f)
-        //{
-        //    travelling = false;
-        //    ChangeWayPoint();
-        //    SetDestination();
-        //}
+    
     }
 
     public void IntruderDeath()
@@ -99,13 +68,11 @@ public class Script_Intruder : MonoBehaviour
         if (currentFear <= 20)
         {
             currentState = IntruderState.Composed;
-            currentPointsType = railPoints;
 
         }
         else if (currentFear <= 75)
         {
             currentState = IntruderState.Scared;
-            currentPointsType = hidePoints;
         }
         else
         {
@@ -136,41 +103,45 @@ public class Script_Intruder : MonoBehaviour
         fearLevel.fillAmount = currentFear / 100;
     }
 
-    //public void SetDestination()
-    // {
-    //     if (currentPointsType != null)
-    //     {
-    //         Vector3 targetVector = currentPointsType[currentWayPoint].transform.position;
-    //         intruderAI.SetDestination(targetVector);
-    //         travelling = true;
-    //     }
-    // }
-
-    // private void ChangeWayPoint()
-    // {
-    //     if (currentState == IntruderState.Composed)
-    //     {
-    //         currentWayPoint = (currentWayPoint + 1) % currentPointsType.Count;
-    //     }
-    //     else if (currentState == IntruderState.Scared)
-    //     {
-    //          currentWayPoint = (currentWayPoint + 1) % currentPointsType.Count;
-    //     }
-    //     {
-    //         if (--currentWayPoint < 0)
-    //         {
-    //             currentWayPoint = railPoints.Count - 1;
-    //         }
-    //     }
-    // }
-
-    public void Detection()
+    public void SeeSomething(GameObject target)
     {
-        if ((Vector3.Distance(transform.position, target.transform.position) < maxRange)
-          && (Vector3.Distance(transform.position, target.transform.position) > minRange) && !feared)
+        objectSeen = target;
+        Debug.Log(objectSeen);
+
+        if(currentState == IntruderState.Composed)
         {
-            FearedImpact(fearAdd);
-            feared = true;
+            
+        }
+
+    }
+
+    public void HearSomething(GameObject target)
+    {
+        objectHeard = target;
+        Debug.Log(objectHeard + "Entendu");
+
+        Vector3 relativePos = objectHeard.transform.position - body.position;
+        Quaternion rotation = Quaternion.LookRotation(relativePos);
+        body.rotation = rotation;
+    }
+
+    private void ChooseRandomPoint()
+    {
+        Debug.Log("222");
+        Vector3 randomPoint = waypoint.position + Random.insideUnitSphere * 100;
+        NavMeshHit hit;
+
+        if (NavMesh.SamplePosition(randomPoint, out hit, 10.0f, NavMesh.AllAreas))
+        {
+            moveTo = hit.position;
+            Debug.Log(moveTo);
+            Navposition(moveTo);
         }
     }
+    
+    private void Navposition(Vector3 positionToGo)
+    {
+        navMeshAI.SetDestination(positionToGo);
+    }
+
 }
