@@ -13,7 +13,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public Text timerText;
     public Image globalFearImage;
-    public GameObject gameOverPanel, gameWinPanel;
+    public GameObject gameOverPanel, gameWinPanel, gamePauseMenu;
 
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
@@ -81,6 +81,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void RpcUpdateGlobalFear(float globalFear)
     {
         globalFearImage.fillAmount = globalFear / 100;
+    }
+
+    public void PauseMenu()
+    {
+        gamePauseMenu.SetActive(!gamePauseMenu.activeSelf);
     }
 
     public void DisconnectPlayer()

@@ -31,6 +31,11 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             CmdDisablePlayer();
             CmdGiveAuthority();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetPauseMenu();
+        }
 	}
 
     private void Mouvement()
@@ -131,5 +136,10 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     void RpcEnablePlayer()
     {
         gameObject.SetActive(true);
+    }
+
+    void SetPauseMenu()
+    {
+        Script_UI_InGame_Manager.Instance.PauseMenu();
     }
 }

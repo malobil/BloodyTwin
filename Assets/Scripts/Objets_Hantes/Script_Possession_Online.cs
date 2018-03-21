@@ -52,6 +52,9 @@ public class Script_Possession_Online : NetworkBehaviour {
             objet_hante.GetComponent<Script_Spectre_Possess_Move_Online>().enabled = false;
 
             timeLeft = 1f;
+
+            player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
+            is_possession = false;
         }
     }
 
@@ -95,10 +98,10 @@ public class Script_Possession_Online : NetworkBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>())
+        if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>() && !is_possession)
         {
-            //player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
-            player = null;
+            player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
+            //player = null;
             print("Spectre sorti");
             can_possession = false;
         }
@@ -109,6 +112,6 @@ public class Script_Possession_Online : NetworkBehaviour {
     {
         var otherOwner = GetComponent<NetworkIdentity>().clientAuthorityOwner;
         GetComponent<NetworkIdentity>().RemoveClientAuthority(otherOwner);
-        player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+        //player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
 }

@@ -77,6 +77,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 currentAttackCooldown = attackCooldown / (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100));
                 CmdAttack();
             }
+
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetPauseMenu();
+            }
         }
 
 
@@ -136,6 +142,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Destroy(tempAttack, currentAttackCooldown);
             //NetworkServer.UnSpawn(tempAttack);
         }
-    }
 
+        void SetPauseMenu()
+        {
+            Script_UI_InGame_Manager.Instance.PauseMenu();
+        }
+    }
 }
