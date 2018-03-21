@@ -37,7 +37,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
             currentCDObject = timeBetweenObjectSeen;
         }
 
-        if (other.CompareTag("Player") && currentCDBourreau <= 0)
+        if (other.CompareTag("Bourreau") && currentCDBourreau <= 0)
         {
             
             RaycastHit hit;
@@ -47,9 +47,10 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
             if (Physics.Raycast(transform.position, other.transform.position - transform.position, out hit, 100f))
             {
                 //Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider.CompareTag("Player"))
+                if (hit.collider.CompareTag("Bourreau"))
                 {
                     other.GetComponent<Script_Bourreau_Moves>().AddFearToIntruder(50f,transform.parent.parent.gameObject);
+                    associateScript.SeeSomething(other.gameObject);
                     currentCDBourreau = timeBetweenBourreauSeen;
                 }
             }

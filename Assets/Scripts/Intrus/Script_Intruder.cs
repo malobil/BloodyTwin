@@ -46,8 +46,6 @@ public class Script_Intruder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (navMeshAI.remainingDistance <= 0)
         {
             isMoving = false;
@@ -58,22 +56,6 @@ public class Script_Intruder : MonoBehaviour
                     CalculateNearestPath();
             }
         }
-
-        if (Input.GetKeyDown("f"))
-        {
-            FearedImpact(fearAdd);
-        }
-
-        if (Input.GetKeyDown("g"))
-        {
-            FearedImpact(fearRemoved);
-        }
-
-        if (Input.GetKeyDown("k"))
-        {
-            CalculateFarestPath();
-        }
-
     }
 
     public void IntruderDeath()

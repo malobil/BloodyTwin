@@ -70,7 +70,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         { return; }
         Debug.Log(thisfear);
         RpcSendFearToAll(thisfear);
-         Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(thisfear);
+        Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(thisfear);
     }
 
     public void FearGraphics()

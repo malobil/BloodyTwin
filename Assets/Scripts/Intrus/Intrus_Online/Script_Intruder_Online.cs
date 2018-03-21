@@ -91,13 +91,17 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void UpdateFearFeedback(float fear) 
     {
-        RpcUpdateFearValorForAll(fear);
         fearLevel.fillAmount = fear / 100;
+
+        if(!isServer)
+        {
+            UpdateFearValorForAll(fear);
+        }
+        
         Debug.Log("testinh");
     }
 
-    [ClientRpc]
-    void RpcUpdateFearValorForAll(float settingFear)
+    void UpdateFearValorForAll(float settingFear)
     {
         currentFear = settingFear;
     }
@@ -144,6 +148,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
         }
 
         navMeshAI.isStopped = false;
+        Debug.Log(moveTo);
         NavPosition(moveTo);
     }
 

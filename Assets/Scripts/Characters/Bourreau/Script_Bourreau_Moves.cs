@@ -39,7 +39,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 return;
             }
 
-            gameObject.tag = "Player";
+            gameObject.tag = "Bourreau";
             // get the transform of the main camera
             if (Camera.main != null)
             {
