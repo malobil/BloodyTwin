@@ -85,6 +85,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     public void FearedImpact(float fearState)
     {
+        Debug.Log("JAI PEUR");
             currentFear += fearState;
 
             if (currentFear >= 100)

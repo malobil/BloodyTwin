@@ -74,14 +74,8 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         {
             currentFearState += intruderFear.CurrentFearState();
         }
-
         currentFearState /= intruderNumberTot;
-
-        if(isServer)
-        {
-            Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(currentFearState);
-        }
-        
+        Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(currentFearState);
         Debug.Log("moyenne:" + currentFearState);
         FearGraphics();
     }
