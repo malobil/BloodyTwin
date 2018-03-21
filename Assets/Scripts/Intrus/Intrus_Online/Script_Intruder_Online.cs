@@ -53,10 +53,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!isServer)
-        {
-            return;
-        }
 
         if (navMeshAI.remainingDistance <= 0)
         {
@@ -82,12 +78,9 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     public void IntruderDeath()
     {
-        if(isServer)
-        {
             Script_Global_Fear_Online.Instance.IntruderDead(this, currentFear);
             NetworkServer.UnSpawn(gameObject);
             Destroy(gameObject);  
-        }
     }
 
     public void FearedImpact(float fearState)
