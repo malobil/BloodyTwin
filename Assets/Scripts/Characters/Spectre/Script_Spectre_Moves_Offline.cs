@@ -56,6 +56,7 @@ public class Script_Spectre_Moves_Offline : MonoBehaviour {
     public void EnablePossessCamera(Transform cameraPoint)
     {
         possessCamera.transform.position = cameraPoint.position;
+        possessCamera.transform.rotation = cameraPoint.rotation;
         possessCamera.SetParent(cameraPoint);
         possessCamera.gameObject.SetActive(true);
     }

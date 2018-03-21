@@ -15,8 +15,15 @@ public class Script_Intruder : MonoBehaviour
 
     // AI //
 
-    public enum IntruderState { Armed, Composed, Scared, Panic };
+    public enum IntruderState { Neutral, Fleeing, Chasing};
     public IntruderState currentState;
+
+    private bool composed;
+    private bool armed;
+    private bool scared;
+    private bool panicked;
+
+    private List<Transform> wayPointsVisited = new List<Transform>();
 
     private GameObject objectSeen;
     private GameObject objectHeard;
@@ -25,14 +32,15 @@ public class Script_Intruder : MonoBehaviour
     public Transform body;
 
     public NavMeshAgent navMeshAI;
-    public Transform waypoint;
+    public Transform wayPoint;
     private Vector3 moveTo;
-
+    private float distance = 0f;
+    private bool isMoving;
+    
     // Use this for initialization
     public void Start()
     {
-        ChooseRandomPoint(); 
-      //navMeshAI.SetDestination(waypoint.position);
+        NavPosition(wayPoint.position);
         Script_Global_Fear.Instance.IntruderAmount();
         
     }
@@ -40,6 +48,18 @@ public class Script_Intruder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+        if (navMeshAI.remainingDistance <= 0)
+        {
+            isMoving = false;
+
+            if (currentState == IntruderState.Neutral)
+            {
+                    wayPointsVisited.Add(wayPoint);
+                    CalculateNearestPath();
+            }
+        }
 
         if (Input.GetKeyDown("f"))
         {
@@ -51,8 +71,11 @@ public class Script_Intruder : MonoBehaviour
             FearedImpact(fearRemoved);
         }
 
+        if (Input.GetKeyDown("k"))
+        {
+            CalculateFarestPath();
+        }
 
-    
     }
 
     public void IntruderDeath()
@@ -67,17 +90,16 @@ public class Script_Intruder : MonoBehaviour
 
         if (currentFear <= 20)
         {
-            currentState = IntruderState.Composed;
+            
 
         }
         else if (currentFear <= 75)
         {
-            currentState = IntruderState.Scared;
+           
         }
         else
         {
-            currentState = IntruderState.Panic;
-
+            
         }
 
         if (currentFear >= 100)
@@ -106,13 +128,9 @@ public class Script_Intruder : MonoBehaviour
     public void SeeSomething(GameObject target)
     {
         objectSeen = target;
-        Debug.Log(objectSeen);
-
-        if(currentState == IntruderState.Composed)
-        {
-            
-        }
-
+        Debug.Log("VUE");
+        CalculateFarestPath();
+        wayPointsVisited.Clear();
     }
 
     public void HearSomething(GameObject target)
@@ -124,24 +142,66 @@ public class Script_Intruder : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(relativePos);
         body.rotation = rotation;
     }
-
-    private void ChooseRandomPoint()
-    {
-        Debug.Log("222");
-        Vector3 randomPoint = waypoint.position + Random.insideUnitSphere * 100;
-        NavMeshHit hit;
-
-        if (NavMesh.SamplePosition(randomPoint, out hit, 10.0f, NavMesh.AllAreas))
-        {
-            moveTo = hit.position;
-            Debug.Log(moveTo);
-            Navposition(moveTo);
-        }
-    }
     
-    private void Navposition(Vector3 positionToGo)
+    private void NavPosition(Vector3 positionToGo)
     {
+        isMoving = true;
         navMeshAI.SetDestination(positionToGo);
     }
 
+    private void CalculateFarestPath()
+    {
+        navMeshAI.isStopped = true;
+        distance = 0;
+
+        foreach(Transform wayPointM in Script_WayPoint_Manager.Instance.wayPoints)
+        {
+            float tempDist = Mathf.Abs(Vector3.Distance(body.position, wayPointM.position));
+            Debug.Log(tempDist);
+            if (tempDist > distance)
+            {
+                
+                distance = tempDist;
+                moveTo = wayPointM.position;
+                wayPoint = wayPointM;
+            } 
+        }
+
+        navMeshAI.isStopped = false;
+        NavPosition(moveTo);
+    }
+
+    private void CalculateNearestPath()
+    {
+        Debug.Log("CalculateNearestPath");
+        navMeshAI.isStopped = true;
+        distance = 9999;
+
+        if(Script_WayPoint_Manager.Instance.wayPoints.Count == wayPointsVisited.Count)
+        {
+            wayPointsVisited.Clear();
+        }
+
+        foreach (Transform wayPointN in Script_WayPoint_Manager.Instance.wayPoints)
+        {
+               if(!wayPointsVisited.Contains(wayPointN))
+                {
+                    float tempDist = Mathf.Abs(Vector3.Distance(body.position, wayPointN.position));
+                    Debug.Log(tempDist);
+                    if (tempDist < distance && tempDist > 1)
+                    {
+                        distance = tempDist;
+                        moveTo = wayPointN.position;
+                        wayPoint = wayPointN;
+                    }
+                }
+               else
+                {
+                    Debug.Log("POINT ALREADY VISITED");
+                }
+        }
+
+        navMeshAI.isStopped = false;
+        NavPosition(moveTo);
+    }
 }
