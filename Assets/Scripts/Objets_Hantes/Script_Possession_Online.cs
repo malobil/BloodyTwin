@@ -109,6 +109,11 @@ public class Script_Possession_Online : NetworkBehaviour {
         }
     }
 
+    public GameObject ReturnPlayer()
+    {
+        return player;
+    }
+
     [Command]
     public void CmdGiveAuthority()
     {
