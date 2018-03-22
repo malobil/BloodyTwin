@@ -64,10 +64,12 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         FearGraphics();        
     }
 
+    
     void OnFearChange(float thisfear)
     {
         if(!isServer)
         { return; }
+        currentFearState = thisfear;
         Debug.Log(thisfear);
         SendFearToAll(thisfear);
         Script_UI_InGame_Manager.Instance.RpcUpdateGlobalFear(thisfear);
