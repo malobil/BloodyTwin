@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 114748801865805264}
   - component: {fileID: 114107964396467772}
   - component: {fileID: 114949376613085326}
+  - component: {fileID: 54997991437249658}
   m_Layer: 0
   m_Name: Prefab_Intrus_Online
   m_TagString: Untagged
@@ -128,7 +129,6 @@ GameObject:
   - component: {fileID: 65531023557088258}
   - component: {fileID: 23908580842809312}
   - component: {fileID: 195474903567870550}
-  - component: {fileID: 54252583559481260}
   m_Layer: 0
   m_Name: Intrus
   m_TagString: Intru
@@ -288,18 +288,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852131856537042}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54252583559481260
+--- !u!54 &54997991437249658
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852131856537042}
+  m_GameObject: {fileID: 1706107610104020}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

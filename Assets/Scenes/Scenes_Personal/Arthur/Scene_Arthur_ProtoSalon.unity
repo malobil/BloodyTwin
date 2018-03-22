@@ -4448,7 +4448,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4020749905923270, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20.34
+      value: -21.95
       objectReference: {fileID: 0}
     - target: {fileID: 4020749905923270, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4456,7 +4456,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4020749905923270, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.38
+      value: -14.67
       objectReference: {fileID: 0}
     - target: {fileID: 4020749905923270, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4482,7 +4482,7 @@ Prefab:
         type: 2}
       propertyPath: wayPoint
       value: 
-      objectReference: {fileID: 673587281}
+      objectReference: {fileID: 149748607}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
   m_IsPrefabParent: 0
