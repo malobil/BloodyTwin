@@ -9,6 +9,7 @@ public class UI_Accueil_Manager : MonoBehaviour {
 	public GameObject accueilMenu;
 	public GameObject selectionMenu;
 	public GameObject is_Waiting;
+    public GameObject startMenu;
 
 	public static UI_Accueil_Manager s_Instance;
 
@@ -47,4 +48,10 @@ public class UI_Accueil_Manager : MonoBehaviour {
 		selectionMenu.SetActive(false);
 		is_Waiting.SetActive(true);
 	}
+
+    public void DisplayPlayScreen()
+    {
+        startMenu.SetActive(false);
+        accueilMenu.SetActive(true);
+    }
 }
