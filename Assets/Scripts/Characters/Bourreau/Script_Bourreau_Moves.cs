@@ -23,8 +23,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float attackCooldown;
         public Transform attackSpawnPoint;
         public GameObject attackZonePrefab;
-        private float currentAttackCooldown;        
+        private float currentAttackCooldown;
 
+        public float enablingTimeNavMeshAgent = 5f;
+        private float currentEnablingTimeNavMeshAgent;
 
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
@@ -69,9 +71,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 currentRunCooldown -= Time.deltaTime;
                 //Debug.Log(currentRunCooldown);
             }
-            else
+
+            if(currentEnablingTimeNavMeshAgent > 0)
             {
-               // Debug.Log("READY");
+                currentEnablingTimeNavMeshAgent -= Time.deltaTime;
+            }
+            else if(currentEnablingTimeNavMeshAgent < 0)
+            {
+                UnActivateNavMashObstacle();
+                currentEnablingTimeNavMeshAgent = 0;
             }
 
             if(currentAttackCooldown > 0)
@@ -166,7 +174,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void ActivateNavMashObstacle()
         {
+            currentEnablingTimeNavMeshAgent = enablingTimeNavMeshAgent;
             GetComponent<NavMeshObstacle>().enabled = true;
+        }
+
+        public void UnActivateNavMashObstacle()
+        {
+            GetComponent<NavMeshObstacle>().enabled = false;
         }
 
         [Command]
