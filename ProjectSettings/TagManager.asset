@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Intru
   - Bourreau
+  - Spectre
   layers:
   - Default
   - TransparentFX
