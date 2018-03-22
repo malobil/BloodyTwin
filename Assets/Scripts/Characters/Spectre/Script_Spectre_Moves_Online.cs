@@ -13,7 +13,10 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     private void Start()
     {
-        
+        if(isLocalPlayer)
+        {
+            gameObject.tag = "Spectre";
+        }
     }    
 
 	void Update ()

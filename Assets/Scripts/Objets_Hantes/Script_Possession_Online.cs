@@ -18,11 +18,6 @@ public class Script_Possession_Online : NetworkBehaviour {
 
     void Start ()
     {
-        if(isServer)
-        {
-            this.enabled = false;
-        }
-
         //objet_hante = transform.parent.gameObject; // objet_hante est son parent
         timeLeft = 1f;
         objet_hante = transform;
@@ -92,7 +87,7 @@ public class Script_Possession_Online : NetworkBehaviour {
     // détection du spectre dans le trigger
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>())
+        if (other.CompareTag("Spectre"))
         {
             player = other.gameObject;
             player.GetComponent<Script_Spectre_Moves_Online>().SettingPossessTarget(this);
@@ -103,7 +98,7 @@ public class Script_Possession_Online : NetworkBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>() && !is_possession)
+        if (other.CompareTag("Spectre") && !is_possession)
         {
             player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
             //player = null;
