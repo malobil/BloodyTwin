@@ -16,7 +16,7 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
 
     public List<Script_Intruder_Online> intruders = new List<Script_Intruder_Online>();
 
-    [SyncVar(hook = ("OnFearChange"))]
+    [SyncVar]/*(hook = ("OnFearChange"))]*/
     public float currentFearState;
 
     public static Script_Global_Fear_Online Instance { get; private set; }
@@ -61,7 +61,8 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
         }
         currentFearState /= intruderNumberTot;
         Debug.Log("moyenne:" + currentFearState);
-        FearGraphics();        
+        FearGraphics();
+        OnFearChange(currentFearState);
     }
 
     
