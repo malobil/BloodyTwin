@@ -123,7 +123,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnEnable()
         {
-            //InvokeRepeating("CalculNearestIntru",0.1f, refreshingCalculNearestIntruder) ;
+            InvokeRepeating("CalculNearestIntru",0.1f, refreshingCalculNearestIntruder) ;
         }
 
         private void Start()
@@ -275,7 +275,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void CalculNearestIntru()
         {
-            //Intruders_Manager_Offline.Instance.ReturnNearestIntruder(transform);
+            Script_Global_Fear_Online.Instance.ReturnNearestIntruder(transform);
             Debug.Log("CALCUL");
         }
 

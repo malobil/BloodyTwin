@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Script_Global_Fear_Online : NetworkBehaviour {
 
@@ -20,6 +21,9 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
     public float currentFearState;
 
     public static Script_Global_Fear_Online Instance { get; private set; }
+
+    private float smallestDistance;
+    private Transform nearestIntruder;
 
     void Awake()
     {
@@ -105,5 +109,23 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
     void RpcSendFearToAll(float fearToSet)
     {
         currentFearState = fearToSet;
+    }
+
+    public void ReturnNearestIntruder(Transform obj)
+    {
+        smallestDistance = 99999;
+
+        foreach (Script_Intruder_Online intruder in intruders)
+        {
+            float dist = Vector3.Distance(intruder.transform.position, obj.position);
+
+            if (dist < smallestDistance)
+            {
+                smallestDistance = dist;
+                nearestIntruder = intruder.transform;
+            }
+        }
+
+        obj.GetComponent<Script_Spectre_Possess_Move_Online>().SettingNearestIntru(nearestIntruder);
     }
 }

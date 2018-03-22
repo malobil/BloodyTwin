@@ -1181,6 +1181,11 @@ Prefab:
       propertyPath: m_LogLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
+        type: 2}
+      propertyPath: m_PlayScene
+      value: Scene_In_Game
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8fef4c5c7926ab429b358ccc60f4943, type: 2}
   m_IsPrefabParent: 0
