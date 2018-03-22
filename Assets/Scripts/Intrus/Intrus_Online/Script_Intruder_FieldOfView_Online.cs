@@ -19,6 +19,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
     private void Start()
     {
         spectre = GameObject.FindGameObjectWithTag("Spectre");
+        Debug.Log(spectre.name);
     }
 
     private void Update()

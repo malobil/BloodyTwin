@@ -11,7 +11,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     private Script_Possession_Online objectToPossess;
 
-    private void Start()
+    private void Awake()
     {
         if(isLocalPlayer)
         {
