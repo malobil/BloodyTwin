@@ -8,6 +8,11 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
 {
     public Script_Intruder_Online associateScript;
 
+    [Header("FEAR")]
+    public float fearOnSeeBourreau;
+    public float fearOnSeeSpectre;
+
+    [Header("FEARCD")]
     public float timeBetweenObjectSeen = 5f;
     private float currentCDObject;
     private bool canSee = true;
@@ -38,7 +43,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
                 associateScript.SeeSomething(other.gameObject);
                 currentCDObject = timeBetweenObjectSeen;
                 //Debug.Log(GameObject.FindGameObjectWithTag("Spectre"));
-                other.GetComponent<Script_Possession_Online>().ReturnPlayer().GetComponent<Script_Spectre_Moves_Online>().AddFearToIntruder(10f, transform.parent.parent.gameObject);
+                other.GetComponent<Script_Possession_Online>().ReturnPlayer().GetComponent<Script_Spectre_Moves_Online>().AddFearToIntruder(fearOnSeeSpectre, transform.parent.parent.gameObject);
             } 
         }
 
@@ -54,7 +59,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
                 //Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.CompareTag("Bourreau"))
                 {
-                    other.GetComponent<Script_Bourreau_Moves>().AddFearToIntruder(50f,transform.parent.parent.gameObject);
+                    other.GetComponent<Script_Bourreau_Moves>().AddFearToIntruder(fearOnSeeBourreau, transform.parent.parent.gameObject);
                     other.GetComponent<Script_Bourreau_Moves>().ActivateNavMashObstacle();
                     associateScript.SeeSomething(other.gameObject);
                     currentCDBourreau = timeBetweenBourreauSeen;
