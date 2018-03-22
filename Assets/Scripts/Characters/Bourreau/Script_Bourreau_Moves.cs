@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
+using UnityEngine.AI;
 
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -161,6 +162,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public void AddFearToIntruder(float fearToAdd, GameObject intruderToFear)
         {
             CmdFearOnIntruder(fearToAdd, intruderToFear);
+        }
+
+        public void ActivateNavMashObstacle()
+        {
+            GetComponent<NavMeshObstacle>().enabled = true;
         }
 
         [Command]

@@ -55,6 +55,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
                 if (hit.collider.CompareTag("Bourreau"))
                 {
                     other.GetComponent<Script_Bourreau_Moves>().AddFearToIntruder(50f,transform.parent.parent.gameObject);
+                    other.GetComponent<Script_Bourreau_Moves>().ActivateNavMashObstacle();
                     associateScript.SeeSomething(other.gameObject);
                     currentCDBourreau = timeBetweenBourreauSeen;
                 }
