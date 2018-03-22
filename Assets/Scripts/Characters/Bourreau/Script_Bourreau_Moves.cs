@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             gameObject.tag = "Bourreau";
+            Script_UI_InGame_Manager.Instance.ActiveBourreauUI();
+
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -68,7 +70,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (currentRunCooldown > 0)
             {
                 currentRunCooldown -= Time.deltaTime;
-                //Debug.Log(currentRunCooldown);
+                Script_UI_InGame_Manager.Instance.UpdateBourreauStamina(currentRunCooldown, runDuration);
             }
 
             if(currentAttackCooldown > 0)
