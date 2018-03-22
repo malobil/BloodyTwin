@@ -10,6 +10,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class Script_Bourreau_Moves : NetworkBehaviour
     {
+        public GameObject navMeshObstaclePrefab;
+
         [Header("Movement")]
         public float walkSpeedMultiply;
         public float runSpeed;
@@ -24,9 +26,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public Transform attackSpawnPoint;
         public GameObject attackZonePrefab;
         private float currentAttackCooldown;
-
-        public float enablingTimeNavMeshAgent = 5f;
-        private float currentEnablingTimeNavMeshAgent;
 
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
@@ -70,16 +69,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 currentRunCooldown -= Time.deltaTime;
                 //Debug.Log(currentRunCooldown);
-            }
-
-            if(currentEnablingTimeNavMeshAgent > 0)
-            {
-                currentEnablingTimeNavMeshAgent -= Time.deltaTime;
-            }
-            else if(currentEnablingTimeNavMeshAgent < 0)
-            {
-                UnActivateNavMashObstacle();
-                currentEnablingTimeNavMeshAgent = 0;
             }
 
             if(currentAttackCooldown > 0)
@@ -174,13 +163,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void ActivateNavMashObstacle()
         {
-            currentEnablingTimeNavMeshAgent = enablingTimeNavMeshAgent;
-            GetComponent<NavMeshObstacle>().enabled = true;
+            CmdSpawnObstacle();
         }
 
-        public void UnActivateNavMashObstacle()
+        [Command]
+        void CmdSpawnObstacle()
         {
-            GetComponent<NavMeshObstacle>().enabled = false;
+            GameObject tempObstacle = Instantiate(navMeshObstaclePrefab,transform.position, Quaternion.identity);
+            NetworkServer.Spawn(tempObstacle);
+            Destroy(tempObstacle, 5f);
         }
 
         [Command]

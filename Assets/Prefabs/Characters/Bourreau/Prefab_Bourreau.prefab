@@ -314,7 +314,6 @@ GameObject:
   - component: {fileID: 114050674548180442}
   - component: {fileID: 114481538033147374}
   - component: {fileID: 114010646705535484}
-  - component: {fileID: 208990445375303300}
   m_Layer: 0
   m_Name: Prefab_Bourreau
   m_TagString: Untagged
@@ -1732,7 +1731,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755443072965588}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2594,6 +2593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshObstaclePrefab: {fileID: 1333363651945414, guid: 390fe6e482b571e4c8d0e068903b6356,
+    type: 2}
   walkSpeedMultiply: 0.5
   runSpeed: 2
   runDuration: 10
@@ -2602,7 +2603,6 @@ MonoBehaviour:
   attackSpawnPoint: {fileID: 4885166653310164}
   attackZonePrefab: {fileID: 1519718916192652, guid: 0964f3e0546d62043933a019629f1591,
     type: 2}
-  enablingTimeNavMeshAgent: 5
 --- !u!114 &114436514432978800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2830,18 +2830,3 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0009998977, y: 0.007603839, z: 0.00028842688}
     m_Extent: {x: 0.80239844, y: 0.23826995, z: 0.5723474}
   m_DirtyAABB: 0
---- !u!208 &208990445375303300
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1242737487146092}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 1.5, y: 0.5, z: 1.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
-  m_TimeToStationary: 0.5
