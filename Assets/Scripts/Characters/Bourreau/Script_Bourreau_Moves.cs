@@ -146,9 +146,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [Command]
         private void CmdAttack()
         {
+            currentAttackCooldown = attackCooldown / (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100));
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
             NetworkServer.Spawn(tempAttack);
-            //Destroy(tempAttack, currentAttackCooldown);
+            Destroy(tempAttack, currentAttackCooldown);
             //NetworkServer.UnSpawn(tempAttack);
         }
 
