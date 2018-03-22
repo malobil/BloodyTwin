@@ -82,6 +82,10 @@ public class Script_Intruder_Online : NetworkBehaviour {
             }
             
             Script_Global_Fear_Online.Instance.FearGlobalState();
+            if (isServer)
+            {
+                RpcUpdateFearValorForAll(currentFear);
+            }
     }
 
     public float CurrentFearState()
@@ -91,11 +95,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void UpdateFearFeedback(float fear) 
     {
-        if(isServer)
-        {
-            RpcUpdateFearValorForAll(fear);
-        }
-
         fearLevel.fillAmount = fear / 100;
         Debug.Log("testinh");
     }
