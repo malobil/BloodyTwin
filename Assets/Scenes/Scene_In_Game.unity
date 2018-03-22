@@ -4453,6 +4453,26 @@ Prefab:
       propertyPath: wayPoint
       value: 
       objectReference: {fileID: 149748607}
+    - target: {fileID: 114974093306624914, guid: 48ae0ade5454db14c8bc984b321badbb,
+        type: 2}
+      propertyPath: fearOnSeeBourreau
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974093306624914, guid: 48ae0ade5454db14c8bc984b321badbb,
+        type: 2}
+      propertyPath: fearOnSeeSpectre
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974093306624914, guid: 48ae0ade5454db14c8bc984b321badbb,
+        type: 2}
+      propertyPath: timeBetweenObjectSeen
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974093306624914, guid: 48ae0ade5454db14c8bc984b321badbb,
+        type: 2}
+      propertyPath: timeBetweenBourreauSeen
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
   m_IsPrefabParent: 0
