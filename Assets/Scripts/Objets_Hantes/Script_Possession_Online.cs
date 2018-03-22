@@ -25,6 +25,7 @@ public class Script_Possession_Online : NetworkBehaviour {
 	
 	public void PossessObject()
     {
+            gameObject.tag = "Possess";
             player.transform.SetParent(transform); // met le spectre en parent de l'objet
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCharacter() ; // désactive le spectre                      
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCamera();
@@ -41,6 +42,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         //si on sort de l'objet en possession
         if (can_leave)
         {
+            gameObject.tag = "Untagged";
             can_leave = false;
             timeLeft = 1f;
 
