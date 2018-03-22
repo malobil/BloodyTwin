@@ -11,9 +11,15 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
     public float timeBetweenObjectSeen = 5f;
     private float currentCDObject;
     private bool canSee = true;
+    private GameObject spectre;
 
     public float timeBetweenBourreauSeen = 5f;
     private float currentCDBourreau;
+
+    private void Start()
+    {
+        spectre = GameObject.FindGameObjectWithTag("Spectre");
+    }
 
     private void Update()
     {
@@ -35,8 +41,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
             Debug.Log("ON SEE");
             associateScript.SeeSomething(other.gameObject);
             currentCDObject = timeBetweenObjectSeen;
-            GameObject.FindGameObjectWithTag("Spectre").GetComponent<Script_Spectre_Moves_Online>().AddFearToIntruder(5f, transform.parent.parent.gameObject);
-
+            spectre.GetComponent<Script_Spectre_Moves_Online>().AddFearToIntruder(5f, transform.parent.parent.gameObject);
         }
 
         if (other.CompareTag("Bourreau") && currentCDBourreau <= 0)
