@@ -42,7 +42,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
             } 
         }
 
-        if (other.CompareTag("Bourreau") && currentCDBourreau <= 0)
+        if (other.CompareTag("Bourreau") && currentCDBourreau <= 0 && associateScript.ReturnCurrentState().ToString("") != "Fleeing")
         {
             
             RaycastHit hit;

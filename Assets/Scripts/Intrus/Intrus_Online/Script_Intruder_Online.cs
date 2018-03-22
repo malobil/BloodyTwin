@@ -92,6 +92,11 @@ public class Script_Intruder_Online : NetworkBehaviour {
             RpcUpdateFearValorForAll(currentFear);
     }
 
+    public IntruderState ReturnCurrentState()
+    {
+        return currentState;
+    }
+
     public float CurrentFearState()
     {
         return currentFear;
