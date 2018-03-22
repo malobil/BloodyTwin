@@ -12,7 +12,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     public Image fearLevel;
 
-    [SyncVar(hook = ("UpdateFearFeedback"))]
+    [SyncVar]
     public float currentFear = 0f;
 
     public enum IntruderState { Neutral, Fleeing, Chasing };
@@ -82,6 +82,7 @@ public class Script_Intruder_Online : NetworkBehaviour {
             }
             
             Script_Global_Fear_Online.Instance.FearGlobalState();
+            RpcUpdateFearValorForAll(currentFear);
     }
 
     public float CurrentFearState()
@@ -91,7 +92,6 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void UpdateFearFeedback(float fear) 
     {
-        RpcUpdateFearValorForAll(fear);
         fearLevel.fillAmount = fear / 100;
         Debug.Log("testinh");
     }
