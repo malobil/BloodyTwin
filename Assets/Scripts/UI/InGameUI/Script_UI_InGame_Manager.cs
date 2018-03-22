@@ -108,7 +108,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void ActiveBourreauUI()
     {
-        bourreauUI.SetActive(true);
+        if (bourreauUI.activeSelf == false)
+        {
+            bourreauUI.SetActive(true);
+        }
+       
     }
 
     public void EnableSpectreUI()
