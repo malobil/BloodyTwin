@@ -18,6 +18,11 @@ public class Script_Possession_Online : NetworkBehaviour {
 
     void Start ()
     {
+        if(isServer)
+        {
+            this.enabled = false;
+        }
+
         //objet_hante = transform.parent.gameObject; // objet_hante est son parent
         timeLeft = 1f;
         objet_hante = transform;
