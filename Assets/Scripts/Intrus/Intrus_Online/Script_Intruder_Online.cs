@@ -111,10 +111,10 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     public void SeeSomething(GameObject target)
     {
-        objectSeen = target;
-        Debug.Log("VUE");
-        CalculateFarestPath();
-        wayPointsVisited.Clear();
+            objectSeen = target;
+            Debug.Log("VUE");
+            CalculateFarestPath();
+            wayPointsVisited.Clear();
     }
 
     public void HearSomething(GameObject target)
@@ -135,24 +135,27 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
     private void CalculateFarestPath()
     {
-        navMeshAI.isStopped = true;
-        distance = 0;
-
-        foreach (Transform wayPointM in Script_WayPoint_Manager.Instance.wayPoints)
+        if (currentState != IntruderState.Fleeing)
         {
-            float tempDist = Mathf.Abs(Vector3.Distance(body.position, wayPointM.position));
-            //Debug.Log(tempDist);
-            if (tempDist > distance)
-            {
-                distance = tempDist;
-                moveTo = wayPointM.position;
-                wayPoint = wayPointM;
-            }
-        }
+            navMeshAI.isStopped = true;
+            distance = 0;
 
-        navMeshAI.isStopped = false;
-        Debug.Log(moveTo);
-        NavPosition(moveTo);
+            foreach (Transform wayPointM in Script_WayPoint_Manager.Instance.wayPoints)
+            {
+                float tempDist = Mathf.Abs(Vector3.Distance(body.position, wayPointM.position));
+                //Debug.Log(tempDist);
+                if (tempDist > distance)
+                {
+                    distance = tempDist;
+                    moveTo = wayPointM.position;
+                    wayPoint = wayPointM;
+                }
+            }
+
+            navMeshAI.isStopped = false;
+            Debug.Log(moveTo);
+            NavPosition(moveTo);
+        }
     }
 
     private void CalculateNearestPath()
