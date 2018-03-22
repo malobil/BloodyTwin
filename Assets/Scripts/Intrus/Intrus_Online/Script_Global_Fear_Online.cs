@@ -117,12 +117,16 @@ public class Script_Global_Fear_Online : NetworkBehaviour {
 
         foreach (Script_Intruder_Online intruder in intruders)
         {
-            float dist = Vector3.Distance(intruder.transform.position, obj.position);
-
-            if (dist < smallestDistance)
+            RaycastHit hit;
+            if (Physics.Raycast(intruder.transform.position, intruder.transform.position - obj.position,out hit, 100f))
             {
-                smallestDistance = dist;
-                nearestIntruder = intruder.transform;
+                float dist = Vector3.Distance(intruder.transform.position, obj.position);
+
+                if (dist < smallestDistance)
+                {
+                    smallestDistance = dist;
+                    nearestIntruder = intruder.transform.GetChild(0).transform;
+                }
             }
         }
 

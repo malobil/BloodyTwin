@@ -141,7 +141,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }*/
             
-            Debug.Log(GetInput());
+            //Debug.Log(GetInput());
             RotateView();
         }
 
@@ -185,7 +185,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsGrounded)
             {
                 m_RigidBody.drag = 5f;
-                Debug.Log("moving now");
+                //Debug.Log("moving now");
                 if (m_Jump)
                 {
                     m_RigidBody.drag = 0f;
@@ -255,7 +255,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float oldYRotation = transform.eulerAngles.y;
                 
             cam.transform.LookAt(nearestIntru);
-            transform.LookAt(nearestIntru);
+
+            if(nearestIntru != null)
+            {
+                Debug.Log("NO INTRUDER DETECT");
+                Vector3 direction = new Vector3(nearestIntru.position.x, transform.position.y, nearestIntru.transform.position.z);
+                transform.LookAt(direction);
+            }
+            
 
             //mouseLook.LookRotation(transform, cam.transform);
 
