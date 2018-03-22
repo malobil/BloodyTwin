@@ -145,4 +145,15 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         Script_UI_InGame_Manager.Instance.PauseMenu();
     }
+
+    public void AddFearToIntruder(float fearToAdd, GameObject intruderToFear)
+    {
+        CmdFearOnIntruder(fearToAdd, intruderToFear);
+    }
+
+    [Command]
+    void CmdFearOnIntruder(float fearAdded, GameObject _target)
+    {
+        _target.GetComponent<Script_Intruder_Online>().FearedImpact(fearAdded);
+    }
 }

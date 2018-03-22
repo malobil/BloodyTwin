@@ -33,9 +33,10 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
         if(other.GetComponent<Script_Spectre_Possess_Move_Online>() && other.GetComponent<Script_Spectre_Possess_Move_Online>().ReturnIsMoving() && currentCDObject<=0)
         {
             Debug.Log("ON SEE");
-            associateScript.FearedImpact(10f);
+            associateScript.SeeSomething(other.gameObject);
             currentCDObject = timeBetweenObjectSeen;
-            
+            other.GetComponent<Script_Spectre_Moves_Online>().AddFearToIntruder(5f, transform.parent.parent.gameObject);
+
         }
 
         if (other.CompareTag("Bourreau") && currentCDBourreau <= 0)
