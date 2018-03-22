@@ -18,8 +18,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
 
     private void Start()
     {
-        spectre = GameObject.FindGameObjectWithTag("Spectre");
-        Debug.Log(spectre.name);
+        
     }
 
     private void Update()
@@ -39,6 +38,8 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
     {
         if(other.GetComponent<Script_Spectre_Possess_Move_Online>() && other.GetComponent<Script_Spectre_Possess_Move_Online>().ReturnIsMoving() && currentCDObject<=0)
         {
+            spectre = GameObject.FindGameObjectWithTag("Spectre");
+            Debug.Log(spectre.name);
             Debug.Log("ON SEE");
             associateScript.SeeSomething(other.gameObject);
             currentCDObject = timeBetweenObjectSeen;
