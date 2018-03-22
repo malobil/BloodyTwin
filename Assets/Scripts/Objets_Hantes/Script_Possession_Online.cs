@@ -87,7 +87,7 @@ public class Script_Possession_Online : NetworkBehaviour {
     // détection du spectre dans le trigger
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Spectre"))
+        if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>())
         {
             player = other.gameObject;
             player.GetComponent<Script_Spectre_Moves_Online>().SettingPossessTarget(this);
@@ -98,7 +98,7 @@ public class Script_Possession_Online : NetworkBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Spectre") && !is_possession)
+        if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>() && !is_possession)
         {
             player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
             //player = null;

@@ -30,11 +30,12 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.GetComponent<Script_Spectre_Possess_Move_Online>() && other.GetComponent<Script_Spectre_Possess_Move_Online>().ReturnIsMoving() && canSee)
+        if(other.GetComponent<Script_Spectre_Possess_Move_Online>() && other.GetComponent<Script_Spectre_Possess_Move_Online>().ReturnIsMoving() && currentCDObject<=0)
         {
             Debug.Log("ON SEE");
             associateScript.FearedImpact(10f);
             currentCDObject = timeBetweenObjectSeen;
+            
         }
 
         if (other.CompareTag("Bourreau") && currentCDBourreau <= 0)
