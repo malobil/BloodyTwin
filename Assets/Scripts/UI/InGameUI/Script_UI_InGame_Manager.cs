@@ -13,7 +13,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public Text timerText;
     public Image globalFearImage;
-    public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI ;
+    public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
@@ -109,6 +109,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void ActiveBourreauUI()
     {
         bourreauUI.SetActive(true);
+    }
+
+    public void EnableSpectreUI()
+    {
+        spectreUI.SetActive(!spectreUI.activeSelf);
     }
 
     public void UpdateBourreauStamina(float stamina, float maxStamina)

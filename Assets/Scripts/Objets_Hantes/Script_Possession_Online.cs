@@ -93,6 +93,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         {
             player = other.gameObject;
             player.GetComponent<Script_Spectre_Moves_Online>().SettingPossessTarget(this);
+            //Script_UI_InGame_Manager.Instance.EnableSpectreUI();
             print("Spectre entré" +  can_possession);
             can_possession = true;
         }
@@ -103,6 +104,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>() && !is_possession)
         {
             player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
+           // Script_UI_InGame_Manager.Instance.EnableSpectreUI();
             //player = null;
             print("Spectre sorti");
             can_possession = false;
