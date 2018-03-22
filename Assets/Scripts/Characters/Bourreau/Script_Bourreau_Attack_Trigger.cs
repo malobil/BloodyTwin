@@ -6,7 +6,7 @@ public class Script_Bourreau_Attack_Trigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Script_Intruder_Online>())
+        if(other.CompareTag("Intru"))
         {
             other.GetComponent<Script_Intruder_Online>().IntruderDeath();
             Debug.Log("TOUCHED SOMEONE");

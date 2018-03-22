@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 114949376613085326}
   m_Layer: 0
   m_Name: Prefab_Intrus_Online
-  m_TagString: Untagged
+  m_TagString: Intru
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706107610104020}
   m_LocalRotation: {x: -0, y: -0.6486353, z: -0, w: 0.7610994}
-  m_LocalPosition: {x: -19.279724, y: 11.6773205, z: 0.53775597}
+  m_LocalPosition: {x: -20.34, y: 2.7, z: -8.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428585823845454}
@@ -400,8 +400,6 @@ MonoBehaviour:
   currentFear: 0
   currentState: 0
   body: {fileID: 4428585823845454}
-  timeBetweenBourreauSeen: 5
-  currentCDBourreau: 0
   navMeshAI: {fileID: 195474903567870550}
   wayPoint: {fileID: 0}
 --- !u!114 &114600807253428958
@@ -505,6 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   associateScript: {fileID: 114542365752924554}
   timeBetweenObjectSeen: 5
+  timeBetweenBourreauSeen: 5
 --- !u!195 &195474903567870550
 NavMeshAgent:
   m_ObjectHideFlags: 1

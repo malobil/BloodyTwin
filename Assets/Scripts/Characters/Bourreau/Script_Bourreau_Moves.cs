@@ -148,7 +148,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
             NetworkServer.Spawn(tempAttack);
-            Destroy(tempAttack, currentAttackCooldown);
+            //Destroy(tempAttack, currentAttackCooldown);
             //NetworkServer.UnSpawn(tempAttack);
         }
 
