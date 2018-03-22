@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706107610104020}
   m_LocalRotation: {x: -0, y: -0.6486353, z: -0, w: 0.7610994}
-  m_LocalPosition: {x: 1014.35364, y: 208.88272, z: -14.67}
+  m_LocalPosition: {x: -21.95, y: 2.7, z: -14.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428585823845454}
@@ -313,8 +313,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.1907487, y: 0.99999976, z: 24.055302}
-  m_Center: {x: -0.44462287, y: 0, z: 12.377693}
+  m_Size: {x: 7.1907487, y: 0.99999976, z: 47.752544}
+  m_Center: {x: -0.44461673, y: 0, z: 24.226288}
 --- !u!65 &65531023557088258
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -337,7 +337,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2, z: 10}
+  m_Size: {x: 15, y: 2, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114107964396467772
 MonoBehaviour:
@@ -518,10 +518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   associateScript: {fileID: 114542365752924554}
-  fearOnSeeBourreau: 5
-  fearOnSeeSpectre: 10
-  timeBetweenObjectSeen: 5
-  timeBetweenBourreauSeen: 5
+  fearOnSeeBourreau: 2
+  fearOnSeeSpectre: 8
+  timeBetweenObjectSeen: 3
+  timeBetweenBourreauSeen: 10
 --- !u!195 &195474903567870550
 NavMeshAgent:
   m_ObjectHideFlags: 1
