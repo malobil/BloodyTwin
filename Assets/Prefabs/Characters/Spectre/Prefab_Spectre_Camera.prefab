@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220008232580694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.98, z: 0}
+  m_LocalPosition: {x: -25.786201, y: -2.145237, z: 17.084091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714313573927092}
@@ -185,7 +185,7 @@ MonoBehaviour:
   sphereCastRadius: 0.1
   visualiseInEditor: 1
   closestDistance: 0.5
-  dontClipTag: Player
+  dontClipTag: Spectre
 --- !u!114 &114665420188717968
 MonoBehaviour:
   m_ObjectHideFlags: 1
