@@ -37,6 +37,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
                 Debug.Log("ON SEE");
                 associateScript.SeeSomething(other.gameObject);
                 currentCDObject = timeBetweenObjectSeen;
+                Debug.Log(GameObject.FindGameObjectWithTag("Spectre"));
                 GameObject.FindGameObjectWithTag("Spectre").GetComponent<Script_Spectre_Moves_Online>().AddFearToIntruder(5f, transform.parent.parent.gameObject);
             } 
         }
