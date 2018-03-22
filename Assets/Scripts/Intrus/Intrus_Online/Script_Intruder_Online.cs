@@ -57,6 +57,12 @@ public class Script_Intruder_Online : NetworkBehaviour {
                 CalculateNearestPath();
             }
         }
+
+        if(currentFear >= 100 && currentState != IntruderState.Fleeing)
+        {
+            currentState = IntruderState.Fleeing;
+            StopNavMesh();
+        }
     }
 
     public void IntruderDeath()
@@ -181,5 +187,10 @@ public class Script_Intruder_Online : NetworkBehaviour {
 
         navMeshAI.isStopped = false;
         NavPosition(moveTo);
+    }
+
+    void StopNavMesh()
+    {
+        navMeshAI.isStopped = true;
     }
 }

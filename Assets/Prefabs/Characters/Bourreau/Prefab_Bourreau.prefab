@@ -2602,6 +2602,7 @@ MonoBehaviour:
   attackSpawnPoint: {fileID: 4885166653310164}
   attackZonePrefab: {fileID: 1519718916192652, guid: 0964f3e0546d62043933a019629f1591,
     type: 2}
+  enablingTimeNavMeshAgent: 5
 --- !u!114 &114436514432978800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2835,7 +2836,7 @@ NavMeshObstacle:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242737487146092}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.5, y: 0.5, z: 1.5}
