@@ -82,10 +82,8 @@ public class Script_Intruder_Online : NetworkBehaviour {
             }
             
             Script_Global_Fear_Online.Instance.FearGlobalState();
-            if (isServer)
-            {
-                RpcUpdateFearValorForAll(currentFear);
-            }
+
+            RpcUpdateFearValorForAll(currentFear);
     }
 
     public float CurrentFearState()
