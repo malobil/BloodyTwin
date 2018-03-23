@@ -11,6 +11,7 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
     [Header("FEAR")]
     public float fearOnSeeBourreau;
     public float fearOnSeeSpectre;
+    public LayerMask seeingLayer;
 
     [Header("FEARCD")]
     public float timeBetweenObjectSeen = 5f;
@@ -47,21 +48,24 @@ public class Script_Intruder_FieldOfView_Online : MonoBehaviour
             } 
         }
 
-        if (other.CompareTag("Bourreau") && currentCDBourreau <= 0 && associateScript.ReturnCurrentState().ToString("") != "Fleeing")
+        if (other.CompareTag("Bourreau") && associateScript.ReturnCurrentState().ToString("") != "Fleeing")
         {
             
             RaycastHit hit;
             Debug.DrawRay(transform.position, other.transform.position - transform.position, Color.green, 100f);
             //Debug.Log(transform.position);
 
-            if (Physics.Raycast(transform.position, other.transform.position - transform.position, out hit, 100f))
+            if (Physics.Raycast(transform.position, other.transform.position - transform.position, out hit, 100f, seeingLayer))
             {
-                //Debug.Log(hit.collider.gameObject.name);
+                Debug.Log("Je voie :" + hit.collider.gameObject.name);
                 if (hit.collider.CompareTag("Bourreau"))
                 {
-                    other.GetComponent<Script_Bourreau_Moves>().AddFearToIntruder(fearOnSeeBourreau, transform.parent.parent.gameObject);
+                    if (currentCDBourreau <= 0)
+                    {
+                        other.GetComponent<Script_Bourreau_Moves>().AddFearToIntruder(fearOnSeeBourreau, transform.parent.parent.gameObject);
+                        associateScript.SeeSomething(other.gameObject);
+                    } 
                     other.GetComponent<Script_Bourreau_Moves>().ActivateNavMashObstacle();
-                    associateScript.SeeSomething(other.gameObject);
                     currentCDBourreau = timeBetweenBourreauSeen;
                 }
             }

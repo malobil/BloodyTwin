@@ -889,24 +889,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1706107610104020, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
+      propertyPath: m_Name
+      value: Prefab_Intrus_Online (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 114542365752924554, guid: 48ae0ade5454db14c8bc984b321badbb,
         type: 2}
       propertyPath: wayPoint
       value: 
       objectReference: {fileID: 915270544}
-    - target: {fileID: 114788254285901196, guid: 48ae0ade5454db14c8bc984b321badbb,
-        type: 2}
-      propertyPath: m_LocalPlayerAuthority
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1706107610104020, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
-      propertyPath: m_Name
-      value: Prefab_Intrus_Online (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114788254285901196, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
-    - {fileID: 114681040211653758, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
-    - {fileID: 114510763146275032, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48ae0ade5454db14c8bc984b321badbb, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &189849082 stripped

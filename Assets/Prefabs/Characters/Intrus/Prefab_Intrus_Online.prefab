@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 223640899507175402}
   - component: {fileID: 114969795466601346}
   - component: {fileID: 114600807253428958}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 224760134951357002}
   - component: {fileID: 222878142734123720}
   - component: {fileID: 114453683466244058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4255895464124680}
   - component: {fileID: 33103191812578824}
   - component: {fileID: 23459465303609156}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,9 +71,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4745152147011372}
-  - component: {fileID: 65911422598879620}
   - component: {fileID: 114465247034512826}
-  m_Layer: 2
+  - component: {fileID: 135607041272811546}
+  m_Layer: 11
   m_Name: Hearing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4628397827090252}
   - component: {fileID: 65295275875174176}
   - component: {fileID: 114974093306624914}
-  m_Layer: 2
+  m_Layer: 11
   m_Name: FieldOfView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 114107964396467772}
   - component: {fileID: 114949376613085326}
   - component: {fileID: 54997991437249658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Prefab_Intrus_Online
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 65531023557088258}
   - component: {fileID: 23908580842809312}
   - component: {fileID: 195474903567870550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Intrus
   m_TagString: Intru
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706107610104020}
   m_LocalRotation: {x: -0, y: -0.6486353, z: -0, w: 0.7610994}
-  m_LocalPosition: {x: -21.95, y: 2.7, z: -14.67}
+  m_LocalPosition: {x: -10.42, y: 2.7, z: 4.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428585823845454}
@@ -322,22 +322,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852131856537042}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65911422598879620
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1483251856670182}
-  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 2, z: 15}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114107964396467772
 MonoBehaviour:
@@ -520,8 +508,23 @@ MonoBehaviour:
   associateScript: {fileID: 114542365752924554}
   fearOnSeeBourreau: 2
   fearOnSeeSpectre: 8
+  seeingLayer:
+    serializedVersion: 2
+    m_Bits: 4294965243
   timeBetweenObjectSeen: 3
   timeBetweenBourreauSeen: 10
+--- !u!135 &135607041272811546
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483251856670182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195474903567870550
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -530,7 +533,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1852131856537042}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2
+  m_Radius: 0.8
   m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50

@@ -9,7 +9,7 @@ public class Script_Intruder_Hearing_Online : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Script_Bourreau_Moves>())
+        if (other.CompareTag("Bourreau"))
         {
             Debug.Log("Entendu");
             associateScript.HearSomething(other.gameObject);
