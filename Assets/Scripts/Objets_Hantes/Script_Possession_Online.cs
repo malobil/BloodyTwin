@@ -8,7 +8,6 @@ public class Script_Possession_Online : NetworkBehaviour {
 
     private GameObject player;
     private Transform objet_hante;
-    public Transform cameraPoint;
 
     private bool can_possession; // peut prendre possession de l'objet
     private bool is_possession; // l'obet est possédé
@@ -28,9 +27,6 @@ public class Script_Possession_Online : NetworkBehaviour {
             gameObject.tag = "Possess";
             player.transform.SetParent(transform); // met le spectre en parent de l'objet
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCharacter() ; // désactive le spectre                      
-            //player.GetComponent<Script_Spectre_Moves_Online>().DisableCamera();
-            //player.GetComponent<Script_Spectre_Moves_Online>().EnablePossessCamera(cameraPoint) ;
-            //GetComponent<Script_Spectre_Possess_Move_Online>().SettingCam(player.GetComponent<Script_Spectre_Moves_Online>().ReturnPossessCamera());
             GetComponent<Script_Spectre_Possess_Move>().enabled = true;
             is_possession = true;
 
@@ -49,13 +45,12 @@ public class Script_Possession_Online : NetworkBehaviour {
             player.transform.parent = null;
             player.SetActive(true); // active le spectre
             CmdGiveAuthority();
-            //player.GetComponent<Script_Spectre_Moves_Online>().EnableCamera();
-            //player.GetComponent<Script_Spectre_Moves_Online>().DisablePossessCamera();
-            objet_hante.GetComponent<Script_Spectre_Possess_Move_Online>().enabled = false;
+            objet_hante.GetComponent<Script_Spectre_Possess_Move>().enabled = false;
 
             timeLeft = 1f;
 
             player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
+            player.GetComponent<Script_Spectre_Moves_Online>().ChangeCameraTarget(player.transform);
             is_possession = false;
         }
     }

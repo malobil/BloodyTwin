@@ -27,7 +27,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         if(Input.GetKeyDown("e") && objectToPossess!= null)
         {
-            PossessObject(); // fonction de possession obj
+            PossessObject(); 
+            ChangeCameraTarget(objectToPossess.transform);
             CmdDisablePlayer(); // Desactive le spectre pour activer l'objet posses
             CmdGiveAuthority(); // Donne l'authorité à l'obj pour pouvoir utiliser les inputs
         }
@@ -64,22 +65,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         playerCamera.SetActive(true);
     }
 
-    /*public void EnablePossessCamera(Transform cameraPoint)
-    {
-        possessCamera.transform.position = cameraPoint.position;
-        possessCamera.transform.rotation = cameraPoint.rotation;
-        possessCamera.SetParent(cameraPoint);
-        possessCamera.gameObject.SetActive(true);
-    }*/
-
-    /*public void DisablePossessCamera()
-    {
-        possessCamera.SetParent(null);
-        possessCamera.gameObject.SetActive(false);
-        CmdEnablePlayer();
-    }*/
-
-
     public void SettingPossessTarget(Script_Possession_Online targetToSet)
     {
         objectToPossess = targetToSet;
@@ -90,10 +75,16 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         objectToPossess = null;
     }
 
+    // fonction de possession obj
     void PossessObject()
     {
-        playerCamera.GetComponent<FreeLookCam>().SetCamera(objectToPossess.transform);
+        
         objectToPossess.PossessObject();
+    }
+
+    public void ChangeCameraTarget(Transform target)
+    {
+        playerCamera.GetComponent<FreeLookCam>().SetCamera(target);
     }
 
     public void DisableCharacter()

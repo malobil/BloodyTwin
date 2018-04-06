@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114757022691063198}
   m_Layer: 0
   m_Name: Prefab_Camera_Bourreau
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: -215833656, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
+  m_TargetIntrus: 0
   m_AutoTargetPlayer: 1
   m_UpdateType: 0
   m_MoveSpeed: 10
@@ -207,6 +208,7 @@ MonoBehaviour:
   m_TiltMin: 45
   m_LockCursor: 0
   m_VerticalAutoReturn: 0
+  pivotPosition: {fileID: 0}
 --- !u!124 &124654105587539844
 Behaviour:
   m_ObjectHideFlags: 1
