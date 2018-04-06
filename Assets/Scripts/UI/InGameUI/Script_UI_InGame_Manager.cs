@@ -12,7 +12,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public float seconds;
 
     public Text timerText;
-    public Image globalFearImage;
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
     [Header("BourreauUI")]
@@ -74,13 +73,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
-    }
-
-    [ClientRpc]
-    public void RpcUpdateGlobalFear(float globalFear)
-    {
-        Debug.Log("Update fear" + globalFear);
-        globalFearImage.fillAmount = globalFear / 100;
     }
 
     public void PauseMenu()
