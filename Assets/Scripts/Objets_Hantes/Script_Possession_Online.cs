@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine.Networking;
 
 public class Script_Possession_Online : NetworkBehaviour {
@@ -28,10 +28,10 @@ public class Script_Possession_Online : NetworkBehaviour {
             gameObject.tag = "Possess";
             player.transform.SetParent(transform); // met le spectre en parent de l'objet
             player.GetComponent<Script_Spectre_Moves_Online>().DisableCharacter() ; // désactive le spectre                      
-            player.GetComponent<Script_Spectre_Moves_Online>().DisableCamera();
-            player.GetComponent<Script_Spectre_Moves_Online>().EnablePossessCamera(cameraPoint) ;
-            GetComponent<Script_Spectre_Possess_Move_Online>().SettingCam(player.GetComponent<Script_Spectre_Moves_Online>().ReturnPossessCamera());
-            GetComponent<Script_Spectre_Possess_Move_Online>().enabled = true;
+            //player.GetComponent<Script_Spectre_Moves_Online>().DisableCamera();
+            //player.GetComponent<Script_Spectre_Moves_Online>().EnablePossessCamera(cameraPoint) ;
+            //GetComponent<Script_Spectre_Possess_Move_Online>().SettingCam(player.GetComponent<Script_Spectre_Moves_Online>().ReturnPossessCamera());
+            GetComponent<Script_Spectre_Possess_Move>().enabled = true;
             is_possession = true;
 
             timeLeft = 1f;
@@ -49,8 +49,8 @@ public class Script_Possession_Online : NetworkBehaviour {
             player.transform.parent = null;
             player.SetActive(true); // active le spectre
             CmdGiveAuthority();
-            player.GetComponent<Script_Spectre_Moves_Online>().EnableCamera();
-            player.GetComponent<Script_Spectre_Moves_Online>().DisablePossessCamera();
+            //player.GetComponent<Script_Spectre_Moves_Online>().EnableCamera();
+            //player.GetComponent<Script_Spectre_Moves_Online>().DisablePossessCamera();
             objet_hante.GetComponent<Script_Spectre_Possess_Move_Online>().enabled = false;
 
             timeLeft = 1f;

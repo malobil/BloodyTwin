@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Script_Possession : MonoBehaviour {
 
@@ -34,7 +34,7 @@ public class Script_Possession : MonoBehaviour {
             player.SetActive(false); // désactive le spectre
             player.GetComponent<Script_Spectre_Moves_Offline>().DisableCamera();
             player.GetComponent<Script_Spectre_Moves_Offline>().EnablePossessCamera(cameraPoint) ;
-            GetComponent<Script_Spectre_Possess_Move>().SettingCam(player.GetComponent<Script_Spectre_Moves_Offline>().ReturnPossessCamera());
+            //GetComponent<Script_Spectre_Possess_Move>().SettingCam(player.GetComponent<Script_Spectre_Moves_Offline>().ReturnPossessCamera());
             GetComponent<Script_Spectre_Possess_Move>().enabled = true;
 
             timeLeft = 1f;

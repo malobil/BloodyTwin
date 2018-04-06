@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
-namespace UnityStandardAssets.Characters.FirstPerson
+namespace UnityStandardAssets.Characters.ThirdPerson
 {
     [RequireComponent(typeof(Rigidbody))]
     public class Script_Spectre_Possess_Move_Online : NetworkBehaviour
@@ -83,7 +83,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Camera cam;
         public MovementSettings movementSettings = new MovementSettings();
-        public MouseLook mouseLook = new MouseLook();
+        //public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
 
 
@@ -130,7 +130,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
-            mouseLook.Init(transform, cam.transform);
+            //mouseLook.Init(transform, cam.transform);
         }
 
 
@@ -254,7 +254,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get the rotation before it's changed
             //float oldYRotation = transform.eulerAngles.y;
                 
-            cam.transform.LookAt(nearestIntru);
+            //cam.transform.LookAt(nearestIntru);
 
             if(nearestIntru != null)
             {

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityStandardAssets.Cameras;
 
 public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     public float speed = 5.0f;
     public GameObject playerCamera;
-    public Transform possessCamera;
-
+   
     private Script_Possession_Online objectToPossess;
 
     private void Awake()
@@ -27,9 +27,9 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         if(Input.GetKeyDown("e") && objectToPossess!= null)
         {
-            PossessObject();
-            CmdDisablePlayer();
-            CmdGiveAuthority();
+            PossessObject(); // fonction de possession obj
+            CmdDisablePlayer(); // Desactive le spectre pour activer l'objet posses
+            CmdGiveAuthority(); // Donne l'authorité à l'obj pour pouvoir utiliser les inputs
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -51,7 +51,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     public void SettingCamera(GameObject camToSet)
     {
-        playerCamera = camToSet;
+        playerCamera = camToSet; // Set la camera du joueur
     }
 
     public void DisableCamera()
@@ -64,25 +64,21 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         playerCamera.SetActive(true);
     }
 
-    public void EnablePossessCamera(Transform cameraPoint)
+    /*public void EnablePossessCamera(Transform cameraPoint)
     {
         possessCamera.transform.position = cameraPoint.position;
         possessCamera.transform.rotation = cameraPoint.rotation;
         possessCamera.SetParent(cameraPoint);
         possessCamera.gameObject.SetActive(true);
-    }
+    }*/
 
-    public void DisablePossessCamera()
+    /*public void DisablePossessCamera()
     {
         possessCamera.SetParent(null);
         possessCamera.gameObject.SetActive(false);
         CmdEnablePlayer();
-    }
+    }*/
 
-    public Camera ReturnPossessCamera()
-    {
-        return possessCamera.GetComponent<Camera>() ;
-    }
 
     public void SettingPossessTarget(Script_Possession_Online targetToSet)
     {
@@ -96,6 +92,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     void PossessObject()
     {
+        playerCamera.GetComponent<FreeLookCam>().SetCamera(objectToPossess.transform);
         objectToPossess.PossessObject();
     }
 
@@ -107,8 +104,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     [Command]
     public void CmdGiveAuthority()
     {
-        //var otherOwner = GetComponent<NetworkIdentity>().clientAuthorityOwner;
-        //GetComponent<NetworkIdentity>().RemoveClientAuthority(otherOwner);
         objectToPossess.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
     
