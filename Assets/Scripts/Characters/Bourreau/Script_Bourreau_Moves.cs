@@ -80,7 +80,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if(Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
-                currentAttackCooldown = attackCooldown / (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100));
+                currentAttackCooldown = attackCooldown ;
                 CmdAttack();
             }
 
@@ -102,8 +102,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (currentAttackCooldown <= 0)
             {
                 // read inputs
-                float h = CrossPlatformInputManager.GetAxis("Horizontal") * walkSpeedMultiply * (1+ (Script_Global_Fear_Online.Instance.ReturnGlobalFear()/100)) ;
-                float v = CrossPlatformInputManager.GetAxis("Vertical") * walkSpeedMultiply * (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100)) ;
+                float h = CrossPlatformInputManager.GetAxis("Horizontal");
+                float v = CrossPlatformInputManager.GetAxis("Vertical");
                 
 
                 // calculate move direction to pass to character
@@ -148,7 +148,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [Command]
         private void CmdAttack()
         {
-            currentAttackCooldown = attackCooldown / (1 + (Script_Global_Fear_Online.Instance.ReturnGlobalFear() / 100));
+            currentAttackCooldown = attackCooldown ;
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
             NetworkServer.Spawn(tempAttack);
             Destroy(tempAttack, currentAttackCooldown);
@@ -158,11 +158,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         void SetPauseMenu()
         {
             Script_UI_InGame_Manager.Instance.PauseMenu();
-        }
-
-        public void AddFearToIntruder(float fearToAdd, GameObject intruderToFear)
-        {
-            CmdFearOnIntruder(fearToAdd, intruderToFear);
         }
 
         public void ActivateNavMashObstacle()
@@ -176,12 +171,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             GameObject tempObstacle = Instantiate(navMeshObstaclePrefab,transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempObstacle);
             Destroy(tempObstacle, 5f);
-        }
-
-        [Command]
-        void CmdFearOnIntruder(float fearAdded, GameObject _target)
-        {
-            _target.GetComponent<Script_Intruder_Online>().FearedImpact(fearAdded);
         }
     }
 }

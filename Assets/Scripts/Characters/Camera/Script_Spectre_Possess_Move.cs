@@ -259,23 +259,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             cam = cameraToSet;
         }
 
-        void CalculNearestIntru()
-        {
-            if (Intruders_Manager_Offline.Instance != null)
-            {
-                Intruders_Manager_Offline.Instance.ReturnNearestIntruder(transform);
-            }
-            
-            Debug.Log("CALCUL");
-        }
-
-        public void SettingNearestIntru(Transform nearest)
-        {
-            nearestIntru = nearest;
-            Debug.Log("SETTING");
-            //CalculNearestIntru();
-        }
-
         public bool ReturnIsMoving()
         {
             return isMoving;

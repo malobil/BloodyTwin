@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4356130926992896}
-  - component: {fileID: 114267920161392220}
   - component: {fileID: 114572454815450000}
   m_Layer: 0
   m_Name: Prefab_GameManager_Online
@@ -41,25 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114267920161392220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1362997639831872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8b262e8dc8d4e419a4c9c87bb059cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imgFearState: {fileID: 0}
-  baseFearWhenDead: 10
-  fearPurcentWhenDead: 20
-  intruders:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &114572454815450000
 MonoBehaviour:
   m_ObjectHideFlags: 1

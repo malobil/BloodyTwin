@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224418412322675144}
   - component: {fileID: 222877856165792060}
   - component: {fileID: 114500218873745772}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image_Global_Fear_Feedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224506682953037224}
   - component: {fileID: 222527367834224102}
   - component: {fileID: 114742529477030960}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 224227475183669482}
   - component: {fileID: 222413146902285466}
   - component: {fileID: 114164054805528816}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_GoBackToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224876730864299164}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: UI_Bourreau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 222583839636837140}
   - component: {fileID: 114532769682159004}
   - component: {fileID: 114655782102874034}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button_GoBackToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 224137504576841636}
   - component: {fileID: 222641349630708136}
   - component: {fileID: 114609505071616176}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 224192125245257932}
   - component: {fileID: 222543081317806580}
   - component: {fileID: 114287223863246098}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fond_Text_Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 224210737013924600}
   - component: {fileID: 222227023147197254}
   - component: {fileID: 114515451384345196}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Panel_GameWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 224243943487379650}
   - component: {fileID: 222357678327398956}
   - component: {fileID: 114827558571917632}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,8 +176,7 @@ GameObject:
   - component: {fileID: 114770750952398768}
   - component: {fileID: 114009472680470234}
   - component: {fileID: 114549217580612966}
-  - component: {fileID: 114298068156345334}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Prefab_UI_Game_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +193,7 @@ GameObject:
   - component: {fileID: 224331689955687050}
   - component: {fileID: 222379797087449084}
   - component: {fileID: 114853261097642616}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_Spectre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +210,7 @@ GameObject:
   - component: {fileID: 224508305356780994}
   - component: {fileID: 222385849054068894}
   - component: {fileID: 114376023816725526}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_GoBackToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +227,7 @@ GameObject:
   - component: {fileID: 224714568926734538}
   - component: {fileID: 222640825864075638}
   - component: {fileID: 114530583639864692}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +244,7 @@ GameObject:
   - component: {fileID: 224679009221639870}
   - component: {fileID: 222806403288977252}
   - component: {fileID: 114506419864468792}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: UI_Spectre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +261,7 @@ GameObject:
   - component: {fileID: 224193001442037694}
   - component: {fileID: 222068899553273862}
   - component: {fileID: 114305835357014614}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +278,7 @@ GameObject:
   - component: {fileID: 4736047606371820}
   - component: {fileID: 114135504722100326}
   - component: {fileID: 114340535271075226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +296,7 @@ GameObject:
   - component: {fileID: 222801112960882572}
   - component: {fileID: 114064399675701862}
   - component: {fileID: 114252310426424636}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button_Disconnect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +313,7 @@ GameObject:
   - component: {fileID: 224309314290893322}
   - component: {fileID: 222805187165795988}
   - component: {fileID: 114593212298710798}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +330,7 @@ GameObject:
   - component: {fileID: 224176943400980966}
   - component: {fileID: 222266273754834454}
   - component: {fileID: 114066219976580796}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image_Global_Fear_Feedback_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +347,7 @@ GameObject:
   - component: {fileID: 224663977196801870}
   - component: {fileID: 222703360027482584}
   - component: {fileID: 114416814458661028}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Panel_GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +364,7 @@ GameObject:
   - component: {fileID: 224224126504248748}
   - component: {fileID: 222448096725114842}
   - component: {fileID: 114590563904300718}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_GoBackToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +382,7 @@ GameObject:
   - component: {fileID: 222257481274079972}
   - component: {fileID: 114115252661453436}
   - component: {fileID: 114316647763073164}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button_GoBackToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +399,7 @@ GameObject:
   - component: {fileID: 224208671216791966}
   - component: {fileID: 222166615079377012}
   - component: {fileID: 114272773119534502}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image_Bourreau_Running
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +416,7 @@ GameObject:
   - component: {fileID: 224989593302096944}
   - component: {fileID: 222924210833373014}
   - component: {fileID: 114501797421490010}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fond_Bourreau_Running
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +433,7 @@ GameObject:
   - component: {fileID: 224115770920522508}
   - component: {fileID: 222448435542645024}
   - component: {fileID: 114361891782249678}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Panel_Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,26 +729,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114298068156345334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1321824628162694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c420afb2fa472942a2316c1428c3249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &114305835357014614
 MonoBehaviour:
   m_ObjectHideFlags: 1

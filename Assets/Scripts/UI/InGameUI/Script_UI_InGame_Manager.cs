@@ -50,13 +50,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             minutes--;
         }
 
-        if(seconds <= 0 && minutes <= 0 && Script_Global_Fear_Online.Instance.ReturnNumberOfIntrus() > 0)
+        if(seconds <= 0 && minutes <= 0)
         {
             RpcGameOver();
-        }
-        else if(seconds <= 0 && minutes <= 0 && Script_Global_Fear_Online.Instance.ReturnNumberOfIntrus() <= 0)
-        {
-            RpcGameWin();
         }
     }
 

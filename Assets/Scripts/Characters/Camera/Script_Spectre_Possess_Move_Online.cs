@@ -280,19 +280,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             Debug.Log(cameraToSet);
         }
 
-        void CalculNearestIntru()
-        {
-            Script_Global_Fear_Online.Instance.ReturnNearestIntruder(transform);
-            Debug.Log("CALCUL");
-        }
-
-        public void SettingNearestIntru(Transform nearest)
-        {
-            nearestIntru = nearest;
-            Debug.Log("SETTING");
-            //CalculNearestIntru();
-        }
-
         public bool ReturnIsMoving()
         {
             return isMoving;
