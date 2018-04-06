@@ -85,7 +85,7 @@ AudioMixerSnapshotController:
     7fffeed976aa6da4f9ea18498e9b63b3: 0.74
     5138fe1af6f2c9746a490b0a52a8dd5e: 0.78
     1812218a4944fe240ab7de72e4283996: 0
-    c977033de5583094989df0897e2d457a: -0.8
+    c977033de5583094989df0897e2d457a: -8.9
   m_TransitionOverrides: {}
 --- !u!243 &243191539194149004
 AudioMixerGroupController:
@@ -118,7 +118,7 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 244119129092079316}
   m_UserColorIndex: 0
-  m_Mute: 0
+  m_Mute: 1
   m_Solo: 0
   m_BypassEffects: 0
 --- !u!243 &243436116365845028
@@ -143,7 +143,7 @@ AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Footstep
+  m_Name: B_Footstep
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 0981dc398dda5b24288719cc7804db5b
   m_Children: []
@@ -152,7 +152,7 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 244087277465987872}
   m_UserColorIndex: 0
-  m_Mute: 1
+  m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
 --- !u!243 &243531423376414040
