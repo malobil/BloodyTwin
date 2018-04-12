@@ -5942,20 +5942,7 @@ Prefab:
       propertyPath: m_Name
       value: Prefab_Objet_Hante_Online (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114976079073249120, guid: 22df54488d7b239418da8f038f8e6039,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114976079073249120, guid: 22df54488d7b239418da8f038f8e6039,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114117538507943302, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
-    - {fileID: 136386718232055608, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
-    - {fileID: 95180765696643728, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22df54488d7b239418da8f038f8e6039, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1661450025

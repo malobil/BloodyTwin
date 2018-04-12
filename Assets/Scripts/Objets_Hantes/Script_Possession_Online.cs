@@ -74,6 +74,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             UnPossessObject();
         }
 
+
         /*if(is_possession)
         {
             player.GetComponent<Script_Spectre_Moves_Online>().CmdUpdatePossessTransform(transform, transform.position);
