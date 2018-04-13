@@ -7,6 +7,10 @@ using UnityStandardAssets.Cameras;
 public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     public float speed = 5.0f;
+    public float possessTime;
+    public GameObject feedbackPossessing ;
+    private float currentPossessTime;
+    private bool tryPossessing = false;
     public GameObject playerCamera;
    
     private Script_Possession_Online objectToPossess;
@@ -25,12 +29,21 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         Mouvement();
 
-        if(Input.GetKeyDown("e") && objectToPossess!= null)
+        if(currentPossessTime > 0 && tryPossessing)
         {
-            PossessObject(); 
-            ChangeCameraTarget(objectToPossess.transform);
-            CmdDisablePlayer(); // Desactive le spectre pour activer l'objet posses
-            CmdGiveAuthority(); // Donne l'authorité à l'obj pour pouvoir utiliser les inputs
+            currentPossessTime -= Time.deltaTime;
+        }
+        else if(currentPossessTime < 0 && tryPossessing)
+        {
+            PossessObject();
+            currentPossessTime = 0;
+        }
+
+        if(Input.GetKeyDown("e") && objectToPossess!= null && !tryPossessing)
+        {
+            currentPossessTime = possessTime;
+            feedbackPossessing.SetActive(true);
+            tryPossessing = true;
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -73,12 +86,16 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public void UnSettingPossessTarget()
     {
         objectToPossess = null;
+        feedbackPossessing.SetActive(false);
+        tryPossessing = false;
     }
 
     // fonction de possession obj
     void PossessObject()
     {
-        
+        ChangeCameraTarget(objectToPossess.transform);
+        CmdDisablePlayer(); // Desactive le spectre pour activer l'objet posses
+        CmdGiveAuthority(); // Donne l'authorité à l'obj pour pouvoir utiliser les inputs
         objectToPossess.PossessObject();
     }
 
@@ -112,7 +129,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     }
 
     [Command]
-    void CmdEnablePlayer()
+    public void CmdEnablePlayer()
     {
         gameObject.SetActive(true);
         RpcEnablePlayer();
