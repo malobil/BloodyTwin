@@ -1322,7 +1322,7 @@ Prefab:
     - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
         type: 2}
       propertyPath: m_PlayScene
-      value: Scene_In_Game
+      value: Scene_In_Game_Arthur
       objectReference: {fileID: 0}
     - target: {fileID: 114964582883052238, guid: b8fef4c5c7926ab429b358ccc60f4943,
         type: 2}
@@ -2226,7 +2226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.086644515, y: 0.33131498}
   m_AnchorMax: {x: 0.29689258, y: 0.395}
-  m_AnchoredPosition: {x: -0.20996094, y: -1.5000153}
+  m_AnchoredPosition: {x: -0.20996094, y: -1.5}
   m_SizeDelta: {x: 0.8999939, y: 3.9000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075410271

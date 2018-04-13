@@ -43,7 +43,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             timeLeft = 1f;
 
             player.transform.parent = null;
-            player.SetActive(true); // active le spectre
+            player.GetComponent<Script_Spectre_Moves_Online>().CmdEnablePlayer(); // active le spectre
             CmdGiveAuthority();
             objet_hante.GetComponent<Script_Spectre_Possess_Move>().enabled = false;
 
@@ -73,12 +73,6 @@ public class Script_Possession_Online : NetworkBehaviour {
         {
             UnPossessObject();
         }
-
-
-        /*if(is_possession)
-        {
-            player.GetComponent<Script_Spectre_Moves_Online>().CmdUpdatePossessTransform(transform, transform.position);
-        }*/
     }
         
 

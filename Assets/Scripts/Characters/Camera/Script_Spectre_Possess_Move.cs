@@ -6,14 +6,12 @@ using UnityEngine.Networking;
 public class Script_Spectre_Possess_Move : MonoBehaviour
 {
     public float moveSpeed;
-    public float maxSpeed;
     public float ejectionSpeed;
 
     private float currentSpeed;
     private Rigidbody rbComponent;
     private Vector3 desiredMoveDirection;
     private Script_Possession_Online associateScriptPossesion; // script gérant la possession / depossession
-    private bool canMove = true;
 
     private void Start()
     {
