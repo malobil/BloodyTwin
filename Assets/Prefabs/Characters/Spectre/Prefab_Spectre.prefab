@@ -107,6 +107,11 @@ MonoBehaviour:
   speed: 5
   possessTime: 2
   feedbackPossessing: {fileID: 1854619131822342}
+  comCome: {fileID: 1049546696430872, guid: bedff413ad48ae945965105d4ab3d8ae, type: 2}
+  comGotOne: {fileID: 1984350310164598, guid: 06bc0e80a2ab2e447a6e978de16a48e9, type: 2}
+  comRunAway: {fileID: 1053032189301652, guid: 2bfff6e0ecdb4f549b7b97314310ef3f, type: 2}
+  comStayHere: {fileID: 1142833389583784, guid: 5668de12b7cccac46859c014cdb18685,
+    type: 2}
   playerCamera: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
     type: 2}
 --- !u!114 &114118656943792600

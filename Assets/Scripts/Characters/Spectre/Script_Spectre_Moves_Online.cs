@@ -6,11 +6,21 @@ using UnityStandardAssets.Cameras;
 
 public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
+    [Header("Movement")]
     public float speed = 5.0f;
+    [Header("Possession")]
     public float possessTime;
     public GameObject feedbackPossessing ;
     private float currentPossessTime;
     private bool tryPossessing = false;
+
+    [Header("Communication")]
+    public GameObject comCome;
+    public GameObject comGotOne;
+    public GameObject comRunAway;
+    public GameObject comStayHere;
+
+    [Header("Camera")]
     public GameObject playerCamera;
    
     private Script_Possession_Online objectToPossess;
@@ -27,9 +37,26 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             return;
         }
 
-        Mouvement();
+        Mouvement(); // déplacement perso
 
-        if(currentPossessTime > 0 && tryPossessing)
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            CmdCommunication(comCome);
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            CmdCommunication(comGotOne);
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            CmdCommunication(comRunAway);
+        }
+        else if (Input.GetKeyDown(KeyCode.V))
+        {
+            CmdCommunication(comStayHere);
+        }
+
+        if (currentPossessTime > 0 && tryPossessing)
         {
             currentPossessTime -= Time.deltaTime;
         }
@@ -139,6 +166,13 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     void RpcEnablePlayer()
     {
         gameObject.SetActive(true);
+    }
+
+    [Command]
+    void CmdCommunication(GameObject toSpawn)
+    {
+        GameObject tempCom = Instantiate(toSpawn, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(tempCom);
     }
 
     void SetPauseMenu()
