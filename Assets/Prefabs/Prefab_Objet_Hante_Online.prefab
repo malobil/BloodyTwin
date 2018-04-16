@@ -262,4 +262,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  ejectionSpeed: 25
+  ejectionSpeedAdd: 2
+  maxEjectionSpeed: 25

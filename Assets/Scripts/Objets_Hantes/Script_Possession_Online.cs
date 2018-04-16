@@ -101,6 +101,11 @@ public class Script_Possession_Online : NetworkBehaviour {
         }
     }
 
+    void Stun()
+    {
+
+    }
+
     public GameObject ReturnPlayer()
     {
         return player;

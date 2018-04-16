@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
@@ -6,7 +7,10 @@ using UnityEngine.Networking;
 public class Script_Spectre_Possess_Move : MonoBehaviour
 {
     public float moveSpeed;
-    public float ejectionSpeed;
+    public float ejectionSpeedAdd;
+    public float maxEjectionSpeed;
+    private float ejectionSpeed = 0f;
+    private bool isProject;
 
     private float currentSpeed;
     private Rigidbody rbComponent;
@@ -21,7 +25,17 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKey(KeyCode.A))
+        {
+            if(ejectionSpeed < maxEjectionSpeed)
+            {
+                ejectionSpeed += ejectionSpeedAdd * Time.deltaTime ;
+            }
+
+            Debug.Log(ejectionSpeed);
+        }
+
+        if(Input.GetKeyUp(KeyCode.A))
         {
             Project();
         }
@@ -29,7 +43,6 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
 
     void FixedUpdate()
     {
-
             //reading the input:
             float horizontalAxis = Input.GetAxis("Horizontal");
             float verticalAxis = Input.GetAxis("Vertical");
@@ -59,8 +72,30 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
     private void Project()
     {
         Transform camera = Camera.main.transform;
-        rbComponent.AddForce(camera.forward * ejectionSpeed);
+        rbComponent.AddForce(camera.forward * ejectionSpeed, ForceMode.Impulse);
         associateScriptPossesion.UnPossessObject();
-        Debug.Log("BALANCE");
+        StartCoroutine(ProjectionEnd());
+        isProject = true;
+        ejectionSpeed = 0;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(isProject)
+        {
+            if (collision.gameObject.CompareTag("Intru"))
+            {
+                Debug.Log("TOUCH" + collision.gameObject.name);
+                // Call here stun function
+                isProject = false;
+            }
+        }
+    }
+
+    IEnumerator ProjectionEnd()
+    {
+        yield return new WaitForSeconds(1.5f);
+        isProject = false;
+        print(isProject);
     }
 }
