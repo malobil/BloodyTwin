@@ -38,6 +38,14 @@ public class LobbyPlayer : NetworkBehaviour
         CmdSetUsername(AccountManager.Instance.GetUsername());
     }
 
+    public void Disconnect()
+    {
+        if (isServer)
+            NetworkManager.singleton.StopHost();
+        else
+            NetworkManager.singleton.StopClient();
+    }
+
     private void OnDestroy()
     {
         LobbyManager.UnRegisterPlayer(transform.name);

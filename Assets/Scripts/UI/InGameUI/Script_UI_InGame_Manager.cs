@@ -84,14 +84,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         Debug.Log("Disconnect");
         if(isServer)
-        {
-            NetworkManager.singleton.StopMatchMaker();
             NetworkManager.singleton.StopHost();
-        }
         else
-        {
             NetworkManager.singleton.StopClient();
-        }
     }
 
     public void ActiveBourreauUI()

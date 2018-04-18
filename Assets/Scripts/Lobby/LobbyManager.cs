@@ -307,6 +307,12 @@ public class LobbyManager : MonoBehaviour
         _waitingLobby.SetActive(false);
     }
 
+    public void LeaveRoom()
+    {
+        var currClient = GetPlayer("Player " + _clientNetId);
+        currClient.Disconnect();
+    }
+
     private const string PlayerIdPrefix = "Player ";
 
     private static readonly Dictionary<string, LobbyPlayer> Players = new Dictionary<string, LobbyPlayer>();
