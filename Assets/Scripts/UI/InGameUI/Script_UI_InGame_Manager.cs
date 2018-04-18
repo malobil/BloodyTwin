@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
@@ -45,7 +43,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
         else if(seconds <= 0 && minutes > 0)
         {
-            seconds = 60;
+            seconds = 59;
             minutes--;
         }
 
@@ -58,7 +56,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [ClientRpc]
     void RpcUpdateTimerText()
     {
-        timerText.text = minutes.ToString("") + " : " + Mathf.RoundToInt(seconds).ToString("");
+        timerText.text = minutes.ToString("0") + " : " + Mathf.RoundToInt(seconds).ToString("00");
     }
 
     [ClientRpc]
@@ -77,6 +75,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void PauseMenu()
     {
+        Cursor.visible = !gamePauseMenu.activeSelf;
+        Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         gamePauseMenu.SetActive(!gamePauseMenu.activeSelf);
     }
 

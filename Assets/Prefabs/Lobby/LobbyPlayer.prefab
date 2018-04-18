@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1699095487352988}
+  m_RootGameObject: {fileID: 1406365563363992}
   m_IsPrefabParent: 1
---- !u!1 &1699095487352988
+--- !u!1 &1406365563363992
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4863771180964706}
-  - component: {fileID: 114768607062520766}
-  - component: {fileID: 114335293315094246}
+  - component: {fileID: 4483635415147596}
+  - component: {fileID: 114552033706640158}
+  - component: {fileID: 114647917826923938}
   m_Layer: 0
   m_Name: LobbyPlayer
   m_TagString: Untagged
@@ -28,37 +28,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4863771180964706
+--- !u!4 &4483635415147596
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1699095487352988}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 487.5, y: 231, z: 0}
+  m_GameObject: {fileID: 1406365563363992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114335293315094246
+--- !u!114 &114552033706640158
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1699095487352988}
+  m_GameObject: {fileID: 1406365563363992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e50794ee3d7c26e4d93adf8c791863a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 12bc79b6cfeaed94caac57d748c8f36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLobbyGUI: 0
---- !u!114 &114768607062520766
+  Username: 
+  Ready: 0
+  Type: -1
+--- !u!114 &114647917826923938
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1699095487352988}
+  m_GameObject: {fileID: 1406365563363992}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
@@ -67,21 +69,21 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 125
-    i1: 183
-    i2: 108
-    i3: 134
-    i4: 99
+    i0: 69
+    i1: 134
+    i2: 158
+    i3: 243
+    i4: 111
     i5: 113
-    i6: 172
-    i7: 228
-    i8: 122
-    i9: 217
-    i10: 202
-    i11: 45
-    i12: 26
-    i13: 126
-    i14: 80
-    i15: 240
+    i6: 29
+    i7: 52
+    i8: 169
+    i9: 110
+    i10: 81
+    i11: 217
+    i12: 246
+    i13: 231
+    i14: 228
+    i15: 218
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
