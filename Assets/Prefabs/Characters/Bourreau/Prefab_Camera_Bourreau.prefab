@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 20463754263326058}
   - component: {fileID: 92223616710539256}
   - component: {fileID: 124654105587539844}
-  - component: {fileID: 81742389416418424}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: MainCamera
@@ -116,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368004831560446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.674605, y: 14.607417, z: -10.015341}
+  m_LocalPosition: {x: -29.249184, y: 58.99102, z: 2.2928367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4472522330821720}
@@ -224,13 +223,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &81742389416418424
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120228340897472}
-  m_Enabled: 1
 --- !u!81 &81756433111486444
 AudioListener:
   m_ObjectHideFlags: 1

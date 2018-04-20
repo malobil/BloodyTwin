@@ -39,19 +39,19 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         Mouvement(); // déplacement perso
 
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetButtonDown("Communication_Come"))
         {
             CmdCommunication(comCome);
         }
-        else if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetButtonDown("Communication_GotOne"))
         {
             CmdCommunication(comGotOne);
         }
-        else if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetButtonDown("Communication_HeRunAway"))
         {
             CmdCommunication(comRunAway);
         }
-        else if (Input.GetKeyDown(KeyCode.V))
+        else if (Input.GetButtonDown("Communication_StayHere"))
         {
             CmdCommunication(comStayHere);
         }

@@ -10,8 +10,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class Script_Bourreau_Moves : NetworkBehaviour
     {
-        public GameObject navMeshObstaclePrefab;
-
         [Header("Movement")]
         public float walkSpeedMultiply;
         public float runSpeed;
@@ -20,6 +18,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private float currentRunDuration;
         private float currentRunCooldown;
+
+        [Header("Communication")]
+        public GameObject comCome;
+        public GameObject comGotOne;
+        public GameObject comRunAway;
+        public GameObject comStayHere;
 
         [Header("Attack")]
         public float attackCooldown;
@@ -87,6 +91,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 SetPauseMenu();
+            }
+
+            if (Input.GetButtonDown("Communication_Come"))
+            {
+                CmdCommunication(comCome);
+            }
+            else if (Input.GetButtonDown("Communication_GotOne"))
+            {
+                CmdCommunication(comGotOne);
+            }
+            else if (Input.GetButtonDown("Communication_HeRunAway"))
+            {
+                CmdCommunication(comRunAway);
+            }
+            else if (Input.GetButtonDown("Communication_StayHere"))
+            {
+                CmdCommunication(comStayHere);
             }
         }
 
@@ -160,17 +181,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Script_UI_InGame_Manager.Instance.PauseMenu();
         }
 
-        public void ActivateNavMashObstacle()
-        {
-            CmdSpawnObstacle();
-        }
-
         [Command]
-        void CmdSpawnObstacle()
+        void CmdCommunication(GameObject toSpawn)
         {
-            GameObject tempObstacle = Instantiate(navMeshObstaclePrefab,transform.position, Quaternion.identity);
-            NetworkServer.Spawn(tempObstacle);
-            Destroy(tempObstacle, 5f);
+            GameObject tempCom = Instantiate(toSpawn, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(tempCom);
         }
     }
 }
