@@ -13,6 +13,7 @@ public class LobbyPlayer : NetworkBehaviour
 
     [SyncVar] private string _roomName;
     [SyncVar] private bool _isHost;
+    [SyncVar] private bool _hasBeenKicked;
 
     public bool IsServerSide { get; private set; }
 
@@ -48,7 +49,28 @@ public class LobbyPlayer : NetworkBehaviour
 
     private void OnDestroy()
     {
-        LobbyManager.UnRegisterPlayer(transform.name);
+        if (!_hasBeenKicked)
+            LobbyManager.UnRegisterPlayer(transform.name);
+    }
+
+    public void KickPlayer(LobbyPlayer lobbyPlayer)
+    {
+        if (!isServer)
+            return;
+
+        var kickedPlayerIdentity = lobbyPlayer.gameObject.GetComponent<NetworkIdentity>();
+        RpcKickPlayer(kickedPlayerIdentity.netId.ToString());
+        kickedPlayerIdentity.connectionToClient.Disconnect();
+    }
+
+    [ClientRpc]
+    public void RpcKickPlayer(string clientNetId)
+    {
+        var kickedPlayer = LobbyManager.GetPlayer("Player " + clientNetId);
+        if (kickedPlayer == null)
+            return;
+
+        kickedPlayer._hasBeenKicked = true;
     }
 
     private void Update()
