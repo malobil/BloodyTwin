@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199759209532491146}
   - component: {fileID: 114633578715595262}
   - component: {fileID: 114631681828224408}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Prefab_Communication_Come
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049546696430872}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.7579823, y: 0.9674747, z: -1.3140049}
+  m_LocalPosition: {x: -1.02, y: 11.813726, z: 24.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -156,7 +156,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -949771353
+  randomSeed: -844618507
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3472,8 +3472,8 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 2b37e34ebb247ef4591d2ea5f1d7fbce, type: 2}
+  - {fileID: 2100000, guid: 2b37e34ebb247ef4591d2ea5f1d7fbce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
