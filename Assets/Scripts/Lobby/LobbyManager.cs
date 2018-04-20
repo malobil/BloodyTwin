@@ -331,15 +331,14 @@ public class LobbyManager : MonoBehaviour
         if (isHost)
             _hostNetId = netId;
 
-        if (!Players.ContainsKey("Player " + _hostNetId))
-            return;
-
         var lobbyHost = GetPlayer("Player " + _hostNetId);
         if (lobbyHost == null) return;
 
         var players = lobbyHost.LobbyPlayers;
         if (!players.ContainsKey(lobbyPlayer.Username))
             lobbyHost.LobbyPlayers.Add(lobbyPlayer.Username, lobbyPlayer);
+        else
+            lobbyHost.KickPlayer(lobbyPlayer);
 
         Instance.UpdateLobbyList();
     }
