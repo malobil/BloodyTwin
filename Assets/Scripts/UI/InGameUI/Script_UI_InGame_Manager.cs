@@ -107,4 +107,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         bourreauStaminaImage.fillAmount = stamina / maxStamina ;
     }
+
+    public void UpdatePlayerStamina(float stamina, float maxStamina)
+    {
+        bourreauStaminaImage.fillAmount = stamina / maxStamina;
+    }
 }
