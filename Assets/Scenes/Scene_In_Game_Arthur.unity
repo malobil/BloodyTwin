@@ -4521,6 +4521,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 084456b4382b325478541efd7ee3e49c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &434130557 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1653222705127756, guid: 084456b4382b325478541efd7ee3e49c,
+    type: 2}
+  m_PrefabInternal: {fileID: 434130556}
+--- !u!81 &434130558
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 434130557}
+  m_Enabled: 1
 --- !u!1 &447628959
 GameObject:
   m_ObjectHideFlags: 0
