@@ -94,8 +94,7 @@ namespace UnityStandardAssets.Characters
             }
         }
 
-        [Command]
-        void SetPauseMenu()
+        private void SetPauseMenu()
         {
             Script_UI_InGame_Manager.Instance.PauseMenu();
         }
