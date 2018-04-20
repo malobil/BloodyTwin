@@ -276,23 +276,22 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    public void Override()
-    {
-        StartGame();
-    }
-
     public void StartGame()
     {
         var currClient = GetPlayer("Player " + _clientNetId);
 
         if (currClient.isServer)
         {
-            var prefab = GetGameObjectFromType(currClient.Type);
             var networkManager = NetworkManager.singleton;
-            var spawnedCharacter = Instantiate(prefab, networkManager.startPositions[Random.Range(0, networkManager.startPositions.Count - 1)].position, Quaternion.identity);
+            var prefab = GetGameObjectFromType(currClient.Type);
 
-            NetworkServer.ReplacePlayerForConnection(currClient.connectionToClient, spawnedCharacter, currClient.playerControllerId);
-            NetworkServer.Spawn(spawnedCharacter);
+            if (prefab != null)
+            {
+                var spawnedCharacter = Instantiate(prefab, networkManager.startPositions[Random.Range(0, networkManager.startPositions.Count - 1)].position, Quaternion.identity);
+
+                NetworkServer.ReplacePlayerForConnection(currClient.connectionToClient, spawnedCharacter, currClient.playerControllerId);
+                NetworkServer.Spawn(spawnedCharacter);
+            }
 
             _managers.SetActive(true);
             NetworkServer.Spawn(_managers.GetComponentInChildren<Script_UI_InGame_Manager>().gameObject);

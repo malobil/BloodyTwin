@@ -156,6 +156,10 @@ public class LobbyPlayer : NetworkBehaviour
     {
         var lobbyClient = client.GetComponent<LobbyPlayer>();
         var prefab = LobbyManager.Instance.GetGameObjectFromType((LobbyManager.PlayerType)type);
+
+        if (prefab == null)
+            return;
+
         var networkManager = NetworkManager.singleton;
         var spawnedCharacter = Instantiate(prefab, networkManager.startPositions[Random.Range(0, networkManager.startPositions.Count - 1)].position, Quaternion.identity);
 
