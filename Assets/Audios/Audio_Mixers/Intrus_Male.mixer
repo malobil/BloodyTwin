@@ -120,7 +120,7 @@ AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: I_Footstep_Crackle
+  m_Name: IG_Footstep_Crackle
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 27238cf6bf169f1489078ce845830058
   m_Children: []
@@ -172,7 +172,7 @@ AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: I_Footstep
+  m_Name: IG_Footstep
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 31ad4b1e4940ef948be3b088c0fde830
   m_Children: []
