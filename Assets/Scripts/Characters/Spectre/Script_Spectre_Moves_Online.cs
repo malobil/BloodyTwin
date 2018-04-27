@@ -39,21 +39,21 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         Mouvement(); // déplacement perso
 
-        if(Input.GetButtonDown("Communication_Come"))
+        if (Input.GetButtonDown("Communication_Come"))
         {
-            CmdCommunication(comCome);
+            CmdCommunicationCome();
         }
         else if (Input.GetButtonDown("Communication_GotOne"))
         {
-            CmdCommunication(comGotOne);
+            CmdCommunicationGotOne();
         }
         else if (Input.GetButtonDown("Communication_HeRunAway"))
         {
-            CmdCommunication(comRunAway);
+            CmdCommunicationHeRun();
         }
         else if (Input.GetButtonDown("Communication_StayHere"))
         {
-            CmdCommunication(comStayHere);
+            CmdCommunicationStay();
         }
 
         if (currentPossessTime > 0 && tryPossessing)
@@ -169,10 +169,35 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     }
 
     [Command]
-    void CmdCommunication(GameObject toSpawn)
+    void CmdCommunicationCome()
     {
-        GameObject tempCom = Instantiate(toSpawn, transform.position, Quaternion.identity);
+        GameObject tempCom = Instantiate(comCome, transform.position, Quaternion.identity);
         NetworkServer.Spawn(tempCom);
+        Debug.Log("COM");
+    }
+
+    [Command]
+    void CmdCommunicationStay()
+    {
+        GameObject tempCom = Instantiate(comStayHere, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(tempCom);
+        Debug.Log("COM");
+    }
+
+    [Command]
+    void CmdCommunicationHeRun()
+    {
+        GameObject tempCom = Instantiate(comRunAway, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(tempCom);
+        Debug.Log("COM");
+    }
+
+    [Command]
+    void CmdCommunicationGotOne()
+    {
+        GameObject tempCom = Instantiate(comGotOne, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(tempCom);
+        Debug.Log("COM");
     }
 
     void SetPauseMenu()
