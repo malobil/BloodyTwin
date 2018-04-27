@@ -46,23 +46,36 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         if (Input.GetButtonDown("Communication_Come"))
         {
-            CmdCommunicationCome();
-            CmdComSound(0);
+            if(comAudioSource.isPlaying)
+            {
+                CmdCommunicationCome();
+                CmdComSound(0);
+            }
+            
         }
         else if (Input.GetButtonDown("Communication_GotOne"))
         {
-            CmdCommunicationGotOne();
-            CmdComSound(1);
+            if (comAudioSource.isPlaying)
+            {
+                CmdCommunicationGotOne();
+                CmdComSound(1);
+            }
         }
         else if (Input.GetButtonDown("Communication_HeRunAway"))
         {
-            CmdCommunicationHeRun();
-            CmdComSound(2);
+            if (comAudioSource.isPlaying)
+            {
+                CmdCommunicationHeRun();
+                CmdComSound(2);
+            }
         }
         else if (Input.GetButtonDown("Communication_StayHere"))
         {
-            CmdCommunicationStay();
-            CmdComSound(3);
+            if (comAudioSource.isPlaying)
+            {
+                CmdCommunicationStay();
+                CmdComSound(3);
+            }
         }
 
         if (currentPossessTime > 0 && tryPossessing)
