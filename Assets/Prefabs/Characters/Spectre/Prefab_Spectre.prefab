@@ -1124,6 +1124,9 @@ MonoBehaviour:
   comAudioSource: {fileID: 82172406888501958}
   comSound:
   - {fileID: 8300000, guid: f70780175b4e38440a651b5a28707e59, type: 3}
+  - {fileID: 8300000, guid: 861fa7f0c09aadb47989486311070c8e, type: 3}
+  - {fileID: 8300000, guid: 43d634de2add2bb4487dbc9500a481ee, type: 3}
+  - {fileID: 8300000, guid: 896af92c479f5db439ec074015858db4, type: 3}
   playerCamera: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
     type: 2}
 --- !u!114 &114118656943792600

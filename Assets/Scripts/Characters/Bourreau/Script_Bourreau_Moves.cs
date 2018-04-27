@@ -24,6 +24,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public GameObject comGotOne;
         public GameObject comRunAway;
         public GameObject comStayHere;
+        public AudioSource comAudioSource;
+        public AudioClip[] comSound;
 
         [Header("Attack")]
         public float attackCooldown;
@@ -96,18 +98,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Input.GetButtonDown("Communication_Come"))
             {
                 CmdCommunicationCome();
+                CmdComSound(0);
             }
             else if (Input.GetButtonDown("Communication_GotOne"))
             {
                 CmdCommunicationGotOne();
+                CmdComSound(1);
             }
             else if (Input.GetButtonDown("Communication_HeRunAway"))
             {
                 CmdCommunicationHeRun();
+                CmdComSound(2);
             }
             else if (Input.GetButtonDown("Communication_StayHere"))
             {
                 CmdCommunicationStay();
+                CmdComSound(3);
             }
         }
 
@@ -211,6 +217,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             GameObject tempCom = Instantiate(comGotOne, transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempCom);
             Debug.Log("COM");
+        }
+
+        [Command]
+        void CmdComSound(int idxToPlay)
+        {
+            RpcTargetSound(idxToPlay);
+        }
+
+        [ClientRpc]
+        public void RpcTargetSound(int idxToPlay)
+        {
+            comAudioSource.PlayOneShot(comSound[idxToPlay]);
         }
     }
 }

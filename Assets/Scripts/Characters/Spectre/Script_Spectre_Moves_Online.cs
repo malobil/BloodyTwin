@@ -52,14 +52,17 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         else if (Input.GetButtonDown("Communication_GotOne"))
         {
             CmdCommunicationGotOne();
+            CmdComSound(1);
         }
         else if (Input.GetButtonDown("Communication_HeRunAway"))
         {
             CmdCommunicationHeRun();
+            CmdComSound(2);
         }
         else if (Input.GetButtonDown("Communication_StayHere"))
         {
             CmdCommunicationStay();
+            CmdComSound(3);
         }
 
         if (currentPossessTime > 0 && tryPossessing)
