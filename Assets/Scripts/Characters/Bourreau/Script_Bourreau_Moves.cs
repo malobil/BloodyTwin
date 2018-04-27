@@ -95,23 +95,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Input.GetButtonDown("Communication_Come"))
             {
-                CmdCommunication(comCome);
-                LocalCommunication(comCome);
+                CmdCommunicationCome();
             }
             else if (Input.GetButtonDown("Communication_GotOne"))
             {
-                CmdCommunication(comGotOne);
-                LocalCommunication(comGotOne);
+                CmdCommunicationGotOne();
             }
             else if (Input.GetButtonDown("Communication_HeRunAway"))
             {
-                CmdCommunication(comRunAway);
-                LocalCommunication(comRunAway);
+                CmdCommunicationHeRun();
             }
             else if (Input.GetButtonDown("Communication_StayHere"))
             {
-                CmdCommunication(comStayHere);
-                LocalCommunication(comStayHere);
+                CmdCommunicationStay();
             }
         }
 
@@ -186,14 +182,35 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
 
         [Command]
-        private void CmdCommunication(GameObject toActive)
+        void CmdCommunicationCome()
         {
-            toActive.SetActive(true);
+            GameObject tempCom = Instantiate(comCome, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(tempCom);
+            Debug.Log("COM");
         }
 
-        private void LocalCommunication(GameObject toActive)
+        [Command]
+        void CmdCommunicationStay()
         {
-            toActive.SetActive(true);
+            GameObject tempCom = Instantiate(comStayHere, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(tempCom);
+            Debug.Log("COM");
+        }
+
+        [Command]
+        void CmdCommunicationHeRun()
+        {
+            GameObject tempCom = Instantiate(comRunAway, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(tempCom);
+            Debug.Log("COM");
+        }
+
+        [Command]
+        void CmdCommunicationGotOne()
+        {
+            GameObject tempCom = Instantiate(comGotOne, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(tempCom);
+            Debug.Log("COM");
         }
     }
 }
