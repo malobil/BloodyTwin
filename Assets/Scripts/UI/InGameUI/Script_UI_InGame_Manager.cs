@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
@@ -12,6 +14,10 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public Text timerText;
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
+    [Header("Poupée")]
+    public List<GameObject> dollList = new List<GameObject>();
+    public int dollCount = 4;
+
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
 
@@ -21,6 +27,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 	void Start ()
     {
         Instance = this;
+
+        if(isServer)
+        {
+            RpcPopDoll();
+        }
 	}
 	
 	// Update is called once per frame
@@ -111,5 +122,16 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void UpdatePlayerStamina(float stamina, float maxStamina)
     {
         bourreauStaminaImage.fillAmount = stamina / maxStamina;
+    }
+
+    [ClientRpc]
+    private void RpcPopDoll()
+    {
+        Debug.Log("PopingDoll");
+
+        for(int i = 0; i < dollCount; i++)
+        {
+            dollList[Random.Range(0, dollList.Count)].SetActive(true);
+        }
     }
 }
