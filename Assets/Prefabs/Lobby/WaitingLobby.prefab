@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 4609279361083612}
   - component: {fileID: 20000196631280890}
   - component: {fileID: 124794605654507628}
-  - component: {fileID: 81636487371286974}
+  - component: {fileID: 81899947463188594}
   m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
@@ -715,7 +715,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81636487371286974
+--- !u!81 &81899947463188594
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1142,6 +1142,8 @@ MonoBehaviour:
   _bourreauPrefab: {fileID: 1242737487146092, guid: 8ac22113ce0988e44bdd05167a97ac60,
     type: 2}
   _spectrePrefab: {fileID: 1935176631834224, guid: 4e3ea9647371a984e8b877cfc2d2a186,
+    type: 2}
+  _intruderPrefab: {fileID: 1192165059592964, guid: cd516bbc439798e40ac4569ab2c0f824,
     type: 2}
 --- !u!114 &114295592216540544
 MonoBehaviour:

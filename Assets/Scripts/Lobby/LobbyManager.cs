@@ -41,6 +41,7 @@ public class LobbyManager : MonoBehaviour
     [Header("Character prefabs")]
     [SerializeField] private GameObject _bourreauPrefab;
     [SerializeField] private GameObject _spectrePrefab;
+    [SerializeField] private GameObject _intruderPrefab;
 
     private readonly List<GameObject> _playerList = new List<GameObject>();
 
@@ -270,7 +271,7 @@ public class LobbyManager : MonoBehaviour
             case PlayerType.Ghost:
                 return _spectrePrefab;
             case PlayerType.Intruder:
-                return null;
+                return _intruderPrefab;
             default:
                 return null;
         }
