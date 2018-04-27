@@ -46,7 +46,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         if (Input.GetButtonDown("Communication_Come"))
         {
-            if(comAudioSource.isPlaying)
+            if(!comAudioSource.isPlaying)
             {
                 CmdCommunicationCome();
                 CmdComSound(0);
@@ -55,7 +55,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
         else if (Input.GetButtonDown("Communication_GotOne"))
         {
-            if (comAudioSource.isPlaying)
+            if (!comAudioSource.isPlaying)
             {
                 CmdCommunicationGotOne();
                 CmdComSound(1);
@@ -63,7 +63,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
         else if (Input.GetButtonDown("Communication_HeRunAway"))
         {
-            if (comAudioSource.isPlaying)
+            if (!comAudioSource.isPlaying)
             {
                 CmdCommunicationHeRun();
                 CmdComSound(2);
@@ -71,7 +71,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
         else if (Input.GetButtonDown("Communication_StayHere"))
         {
-            if (comAudioSource.isPlaying)
+            if (!comAudioSource.isPlaying)
             {
                 CmdCommunicationStay();
                 CmdComSound(3);
