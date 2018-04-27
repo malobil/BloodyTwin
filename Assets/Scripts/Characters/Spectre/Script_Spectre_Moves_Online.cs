@@ -11,6 +11,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     [Header("Possession")]
     public float possessTime;
     public GameObject feedbackPossessing ;
+    public AudioSource sfxAudioSource;
+    public AudioClip possessAudio;
     private float currentPossessTime;
     private bool tryPossessing = false;
 
@@ -19,6 +21,9 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public GameObject comGotOne;
     public GameObject comRunAway;
     public GameObject comStayHere;
+    public AudioSource comAudioSource;
+    public AudioClip[] comSound;
+
 
     [Header("Camera")]
     public GameObject playerCamera;
@@ -42,6 +47,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         if (Input.GetButtonDown("Communication_Come"))
         {
             CmdCommunicationCome();
+            CmdComSound(0);
         }
         else if (Input.GetButtonDown("Communication_GotOne"))
         {
@@ -71,6 +77,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             currentPossessTime = possessTime;
             feedbackPossessing.SetActive(true);
             tryPossessing = true;
+            sfxAudioSource.Play();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -120,6 +127,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     // fonction de possession obj
     void PossessObject()
     {
+        sfxAudioSource.Stop();
         ChangeCameraTarget(objectToPossess.transform);
         CmdDisablePlayer(); // Desactive le spectre pour activer l'objet posses
         CmdGiveAuthority(); // Donne l'authorité à l'obj pour pouvoir utiliser les inputs
@@ -198,6 +206,18 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         GameObject tempCom = Instantiate(comGotOne, transform.position, Quaternion.identity);
         NetworkServer.Spawn(tempCom);
         Debug.Log("COM");
+    }
+
+    [Command]
+    void CmdComSound(int idxToPlay)
+    {
+        RpcTargetSound(idxToPlay);
+    }
+
+    [ClientRpc]
+    public void RpcTargetSound(int idxToPlay)
+    {
+        comAudioSource.PlayOneShot(comSound[idxToPlay]);
     }
 
     void SetPauseMenu()

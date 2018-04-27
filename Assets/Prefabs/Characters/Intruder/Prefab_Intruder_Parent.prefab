@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114564144031831896}
   - component: {fileID: 114845351141529508}
   m_Layer: 0
-  m_Name: Intruder_Parent
+  m_Name: Prefab_Intruder_Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
