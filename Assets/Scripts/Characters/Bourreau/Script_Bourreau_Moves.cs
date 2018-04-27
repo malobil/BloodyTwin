@@ -97,36 +97,40 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Input.GetButtonDown("Communication_Come"))
             {
-                CmdCommunicationCome();
+                
                 if(!comAudioSource.isPlaying)
                 {
                     CmdComSound(0);
+                    CmdCommunicationCome();
                 }
                 
             }
             else if (Input.GetButtonDown("Communication_GotOne"))
             {
-                CmdCommunicationGotOne();
+                
                 if (!comAudioSource.isPlaying)
                 {
                     CmdComSound(1);
+                    CmdCommunicationGotOne();
                 }
             }
             else if (Input.GetButtonDown("Communication_HeRunAway"))
             {
-                CmdCommunicationHeRun();
+              
                 if (!comAudioSource.isPlaying)
                 {
                     CmdComSound(2);
+                    CmdCommunicationHeRun();
                 }
             }
             else if (Input.GetButtonDown("Communication_StayHere"))
             {
-                CmdCommunicationStay();
+                
 
                 if (!comAudioSource.isPlaying)
                 {
                     CmdComSound(3);
+                    CmdCommunicationStay();
                 }
             }
         }
