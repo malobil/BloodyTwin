@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1134977541663368
 GameObject:
   m_ObjectHideFlags: 1
@@ -184,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1160632762075336
 GameObject:
   m_ObjectHideFlags: 1
@@ -203,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1162866115962212
 GameObject:
   m_ObjectHideFlags: 1
@@ -726,7 +726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1492664762435658
 GameObject:
   m_ObjectHideFlags: 1
@@ -3215,7 +3215,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 1
   looping: 0
   prewarm: 0
   playOnAwake: 1
@@ -3266,7 +3266,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 965014532
+  randomSeed: -118995394
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6576,7 +6576,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 1
   looping: 0
   prewarm: 0
   playOnAwake: 1
@@ -9937,7 +9937,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 1
   looping: 0
   prewarm: 0
   playOnAwake: 1
@@ -13298,7 +13298,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 1
   looping: 0
   prewarm: 0
   playOnAwake: 1
