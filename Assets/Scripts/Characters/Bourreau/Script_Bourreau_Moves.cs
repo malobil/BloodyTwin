@@ -96,18 +96,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Input.GetButtonDown("Communication_Come"))
             {
                 CmdCommunication(comCome);
+                Debug.Log(comCome);
             }
             else if (Input.GetButtonDown("Communication_GotOne"))
             {
                 CmdCommunication(comGotOne);
+                Debug.Log(comGotOne);
             }
             else if (Input.GetButtonDown("Communication_HeRunAway"))
             {
                 CmdCommunication(comRunAway);
+                Debug.Log(comRunAway);
             }
             else if (Input.GetButtonDown("Communication_StayHere"))
             {
                 CmdCommunication(comStayHere);
+                Debug.Log(comStayHere);
             }
         }
 
@@ -186,6 +190,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempCom = Instantiate(toSpawn, transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempCom);
+            Debug.Log("COM");
         }
     }
 }
