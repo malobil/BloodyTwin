@@ -104,6 +104,10 @@ namespace UnityStandardAssets.Characters
                         Destroy(hit.collider.gameObject);
                         CmdGetDoll(hit.collider.gameObject);
                     }
+                    else if(hit.collider.gameObject.GetComponent<Script_Armory>())
+                    {
+                        hit.collider.gameObject.GetComponent<Script_Armory>().OpenArmory();
+                    }
                 }
             }
         }
