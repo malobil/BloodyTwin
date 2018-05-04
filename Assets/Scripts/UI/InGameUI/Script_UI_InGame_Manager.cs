@@ -18,6 +18,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public List<Transform> dollSpawnList = new List<Transform>();
     public GameObject dollPrefab;
     public int dollToSpawn = 4;
+    public GameObject doorHall;
+    private int dollGet = 0;
 
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
@@ -85,6 +87,12 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         Time.timeScale = 0f;
     }
 
+    public void IntruderWin()
+    {
+        gameWinPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     public void PauseMenu()
     {
         Cursor.visible = !gamePauseMenu.activeSelf;
@@ -133,6 +141,17 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             GameObject tempDoll = Instantiate(dollPrefab, dollSpawnList[tempRandom].position, Quaternion.identity);
             NetworkServer.Spawn(tempDoll);
             dollSpawnList.RemoveAt(tempRandom);
+        }
+    }
+
+    public void GetADoll()
+    {
+        dollGet++;
+
+        if(dollGet == dollToSpawn)
+        {
+            Destroy(doorHall);
+            NetworkServer.UnSpawn(doorHall);
         }
     }
 }

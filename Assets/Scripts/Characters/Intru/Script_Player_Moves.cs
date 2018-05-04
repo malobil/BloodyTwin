@@ -92,11 +92,32 @@ namespace UnityStandardAssets.Characters
             {
                 SetPauseMenu();
             }
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                RaycastHit hit;
+                if(Physics.Raycast(transform.position, transform.forward, out hit, 4.0f))
+                {
+                    if(hit.collider.gameObject.CompareTag("Doll"))
+                    {
+                        Debug.Log("Doll");
+                        Destroy(hit.collider.gameObject);
+                        CmdGetDoll(hit.collider.gameObject);
+                    }
+                }
+            }
         }
 
         private void SetPauseMenu()
         {
             Script_UI_InGame_Manager.Instance.PauseMenu();
+        }
+
+        [Command]
+        private void CmdGetDoll(GameObject dollToUnspawn)
+        {
+            Script_UI_InGame_Manager.Instance.GetADoll();
+            NetworkServer.UnSpawn(dollToUnspawn);
         }
     }
 }

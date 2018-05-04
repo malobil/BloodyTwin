@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114846611291896562}
   m_Layer: 0
   m_Name: "Prefab_Poup\xE9e"
-  m_TagString: Untagged
+  m_TagString: Doll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
