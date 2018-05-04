@@ -15,8 +15,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
     [Header("Poupée")]
-    public List<GameObject> dollList = new List<GameObject>();
-    public int dollCount = 4;
+    public List<Transform> dollSpawnList = new List<Transform>();
+    public GameObject dollPrefab;
+    public int dollToSpawn = 4;
 
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
@@ -30,7 +31,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(isServer)
         {
-            RpcPopDoll();
+            SpawnDolls();
         }
 	}
 	
@@ -124,14 +125,14 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         bourreauStaminaImage.fillAmount = stamina / maxStamina;
     }
 
-    [ClientRpc]
-    private void RpcPopDoll()
+    private void SpawnDolls()
     {
-        Debug.Log("PopingDoll");
-
-        for(int i = 0; i < dollCount; i++)
+        for(int i = 0; i < dollToSpawn; i++)
         {
-            dollList[Random.Range(0, dollList.Count)].SetActive(true);
+            int tempRandom = Random.Range(0, dollSpawnList.Count);
+            GameObject tempDoll = Instantiate(dollPrefab, dollSpawnList[tempRandom].position, Quaternion.identity);
+            NetworkServer.Spawn(tempDoll);
+            dollSpawnList.RemoveAt(tempRandom);
         }
     }
 }
