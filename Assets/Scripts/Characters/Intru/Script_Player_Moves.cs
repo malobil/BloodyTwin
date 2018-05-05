@@ -29,6 +29,9 @@ namespace UnityStandardAssets.Characters
 
         private float currentflashlightCooldown;
 
+        [Header("Camera")]
+        public Transform cameraTransform;
+
         private void Start()
         {
             if (!isLocalPlayer)
@@ -96,7 +99,7 @@ namespace UnityStandardAssets.Characters
             if(Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;
-                if(Physics.Raycast(transform.position, transform.forward, out hit, 4.0f))
+                if(Physics.Raycast(cameraTransform.position, transform.forward, out hit, 4.0f))
                 {
                     if(hit.collider.gameObject.CompareTag("Doll"))
                     {
@@ -108,6 +111,8 @@ namespace UnityStandardAssets.Characters
                     {
                         hit.collider.gameObject.GetComponent<Script_Armory>().OpenArmory();
                     }
+
+                    Debug.Log(hit.collider.gameObject.name);
                 }
             }
         }

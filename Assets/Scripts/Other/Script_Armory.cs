@@ -15,5 +15,6 @@ public class Script_Armory : MonoBehaviour {
 	public void OpenArmory()
     {
         myAnimator.SetTrigger("Open");
+        GetComponent<BoxCollider>().isTrigger = true;
     }
 }
