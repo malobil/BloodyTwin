@@ -26,6 +26,7 @@ namespace UnityStandardAssets.Characters
 
         [Header("Flashlight")]
         public float flashlightCooldown;
+        public GameObject lampGO;
 
         private float currentflashlightCooldown;
 
@@ -55,6 +56,8 @@ namespace UnityStandardAssets.Characters
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<FirstPersonController>();
+
+            currentflashlightCooldown = flashlightCooldown; // Setting light CD to base
         }
 
 
@@ -65,16 +68,23 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
-            if (currentRunCooldown > 0)
+            if (currentRunCooldown > 0 )
             {
                 currentRunCooldown -= Time.deltaTime;
                 Script_UI_InGame_Manager.Instance.UpdatePlayerStamina(currentRunCooldown, runDuration);
             }
             if (currentflashlightCooldown <= 0)
             {
-                // Stop the flashlight
+                if (isServer)
+                {
+                    RpcDisableLamp();
+                }
+                else
+                {
+                    CmdDisableLamp();
+                }// Stop the flashlight
             }
-            else
+            else if(lampGO.activeSelf && currentflashlightCooldown > 0)
             {
                 currentflashlightCooldown -= Time.deltaTime;
             }
@@ -83,7 +93,16 @@ namespace UnityStandardAssets.Characters
             {
                 if (currentflashlightCooldown > 0)
                 {
-
+                    if(isServer)
+                    {
+                        RpcToggleLamp();
+                        Debug.Log("Lamp");
+                    }
+                    else
+                    {
+                        CmdToggleLamp() ;
+                    }
+                   
                 }
                 else
                 {
@@ -99,7 +118,7 @@ namespace UnityStandardAssets.Characters
             if(Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;
-                if(Physics.Raycast(cameraTransform.position, transform.forward, out hit, 4.0f))
+                if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 4.0f))
                 {
                     if(hit.collider.gameObject.CompareTag("Doll"))
                     {
@@ -111,6 +130,11 @@ namespace UnityStandardAssets.Characters
                     {
                         hit.collider.gameObject.GetComponent<Script_Armory>().OpenArmory();
                     }
+                    else if (hit.collider.gameObject.GetComponent<Script_Piles>())
+                    {
+                        hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
+                    }
+
 
                     Debug.Log(hit.collider.gameObject.name);
                 }
@@ -122,11 +146,53 @@ namespace UnityStandardAssets.Characters
             Script_UI_InGame_Manager.Instance.PauseMenu();
         }
 
+        public void AddingPile(float toAdd)
+        {
+            currentflashlightCooldown += toAdd;
+        }
+
+        private void LocalToggleLamp()
+        {
+            lampGO.SetActive(!lampGO.activeSelf);
+        }
+
+        private void LocalDisableLamp()
+        {
+            lampGO.SetActive(false);
+        }
+
         [Command]
         private void CmdGetDoll(GameObject dollToUnspawn)
         {
             Script_UI_InGame_Manager.Instance.GetADoll();
             NetworkServer.UnSpawn(dollToUnspawn);
         }
+
+        [Command]
+        private void CmdToggleLamp()
+        {
+            LocalToggleLamp();
+            RpcToggleLamp();    
+        }
+
+        [ClientRpc]
+        private void RpcToggleLamp()
+        {
+            LocalToggleLamp();
+        }
+
+        [Command]
+        private void CmdDisableLamp()
+        {
+            LocalDisableLamp();
+            RpcDisableLamp();
+        }
+
+        [ClientRpc]
+        private void RpcDisableLamp()
+        {
+            LocalDisableLamp();
+        }
+
     }
 }
