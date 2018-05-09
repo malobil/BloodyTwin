@@ -11,8 +11,12 @@ public class Script_Spawn_Camera_Online : NetworkBehaviour {
     public override void OnStartLocalPlayer()
     {
         GameObject cameraI = Instantiate(cameraToInstantiate, transform.position, transform.rotation);
-        cameraI.GetComponent<FreeLookCam>().SetCamera(transform);
-        Debug.Log("Camera Set to :" + transform.position);
+
+        if (cameraI.GetComponent<FreeLookCam>() != null)
+        {
+            cameraI.GetComponent<FreeLookCam>().SetCamera(transform);
+            Debug.Log("Camera Set to :" + transform.position);
+        }
 
         if (GetComponent<Script_Spectre_Moves_Online>() != null)
         {

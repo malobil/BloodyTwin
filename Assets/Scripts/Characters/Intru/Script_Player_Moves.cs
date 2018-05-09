@@ -31,7 +31,9 @@ namespace UnityStandardAssets.Characters
         private float currentflashlightCooldown;
 
         [Header("Camera")]
-        public Transform cameraTransform;
+        public GameObject cameraPrefab;
+        public Transform cameraBasePosition;
+        private Transform cameraTransform;
 
         private void Start()
         {
@@ -60,6 +62,10 @@ namespace UnityStandardAssets.Characters
             currentflashlightCooldown = flashlightCooldown; // Setting light CD to base
         }
 
+        public override void OnStartLocalPlayer()
+        {
+            SetupCamera();
+        }
 
         private void Update()
         {
@@ -192,6 +198,13 @@ namespace UnityStandardAssets.Characters
         private void RpcDisableLamp()
         {
             LocalDisableLamp();
+        }
+
+        public void SetupCamera()
+        {
+            GameObject cameraPop = Instantiate(cameraPrefab, cameraBasePosition.position, cameraBasePosition.rotation,this.transform);
+            cameraTransform = cameraPop.transform;
+            lampGO.transform.parent = cameraPop.transform ;
         }
 
     }
