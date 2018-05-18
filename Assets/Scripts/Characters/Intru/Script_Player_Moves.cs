@@ -107,7 +107,6 @@ namespace UnityStandardAssets.Characters
                     else
                     {
                         CmdToggleLamp() ;
-                        RpcToggleLamp();
                     }
                    
                 }
@@ -178,13 +177,17 @@ namespace UnityStandardAssets.Characters
         [Command]
         private void CmdToggleLamp()
         {
-            LocalToggleLamp();
-            RpcToggleLamp();    
+            RpcToggleLamp();
+            LocalToggleLamp();  
         }
 
         [ClientRpc]
         private void RpcToggleLamp()
         {
+            if(isLocalPlayer)
+            {
+                return;
+            }
             LocalToggleLamp();
         }
 
