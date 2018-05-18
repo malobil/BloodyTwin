@@ -1,9 +1,6 @@
-using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
-using UnityEngine.AI;
-using UnityEngine.Experimental.Audio.Google;
 
 
 namespace UnityStandardAssets.Characters.ThirdPerson
