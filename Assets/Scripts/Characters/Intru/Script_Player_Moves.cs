@@ -207,5 +207,10 @@ namespace UnityStandardAssets.Characters
             lampGO.transform.parent = cameraPop.transform ;
         }
 
+        public void Die()
+        {
+            Debug.Log("DIE");
+        }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters;
 
 public class Script_Bourreau_Attack_Trigger : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class Script_Bourreau_Attack_Trigger : MonoBehaviour {
     {
         if(other.CompareTag("Intru"))
         {
-            //other.transform.parent.GetComponent<Script_Intruder_Online>().IntruderDeath();
+            other.transform.parent.GetComponent<Script_Player_Moves>().Die();
             Debug.Log("TOUCHED SOMEONE");
         }
     }

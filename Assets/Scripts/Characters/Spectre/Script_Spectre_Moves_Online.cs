@@ -33,9 +33,9 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     private void Awake()
     {
         gameObject.tag = "Spectre";
-    }    
+    }
 
-	void Update ()
+    void Update ()
     {
         if (!isLocalPlayer)
         {
