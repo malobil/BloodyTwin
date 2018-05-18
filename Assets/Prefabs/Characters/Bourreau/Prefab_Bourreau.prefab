@@ -1748,7 +1748,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755443072965588}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2714,10 +2714,10 @@ MonoBehaviour:
     type: 2}
   comAudioSource: {fileID: 82369966388434924}
   comSound:
-  - {fileID: 8300000, guid: 861fa7f0c09aadb47989486311070c8e, type: 3}
-  - {fileID: 8300000, guid: 2ba796cb5983409418e20c52fbb3063b, type: 3}
-  - {fileID: 8300000, guid: 896af92c479f5db439ec074015858db4, type: 3}
-  - {fileID: 8300000, guid: b1a0770375ec934408f665c9a3ba4fdb, type: 3}
+  - {fileID: 8300000, guid: 41c862245fdebbf47bb8232750cc4184, type: 3}
+  - {fileID: 8300000, guid: 9b1ee0a77c5f0e04fbb17041435a4d82, type: 3}
+  - {fileID: 8300000, guid: 9b82f95a82fcd6a44b331ab33403cc56, type: 3}
+  - {fileID: 8300000, guid: 1773f9216b2298842b945e5f231fbb2f, type: 3}
   attackCooldown: 2
   attackSpawnPoint: {fileID: 4885166653310164}
   attackZonePrefab: {fileID: 1519718916192652, guid: 0964f3e0546d62043933a019629f1591,
