@@ -210,6 +210,8 @@ namespace UnityStandardAssets.Characters
         public void Die()
         {
             Debug.Log("DIE");
+            NetworkServer.UnSpawn(this.gameObject);
+            Destroy(gameObject);
         }
 
     }
