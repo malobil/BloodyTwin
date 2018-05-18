@@ -9,8 +9,9 @@ public class Script_Bourreau_Attack_Trigger : MonoBehaviour {
     {
         if(other.CompareTag("Intru"))
         {
+            Debug.Log("TOUCHED SOMEONE : " + other.gameObject.name);
             other.transform.parent.GetComponent<Script_Player_Moves>().Die();
-            Debug.Log("TOUCHED SOMEONE");
+            
         }
     }
 }
