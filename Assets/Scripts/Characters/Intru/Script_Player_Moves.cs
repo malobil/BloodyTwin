@@ -177,7 +177,6 @@ namespace UnityStandardAssets.Characters
         [Command]
         private void CmdToggleLamp()
         {
-            //LocalToggleLamp();
             RpcToggleLamp();
         }
 
