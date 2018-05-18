@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199389969486580266}
   - component: {fileID: 114956769266952932}
   - component: {fileID: 114473354582584114}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Prefab_Communication_HeRunAway
   m_TagString: Untagged
   m_Icon: {fileID: 0}

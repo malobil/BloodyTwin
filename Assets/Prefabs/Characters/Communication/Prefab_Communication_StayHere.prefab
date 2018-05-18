@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199228002347189514}
   - component: {fileID: 114963515709195998}
   - component: {fileID: 114662590712070434}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Prefab_Communication_StayHere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
