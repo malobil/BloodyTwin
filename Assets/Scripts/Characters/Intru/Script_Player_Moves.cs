@@ -107,6 +107,7 @@ namespace UnityStandardAssets.Characters
                     else
                     {
                         CmdToggleLamp() ;
+                        RpcToggleLamp();
                     }
                    
                 }
