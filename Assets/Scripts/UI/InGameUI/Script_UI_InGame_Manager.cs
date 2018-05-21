@@ -13,10 +13,13 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public float seconds;
 
     public Text timerText;
+    public Text endText;
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
     [Header("Intruders")]
-    private int intruderAlive = 2;
+
+    [SyncVar]
+    private int intruderAlive = 0;
     private List<GameObject> intruders = new List<GameObject>();
 
     [Header("Poupée")]
@@ -80,7 +83,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            
+            RpcGameEnd();
         }
     }
 
@@ -97,8 +100,17 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     }
 
     [ClientRpc]
-    public void RpcGameWin()
+    public void RpcGameEnd()
     {
+        if(intruderAlive <= 0)
+        {
+            endText.text = "KILLERS win !";
+        }
+        else
+        {
+            endText.text = "Intruders win ! ";
+        }
+
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
     }

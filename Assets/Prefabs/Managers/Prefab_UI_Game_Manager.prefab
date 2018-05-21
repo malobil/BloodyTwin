@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1319129389330114
 GameObject:
   m_ObjectHideFlags: 1
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1d61356076b4d4cb054c6f41184f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 5
+  minutes: 0
   seconds: 5
   timerText: {fileID: 114742529477030960}
   gameOverPanel: {fileID: 1467372362706200}
@@ -391,7 +391,16 @@ MonoBehaviour:
   gamePauseMenu: {fileID: 1698612746327514}
   bourreauUI: {fileID: 1067799828398324}
   spectreUI: {fileID: 1367785476999080}
+  dollSpawnList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dollPrefab: {fileID: 1058157695936908, guid: ec7772e294baee14fb147df570bf4293, type: 2}
+  dollToSpawn: 2
+  doorHall: {fileID: 0}
   bourreauStaminaImage: {fileID: 114272773119534502}
+  lights: {fileID: 0}
 --- !u!114 &114064399675701862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -858,7 +867,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VICTORY !
+  m_Text: ____ wins !
 --- !u!114 &114532769682159004
 MonoBehaviour:
   m_ObjectHideFlags: 1
