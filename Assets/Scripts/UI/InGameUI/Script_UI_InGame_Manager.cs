@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
-using UnityStandardAssets.Characters;
 
 public class Script_UI_InGame_Manager : NetworkBehaviour {
 
