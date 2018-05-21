@@ -45,18 +45,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
         
-        /*private void Start()
+        private void Start()
         {
             if (!isLocalPlayer)
             {
                 return;
             }
 
-           
-        }*/
-
-        public override void OnStartLocalPlayer()
-        {
             gameObject.tag = "Bourreau";
             Script_UI_InGame_Manager.Instance.LightUp();
             // get the transform of the main camera
@@ -74,7 +69,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
         }
-
 
         private void Update()
         {
