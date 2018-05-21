@@ -11737,28 +11737,9 @@ Prefab:
       propertyPath: lights
       value: 
       objectReference: {fileID: 767590458}
-    - target: {fileID: 1321824628162694, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306022401008548, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: endText
-      value: 
-      objectReference: {fileID: 1124868415}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1124868415 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114530583639864692, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-    type: 2}
-  m_PrefabInternal: {fileID: 1124868414}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1141933675
 GameObject:
   m_ObjectHideFlags: 0
