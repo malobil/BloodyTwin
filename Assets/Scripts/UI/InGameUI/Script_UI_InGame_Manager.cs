@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityStandardAssets.Characters;
-using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Script_UI_InGame_Manager : NetworkBehaviour {
 
@@ -91,7 +90,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             if(bourreau != null)
             {
-                bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
+                //bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
             }   
         }
     }
