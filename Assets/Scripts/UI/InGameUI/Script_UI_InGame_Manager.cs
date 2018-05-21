@@ -32,6 +32,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("Bourreau & Spectre GO")]
     private GameObject bourreau;
     private GameObject spectre;
+    public GameObject lights;
 
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
@@ -201,6 +202,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             intrus.GetComponent<Script_Player_Moves>().Win();
         }
+    }
+
+    public void LightUp()
+    {
+        lights.SetActive(true);
     }
 
  }
