@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1d61356076b4d4cb054c6f41184f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 0
+  minutes: 5
   seconds: 5
   timerText: {fileID: 114742529477030960}
   endText: {fileID: 114530583639864692}
