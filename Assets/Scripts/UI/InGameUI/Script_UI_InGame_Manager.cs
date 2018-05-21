@@ -92,6 +92,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void IntruderWin()
     {
+        Cursor.visible = !gamePauseMenu.activeSelf;
+        Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
     }

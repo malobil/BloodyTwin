@@ -217,8 +217,6 @@ namespace UnityStandardAssets.Characters
                 NetworkServer.UnSpawn(this.gameObject);
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
-            
-            
         }
 
     }
