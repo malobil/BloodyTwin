@@ -186,20 +186,17 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
     }
 
-    [Command]
     public void CmdIntruderDie()
     {
         if(isServer)
         {
             intruderAlive--;
-            Debug.Log("MOINS UN");
-
+            
             if (intruderAlive <= 0)
             {
                 RpcGameEnd();
             }
-        }
-        
+        } 
     }
 
     public void LightUp()

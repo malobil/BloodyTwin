@@ -222,14 +222,6 @@ namespace UnityStandardAssets.Characters
             NetworkServer.UnSpawn(this.gameObject);
         }
 
-        public void Win()
-        {
-            if(isLocalPlayer)
-            {
-                Script_UI_InGame_Manager.Instance.IntruderWin();
-            }
-        }
-
         [Command]
         void CmdDie()
         {
