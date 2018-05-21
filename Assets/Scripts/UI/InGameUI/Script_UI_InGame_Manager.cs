@@ -197,15 +197,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
     }
 
-    [ClientRpc]
-    public void RpcTest()
-    {
-        foreach (GameObject intrus in intruders)
-        {
-            intrus.GetComponent<Script_Player_Moves>().Win();
-        }
-    }
-
     public void LightUp()
     {
         lights.SetActive(true);
