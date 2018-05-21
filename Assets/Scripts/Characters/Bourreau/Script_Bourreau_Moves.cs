@@ -282,15 +282,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void Loose()
         {
-            if(isServer)
-            {
-                Script_UI_InGame_Manager.Instance.TargetTest(connectionToClient);
-            }
-            else
-            {
-                Script_UI_InGame_Manager.Instance.TargetTest(connectionToServer);
-            }
-           
+            Script_UI_InGame_Manager.Instance.TargetTest(connectionToClient);
         }
     }
 }

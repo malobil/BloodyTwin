@@ -84,13 +84,19 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             if(bourreau != null)
             {
-                bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
+                CmdBourreau();
             }
             else
             {
                 Debug.Log("LOOSE");
             }
         }
+    }
+
+    [Command]
+    void CmdBourreau()
+    {
+        bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
     }
 
     [ClientRpc]
