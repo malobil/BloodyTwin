@@ -14,6 +14,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public Text timerText;
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
+    [Header("Intruders")]
+    private int intruderAlive = 0;
+
     [Header("Poupée")]
     public List<Transform> dollSpawnList = new List<Transform>();
     public GameObject dollPrefab;
@@ -92,8 +95,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void IntruderWin()
     {
-        Cursor.visible = !gamePauseMenu.activeSelf;
-        Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -161,6 +162,23 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             Destroy(doorHall);
             NetworkServer.UnSpawn(doorHall);
+        }
+    }
+
+    [Command]
+    public void CmdRegisterIntruder()
+    {
+        intruderAlive++;
+    }
+
+    [Command]
+    public void CmdIntruderDie()
+    {
+        intruderAlive--;
+
+        if(intruderAlive <= 0)
+        {
+            Debug.Log("WIN");
         }
     }
 
