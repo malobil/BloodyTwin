@@ -29,9 +29,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
 
-    [Header("Bourreau & Spectre GO")]
-    private GameObject bourreau;
-    private GameObject spectre;
     public GameObject lights;
 
     public static Script_UI_InGame_Manager Instance { get; private set; }
@@ -39,13 +36,23 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 	// Use this for initialization
 	void Awake ()
     {
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+	}
 
-        if(isServer)
+    private void Start()
+    {
+        if (isServer)
         {
             SpawnDolls();
         }
-	}
+    }
 
     // Update is called once per frame
     void Update ()
@@ -73,10 +80,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            if(bourreau != null)
-            {
-                bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
-            }
+            
         }
     }
 
@@ -189,15 +193,5 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             lights.SetActive(true);
         }
-    }
-    
-    public void RegisterBourreau()
-    {
-        bourreau = GameObject.FindGameObjectWithTag("Bourreau");
-    }
-
-    public void RegisterSpectre()
-    {
-        spectre = GameObject.FindGameObjectWithTag("Spectre");
     }
 }
