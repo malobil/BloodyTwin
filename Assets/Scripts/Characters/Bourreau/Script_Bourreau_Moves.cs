@@ -285,6 +285,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Script_UI_InGame_Manager.Instance.TargetTest(connectionToClient);
         }
 
+        [Command]
         void CmdRegisterBourreau()
         {
             Script_UI_InGame_Manager.Instance.RegisterBourreau();
