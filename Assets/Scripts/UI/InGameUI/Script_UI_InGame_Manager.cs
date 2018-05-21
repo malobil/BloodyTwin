@@ -45,12 +45,19 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             SpawnDolls();
         }
-    }
 
-    private void Start()
-    {
-        
-    }
+        if(isServer)
+        {
+            foreach (GameObject intrus in GameObject.FindGameObjectsWithTag("Intru"))
+            {
+                intruders.Add(intrus);
+                Debug.Log(intruders.Count);
+            }
+
+           
+            
+        }
+	}
 
     // Update is called once per frame
     void Update ()
@@ -81,7 +88,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             if(bourreau != null)
             {
                 bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
-            }   
+            }
         }
     }
 
@@ -203,19 +210,14 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdRegisterAll()
+    public void CmdRegisterBourreau()
     {
-        foreach (GameObject intrus in GameObject.FindGameObjectsWithTag("Intru"))
-        {
-            intruders.Add(intrus);
-            Debug.Log(intruders.Count);
-        }
-
         bourreau = GameObject.FindGameObjectWithTag("Bourreau");
-        spectre = GameObject.FindGameObjectWithTag("Spectre");
-
-        Debug.Log(bourreau);
-        Debug.Log(spectre);
     }
 
- }
+    [Command]
+    public void CmdRegisterSpectre()
+    {
+        spectre = GameObject.FindGameObjectWithTag("Spectre");
+    }
+}
