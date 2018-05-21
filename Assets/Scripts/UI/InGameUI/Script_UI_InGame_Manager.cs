@@ -24,8 +24,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
 
-    [Header("OnlineCo")]
-    private NetworkConnection bourreauConnection, spectreConnection, intruderConnection1, intruderConnection2;
+    /*[Header("OnlineCo")]
+    private NetworkConnection bourreauConnection, spectreConnection, intruderConnection1, intruderConnection2;*/
 
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
@@ -94,6 +94,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void IntruderLoose()
+    {
+        gameOverPanel.SetActive(true);
     }
 
     public void PauseMenu()

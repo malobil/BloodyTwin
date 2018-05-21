@@ -210,6 +210,7 @@ namespace UnityStandardAssets.Characters
         {
             Debug.Log("DIE");
             cameraTransform.parent = null;
+            Script_UI_InGame_Manager.Instance.IntruderLoose();
             NetworkServer.UnSpawn(this.gameObject);
             //NetworkManager.singleton.StopClient();
             Destroy(gameObject);
