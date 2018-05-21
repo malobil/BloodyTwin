@@ -19,7 +19,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("Intruders")]
 
     [SyncVar]
-    private int intruderAlive = 0;
+    private int intruderAlive = 2;
     private List<GameObject> intruders = new List<GameObject>();
 
     [Header("Poupée")]
