@@ -186,6 +186,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
     }
 
+    [Command]
     public void CmdIntruderDie()
     {
 
