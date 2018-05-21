@@ -85,12 +85,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             {
                 spectre.GetComponent<Script_Spectre_Moves_Online>().Loose();
             }
-            
 
-            foreach(GameObject intrus in intruders)
-            {
-                intrus.GetComponent<Script_Player_Moves>().Win();
-            }
+            RpcTest();
+            
         }
     }
 
@@ -194,6 +191,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         if (intruderAlive <= 0)
         {
             Debug.Log("WIN");
+        }
+    }
+
+    [ClientRpc]
+    public void RpcTest()
+    {
+        foreach (GameObject intrus in intruders)
+        {
+            intrus.GetComponent<Script_Player_Moves>().Win();
         }
     }
 
