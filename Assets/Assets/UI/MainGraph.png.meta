@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: 3fb851efb9a7f8042b73c2bd3d6f4e86
-timeCreated: 1526903704
+guid: 03d75614b5446d943a86d51b13c1e8f5
+timeCreated: 1526906935
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: MainGraph_Logo
-    21300002: MainGraph_backgroundNameRoom
-    21300004: MainGraph_boutonCaracter
-    21300006: MainGraph_selectedSmall
-    21300008: MainGraph_selecteedBig
+    21300002: MainGraph_backgroundSelectRoom
+    21300004: MainGraph_backgroundTuto
+    21300006: MainGraph_tutoLeft
+    21300008: MainGraph_tutoRight
+    21300010: MainGraph_selectCharacter
+    21300012: MainGraph_selectedSmall
+    21300014: MainGraph_selectedBig
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -99,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: MainGraph_backgroundNameRoom
+      name: MainGraph_backgroundSelectRoom
       rect:
         serializedVersion: 2
         x: 1442
@@ -113,7 +116,49 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: MainGraph_boutonCaracter
+      name: MainGraph_backgroundTuto
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 40
+        width: 813
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MainGraph_tutoLeft
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 398
+        width: 66
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MainGraph_tutoRight
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 398
+        width: 67
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MainGraph_selectCharacter
       rect:
         serializedVersion: 2
         x: 1731
@@ -141,7 +186,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: MainGraph_selecteedBig
+      name: MainGraph_selectedBig
       rect:
         serializedVersion: 2
         x: 1270
