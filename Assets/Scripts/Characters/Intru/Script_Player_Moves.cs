@@ -209,7 +209,10 @@ namespace UnityStandardAssets.Characters
 
         public void Die()
         {
-            if(!isLocalPlayer)
+            Destroy(this.gameObject);
+            NetworkServer.UnSpawn(this.gameObject);
+
+            if (!isLocalPlayer)
             {
                 return;
             }
@@ -218,8 +221,6 @@ namespace UnityStandardAssets.Characters
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose();
                 Script_UI_InGame_Manager.Instance.CmdIntruderDie();
-            Destroy(this.gameObject);
-                NetworkServer.UnSpawn(this.gameObject);
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
         }
