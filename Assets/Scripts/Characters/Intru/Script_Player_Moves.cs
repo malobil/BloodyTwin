@@ -210,7 +210,7 @@ namespace UnityStandardAssets.Characters
         {
             Debug.Log("DIE");
             NetworkServer.UnSpawn(this.gameObject);
-            NetworkManager.singleton.StopClient();
+            //NetworkManager.singleton.StopClient();
             Destroy(gameObject);
         }
 
