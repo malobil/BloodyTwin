@@ -282,7 +282,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void Loose()
         {
-            Script_UI_InGame_Manager.Instance.TargetTest(connectionToClient);
+            if(isLocalPlayer)
+            {
+                Script_UI_InGame_Manager.Instance.GameOver();
+            }
         }
 
         [Command]
