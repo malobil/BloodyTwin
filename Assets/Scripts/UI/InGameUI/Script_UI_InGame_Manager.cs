@@ -199,7 +199,10 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void LightUp()
     {
-       // lights.SetActive(true);
+        if(lights != null)
+        {
+            lights.SetActive(true);
+        }
     }
 
     [TargetRpc]
