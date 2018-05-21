@@ -84,7 +84,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
             foreach(GameObject intrus in intruders)
             {
-                IntruderWin();
+                RpcGameWin();
             }
         }
     }
