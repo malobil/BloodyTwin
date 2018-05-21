@@ -278,5 +278,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             comAudioSource.PlayOneShot(comSound[idxToPlay]);
         }
+
+        public void Loose()
+        {
+            Script_UI_InGame_Manager.Instance.TargetTest(connectionToClient);
+        }
     }
 }

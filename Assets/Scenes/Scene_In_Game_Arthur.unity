@@ -11776,7 +11776,7 @@ Prefab:
     - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
         type: 2}
       propertyPath: minutes
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
         type: 2}

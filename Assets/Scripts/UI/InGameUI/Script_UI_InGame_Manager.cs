@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityStandardAssets.Characters;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Script_UI_InGame_Manager : NetworkBehaviour {
 
@@ -45,6 +46,14 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             SpawnDolls();
 
+            
+        }
+	}
+
+    private void Start()
+    {
+        if(isServer)
+        {
             foreach (GameObject intrus in GameObject.FindGameObjectsWithTag("Intru"))
             {
                 intruders.Add(intrus);
@@ -52,12 +61,12 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             }
 
             bourreau = GameObject.FindGameObjectWithTag("Bourreau");
-            spectre = GameObject.FindGameObjectWithTag("Spectre") ;
+            spectre = GameObject.FindGameObjectWithTag("Spectre");
         }
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         Timer(); 
 	}
@@ -82,13 +91,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            if(spectre != null)
-            {
-                spectre.GetComponent<Script_Spectre_Moves_Online>().Loose();
-            }
-
-            RpcTest();
-            
+            bourreau.GetComponent<Script_Bourreau_Moves>().Loose();         
         }
     }
 
@@ -207,6 +210,12 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void LightUp()
     {
         lights.SetActive(true);
+    }
+
+    [TargetRpc]
+    public void TargetTest(NetworkConnection target)
+    {
+        Debug.Log("JE SUIS TARGET");
     }
 
  }
