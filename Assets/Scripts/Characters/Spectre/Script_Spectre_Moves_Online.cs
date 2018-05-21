@@ -35,6 +35,11 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         gameObject.tag = "Spectre";
     }
 
+    private void Start()
+    {
+        Script_UI_InGame_Manager.Instance.LightUp(); 
+    }
+
     void Update ()
     {
         if (!isLocalPlayer)
@@ -116,7 +121,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public void SettingCamera(GameObject camToSet)
     {
         playerCamera = camToSet; // Set la camera du joueur
-        Script_UI_InGame_Manager.Instance.LightUp();
+
     }
 
     public void DisableCamera()
