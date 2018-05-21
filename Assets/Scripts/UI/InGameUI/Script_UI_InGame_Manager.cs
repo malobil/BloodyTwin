@@ -83,7 +83,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            //RpcGameEnd();
+            RpcGameEnd();
         }
     }
 
