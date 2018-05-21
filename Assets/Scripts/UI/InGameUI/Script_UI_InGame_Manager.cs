@@ -188,15 +188,13 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void CmdIntruderDie()
     {
-        if(isServer)
-        {
+
             intruderAlive--;
             
             if (intruderAlive <= 0)
             {
                 RpcGameEnd();
             }
-        } 
     }
 
     public void LightUp()
