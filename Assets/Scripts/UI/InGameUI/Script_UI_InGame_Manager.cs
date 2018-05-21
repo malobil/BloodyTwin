@@ -205,5 +205,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             lights.SetActive(true);
         }
+        else
+        {
+            Debug.Log("NO LIGHT");
+        }
     }
 }
