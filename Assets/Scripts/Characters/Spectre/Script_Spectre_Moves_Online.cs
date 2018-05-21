@@ -37,7 +37,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     private void Start()
     {
-        Script_UI_InGame_Manager.Instance.CmdRegisterSpectre();
+        //Script_UI_InGame_Manager.Instance.CmdRegisterSpectre();
         Script_UI_InGame_Manager.Instance.LightUp(); 
     }
 

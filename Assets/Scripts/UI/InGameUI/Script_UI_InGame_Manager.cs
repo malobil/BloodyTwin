@@ -84,19 +84,13 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             if(bourreau != null)
             {
-                CmdBourreau();
+                bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
             }
             else
             {
                 Debug.Log("LOOSE");
             }
         }
-    }
-
-    [Command]
-    void CmdBourreau()
-    {
-        bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
     }
 
     [ClientRpc]
@@ -216,14 +210,14 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         Debug.Log("JE SUIS TARGET");
     }
 
-    [Command]
-    public void CmdRegisterBourreau()
+    
+    public void RegisterBourreau()
     {
         bourreau = GameObject.FindGameObjectWithTag("Bourreau");
     }
 
-    [Command]
-    public void CmdRegisterSpectre()
+
+    public void RegisterSpectre()
     {
         spectre = GameObject.FindGameObjectWithTag("Spectre");
     }

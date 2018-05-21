@@ -53,7 +53,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             gameObject.tag = "Bourreau";
-            Script_UI_InGame_Manager.Instance.CmdRegisterBourreau();
+            CmdRegisterBourreau();
             Script_UI_InGame_Manager.Instance.LightUp();
             // get the transform of the main camera
             if (Camera.main != null)
@@ -283,6 +283,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public void Loose()
         {
             Script_UI_InGame_Manager.Instance.TargetTest(connectionToClient);
+        }
+
+        void CmdRegisterBourreau()
+        {
+            Script_UI_InGame_Manager.Instance.RegisterBourreau();
         }
     }
 }
