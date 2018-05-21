@@ -229,6 +229,5 @@ namespace UnityStandardAssets.Characters
                 Script_UI_InGame_Manager.Instance.IntruderWin();
             }
         }
-
     }
 }
