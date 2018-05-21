@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1319129389330114
 GameObject:
   m_ObjectHideFlags: 1
@@ -386,6 +386,7 @@ MonoBehaviour:
   minutes: 0
   seconds: 5
   timerText: {fileID: 114742529477030960}
+  endText: {fileID: 114530583639864692}
   gameOverPanel: {fileID: 1467372362706200}
   gameWinPanel: {fileID: 1306022401008548}
   gamePauseMenu: {fileID: 1698612746327514}
