@@ -16,8 +16,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public Text endText;
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
-    
-    [SyncVar]
+   
     public int intruderAlive = 1;
     private List<GameObject> intruders = new List<GameObject>();
 
@@ -186,16 +185,26 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
     }
 
-    [Command]
-    public void CmdIntruderDie()
+    public void IntruderDie()
     {
+        if(!isServer)
+        {
+            return;
+        }
 
             intruderAlive--;
+            RpcTest();
             
             if (intruderAlive <= 0)
             {
                 RpcGameEnd();
             }
+    }
+
+    [ClientRpc]
+    void RpcTest()
+    {
+        intruderAlive--;
     }
 
     public void LightUp()

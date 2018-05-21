@@ -121,7 +121,12 @@ namespace UnityStandardAssets.Characters
                 SetPauseMenu();
             }
 
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Die();
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;
                 if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 4.0f))
@@ -213,19 +218,20 @@ namespace UnityStandardAssets.Characters
                 Debug.Log("DIE");
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose(); // UI
-                CmdDie();
+               
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
             }
 
+            CmdDieServer();
             Destroy(this.gameObject);
             NetworkServer.UnSpawn(this.gameObject);
         }
 
         [Command]
-        void CmdDie()
+        void CmdDieServer()
         {
-            Script_UI_InGame_Manager.Instance.CmdIntruderDie(); // Count
+            Script_UI_InGame_Manager.Instance.IntruderDie(); // Count
         }
     }
 }
