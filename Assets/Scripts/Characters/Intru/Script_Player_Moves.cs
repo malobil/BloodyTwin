@@ -213,7 +213,7 @@ namespace UnityStandardAssets.Characters
                 Debug.Log("DIE");
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose(); // UI
-                Script_UI_InGame_Manager.Instance.CmdIntruderDie(); // Count
+                CmdDie();
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
             }
@@ -228,6 +228,12 @@ namespace UnityStandardAssets.Characters
             {
                 Script_UI_InGame_Manager.Instance.IntruderWin();
             }
+        }
+
+        [Command]
+        void CmdDie()
+        {
+            Script_UI_InGame_Manager.Instance.CmdIntruderDie(); // Count
         }
     }
 }

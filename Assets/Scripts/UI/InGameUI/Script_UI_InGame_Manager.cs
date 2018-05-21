@@ -16,10 +16,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public Text endText;
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
-    [Header("Intruders")]
-
+    
     [SyncVar]
-    private int intruderAlive = 2;
+    private int intruderAlive = 1;
     private List<GameObject> intruders = new List<GameObject>();
 
     [Header("Poupée")]
@@ -195,7 +194,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if (intruderAlive <= 0)
         {
-            Debug.Log("WIN");
+            RpcGameEnd();
         }
     }
 
