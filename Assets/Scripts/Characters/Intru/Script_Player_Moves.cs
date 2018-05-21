@@ -209,20 +209,18 @@ namespace UnityStandardAssets.Characters
 
         public void Die()
         {
-            Destroy(this.gameObject);
-            NetworkServer.UnSpawn(this.gameObject);
-
-            if (!isLocalPlayer)
+            if (isLocalPlayer)
             {
-                return;
-            }
-
                 Debug.Log("DIE");
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose();
                 Script_UI_InGame_Manager.Instance.CmdIntruderDie();
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
+            }
+
+            Destroy(this.gameObject);
+            NetworkServer.UnSpawn(this.gameObject);
         }
 
     }
