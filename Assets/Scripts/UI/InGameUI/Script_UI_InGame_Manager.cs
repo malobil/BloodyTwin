@@ -216,7 +216,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         bourreau = GameObject.FindGameObjectWithTag("Bourreau");
     }
 
-
     public void RegisterSpectre()
     {
         spectre = GameObject.FindGameObjectWithTag("Spectre");
