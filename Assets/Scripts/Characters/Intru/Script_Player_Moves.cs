@@ -209,6 +209,7 @@ namespace UnityStandardAssets.Characters
         public void Die()
         {
             Debug.Log("DIE");
+            cameraTransform.parent = null;
             NetworkServer.UnSpawn(this.gameObject);
             //NetworkManager.singleton.StopClient();
             Destroy(gameObject);
