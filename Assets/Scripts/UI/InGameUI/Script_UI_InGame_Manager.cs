@@ -16,6 +16,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     [Header("Intruders")]
     private int intruderAlive = 2;
+    private List<GameObject> intruders = new List<GameObject>();
 
     [Header("Poupée")]
     public List<Transform> dollSpawnList = new List<Transform>();
@@ -27,6 +28,10 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
 
+    [Header("Bourreau & Spectre GO")]
+    private GameObject bourreau;
+    private GameObject spectre;
+
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
 	// Use this for initialization
@@ -37,6 +42,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         if(isServer)
         {
             SpawnDolls();
+
+            foreach (GameObject intrus in GameObject.FindGameObjectsWithTag("Intru"))
+            {
+                intruders.Add(intrus);
+                Debug.Log(intruders.Count);
+            }
+
+            bourreau = GameObject.FindGameObjectWithTag("Bourreau");
+            spectre = GameObject.FindGameObjectWithTag("Spectre");
         }
 	}
 	
@@ -66,7 +80,12 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            RpcGameOver();
+            //RpcGameOver();
+
+            foreach(GameObject intrus in intruders)
+            {
+                IntruderWin();
+            }
         }
     }
 
