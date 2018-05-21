@@ -44,7 +44,7 @@ namespace UnityStandardAssets.Characters
 
             gameObject.tag = "Intru";
 
-            Script_UI_InGame_Manager.Instance.CmdRegisterIntruder();
+            //Script_UI_InGame_Manager.Instance.CmdRegisterIntruder();
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -209,14 +209,15 @@ namespace UnityStandardAssets.Characters
 
         public void Die()
         {
-            Debug.Log("DIE");
-            if(cameraTransform != null)
+            if(!isLocalPlayer)
             {
+                return;
+            }
+
+                Debug.Log("DIE");
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose();
-                //Script_UI_InGame_Manager.Instance.CmdIntruderDie();
-            }
-               
+                Script_UI_InGame_Manager.Instance.CmdIntruderDie();
                 NetworkServer.UnSpawn(this.gameObject);
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);

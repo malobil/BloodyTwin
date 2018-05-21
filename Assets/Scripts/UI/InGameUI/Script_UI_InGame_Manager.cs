@@ -27,9 +27,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
 
-    /*[Header("OnlineCo")]
-    private NetworkConnection bourreauConnection, spectreConnection, intruderConnection1, intruderConnection2;*/
-
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
 	// Use this for initialization
@@ -182,21 +179,4 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
     }
 
-    /*public void SetupCoBourreau(NetworkConnection bourreauConnec)
-    {
-        bourreauConnection = bourreauConnec;
-        Debug.Log(bourreauConnection);
-    }
-
-    public void SetupCoSpectre(NetworkConnection spectreConnec)
-    {
-        spectreConnection = spectreConnec ;
-    }
-
-    public void SetupCoIntruder(NetworkConnection intruConnec)
-    {
-        intruderConnection1 = intruConnec ;
-    }*/
-
-
-}
+ }
