@@ -190,13 +190,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             lights.SetActive(true);
         }
     }
-
-    [TargetRpc]
-    public void TargetTest(NetworkConnection target)
-    {
-        Debug.Log("JE SUIS TARGET");
-    }
-
     
     public void RegisterBourreau()
     {
