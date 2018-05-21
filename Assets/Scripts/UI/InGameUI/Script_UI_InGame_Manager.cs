@@ -30,6 +30,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public Image bourreauStaminaImage ;
 
     [Header("Bourreau & Spectre GO")]
+    [SyncVar]
     private GameObject bourreau;
     private GameObject spectre;
     public GameObject lights;
