@@ -45,21 +45,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             SpawnDolls();
         }
-	}
+    }
 
     private void Start()
     {
-        if(isServer)
-        {
-            foreach (GameObject intrus in GameObject.FindGameObjectsWithTag("Intru"))
-            {
-                intruders.Add(intrus);
-                Debug.Log(intruders.Count);
-            }
-
-            bourreau = GameObject.FindGameObjectWithTag("Bourreau");
-            spectre = GameObject.FindGameObjectWithTag("Spectre");
-        }
+        
     }
 
     // Update is called once per frame
@@ -210,6 +200,22 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void TargetTest(NetworkConnection target)
     {
         Debug.Log("JE SUIS TARGET");
+    }
+
+    [Command]
+    public void CmdRegisterAll()
+    {
+        foreach (GameObject intrus in GameObject.FindGameObjectsWithTag("Intru"))
+        {
+            intruders.Add(intrus);
+            Debug.Log(intruders.Count);
+        }
+
+        bourreau = GameObject.FindGameObjectWithTag("Bourreau");
+        spectre = GameObject.FindGameObjectWithTag("Spectre");
+
+        Debug.Log(bourreau);
+        Debug.Log(spectre);
     }
 
  }
