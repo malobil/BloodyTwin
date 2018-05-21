@@ -15,7 +15,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
     [Header("Intruders")]
-    private int intruderAlive = 0;
+    private int intruderAlive = 2;
 
     [Header("Poupée")]
     public List<Transform> dollSpawnList = new List<Transform>();
@@ -163,17 +163,12 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdRegisterIntruder()
-    {
-        intruderAlive++;
-    }
-
-    [Command]
     public void CmdIntruderDie()
     {
         intruderAlive--;
+        Debug.Log("MOINS UN");
 
-        if(intruderAlive <= 0)
+        if (intruderAlive <= 0)
         {
             Debug.Log("WIN");
         }

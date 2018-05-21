@@ -44,8 +44,7 @@ namespace UnityStandardAssets.Characters
 
             gameObject.tag = "Intru";
 
-            //Script_UI_InGame_Manager.Instance.CmdRegisterIntruder();
-            // get the transform of the main camera
+           // get the transform of the main camera
             if (Camera.main != null)
             {
                 m_Cam = Camera.main.transform;
@@ -213,8 +212,8 @@ namespace UnityStandardAssets.Characters
             {
                 Debug.Log("DIE");
                 cameraTransform.parent = null;
-                Script_UI_InGame_Manager.Instance.IntruderLoose();
-                Script_UI_InGame_Manager.Instance.CmdIntruderDie();
+                Script_UI_InGame_Manager.Instance.IntruderLoose(); // UI
+                Script_UI_InGame_Manager.Instance.CmdIntruderDie(); // Count
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
             }
