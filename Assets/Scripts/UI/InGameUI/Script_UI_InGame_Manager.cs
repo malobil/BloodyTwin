@@ -81,7 +81,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            spectre.GetComponent<Script_Spectre_Moves_Online>().Loose();
+            if(spectre != null)
+            {
+                spectre.GetComponent<Script_Spectre_Moves_Online>().Loose();
+            }
+            
 
             foreach(GameObject intrus in intruders)
             {
