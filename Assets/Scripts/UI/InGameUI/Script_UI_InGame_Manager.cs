@@ -53,9 +53,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
                 intruders.Add(intrus);
                 Debug.Log(intruders.Count);
             }
-
-           
-            
         }
 	}
 
@@ -88,6 +85,10 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             if(bourreau != null)
             {
                 bourreau.GetComponent<Script_Bourreau_Moves>().Loose();
+            }
+            else
+            {
+                Debug.Log("LOOSE");
             }
         }
     }
