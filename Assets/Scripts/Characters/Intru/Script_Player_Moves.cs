@@ -213,9 +213,10 @@ namespace UnityStandardAssets.Characters
             if(cameraTransform != null)
             {
                 cameraTransform.parent = null;
+                Script_UI_InGame_Manager.Instance.IntruderLoose();
                 //Script_UI_InGame_Manager.Instance.CmdIntruderDie();
             }
-                Script_UI_InGame_Manager.Instance.IntruderLoose();
+               
                 NetworkServer.UnSpawn(this.gameObject);
                 //NetworkManager.singleton.StopClient();
                 Destroy(gameObject);
