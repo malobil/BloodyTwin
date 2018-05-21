@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityStandardAssets.Characters;
 
 public class Script_UI_InGame_Manager : NetworkBehaviour {
 
@@ -50,7 +51,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             }
 
             bourreau = GameObject.FindGameObjectWithTag("Bourreau");
-            spectre = GameObject.FindGameObjectWithTag("Spectre");
+            spectre = GameObject.FindGameObjectWithTag("Spectre") ;
         }
 	}
 	
@@ -80,11 +81,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         if(seconds <= 0 && minutes <= 0)
         {
-            //RpcGameOver();
+            spectre.GetComponent<Script_Spectre_Moves_Online>().Loose();
 
             foreach(GameObject intrus in intruders)
             {
-                RpcGameWin();
+                intrus.GetComponent<Script_Player_Moves>().Win();
             }
         }
     }
@@ -95,8 +96,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         timerText.text = minutes.ToString("0") + " : " + Mathf.RoundToInt(seconds).ToString("00");
     }
 
-    [ClientRpc]
-    void RpcGameOver()
+    public void GameOver()
     {
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
