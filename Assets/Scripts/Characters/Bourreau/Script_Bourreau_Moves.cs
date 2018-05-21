@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
-using UnityEngine.AI;
 
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -32,6 +30,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public Transform attackSpawnPoint;
         public GameObject attackZonePrefab;
         private float currentAttackCooldown;
+
+        [Header("Scream")]
+        public float ScreamRange = 5f;
+        public float ScreamCooldown = 10f;
+        public float ScreamStunTime = 2f;
+        private float _screamCooldown = 0f;
+        private bool _isScreaming = false;
 
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
@@ -84,10 +89,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 currentAttackCooldown -= Time.deltaTime;
             }
 
-            if(Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
+            if (_screamCooldown > 0)
+                _screamCooldown -= Time.deltaTime;
+
+            if (Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
                 currentAttackCooldown = attackCooldown ;
                 CmdAttack();
+            }
+
+            if (Input.GetButtonDown("Bourreau_Scream") && _screamCooldown <= 0f)
+            {
+                _screamCooldown = ScreamCooldown;
+                _isScreaming = true;
+                CmdScream();
+                _isScreaming = false;
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -144,7 +160,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 return;
             }
 
-            if (currentAttackCooldown <= 0)
+            if (currentAttackCooldown <= 0 && !_isScreaming)
             {
                 // read inputs
                 float h = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -188,6 +204,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             m_Character.Move(m_Move,false,false);
             //m_Jump = false;
+        }
+
+        [Command]
+        private void CmdScream()
+        {
+            _screamCooldown = ScreamCooldown;
+            var players = GameObject.FindGameObjectsWithTag("Intru");
+
+            foreach (var player in players)
+            {
+                //if (Vector3.Distance(transform.position, player.transform.position) < ScreamRange)
+                //    player.StunForSeconds(ScreamStunTime);
+            }
+            Debug.Log("Scream");
         }
 
         [Command]
