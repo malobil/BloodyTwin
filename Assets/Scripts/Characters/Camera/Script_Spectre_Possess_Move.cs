@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 using UnityStandardAssets.Characters;
 
-public class Script_Spectre_Possess_Move : MonoBehaviour
+public class Script_Spectre_Possess_Move : NetworkBehaviour
 {
     public float moveSpeed;
     public float ejectionSpeedAdd;
@@ -26,6 +26,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
 
     private void Update()
     {
+
         if(Input.GetKey(KeyCode.A))
         {
             if(ejectionSpeed < maxEjectionSpeed)
@@ -44,7 +45,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
 
     void FixedUpdate()
     {
-            //reading the input:
+             //reading the input:
             float horizontalAxis = Input.GetAxis("Horizontal");
             float verticalAxis = Input.GetAxis("Vertical");
 
