@@ -146,7 +146,7 @@ namespace UnityStandardAssets.Characters
                     if(hit.collider.gameObject.CompareTag("Doll"))
                     {
                         Debug.Log("Doll");
-                        Destroy(hit.collider.gameObject);
+                        //Destroy(hit.collider.gameObject);
                         CmdGetDoll(hit.collider.gameObject);
                     }
                     else if(hit.collider.gameObject.GetComponent<Script_Armory>())
@@ -195,7 +195,7 @@ namespace UnityStandardAssets.Characters
         private void CmdGetDoll(GameObject dollToUnspawn)
         {
             Script_UI_InGame_Manager.Instance.GetADoll();
-            NetworkServer.UnSpawn(dollToUnspawn);
+            Network.Destroy(dollToUnspawn);
         }
 
         [Command]
