@@ -16,8 +16,12 @@ public class Script_Armory : NetworkBehaviour {
 	public void OpenArmory()
     {
         myAnimator.SetTrigger("Open");
-        myAnimator.GetComponent<NetworkAnimator>().SetTrigger("Open");
+        Sync();
         GetComponent<BoxCollider>().isTrigger = true;
-        
+    }
+
+    void Sync()
+    {
+        myAnimator.GetComponent<NetworkAnimator>().SetTrigger("Open");
     }
 }
