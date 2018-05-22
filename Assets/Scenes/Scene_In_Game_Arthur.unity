@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000400, guid: cbf7c1d8dbffc5d4eb6d968f95f479b3,
+  m_LightingDataAsset: {fileID: 112000342, guid: cbf7c1d8dbffc5d4eb6d968f95f479b3,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -956,6 +956,11 @@ Prefab:
     - target: {fileID: 4546479138057448, guid: ed696e812391ada4b9351e814ca70932, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
@@ -4039,6 +4044,16 @@ Prefab:
       propertyPath: m_Name
       value: Lune_Fenetre (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Range
+      value: 33.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
   m_IsPrefabParent: 0
@@ -4341,6 +4356,11 @@ Prefab:
     - target: {fileID: 1694230012773080, guid: ed696e812391ada4b9351e814ca70932, type: 2}
       propertyPath: m_Name
       value: Lune_Fenetre (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
@@ -4668,6 +4688,16 @@ Prefab:
     - target: {fileID: 1694230012773080, guid: ed696e812391ada4b9351e814ca70932, type: 2}
       propertyPath: m_Name
       value: Lune_Fenetre (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Range
+      value: 31.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
@@ -7003,6 +7033,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
   m_IsPrefabParent: 0
@@ -8413,12 +8448,17 @@ Prefab:
     - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
         type: 2}
       propertyPath: m_Range
-      value: 36.7
+      value: 28.97
       objectReference: {fileID: 0}
     - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
         type: 2}
       propertyPath: m_SpotAngle
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
@@ -8470,6 +8510,16 @@ Prefab:
     - target: {fileID: 1694230012773080, guid: ed696e812391ada4b9351e814ca70932, type: 2}
       propertyPath: m_Name
       value: Lune_Fenetre (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Range
+      value: 27.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
@@ -15820,6 +15870,11 @@ Prefab:
       propertyPath: m_Name
       value: Lune_Fenetre (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
   m_IsPrefabParent: 0
@@ -17587,6 +17642,11 @@ Prefab:
     - target: {fileID: 4546479138057448, guid: ed696e812391ada4b9351e814ca70932, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
@@ -20894,6 +20954,16 @@ Prefab:
       propertyPath: m_Name
       value: Lune_Fenetre (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Range
+      value: 30.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
   m_IsPrefabParent: 0
@@ -22842,6 +22912,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
   m_IsPrefabParent: 0
@@ -23191,6 +23266,16 @@ Prefab:
     - target: {fileID: 1694230012773080, guid: ed696e812391ada4b9351e814ca70932, type: 2}
       propertyPath: m_Name
       value: Lune_Fenetre (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 108271390386046276, guid: ed696e812391ada4b9351e814ca70932,
+        type: 2}
+      propertyPath: m_Range
+      value: 29.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed696e812391ada4b9351e814ca70932, type: 2}
