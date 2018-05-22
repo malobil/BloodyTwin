@@ -16,7 +16,7 @@ public class Script_Piles : MonoBehaviour {
 
     private void UnSpawnObj()
     {
-        Destroy(gameObject);
-        NetworkServer.UnSpawn(gameObject);
+        Destroy(this.gameObject);
+        NetworkServer.UnSpawn(this.gameObject);
     }
 }
