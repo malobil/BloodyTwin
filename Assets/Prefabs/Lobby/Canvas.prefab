@@ -2119,7 +2119,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'In this game, 2 teams of two players will fight against each others with
+    two differents goals and gameplays. '
 --- !u!114 &114047853659150298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2218,8 +2219,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2354,13 +2355,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Intruders Controls.
 --- !u!114 &114128464845738858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2589,7 +2590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: The Intruders have no differences. They can cooperate or play solo to escape.
 --- !u!114 &114165921190807000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3040,13 +3041,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Ghost controls.
 --- !u!114 &114256579876246426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3177,13 +3178,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 'Butcher controls. '
 --- !u!114 &114273379605390302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3216,7 +3217,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "The Intruders Team must destroy all the artefacts that sealed the Entrance
+    before leaving the Mansion or survived until the rescuers.\r\n\nPS : Even if the
+    intruders can work in team, each one will be able to win or lose.\r\n"
 --- !u!114 &114274835658930574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3336,7 +3339,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: She Is one of the Bloody Twins Member, the Butcher has the ability to kill
+    the intruders but she is pretty slow and will need the help of the Ghost.
 --- !u!114 &114288924214263554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3715,7 +3719,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: The Butcher and the Ghost can communicate between each others with this
+    commands.
 --- !u!114 &114418048590247274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3993,13 +3998,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Welcome in Bloody Twins
 --- !u!114 &114499831704147108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4502,7 +4507,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "She Is one of the Bloody Twins Member, the Ghost has the ability to fly
+    through walls but can\u2019t escape from the Mansion, her ability is to move fast
+    and slow down the intruders."
 --- !u!114 &114604394604437488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4643,7 +4650,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: The Bloody Twins Team must work together to kill all intruders before they
+    run out of time and the rescuers come to save them or before the Intruders Team
+    flee from the Mansion.
 --- !u!114 &114619049737455842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4710,7 +4719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4718,10 +4727,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 796a6063bdb30ce4081c2f0cda10ac71, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -5238,7 +5247,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: The Butcher and the Ghost can communicate between each others with this
+    commands.
 --- !u!114 &114747983341779030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6021,8 +6031,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300012, guid: 03d75614b5446d943a86d51b13c1e8f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
