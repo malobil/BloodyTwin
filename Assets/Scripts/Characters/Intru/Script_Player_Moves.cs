@@ -85,11 +85,12 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
-            if (currentRunCooldown > 0 )
+            /*if (currentRunCooldown > 0 )
             {
                 currentRunCooldown -= Time.deltaTime;
                 Script_UI_InGame_Manager.Instance.UpdatePlayerStamina(currentRunCooldown, runDuration);
-            }
+            }*/
+
             if (currentflashlightCooldown <= 0)
             {
                 if (isServer)
@@ -151,7 +152,7 @@ namespace UnityStandardAssets.Characters
                     }
                     else if(hit.collider.gameObject.GetComponent<Script_Armory>())
                     {
-                        Armory(hit.collider.gameObject);
+                        CmdArmory(hit.collider.gameObject);
                     }
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {
@@ -164,7 +165,8 @@ namespace UnityStandardAssets.Characters
             }
         }
 
-        void Armory(GameObject go)
+        [Command]
+        void CmdArmory(GameObject go)
         {
             go.GetComponent<Script_Armory>().OpenArmory();
         }

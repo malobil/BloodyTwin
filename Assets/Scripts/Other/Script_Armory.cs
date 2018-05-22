@@ -7,6 +7,9 @@ public class Script_Armory : NetworkBehaviour {
 
     public Animator myAnimator;
 
+    [SyncVar(hook = "OpenDoor")]
+    private bool isOpen = false;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -15,9 +18,15 @@ public class Script_Armory : NetworkBehaviour {
 
 	public void OpenArmory()
     {
-        myAnimator.SetTrigger("Open");
+        isOpen = true;
+        /*myAnimator.SetTrigger("Open");
         myAnimator.GetComponent<NetworkAnimator>().SetTrigger("Open");
-        GetComponent<BoxCollider>().isTrigger = true;
+        GetComponent<BoxCollider>().isTrigger = true;*/
+    }
+
+    public void OpenDoor(bool toOpen)
+    {
+        myAnimator.SetBool("OpenArmory",toOpen);
     }
 
 }
