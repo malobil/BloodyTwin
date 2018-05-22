@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Script_Armory : MonoBehaviour {
+public class Script_Armory : NetworkBehaviour {
 
     public Animator myAnimator;
 
@@ -12,7 +13,8 @@ public class Script_Armory : MonoBehaviour {
         
 	}
 	
-	public void OpenArmory()
+    [ClientRpc]
+	public void RpcOpenArmory()
     {
         myAnimator.SetTrigger("Open");
         GetComponent<BoxCollider>().isTrigger = true;
