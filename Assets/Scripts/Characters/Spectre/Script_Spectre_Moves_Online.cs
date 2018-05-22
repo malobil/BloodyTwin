@@ -257,7 +257,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         if(isLocalPlayer)
         {
             Script_UI_InGame_Manager.Instance.GameOver();
-        }
-        
+        } 
     }
 }
