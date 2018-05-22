@@ -167,7 +167,7 @@ namespace UnityStandardAssets.Characters
         [Command]
         void CmdOpenArmory(GameObject toAnimate)
         {
-           toAnimate.GetComponent<Script_Armory>().OpenArmory();
+           toAnimate.GetComponent<Script_Armory>().RpcOpenArmory();
         }
 
         [Command]
