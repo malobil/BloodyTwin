@@ -151,7 +151,7 @@ namespace UnityStandardAssets.Characters
                     }
                     else if(hit.collider.gameObject.GetComponent<Script_Armory>())
                     {
-                        CmdArmory(hit.collider.gameObject);
+                        Armory(hit.collider.gameObject);
                     }
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {
@@ -164,8 +164,7 @@ namespace UnityStandardAssets.Characters
             }
         }
 
-        [Command]
-        void CmdArmory(GameObject go)
+        void Armory(GameObject go)
         {
             go.GetComponent<Script_Armory>().OpenArmory();
         }
