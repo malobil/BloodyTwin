@@ -151,7 +151,7 @@ namespace UnityStandardAssets.Characters
                     }
                     else if(hit.collider.gameObject.GetComponent<Script_Armory>())
                     {
-                        CmdOpenArmory(hit.collider.gameObject);
+                        hit.collider.gameObject.GetComponent<Script_Armory>().OpenArmory();
                     }
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {
@@ -162,12 +162,6 @@ namespace UnityStandardAssets.Characters
                     Debug.Log(hit.collider.gameObject.name);
                 }
             }
-        }
-
-        [Command]
-        void CmdOpenArmory(GameObject toAnimate)
-        {
-           toAnimate.GetComponent<Script_Armory>().RpcOpenArmory();
         }
 
         [Command]

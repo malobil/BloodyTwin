@@ -12,11 +12,12 @@ public class Script_Armory : NetworkBehaviour {
     {
         
 	}
-	
-    [ClientRpc]
-	public void RpcOpenArmory()
+
+	public void OpenArmory()
     {
         myAnimator.SetTrigger("Open");
+        myAnimator.GetComponent<NetworkAnimator>().SetTrigger("Open");
         GetComponent<BoxCollider>().isTrigger = true;
+        
     }
 }
