@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 95318532062507358}
   - component: {fileID: 114989874711660926}
   - component: {fileID: 114179111921917792}
+  - component: {fileID: 114494581818729000}
   m_Layer: 0
   m_Name: Prefab_Armoire_Parent
   m_TagString: Untagged
@@ -160,8 +161,6 @@ GameObject:
   - component: {fileID: 33546819500778462}
   - component: {fileID: 65199918007448722}
   - component: {fileID: 23259106172219508}
-  - component: {fileID: 114517922573623932}
-  - component: {fileID: 114840491149545040}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -648,50 +647,18 @@ MonoBehaviour:
   param3: 
   param4: 
   param5: 
---- !u!114 &114517922573623932
+--- !u!114 &114494581818729000
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1993798152334806}
+  m_GameObject: {fileID: 1291346286785042}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e104feaf953c6a643a051231f1f9aad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 95318532062507358}
---- !u!114 &114840491149545040
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1993798152334806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 90
-    i1: 200
-    i2: 157
-    i3: 7
-    i4: 243
-    i5: 80
-    i6: 126
-    i7: 52
-    i8: 57
-    i9: 101
-    i10: 119
-    i11: 145
-    i12: 233
-    i13: 244
-    i14: 42
-    i15: 232
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114989874711660926
 MonoBehaviour:
   m_ObjectHideFlags: 1
