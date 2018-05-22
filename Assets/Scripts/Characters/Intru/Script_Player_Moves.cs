@@ -223,6 +223,7 @@ namespace UnityStandardAssets.Characters
             lampGO.transform.parent = cameraPop.transform ;
         }
 
+        [ClientRpc]
         public void RpcStun()
         {
             isStun = true;

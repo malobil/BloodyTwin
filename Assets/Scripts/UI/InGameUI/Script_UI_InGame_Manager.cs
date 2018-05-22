@@ -18,7 +18,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
    
     public int intruderAlive = 2;
-    private List<GameObject> intruders = new List<GameObject>();
 
     [Header("Poupée")]
     public List<Transform> dollSpawnList = new List<Transform>();
