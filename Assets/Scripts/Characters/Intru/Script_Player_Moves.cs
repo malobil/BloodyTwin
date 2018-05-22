@@ -78,10 +78,10 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
-            if(isStun)
+            /*if(isStun)
             {
                 return;
-            }
+            }*/
 
             if (currentRunCooldown > 0 )
             {
