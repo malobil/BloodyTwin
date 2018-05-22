@@ -195,7 +195,8 @@ namespace UnityStandardAssets.Characters
         private void CmdGetDoll(GameObject dollToUnspawn)
         {
             Script_UI_InGame_Manager.Instance.GetADoll();
-            Network.Destroy(dollToUnspawn);
+            Destroy(dollToUnspawn);
+            NetworkServer.UnSpawn(dollToUnspawn);
         }
 
         [Command]
