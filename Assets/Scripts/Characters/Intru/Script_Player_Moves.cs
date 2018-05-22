@@ -226,6 +226,7 @@ namespace UnityStandardAssets.Characters
         public void RpcStun()
         {
             isStun = true;
+            Debug.Log("You are stun");
             GetComponent<FirstPersonController>().enabled = false;
             StartCoroutine(StunTime());
         }
