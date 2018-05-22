@@ -41,12 +41,14 @@ namespace UnityStandardAssets.Characters
 
         private void Start()
         {
+            gameObject.tag = "Intru";
+
             if (!isLocalPlayer)
             {
                 return;
             }
 
-            gameObject.tag = "Intru";
+            
 
            // get the transform of the main camera
             if (Camera.main != null)
