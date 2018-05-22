@@ -155,13 +155,20 @@ namespace UnityStandardAssets.Characters
                     }
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {
-                        hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
+                        CmdGetAPile(hit.collider.gameObject);
                     }
 
 
                     Debug.Log(hit.collider.gameObject.name);
                 }
             }
+        }
+
+        [Command]
+        void CmdGetAPile(GameObject go)
+        {
+            //hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
+            go.GetComponent<Script_Piles>().AddPile(this);
         }
 
         private void SetPauseMenu()
