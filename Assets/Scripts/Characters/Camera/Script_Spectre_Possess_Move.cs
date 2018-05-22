@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
+using UnityStandardAssets.Characters;
 
 public class Script_Spectre_Possess_Move : MonoBehaviour
 {
@@ -86,7 +87,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
             if (collision.gameObject.CompareTag("Intru"))
             {
                 Debug.Log("TOUCH" + collision.gameObject.name);
-                // Call here stun function
+                collision.gameObject.GetComponent<Script_Player_Moves>().Stun();// Call here stun function
                 isProject = false;
             }
         }

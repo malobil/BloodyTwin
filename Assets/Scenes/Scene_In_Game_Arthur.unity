@@ -11737,11 +11737,6 @@ Prefab:
       propertyPath: lights
       value: 
       objectReference: {fileID: 767590458}
-    - target: {fileID: 114549217580612966, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: m_LocalPlayerAuthority
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
   m_IsPrefabParent: 0

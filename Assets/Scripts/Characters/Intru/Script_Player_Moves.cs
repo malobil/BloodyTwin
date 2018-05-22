@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
@@ -35,6 +36,9 @@ namespace UnityStandardAssets.Characters
         public Transform cameraBasePosition;
         private Transform cameraTransform;
 
+        [Header("Stun")]
+        private bool isStun = false;
+
         private void Start()
         {
             if (!isLocalPlayer)
@@ -70,6 +74,11 @@ namespace UnityStandardAssets.Characters
         private void Update()
         {
             if (!isLocalPlayer)
+            {
+                return;
+            }
+
+            if(isStun)
             {
                 return;
             }
@@ -121,9 +130,10 @@ namespace UnityStandardAssets.Characters
                 SetPauseMenu();
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S))// debug
             {
-                Die();
+                //Die();
+                //Stun();
             }
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -211,6 +221,13 @@ namespace UnityStandardAssets.Characters
             lampGO.transform.parent = cameraPop.transform ;
         }
 
+        public void Stun()
+        {
+            isStun = true;
+            GetComponent<FirstPersonController>().enabled = false;
+            StartCoroutine(StunTime());
+        }
+
         public void Die()
         {
             if (isLocalPlayer)
@@ -232,6 +249,18 @@ namespace UnityStandardAssets.Characters
         void CmdDieServer()
         {
             Script_UI_InGame_Manager.Instance.IntruderDie(); // Count
+        }
+
+        public bool ReturnIsStun()
+        {
+            return isStun;
+        }
+
+        IEnumerator StunTime()
+        {
+            yield return new WaitForSeconds(3f);
+            isStun = false;
+            GetComponent<FirstPersonController>().enabled = true;
         }
     }
 }
