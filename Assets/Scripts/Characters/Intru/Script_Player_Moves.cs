@@ -223,7 +223,7 @@ namespace UnityStandardAssets.Characters
             lampGO.transform.parent = cameraPop.transform ;
         }
 
-        public void Stun()
+        public void RpcStun()
         {
             isStun = true;
             GetComponent<FirstPersonController>().enabled = false;

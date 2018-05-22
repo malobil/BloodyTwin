@@ -88,7 +88,7 @@ public class Script_Spectre_Possess_Move : NetworkBehaviour
             if (collision.gameObject.CompareTag("Intru"))
             {
                 Debug.Log("TOUCH" + collision.gameObject.name);
-                collision.gameObject.GetComponent<Script_Player_Moves>().Stun();// Call here stun function
+                collision.gameObject.GetComponent<Script_Player_Moves>().RpcStun();// Call here stun function
                 isProject = false;
             }
         }
