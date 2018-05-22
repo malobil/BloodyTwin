@@ -150,9 +150,9 @@ namespace UnityStandardAssets.Characters
                         //Destroy(hit.collider.gameObject);
                         CmdGetDoll(hit.collider.gameObject);
                     }
-                    else if(hit.collider.gameObject.GetComponent<Script_Armory>())
+                    else if(hit.collider.gameObject.CompareTag("Armory"))
                     {
-                        CmdArmory(hit.collider.gameObject);
+                        CmdArmory(hit.collider.transform.parent.parent.gameObject);
                     }
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {

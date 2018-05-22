@@ -9,6 +9,8 @@ TagManager:
   - Spectre
   - Possess
   - Doll
+  - Fire
+  - Armory
   layers:
   - Default
   - TransparentFX

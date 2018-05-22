@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 95318532062507358}
   - component: {fileID: 114989874711660926}
   - component: {fileID: 114179111921917792}
-  - component: {fileID: 114494581818729000}
+  - component: {fileID: 114188263055695492}
   m_Layer: 0
   m_Name: Prefab_Armoire_Parent
   m_TagString: Untagged
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 23259106172219508}
   m_Layer: 0
   m_Name: Porte
-  m_TagString: Untagged
+  m_TagString: Armory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
   param3: 
   param4: 
   param5: 
---- !u!114 &114494581818729000
+--- !u!114 &114188263055695492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
