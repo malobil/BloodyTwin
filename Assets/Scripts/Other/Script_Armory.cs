@@ -16,6 +16,7 @@ public class Script_Armory : NetworkBehaviour {
         
 	}
 
+
 	public void OpenArmory()
     {
         isOpen = true;
@@ -27,6 +28,7 @@ public class Script_Armory : NetworkBehaviour {
     public void OpenDoor(bool toOpen)
     {
         myAnimator.SetBool("OpenArmory",toOpen);
+        Debug.Log("OPEN");
     }
 
 }
