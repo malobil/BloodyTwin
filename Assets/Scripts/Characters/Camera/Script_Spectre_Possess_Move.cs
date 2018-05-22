@@ -74,7 +74,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
     {
         Transform camera = Camera.main.transform;
         rbComponent.AddForce(camera.forward * ejectionSpeed, ForceMode.Impulse);
-        associateScriptPossesion.UnPossessObject();
+        //associateScriptPossesion.UnPossessObject();
         StartCoroutine(ProjectionEnd());
         isProject = true;
         ejectionSpeed = 0;
