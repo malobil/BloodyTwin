@@ -239,7 +239,7 @@ namespace UnityStandardAssets.Characters
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose(); // UI
                
-                //NetworkManager.singleton.StopClient();
+                
                 Destroy(gameObject);
             }
 

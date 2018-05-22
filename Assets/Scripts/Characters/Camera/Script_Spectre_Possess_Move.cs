@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 using UnityStandardAssets.Characters;
 
-public class Script_Spectre_Possess_Move : NetworkBehaviour
+public class Script_Spectre_Possess_Move : MonoBehaviour
 {
     public float moveSpeed;
     public float ejectionSpeedAdd;
