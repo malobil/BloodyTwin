@@ -20224,17 +20224,17 @@ Prefab:
     - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.25
+      value: 0.8897059
       objectReference: {fileID: 0}
     - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.25
+      value: 0.8897059
       objectReference: {fileID: 0}
     - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.25
+      value: 0.8897059
       objectReference: {fileID: 0}
     - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
         type: 2}
@@ -20269,6 +20269,11 @@ Prefab:
         type: 2}
       propertyPath: m_Lightmapping
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b08986eeaa701f429b397124ff245e1, type: 2}
