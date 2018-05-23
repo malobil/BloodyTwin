@@ -124,7 +124,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         intruderWin++;
 
-        if(intruderWin >= 2)
+        RpcIntruderWin();
+
+        if (intruderWin >= 2)
         {
             RpcGameEnd();
         }
@@ -204,7 +206,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
 
             intruderAlive--;
-            RpcTest();
+            RpcIntruderAlive();
             
             if (intruderAlive <= 0)
             {
@@ -213,9 +215,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     }
 
     [ClientRpc]
-    void RpcTest()
+    void RpcIntruderAlive()
     {
         intruderAlive--;
+    }
+
+    [ClientRpc]
+    void RpcIntruderWin()
+    {
+        intruderWin++;
     }
 
     public void LightUp()
