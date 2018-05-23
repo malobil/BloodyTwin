@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Settings:
       lowPercent: 45
       highPercent: 95
-      minLuminance: 0
+      minLuminance: -1
       maxLuminance: 5
       keyValue: 0.25
       dynamicKeyValue: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
       speedUp: 2
       speedDown: 1
       logMin: -4
-      logMax: 4
+      logMax: 5
   bloom:
     m_Enabled: 0
     m_Settings:
@@ -293,10 +293,10 @@ MonoBehaviour:
       size: 1
       luminanceContribution: 0.678
   vignette:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       mode: 0
-      color: {r: 0, g: 0, b: 0, a: 1}
+      color: {r: 0.9411765, g: 0.449827, b: 0.449827, a: 1}
       center: {x: 0.5, y: 0.5}
       intensity: 0.595
       smoothness: 1
