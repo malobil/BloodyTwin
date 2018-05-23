@@ -88,14 +88,14 @@ MonoBehaviour:
       lowPercent: 45
       highPercent: 95
       minLuminance: -5
-      maxLuminance: 6
+      maxLuminance: 5
       keyValue: 0.25
       dynamicKeyValue: 1
-      adaptationType: 1
+      adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -4
-      logMax: 8
+      logMin: -10
+      logMax: 5
   bloom:
     m_Enabled: 0
     m_Settings:
@@ -113,7 +113,7 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.052
+        neutralBlackIn: 0.087
         neutralWhiteIn: 10
         neutralBlackOut: 0
         neutralWhiteOut: 10
@@ -134,9 +134,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 0.46855065, b: 0.2830518, a: 0.39889196}
-          power: {r: 1, g: 0.21943976, b: 0.14078903, a: 0.15512466}
-          offset: {r: 1, g: 0.27910823, b: 0.24244517, a: -0.08864266}
+          slope: {r: 0.9494563, g: 0.9583844, b: 1, a: 0.39889196}
+          power: {r: 1, g: 0.36429477, b: 0.19005793, a: 0.15512466}
+          offset: {r: 1, g: 0.14004713, b: 0.040379047, a: -0.08864266}
         linear:
           lift: {r: 0.965529, g: 1, b: 0.9833079, a: 0}
           gamma: {r: 0.81611574, g: 1, b: 0.91858375, a: 0}
@@ -298,7 +298,7 @@ MonoBehaviour:
       mode: 0
       color: {r: 0.50735295, g: 0.048496958, b: 0.048496958, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.595
+      intensity: 0.47
       smoothness: 1
       roundness: 0.617
       mask: {fileID: 0}
