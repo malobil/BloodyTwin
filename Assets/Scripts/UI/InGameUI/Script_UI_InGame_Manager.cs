@@ -114,6 +114,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void IntruderWin()
     {
+        endText.text = "You win ! " ;
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
     }

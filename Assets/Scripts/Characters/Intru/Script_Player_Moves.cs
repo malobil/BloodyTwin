@@ -85,12 +85,6 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
-            /*if (currentRunCooldown > 0 )
-            {
-                currentRunCooldown -= Time.deltaTime;
-                Script_UI_InGame_Manager.Instance.UpdatePlayerStamina(currentRunCooldown, runDuration);
-            }*/
-
             if (currentflashlightCooldown <= 0)
             {
                 if (isServer)
