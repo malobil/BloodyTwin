@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters;
 
 public class Script_End_Level_Trigger : MonoBehaviour {
 
@@ -8,7 +9,8 @@ public class Script_End_Level_Trigger : MonoBehaviour {
     {
         if(other.CompareTag("Intru"))
         {
-            Script_UI_InGame_Manager.Instance.IntruderWin();
+            other.GetComponent<Script_Player_Moves>().IntruderWin();
+            Debug.Log("FIN");
         }
     }
 }

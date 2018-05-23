@@ -17,7 +17,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
    
-    private int intruderAlive = 2;
+    private int intruderAlive = 1;
+    private int intruderWin = 0;
 
     [Header("Poupée")]
     public List<Transform> dollSpawnList = new List<Transform>();
@@ -99,7 +100,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [ClientRpc]
     public void RpcGameEnd()
     {
-        if(intruderAlive <= 0)
+        if(intruderAlive <= 0 && intruderWin <= 0)
         {
             endText.text = "KILLERS win !";
         }
@@ -114,9 +115,19 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public void IntruderWin()
     {
-        endText.text = "You win ! " ;
+        endText.text = "You win ! ";
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void IntruderAsWin() // execute on server
+    {
+        intruderWin++;
+
+        if(intruderWin >= 2)
+        {
+            RpcGameEnd();
+        }
     }
 
     public void IntruderLoose()

@@ -269,6 +269,28 @@ namespace UnityStandardAssets.Characters
             return isStun;
         }
 
+        public void IntruderWin()
+        {
+            if (isLocalPlayer)
+            {
+                Debug.Log("WIN");
+                cameraTransform.parent = null;
+                Script_UI_InGame_Manager.Instance.IntruderWin();
+
+                Destroy(gameObject);
+            }
+            
+            CmdIntruderAsWin();
+            Destroy(this.gameObject);
+            NetworkServer.UnSpawn(this.gameObject);
+        }
+
+        [Command]
+        void CmdIntruderAsWin()
+        {
+            Script_UI_InGame_Manager.Instance.IntruderAsWin();
+        }
+
         IEnumerator StunTime()
         {
             yield return new WaitForSeconds(3f);
