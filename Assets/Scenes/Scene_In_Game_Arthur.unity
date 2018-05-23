@@ -14633,39 +14633,6 @@ Prefab:
       propertyPath: lights
       value: 
       objectReference: {fileID: 1482476979}
-    - target: {fileID: 1467372362706200, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306022401008548, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114530583639864692, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114530583639864692, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114530583639864692, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114530583639864692, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 796a6063bdb30ce4081c2f0cda10ac71,
-        type: 3}
-    - target: {fileID: 1366446710627872, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
   m_IsPrefabParent: 0

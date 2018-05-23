@@ -383,8 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1d61356076b4d4cb054c6f41184f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 10
-  seconds: 10
+  minutes: 5
+  seconds: 30
   timerText: {fileID: 114742529477030960}
   endText: {fileID: 114530583639864692}
   gameOverPanel: {fileID: 1467372362706200}
@@ -392,7 +392,6 @@ MonoBehaviour:
   gamePauseMenu: {fileID: 1698612746327514}
   bourreauUI: {fileID: 1067799828398324}
   spectreUI: {fileID: 1367785476999080}
-  intruderAlive: 1
   dollSpawnList:
   - {fileID: 0}
   - {fileID: 0}
@@ -849,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.36551726, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -857,7 +856,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 796a6063bdb30ce4081c2f0cda10ac71, type: 3}
     m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
