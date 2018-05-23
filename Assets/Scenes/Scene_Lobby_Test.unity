@@ -5315,7 +5315,7 @@ MonoBehaviour:
   _status: {fileID: 1912368217}
   _roomListItemPrefab: {fileID: 1000010946529116, guid: fd175173a444eac4cbf2dab015d8e0df,
     type: 2}
-  _roomListParent: {fileID: 0}
+  _roomListParent: {fileID: 275937542}
 --- !u!1 &1142579959
 GameObject:
   m_ObjectHideFlags: 0
