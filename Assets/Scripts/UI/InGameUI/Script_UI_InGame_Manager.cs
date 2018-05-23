@@ -17,7 +17,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
 
    
-    private int intruderAlive = 1;
+    private int intruderAlive = 2;
     private int intruderWin = 0;
 
     [Header("Poupée")]
