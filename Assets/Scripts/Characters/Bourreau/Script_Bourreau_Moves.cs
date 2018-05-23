@@ -9,6 +9,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     public class Script_Bourreau_Moves : NetworkBehaviour
     {
         [Header("Movement")]
+        public float speed = 1f;
         public float walkSpeedMultiply;
         public float runSpeed;
         public float runDuration;
@@ -47,12 +48,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         
         private void Start()
         {
+            gameObject.tag = "Bourreau";
+
             if (!isLocalPlayer)
             {
                 return;
             }
 
-            gameObject.tag = "Bourreau";
+           
             Script_UI_InGame_Manager.Instance.LightUp();
             // get the transform of the main camera
             if (Camera.main != null)
@@ -80,7 +83,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (currentRunCooldown > 0)
             {
                 currentRunCooldown -= Time.deltaTime;
-                Script_UI_InGame_Manager.Instance.UpdateBourreauStamina(currentRunCooldown, runDuration);
+                //Script_UI_InGame_Manager.Instance.UpdateBourreauStamina(currentRunCooldown, runDuration);
             }
 
             if(currentAttackCooldown > 0)
@@ -162,8 +165,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (currentAttackCooldown <= 0 && !_isScreaming)
             {
                 // read inputs
-                float h = CrossPlatformInputManager.GetAxis("Horizontal");
-                float v = CrossPlatformInputManager.GetAxis("Vertical");
+                float h = CrossPlatformInputManager.GetAxis("Horizontal") * speed;
+                float v = CrossPlatformInputManager.GetAxis("Vertical") * speed ;
                 
 
                 // calculate move direction to pass to character
@@ -184,7 +187,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     m_Move *= runSpeed;
                     currentRunDuration += Time.deltaTime;
-                    Script_UI_InGame_Manager.Instance.ActiveBourreauUI();
+                    //Script_UI_InGame_Manager.Instance.ActiveBourreauUI();
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftShift) && currentRunCooldown <= 0 || currentRunDuration >= runDuration && currentRunCooldown <= 0)
                 {

@@ -1748,7 +1748,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755443072965588}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2703,9 +2703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeedMultiply: 1.2
+  walkSpeedMultiply: 0
   runSpeed: 3
-  runDuration: 10
+  runDuration: 5
   runCooldown: 10
   comCome: {fileID: 1049546696430872, guid: bedff413ad48ae945965105d4ab3d8ae, type: 2}
   comGotOne: {fileID: 1984350310164598, guid: 06bc0e80a2ab2e447a6e978de16a48e9, type: 2}
@@ -2718,7 +2718,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9b1ee0a77c5f0e04fbb17041435a4d82, type: 3}
   - {fileID: 8300000, guid: 9b82f95a82fcd6a44b331ab33403cc56, type: 3}
   - {fileID: 8300000, guid: 1773f9216b2298842b945e5f231fbb2f, type: 3}
-  attackCooldown: 2
+  attackCooldown: 1
   attackSpawnPoint: {fileID: 4885166653310164}
   attackZonePrefab: {fileID: 1519718916192652, guid: 0964f3e0546d62043933a019629f1591,
     type: 2}
