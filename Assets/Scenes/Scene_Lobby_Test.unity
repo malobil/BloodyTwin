@@ -732,7 +732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: back
 --- !u!222 &263941825
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1738,8 +1738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.95, y: -591.835}
-  m_SizeDelta: {x: 403.9, y: 142.17}
+  m_AnchoredPosition: {x: 298.66998, y: -762.98}
+  m_SizeDelta: {x: 401.34, y: 45.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458460057
 MonoBehaviour:
@@ -6965,7 +6965,7 @@ GameObject:
   - component: {fileID: 1517413430}
   - component: {fileID: 1517413431}
   m_Layer: 5
-  m_Name: "Tuto_D\xE9but"
+  m_Name: Tuto_Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7005,14 +7005,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 41
+    m_Left: 98
     m_Right: 0
-    m_Top: 324
+    m_Top: 640
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 403.9, y: 142.17}
+  m_CellSize: {x: 401.34, y: 45.6}
   m_Spacing: {x: 0, y: 54.58}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -7396,8 +7396,8 @@ RectTransform:
   m_Father: {fileID: 1742652747}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06508212, y: 0.021763429}
-  m_AnchorMax: {x: 0.16430764, y: 0.09849525}
+  m_AnchorMin: {x: 0.06508212, y: 0.07035033}
+  m_AnchorMax: {x: 0.16430764, y: 0.14708215}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8868,8 +8868,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.95, y: -395.085}
-  m_SizeDelta: {x: 403.9, y: 142.17}
+  m_AnchoredPosition: {x: 298.66998, y: -662.8}
+  m_SizeDelta: {x: 401.34, y: 45.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1815119782
 MonoBehaviour:
