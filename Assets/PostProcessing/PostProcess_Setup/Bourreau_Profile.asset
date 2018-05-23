@@ -87,15 +87,15 @@ MonoBehaviour:
     m_Settings:
       lowPercent: 45
       highPercent: 95
-      minLuminance: -1
-      maxLuminance: 5
+      minLuminance: -5
+      maxLuminance: 6
       keyValue: 0.25
       dynamicKeyValue: 1
-      adaptationType: 0
+      adaptationType: 1
       speedUp: 2
       speedDown: 1
       logMin: -4
-      logMax: 5
+      logMax: 8
   bloom:
     m_Enabled: 0
     m_Settings:
@@ -113,7 +113,7 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.02
+        neutralBlackIn: 0.052
         neutralWhiteIn: 10
         neutralBlackOut: 0
         neutralWhiteOut: 10
@@ -127,19 +127,19 @@ MonoBehaviour:
         saturation: 1
         contrast: 1
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: 0.65, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
-          slope: {r: 0.8302137, g: 1, b: 0.7570401, a: 0.39889196}
-          power: {r: 1, g: 0.6249875, b: 0.6730895, a: 0.15512466}
-          offset: {r: 1, g: 0.7674492, b: 0.5852455, a: -0.08864266}
+          slope: {r: 1, g: 0.46855065, b: 0.2830518, a: 0.39889196}
+          power: {r: 1, g: 0.21943976, b: 0.14078903, a: 0.15512466}
+          offset: {r: 1, g: 0.27910823, b: 0.24244517, a: -0.08864266}
         linear:
           lift: {r: 0.965529, g: 1, b: 0.9833079, a: 0}
-          gamma: {r: 1, g: 1, b: 1, a: 0}
+          gamma: {r: 0.81611574, g: 1, b: 0.91858375, a: 0}
           gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
@@ -293,10 +293,10 @@ MonoBehaviour:
       size: 1
       luminanceContribution: 0.678
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 0.9411765, g: 0.449827, b: 0.449827, a: 1}
+      color: {r: 0.50735295, g: 0.048496958, b: 0.048496958, a: 1}
       center: {x: 0.5, y: 0.5}
       intensity: 0.595
       smoothness: 1
