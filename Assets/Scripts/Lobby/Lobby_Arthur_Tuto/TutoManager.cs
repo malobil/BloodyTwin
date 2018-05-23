@@ -101,4 +101,9 @@ public class TutoManager : MonoBehaviour
 		}
 
 	}
+
+    public void QuitGame ()
+    {
+        Application.Quit();
+    }
 }
