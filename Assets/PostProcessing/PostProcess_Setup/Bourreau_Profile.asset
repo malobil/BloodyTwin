@@ -300,7 +300,7 @@ MonoBehaviour:
       center: {x: 0.5, y: 0.5}
       intensity: 0.47
       smoothness: 1
-      roundness: 0.617
+      roundness: 0.47
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
