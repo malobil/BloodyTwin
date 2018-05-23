@@ -388,7 +388,7 @@ Prefab:
     - target: {fileID: 224149346719343390, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -52.35
       objectReference: {fileID: 0}
     - target: {fileID: 224697953256074348, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
@@ -408,7 +408,7 @@ Prefab:
     - target: {fileID: 224697953256074348, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -143.11
       objectReference: {fileID: 0}
     - target: {fileID: 224462625681225318, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
@@ -428,7 +428,7 @@ Prefab:
     - target: {fileID: 224462625681225318, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -230.47
       objectReference: {fileID: 0}
     - target: {fileID: 224505053358453996, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
@@ -448,7 +448,7 @@ Prefab:
     - target: {fileID: 224505053358453996, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -319.48
       objectReference: {fileID: 0}
     - target: {fileID: 224577048764092518, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
@@ -468,11 +468,11 @@ Prefab:
     - target: {fileID: 224577048764092518, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -415.84
       objectReference: {fileID: 0}
     - target: {fileID: 1766004446286606, guid: f9a3223bd4def284fbad62fa71a6586d, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1928794135088704, guid: f9a3223bd4def284fbad62fa71a6586d, type: 2}
       propertyPath: m_IsActive
@@ -541,7 +541,7 @@ Prefab:
     - target: {fileID: 224220384127387614, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000066757
+      value: -0.000005722046
       objectReference: {fileID: 0}
     - target: {fileID: 224220384127387614, guid: f9a3223bd4def284fbad62fa71a6586d,
         type: 2}
@@ -767,6 +767,29 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMin.y
       value: 0.058251508
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359915235397968, guid: f9a3223bd4def284fbad62fa71a6586d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484960380379570, guid: f9a3223bd4def284fbad62fa71a6586d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264600825419144, guid: f9a3223bd4def284fbad62fa71a6586d,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Butcher''s controls. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255643030534548, guid: f9a3223bd4def284fbad62fa71a6586d,
+        type: 2}
+      propertyPath: m_Text
+      value: Ghost's controls.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114124382170838942, guid: f9a3223bd4def284fbad62fa71a6586d,
+        type: 2}
+      propertyPath: m_Text
+      value: Intruders's Controls.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9a3223bd4def284fbad62fa71a6586d, type: 2}
