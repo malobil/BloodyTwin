@@ -20219,7 +20219,7 @@ Prefab:
     - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
         type: 2}
       propertyPath: m_Intensity
-      value: 0.92
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 108898622389157220, guid: 9b08986eeaa701f429b397124ff245e1,
         type: 2}

@@ -88,7 +88,7 @@ MonoBehaviour:
       lowPercent: 45
       highPercent: 95
       minLuminance: -5
-      maxLuminance: 5
+      maxLuminance: 6
       keyValue: 0.25
       dynamicKeyValue: 1
       adaptationType: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
         mode: 1
         log:
           slope: {r: 0.9494563, g: 0.9583844, b: 1, a: 0.39889196}
-          power: {r: 1, g: 0.36429477, b: 0.19005793, a: 0.15512466}
-          offset: {r: 1, g: 0.14004713, b: 0.040379047, a: -0.08864266}
+          power: {r: 1, g: 0.5964023, b: 0.45326108, a: 0.15512466}
+          offset: {r: 1, g: 0.44599468, b: 0.44075936, a: -0.08864266}
         linear:
           lift: {r: 0.965529, g: 1, b: 0.9833079, a: 0}
           gamma: {r: 0.81611574, g: 1, b: 0.91858375, a: 0}
@@ -300,7 +300,7 @@ MonoBehaviour:
       center: {x: 0.5, y: 0.5}
       intensity: 0.47
       smoothness: 1
-      roundness: 0.47
+      roundness: 0.13
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
