@@ -297,5 +297,12 @@ namespace UnityStandardAssets.Characters
             isStun = false;
             GetComponent<FirstPersonController>().enabled = true;
         }
+
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            Rigidbody body = hit.collider.attachedRigidbody;
+            if (body != null && !body.isKinematic)
+                body.velocity += hit.controller.velocity * 0.3f;
+        }
     }
 }
