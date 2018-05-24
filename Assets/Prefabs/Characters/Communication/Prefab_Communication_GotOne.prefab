@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199728095663200354}
   - component: {fileID: 114384139551846474}
   - component: {fileID: 114499020207301602}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Prefab_Communication_GotOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
