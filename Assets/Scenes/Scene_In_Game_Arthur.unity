@@ -644,11 +644,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4747047158104296, guid: 7d917f9c987ae6042bc1d16888fe18ac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.029999971
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4747047158104296, guid: 7d917f9c987ae6042bc1d16888fe18ac, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -32.64
+      value: -32.55
       objectReference: {fileID: 0}
     - target: {fileID: 4747047158104296, guid: 7d917f9c987ae6042bc1d16888fe18ac, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5058,7 +5058,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5279b4c9075f91640b493b5122036470, type: 2}
+  - {fileID: 2100000, guid: 74a0e03be95611844a3c50607e6a08a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
