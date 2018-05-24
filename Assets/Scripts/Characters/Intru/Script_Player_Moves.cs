@@ -150,6 +150,7 @@ namespace UnityStandardAssets.Characters
                     }
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {
+                        hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
                         CmdGetAPile(hit.collider.gameObject);
                     }
 
