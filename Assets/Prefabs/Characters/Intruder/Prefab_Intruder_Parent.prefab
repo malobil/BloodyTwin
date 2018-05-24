@@ -428,7 +428,7 @@ MonoBehaviour:
   runSpeed: 0
   runDuration: 0
   runCooldown: 0
-  flashlightCooldown: 100
+  flashlightCooldown: 60
   lampGO: {fileID: 1540221763709376}
   cameraPrefab: {fileID: 1659406914338794, guid: 9096172803b8d744ca4fc8ca54a0c369,
     type: 2}
