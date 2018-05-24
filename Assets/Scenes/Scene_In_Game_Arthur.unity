@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000408, guid: cbf7c1d8dbffc5d4eb6d968f95f479b3,
+  m_LightingDataAsset: {fileID: 112000432, guid: cbf7c1d8dbffc5d4eb6d968f95f479b3,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -15519,11 +15519,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4991176749948580, guid: 1106b9ee0e3b7a048b373bc19480f56a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.962
+      value: -0.987
       objectReference: {fileID: 0}
     - target: {fileID: 4991176749948580, guid: 1106b9ee0e3b7a048b373bc19480f56a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -26.48
+      value: -26.474
       objectReference: {fileID: 0}
     - target: {fileID: 4991176749948580, guid: 1106b9ee0e3b7a048b373bc19480f56a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -20426,8 +20426,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577532172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59.47, y: 2.38, z: -13.35}
-  m_LocalScale: {x: 2.1052175, y: 3.8720083, z: 0.1159152}
+  m_LocalPosition: {x: -59.47, y: 2.13, z: -13.35}
+  m_LocalScale: {x: 2.1052175, y: 4.2742777, z: 0.1159152}
   m_Children: []
   m_Father: {fileID: 1750036148}
   m_RootOrder: 2
@@ -21213,11 +21213,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4384314734882156, guid: c74a2ecbafac3b14f846ab19462f2eed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.31
+      value: 0.274
       objectReference: {fileID: 0}
     - target: {fileID: 4384314734882156, guid: c74a2ecbafac3b14f846ab19462f2eed, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -28.57
+      value: -27.12
       objectReference: {fileID: 0}
     - target: {fileID: 4384314734882156, guid: c74a2ecbafac3b14f846ab19462f2eed, type: 2}
       propertyPath: m_LocalRotation.x
