@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityStandardAssets.Cameras;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
@@ -22,7 +23,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public GameObject comRunAway;
     public GameObject comStayHere;
     public AudioSource comAudioSource;
-    public AudioClip[] comSound;
+    public AudioClip[] comSoundSpectre;
+    public AudioClip[] comSoundBourreau;
 
 
     [Header("Camera")]
@@ -42,7 +44,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             return;
         }
         //Script_UI_InGame_Manager.Instance.CmdRegisterSpectre();
-        Script_UI_InGame_Manager.Instance.LightUp(); 
+        Script_UI_InGame_Manager.Instance.LightUp();
+        
     }
 
     void Update ()
@@ -59,7 +62,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             if(!comAudioSource.isPlaying)
             {
                 CmdCommunicationCome();
-                CmdComSound(0);
+                CmdcomSoundSpectre(0);
             }
             
         }
@@ -68,7 +71,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             if (!comAudioSource.isPlaying)
             {
                 CmdCommunicationGotOne();
-                CmdComSound(1);
+                CmdcomSoundSpectre(1);
             }
         }
         else if (Input.GetButtonDown("Communication_HeRunAway"))
@@ -76,7 +79,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             if (!comAudioSource.isPlaying)
             {
                 CmdCommunicationHeRun();
-                CmdComSound(2);
+                CmdcomSoundSpectre(2);
             }
         }
         else if (Input.GetButtonDown("Communication_StayHere"))
@@ -84,7 +87,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             if (!comAudioSource.isPlaying)
             {
                 CmdCommunicationStay();
-                CmdComSound(3);
+                CmdcomSoundSpectre(3);
             }
         }
 
@@ -211,7 +214,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         GameObject tempCom = Instantiate(comCome, transform.position, Quaternion.identity);
         NetworkServer.Spawn(tempCom);
-        Debug.Log("COM");
     }
 
     [Command]
@@ -219,7 +221,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         GameObject tempCom = Instantiate(comStayHere, transform.position, Quaternion.identity);
         NetworkServer.Spawn(tempCom);
-        Debug.Log("COM");
     }
 
     [Command]
@@ -227,7 +228,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         GameObject tempCom = Instantiate(comRunAway, transform.position, Quaternion.identity);
         NetworkServer.Spawn(tempCom);
-        Debug.Log("COM");
     }
 
     [Command]
@@ -235,19 +235,27 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         GameObject tempCom = Instantiate(comGotOne, transform.position, Quaternion.identity);
         NetworkServer.Spawn(tempCom);
-        Debug.Log("COM");
     }
 
     [Command]
-    void CmdComSound(int idxToPlay)
+    void CmdcomSoundSpectre(int idxToPlay)
     {
-        RpcTargetSound(idxToPlay);
+        //RpcTargetSound(idxToPlay);
+        PlaySound(idxToPlay);
+        if (GameObject.FindGameObjectWithTag("Bourreau") != null)
+        {
+            GameObject.FindGameObjectWithTag("Bourreau").GetComponent<Script_Bourreau_Moves>().TakeSound(idxToPlay);
+        }
+        else
+        {
+            Debug.Log("No Bourreau");
+        }
     }
 
     [ClientRpc]
     public void RpcTargetSound(int idxToPlay)
     {
-        comAudioSource.PlayOneShot(comSound[idxToPlay]);
+        comAudioSource.PlayOneShot(comSoundSpectre[idxToPlay]);
     }
 
     void SetPauseMenu()
@@ -261,5 +269,21 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             Script_UI_InGame_Manager.Instance.GameOver();
         } 
+    }
+
+    void PlaySound(int idx)
+    {
+        comAudioSource.PlayOneShot(comSoundSpectre[idx]);
+    }
+
+    public void TakeSound(int toPlay)
+    {
+        TargetRpcTargetBySound(connectionToClient, toPlay);
+    }
+
+    [TargetRpc]
+    void TargetRpcTargetBySound(NetworkConnection test, int idxToPlay)
+    {
+        comAudioSource.PlayOneShot(comSoundBourreau[idxToPlay]);
     }
 }

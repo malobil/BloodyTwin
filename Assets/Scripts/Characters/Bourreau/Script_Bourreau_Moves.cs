@@ -25,6 +25,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public GameObject comStayHere;
         public AudioSource comAudioSource;
         public AudioClip[] comSound;
+        public AudioClip[] comSoundSpectre;
 
         [Header("Attack")]
         public float attackCooldown;
@@ -48,14 +49,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         
         private void Start()
         {
-            gameObject.tag = "Bourreau";
 
+            gameObject.tag = "Bourreau";
             if (!isLocalPlayer)
             {
                 return;
             }
 
-           
+            
             Script_UI_InGame_Manager.Instance.LightUp();
             // get the transform of the main camera
             if (Camera.main != null)
@@ -242,7 +243,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempCom = Instantiate(comCome, transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempCom);
-            Debug.Log("COM");
         }
 
         [Command]
@@ -250,7 +250,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempCom = Instantiate(comStayHere, transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempCom);
-            Debug.Log("COM");
         }
 
         [Command]
@@ -258,7 +257,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempCom = Instantiate(comRunAway, transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempCom);
-            Debug.Log("COM");
         }
 
         [Command]
@@ -266,19 +264,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempCom = Instantiate(comGotOne, transform.position, Quaternion.identity);
             NetworkServer.Spawn(tempCom);
-            Debug.Log("COM");
         }
 
         [Command]
         void CmdComSound(int idxToPlay)
         {
-            RpcTargetSound(idxToPlay);
+            // RpcTargetSound(idxToPlay);
+            PlaySound(idxToPlay);
+            if(GameObject.FindGameObjectWithTag("Spectre") != null)
+            {
+                GameObject.FindGameObjectWithTag("Spectre").GetComponent<Script_Spectre_Moves_Online>().TakeSound(idxToPlay);
+            }
+            else
+            {
+                Debug.Log("No spectre");
+            }
+            
         }
 
         [ClientRpc]
         public void RpcTargetSound(int idxToPlay)
         {
-            comAudioSource.PlayOneShot(comSound[idxToPlay]);
+           comAudioSource.PlayOneShot(comSound[idxToPlay]); 
         }
 
         public void Loose()
@@ -287,6 +294,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 Script_UI_InGame_Manager.Instance.GameOver();
             }
+        }
+
+        void PlaySound(int idx)
+        {
+            comAudioSource.PlayOneShot(comSound[idx]);
+        }
+
+        public void TakeSound(int toPlay)
+        {
+            TargetRpcTargetBySound(connectionToClient, toPlay);
+        }
+
+        [TargetRpc]
+        void TargetRpcTargetBySound(NetworkConnection test, int idxToPlay)
+        {
+            comAudioSource.PlayOneShot(comSoundSpectre[idxToPlay]);
         }
     }
 }

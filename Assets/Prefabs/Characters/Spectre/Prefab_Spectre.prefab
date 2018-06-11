@@ -1122,11 +1122,16 @@ MonoBehaviour:
   comStayHere: {fileID: 1142833389583784, guid: 5668de12b7cccac46859c014cdb18685,
     type: 2}
   comAudioSource: {fileID: 82172406888501958}
-  comSound:
+  comSoundSpectre:
   - {fileID: 8300000, guid: eaff4856bf990b84386cb30b735ca8a3, type: 3}
   - {fileID: 8300000, guid: 70820cf350168b04bacdae40274fac71, type: 3}
   - {fileID: 8300000, guid: 40d2626046feb2c40bb069397e384db5, type: 3}
   - {fileID: 8300000, guid: 632feb711e0751145955fd346c9cc9b3, type: 3}
+  comSoundBourreau:
+  - {fileID: 8300000, guid: 41c862245fdebbf47bb8232750cc4184, type: 3}
+  - {fileID: 8300000, guid: 9b1ee0a77c5f0e04fbb17041435a4d82, type: 3}
+  - {fileID: 8300000, guid: 9b82f95a82fcd6a44b331ab33403cc56, type: 3}
+  - {fileID: 8300000, guid: 1773f9216b2298842b945e5f231fbb2f, type: 3}
   playerCamera: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
     type: 2}
 --- !u!114 &114118656943792600
