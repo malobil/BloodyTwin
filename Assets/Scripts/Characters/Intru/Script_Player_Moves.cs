@@ -160,6 +160,22 @@ namespace UnityStandardAssets.Characters
             }
         }
 
+        private void FixedUpdate()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 4.0f))
+                {
+                    if (hit.collider.gameObject.CompareTag("Door"))
+                    {
+                        Debug.Log("Door");
+                        
+                    }
+                }
+            }
+        }
+
         [Command]
         void CmdArmory(GameObject go)
         {

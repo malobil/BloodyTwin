@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4268151169157234}
   - component: {fileID: 33190108941236906}
   - component: {fileID: 23504590780694804}
+  - component: {fileID: 65274811881065984}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -39,9 +40,10 @@ GameObject:
   - component: {fileID: 33696850327106316}
   - component: {fileID: 23029420697190530}
   - component: {fileID: 95113272895683870}
+  - component: {fileID: 114679964999132512}
   m_Layer: 0
   m_Name: Door_Simple
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,8 +117,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449183808914264}
   m_LocalRotation: {x: 1, y: 0, z: -0, w: 0.00000011920929}
-  m_LocalPosition: {x: -16.52, y: 5.08, z: -7.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -27.781052, y: 2.61, z: -12.089489}
+  m_LocalScale: {x: 0.500799, y: 0.500799, z: 0.500799}
   m_Children:
   - {fileID: 4268151169157234}
   m_Father: {fileID: 0}
@@ -299,6 +301,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449183808914264}
   m_Mesh: {fileID: 4300000, guid: 03517c211fe8a1c42979931521d98c6e, type: 3}
+--- !u!65 &65274811881065984
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066989623588058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3368015, y: 4.4196, z: 0.16149297}
+  m_Center: {x: -1.2700007, y: 2.5146, z: -0.052171484}
 --- !u!95 &95113272895683870
 Animator:
   serializedVersion: 3
@@ -308,7 +322,7 @@ Animator:
   m_GameObject: {fileID: 1449183808914264}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 03517c211fe8a1c42979931521d98c6e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8c7ccc492a85c240b3c7ca88b48d0a8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -316,3 +330,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114679964999132512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449183808914264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f7bb48d45ada843a91923bbf85936a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

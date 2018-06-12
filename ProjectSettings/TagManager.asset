@@ -11,6 +11,7 @@ TagManager:
   - Doll
   - Fire
   - Armory
+  - Door
   layers:
   - Default
   - TransparentFX
