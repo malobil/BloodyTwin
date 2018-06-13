@@ -106,4 +106,9 @@ public class TutoManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void DiscordHyperlink()
+    {
+    	Application.OpenURL("https://discord.gg/smXd5Z7");
+    }
 }
