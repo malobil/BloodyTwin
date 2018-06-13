@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
@@ -32,6 +33,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public Transform attackSpawnPoint;
         public GameObject attackZonePrefab;
         private float currentAttackCooldown;
+        private IEnumerator attack;
 
         [Header("Scream")]
         public float ScreamRange = 5f;
@@ -46,16 +48,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
+      
+        public Transform detectPoint;
         
+
+
         private void Start()
         {
-
             gameObject.tag = "Bourreau";
             if (!isLocalPlayer)
             {
                 return;
             }
-
             
             Script_UI_InGame_Manager.Instance.LightUp();
             // get the transform of the main camera
@@ -97,8 +101,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
-                currentAttackCooldown = attackCooldown ;
-                CmdAttack();
+                Debug.Log(currentAttackCooldown);
+                StartCoroutine("Attack");
+                currentAttackCooldown = attackCooldown;  
             }
 
             if (Input.GetButtonDown("Bourreau_Scream") && _screamCooldown <= 0f)
@@ -210,9 +215,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                Debug.Log("Fire");
                 RaycastHit hit;
-                if (Physics.Raycast(m_Cam.position, m_Cam.forward, out hit, 4.0f))
+                if (Physics.Raycast(detectPoint.transform.position,detectPoint.transform.forward, out hit, 4.0f))
                 {
+                    
+                    Debug.Log(hit);
                     if (hit.collider.gameObject.CompareTag("Door"))
                     {
                         Debug.Log("Door");
@@ -228,6 +236,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     }
                 }
             }
+        }
+
+        IEnumerator Attack()
+        { 
+            yield return new WaitForSeconds(2);
+            CmdAttack();
+            Debug.Log("Attack");
         }
 
         [Command]
