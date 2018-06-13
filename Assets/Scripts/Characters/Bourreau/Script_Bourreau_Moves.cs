@@ -213,7 +213,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Character.Move(m_Move,false,false);
             //m_Jump = false;
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Fire");
                 RaycastHit hit;
@@ -240,7 +240,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         IEnumerator Attack()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSecondsRealtime(0.5f);
             CmdAttack();
             Debug.Log("Attack");
         }

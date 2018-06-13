@@ -162,7 +162,7 @@ namespace UnityStandardAssets.Characters
 
         private void FixedUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;
                 if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 4.0f))
