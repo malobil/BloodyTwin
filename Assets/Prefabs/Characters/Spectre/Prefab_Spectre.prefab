@@ -235,12 +235,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4975181534809142}
-  - component: {fileID: 135709415755289948}
   - component: {fileID: 114630386339972210}
   - component: {fileID: 114118656943792600}
   - component: {fileID: 114563940511010818}
   - component: {fileID: 114061684574360024}
   - component: {fileID: 54566497733767556}
+  - component: {fileID: 65066201570960762}
   m_Layer: 9
   m_Name: Prefab_Spectre
   m_TagString: Untagged
@@ -463,7 +463,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1935176631834224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.572338, y: -2.44899, z: -1.1757171}
+  m_LocalPosition: {x: -59.777866, y: -1.9400933, z: 4.917647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4307995125877468}
@@ -857,7 +857,19 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
+--- !u!65 &65066201570960762
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935176631834224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.68014526, y: 1.6117545, z: 0.6760043}
+  m_Center: {x: -0.0059051514, y: 0.22228438, z: 0.2616055}
 --- !u!82 &82172406888501958
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1200,18 +1212,6 @@ MonoBehaviour:
     i15: 134
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!135 &135709415755289948
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1935176631834224}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198306421993761616
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -9,6 +9,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     [Header("Movement")]
     public float speed = 5.0f;
+    private Rigidbody rb;
     [Header("Possession")]
     public float possessTime;
     public GameObject feedbackPossessing ;
@@ -45,6 +46,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
         //Script_UI_InGame_Manager.Instance.CmdRegisterSpectre();
         Script_UI_InGame_Manager.Instance.LightUp();
+        rb = GetComponent<Rigidbody>();
         
     }
 
@@ -121,9 +123,16 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         float forwardInput = Input.GetAxis("Vertical"); // touche Z & S
 
         transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.up); //déplacement en fonction du regard du spectre && Il faut mettre un VECTOR 3 à la place
-        
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // déplacement Q & D
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); // déplacement Z & S
+
+        /*transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // déplacement Q & D
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); // déplacement Z & S */
+
+      /* rb.AddForce(Vector3.right * speed * horizontalInput, ForceMode.VelocityChange);
+        rb.AddForce(Vector3.forward * speed * forwardInput, ForceMode.VelocityChange);*/
+
+        rb.velocity = transform.right * speed * horizontalInput + transform.forward * speed * forwardInput;
+
+
     }
 
     public void SettingCamera(GameObject camToSet)
