@@ -30,6 +30,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     [Header("Camera")]
     public GameObject playerCamera;
+    public GameObject poupeeCam;
    
     private Script_Possession_Online objectToPossess;
 
@@ -46,8 +47,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
         //Script_UI_InGame_Manager.Instance.CmdRegisterSpectre();
         Script_UI_InGame_Manager.Instance.LightUp();
-        rb = GetComponent<Rigidbody>();
-        
+        rb = GetComponent<Rigidbody>();        
     }
 
     void Update ()
@@ -58,6 +58,16 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
 
         Mouvement(); // déplacement perso
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            poupeeCam.SetActive(true);
+        }
+        
+        if(Input.GetKeyUp(KeyCode.F))
+        {
+            poupeeCam.SetActive(false);
+        }
 
         if (Input.GetButtonDown("Communication_Come"))
         {
@@ -135,9 +145,12 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     }
 
-    public void SettingCamera(GameObject camToSet)
+    public void SettingCamera(GameObject camToSet, GameObject camP)
     {
         playerCamera = camToSet; // Set la camera du joueur
+        poupeeCam = camP;
+        poupeeCam.SetActive(false);
+        Debug.Log(poupeeCam);
 
     }
 

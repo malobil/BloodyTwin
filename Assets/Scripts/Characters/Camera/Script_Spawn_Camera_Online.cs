@@ -20,7 +20,7 @@ public class Script_Spawn_Camera_Online : NetworkBehaviour {
 
         if (GetComponent<Script_Spectre_Moves_Online>() != null)
         {
-            GetComponent<Script_Spectre_Moves_Online>().SettingCamera(cameraI);
+            GetComponent<Script_Spectre_Moves_Online>().SettingCamera(cameraI, GameObject.FindGameObjectWithTag("PoupéeCam"));
         }
 
         cameraI.tag = "MainCamera" ;

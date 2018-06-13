@@ -12,6 +12,7 @@ TagManager:
   - Fire
   - Armory
   - Door
+  - "Poup\xE9eCam"
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - SpectreTrigger
   - Intruders
   - ObjectPossess
-  - 
+  - SpectreVision
   - 
   - 
   - 
