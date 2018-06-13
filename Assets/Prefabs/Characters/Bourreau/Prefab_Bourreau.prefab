@@ -1528,7 +1528,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242737487146092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.096405, y: 1.3353801, z: -8.393117}
+  m_LocalPosition: {x: -21.691925, y: -0.17820477, z: -8.074763}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4636555256589430}
@@ -2864,7 +2864,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 70820cf350168b04bacdae40274fac71, type: 3}
   - {fileID: 8300000, guid: 40d2626046feb2c40bb069397e384db5, type: 3}
   - {fileID: 8300000, guid: 632feb711e0751145955fd346c9cc9b3, type: 3}
-  attackCooldown: 1
+  attackCooldown: 2
   attackSpawnPoint: {fileID: 4337793144649868}
   attackZonePrefab: {fileID: 1519718916192652, guid: 0964f3e0546d62043933a019629f1591,
     type: 2}

@@ -101,9 +101,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
+                currentAttackCooldown = attackCooldown;
                 Debug.Log(currentAttackCooldown);
-                StartCoroutine("Attack");
-                currentAttackCooldown = attackCooldown;  
+                StartCoroutine("Attack");                 
             }
 
             if (Input.GetButtonDown("Bourreau_Scream") && _screamCooldown <= 0f)
@@ -239,8 +239,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
 
         IEnumerator Attack()
-        { 
-            yield return new WaitForSeconds(2);
+        {
+            yield return new WaitForSeconds(1);
             CmdAttack();
             Debug.Log("Attack");
         }
@@ -269,7 +269,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [Command]
         private void CmdAttack()
         {
-            currentAttackCooldown = attackCooldown ;
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
             NetworkServer.Spawn(tempAttack);
             Destroy(tempAttack, currentAttackCooldown);
