@@ -170,10 +170,25 @@ namespace UnityStandardAssets.Characters
                     if (hit.collider.gameObject.CompareTag("Door"))
                     {
                         Debug.Log("Door");
-                        
+                        //if(!isServer)
+                        //{
+                        //    CmdDoor(hit.collider.gameObject);
+                        //}
+                        //else
+                        //{
+                        //    CmdDoor(hit.collider.gameObject);
+                        //}
+                        CmdDoor(hit.collider.transform.parent.gameObject);
                     }
                 }
             }
+        }
+
+        [Command]
+        public void CmdDoor(GameObject doorHit)
+        {
+            doorHit.GetComponent<Script_Door>().ChangeState();
+            Debug.Log(doorHit);
         }
 
         [Command]

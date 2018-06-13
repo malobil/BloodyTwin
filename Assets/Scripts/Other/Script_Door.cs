@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 public class Script_Door : NetworkBehaviour {
 
     private Animator doorAnimator;
+    private Animation doorAnimation;
     [SyncVar(hook = "DoorState")]
     private bool opened = false;
 
@@ -26,18 +27,18 @@ public class Script_Door : NetworkBehaviour {
     {
         if(isOpening)
         {
+            Debug.Log("DoorOpen");
             doorAnimator.SetTrigger("Open");
-
         }
         else if(!isOpening)
         {
             doorAnimator.SetTrigger("Close");
+            Debug.Log("DoorClose");
         }
     }
 
     public void ChangeState ()
     {
         opened = !opened;
-
     }
 }
