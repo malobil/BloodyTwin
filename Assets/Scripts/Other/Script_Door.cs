@@ -12,9 +12,9 @@ public class Script_Door : NetworkBehaviour {
     private bool opened = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         doorAnimator = GetComponent<Animator>();
-
 	}
 	
 	// Update is called once per frame

@@ -207,6 +207,34 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             m_Character.Move(m_Move,false,false);
             //m_Jump = false;
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(m_Cam.position, m_Cam.forward, out hit, 4.0f))
+                {
+                    if (hit.collider.gameObject.CompareTag("Door"))
+                    {
+                        Debug.Log("Door");
+                        //if(!isServer)
+                        //{
+                        //    CmdDoor(hit.collider.gameObject);
+                        //}
+                        //else
+                        //{
+                        //    CmdDoor(hit.collider.gameObject);
+                        //}
+                        CmdDoor(hit.collider.transform.parent.gameObject);
+                    }
+                }
+            }
+        }
+
+        [Command]
+        public void CmdDoor(GameObject doorHit)
+        {
+            doorHit.GetComponent<Script_Door>().ChangeState();
+            Debug.Log(doorHit);
         }
 
         [Command]
