@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114177846239947854}
   - component: {fileID: 114908689428451170}
   - component: {fileID: 114991866623027608}
+  - component: {fileID: 114020373812482506}
   m_Layer: 0
   m_Name: Door_Double
   m_TagString: Destructible
@@ -332,6 +333,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114020373812482506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064827795224722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219086e8ac90b2a4a9d480eb00cd0141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boom: {fileID: 19800000, guid: 921a3ff88856fe04ebc86b196fd8cc59, type: 2}
+  boomPosition: {fileID: 4526972252767592}
+  wall: {fileID: 1064827795224722}
 --- !u!114 &114177846239947854
 MonoBehaviour:
   m_ObjectHideFlags: 1
