@@ -10,6 +10,8 @@ public class Script_Door : NetworkBehaviour {
     private Animation doorAnimation;
     [SyncVar(hook = "DoorState")]
     private bool opened = false;
+    [SyncVar(hook = "DoorLock")]
+    private bool locked = false;
 
 	// Use this for initialization
 	void Start ()
@@ -23,9 +25,9 @@ public class Script_Door : NetworkBehaviour {
 	    
 	}
 
-    void DoorState (bool isOpening)
+    void DoorState (bool isOpening , bool isLocked)
     {
-        if(isOpening)
+        if(isOpening && !isLocked)
         {
             Debug.Log("DoorOpen");
             doorAnimator.SetTrigger("Open");
@@ -41,4 +43,11 @@ public class Script_Door : NetworkBehaviour {
     {
         opened = !opened;
     }
+
+    public void LockState ()
+    {
+        locked = !locked;
+    }
+
+
 }

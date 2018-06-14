@@ -27,7 +27,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A) && gameObject.tag != "door")
         {
             if(ejectionSpeed < maxEjectionSpeed)
             {
@@ -37,9 +37,14 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
            // Debug.Log(ejectionSpeed);
         }
 
-        if(Input.GetKeyUp(KeyCode.A))
+        if(Input.GetKeyUp(KeyCode.A) && gameObject.tag != "door")
         {
             Project();
+        }
+
+        if(Input.GetKey(KeyCode.A) && gameObject.tag == "door")
+        {
+            DoorLock(transform.parent.gameObject);
         }
     }
 
@@ -92,6 +97,11 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
                 isProject = false;
             }
         }
+    }
+
+    public void DoorLock (GameObject doorToLock)
+    {
+       doorToLock.GetComponent<Script_Door>().LockState();
     }
 
     IEnumerator ProjectionEnd()
