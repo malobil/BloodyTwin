@@ -101,7 +101,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
 
     public void DoorLock (GameObject doorToLock)
     {
-       doorToLock.GetComponent<Script_Door>().LockState();
+       //doorToLock.GetComponent<Script_Door>().LockState();
     }
 
     IEnumerator ProjectionEnd()
