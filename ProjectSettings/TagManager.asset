@@ -13,6 +13,7 @@ TagManager:
   - Armory
   - Door
   - "Poup\xE9eCam"
+  - Destructible
   layers:
   - Default
   - TransparentFX
