@@ -22,11 +22,12 @@ GameObject:
   - component: {fileID: 33962921922823854}
   - component: {fileID: 23484672583544264}
   - component: {fileID: 95919470701980218}
-  - component: {fileID: 114177846239947854}
   - component: {fileID: 114438338880188318}
-  - component: {fileID: 114247754290661812}
   - component: {fileID: 54809184012269732}
   - component: {fileID: 65812389550656980}
+  - component: {fileID: 114177846239947854}
+  - component: {fileID: 114908689428451170}
+  - component: {fileID: 114991866623027608}
   m_Layer: 0
   m_Name: Door_Double
   m_TagString: Destructible
@@ -342,20 +343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f7bb48d45ada843a91923bbf85936a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114247754290661812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1064827795224722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219086e8ac90b2a4a9d480eb00cd0141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boom: {fileID: 19800000, guid: 921a3ff88856fe04ebc86b196fd8cc59, type: 2}
-  boomPosition: {fileID: 4526972252767592}
-  wall: {fileID: 1064827795224722}
 --- !u!114 &114438338880188318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,3 +375,28 @@ MonoBehaviour:
     i15: 14
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114908689428451170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064827795224722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad61946a93b985c4a9c7eda5a21d0135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114991866623027608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064827795224722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4be9cb90d0a134cb67ea27fe46ab10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  ejectionSpeedAdd: 0
+  maxEjectionSpeed: 0
