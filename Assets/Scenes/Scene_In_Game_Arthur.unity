@@ -17319,25 +17319,6 @@ Transform:
   m_Father: {fileID: 203715519}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1338853452 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1064827795224722, guid: 690782700991f234dbc37e18f515af0e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1872502274}
---- !u!114 &1338853453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1338853452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219086e8ac90b2a4a9d480eb00cd0141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boom: {fileID: 19800000, guid: 921a3ff88856fe04ebc86b196fd8cc59, type: 2}
-  boomPosition: {fileID: 1848553444}
-  wall: {fileID: 1338853452}
 --- !u!1001 &1340733114
 Prefab:
   m_ObjectHideFlags: 0
@@ -18006,11 +17987,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4145894106585102, guid: 9023ff58b53639347b395b7f1f3293cd,
     type: 2}
   m_PrefabInternal: {fileID: 410176611}
---- !u!4 &1409791970 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4727315800099136, guid: ea9c9b72f5e419f468471798ee8ed9de,
-    type: 2}
-  m_PrefabInternal: {fileID: 1285291284}
 --- !u!1 &1412325036
 GameObject:
   m_ObjectHideFlags: 0
@@ -19662,25 +19638,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1508155407}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1509666725 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1449183808914264, guid: ea9c9b72f5e419f468471798ee8ed9de,
-    type: 2}
-  m_PrefabInternal: {fileID: 1285291284}
---- !u!114 &1509666726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1509666725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219086e8ac90b2a4a9d480eb00cd0141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boom: {fileID: 19800000, guid: 921a3ff88856fe04ebc86b196fd8cc59, type: 2}
-  boomPosition: {fileID: 1409791970}
-  wall: {fileID: 1509666725}
 --- !u!1 &1514318762
 GameObject:
   m_ObjectHideFlags: 0
@@ -23112,11 +23069,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1847756647}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1848553444 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4526972252767592, guid: 690782700991f234dbc37e18f515af0e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1872502274}
 --- !u!1 &1850129909
 GameObject:
   m_ObjectHideFlags: 0
