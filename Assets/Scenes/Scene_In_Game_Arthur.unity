@@ -3055,14 +3055,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 1449183808914264, guid: ea9c9b72f5e419f468471798ee8ed9de, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1977040749233082, guid: ea9c9b72f5e419f468471798ee8ed9de, type: 2}
-      propertyPath: m_TagString
-      value: Destructible
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea9c9b72f5e419f468471798ee8ed9de, type: 2}
   m_IsPrefabParent: 0
