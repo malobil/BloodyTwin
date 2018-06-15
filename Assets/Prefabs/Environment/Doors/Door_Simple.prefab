@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 54537674720398576}
   - component: {fileID: 65303500019825034}
   - component: {fileID: 114884356424616306}
+  - component: {fileID: 114757437334146362}
   - component: {fileID: 114679964999132512}
   - component: {fileID: 114528567050050490}
   m_Layer: 0
@@ -444,8 +445,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.986866, y: 6.020944, z: 0.9570516}
-  m_Center: {x: 0.23590145, y: 0.010925073, z: 0.0135166375}
+  m_Size: {x: 2.986866, y: 3.966606, z: 0.2008643}
+  m_Center: {x: 0.23590145, y: -0.15215103, z: 0.060521074}
 --- !u!65 &65832126254892840
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -511,6 +512,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f7bb48d45ada843a91923bbf85936a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114757437334146362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449183808914264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114884356424616306
 MonoBehaviour:
   m_ObjectHideFlags: 1
