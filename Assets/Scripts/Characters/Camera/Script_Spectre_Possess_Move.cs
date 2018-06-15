@@ -41,11 +41,6 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
         {
             Project();
         }
-
-        if(Input.GetKey(KeyCode.A) && gameObject.tag == "door")
-        {
-            DoorLock(transform.parent.gameObject);
-        }
     }
 
     void FixedUpdate()
@@ -97,11 +92,6 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
                 isProject = false;
             }
         }
-    }
-
-    public void DoorLock (GameObject doorToLock)
-    {
-       doorToLock.GetComponent<Script_Door>().LockState();
     }
 
     IEnumerator ProjectionEnd()
