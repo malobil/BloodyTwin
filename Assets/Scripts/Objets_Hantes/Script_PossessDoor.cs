@@ -18,12 +18,12 @@ public class Script_PossessDoor : NetworkBehaviour {
     {
 		if(Input.GetKeyDown(KeyCode.A))
         {
-            LockDoor();
+            RpcLockDoor();
         }
 	}
 
     [ClientRpc]
-    public void LockDoor ()
+    public void RpcLockDoor ()
     {
         isLock = !isLock;
     }
