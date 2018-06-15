@@ -16,12 +16,6 @@ public class Script_Door : NetworkBehaviour {
     {
         doorAnimator = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	    
-	}
 
     void DoorState (bool isOpening)
     {
@@ -39,6 +33,7 @@ public class Script_Door : NetworkBehaviour {
 
     public void ChangeState ()
     {
+        Debug.Log("ChangeState");
         opened = !opened;
     }
 
