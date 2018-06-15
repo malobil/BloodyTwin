@@ -26,8 +26,13 @@ public class Script_Possession_Online : NetworkBehaviour {
     {
             gameObject.tag = "Possess";
             player.transform.SetParent(transform); // met le spectre en parent de l'objet
-            player.GetComponent<Script_Spectre_Moves_Online>().DisableCharacter() ; // désactive le spectre                      
+            player.GetComponent<Script_Spectre_Moves_Online>().DisableCharacter() ; // désactive le spectre
+            
+        if (GetComponent<Script_Spectre_Possess_Move>() != null)
+        {
             GetComponent<Script_Spectre_Possess_Move>().enabled = true;
+        }
+            
             is_possession = true;
 
             timeLeft = 1f;
