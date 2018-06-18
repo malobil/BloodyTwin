@@ -77,9 +77,10 @@ GameObject:
   - component: {fileID: 114757437334146362}
   - component: {fileID: 114679964999132512}
   - component: {fileID: 114528567050050490}
+  - component: {fileID: 114203692491000826}
   m_Layer: 0
   m_Name: Door_Simple
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -476,6 +477,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114203692491000826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449183808914264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219086e8ac90b2a4a9d480eb00cd0141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boom: {fileID: 0}
+  boomPosition: {fileID: 0}
+  wall: {fileID: 0}
 --- !u!114 &114528567050050490
 MonoBehaviour:
   m_ObjectHideFlags: 1

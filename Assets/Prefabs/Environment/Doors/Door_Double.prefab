@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 54809184012269732}
   - component: {fileID: 65812389550656980}
   - component: {fileID: 114177846239947854}
+  - component: {fileID: 114691393072790496}
   - component: {fileID: 114020373812482506}
   m_Layer: 0
   m_Name: Door_Double
@@ -410,3 +411,14 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114691393072790496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064827795224722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad61946a93b985c4a9c7eda5a21d0135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
