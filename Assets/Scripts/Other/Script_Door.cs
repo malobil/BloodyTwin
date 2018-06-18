@@ -10,6 +10,7 @@ public class Script_Door : NetworkBehaviour {
     private Animation doorAnimation;
     [SyncVar(hook = "DoorState")]
     private bool opened = false;
+    [SyncVar(hook = "LockingDoor")]
     private bool lockedDoor = false;
 
 	// Use this for initialization
