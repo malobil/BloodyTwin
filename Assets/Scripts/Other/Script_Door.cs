@@ -49,6 +49,6 @@ public class Script_Door : NetworkBehaviour {
     public void LockingDoor ()
     {
         lockedDoor = !lockedDoor;
+        Debug.Log("Lock");
     }
-
 }

@@ -24,9 +24,10 @@ public class Script_Possession_Online : NetworkBehaviour {
 	
 	public void PossessObject()
     {
-        if(gameObject.tag ==  "door")
+        if (gameObject.GetComponent<Script_Door>())
         {
             gameObject.GetComponent<Script_Door>().LockingDoor();
+            Debug.Log("Possess a door");
         }
             gameObject.tag = "Possess";
             player.transform.SetParent(transform); // met le spectre en parent de l'objet
@@ -47,7 +48,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         //si on sort de l'objet en possession
         if (can_leave)
         {
-            if (gameObject.tag == "door")
+            if (gameObject.GetComponent<Script_Door>())
             {
                 gameObject.GetComponent<Script_Door>().LockingDoor();
             }
