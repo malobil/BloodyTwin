@@ -15,9 +15,9 @@ public class Script_Door : NetworkBehaviour {
 
     [Header("Audio Door")]
 	public AudioSource openingDoor;
+    public AudioSource closingDoor;
     public AudioSource creakOpen;
     public AudioSource creakClose;
-    public AudioSource closingDoor;
 	public AudioSource doorIsLocked;
 	public AudioSource lockingDoor;
 	public AudioSource destroyDoor;
