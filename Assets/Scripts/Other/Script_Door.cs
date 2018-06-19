@@ -14,8 +14,8 @@ public class Script_Door : NetworkBehaviour {
     private bool lockedDoor = false;
 
     [Header("Audio Door")]
-	public AudioSource openDoor;
-	public AudioSource closeDoor;
+	public AudioSource openingDoor;
+	public AudioSource closingDoor;
 	public AudioSource doorIsLocked;
 	public AudioSource lockingDoor;
 	public AudioSource destroyDoor;
@@ -32,7 +32,6 @@ public class Script_Door : NetworkBehaviour {
         {
             Debug.Log("DoorOpen");
             doorAnimator.SetTrigger("Open");
-            openDoor.Play();
         }
         else if(!isOpening)
         {
@@ -52,6 +51,16 @@ public class Script_Door : NetworkBehaviour {
         {
 
         }
+    }
+
+    public void OpeningDoor ()
+    {
+        openingDoor.Play();
+    }
+
+    public void ClosingDoor()
+    {
+        closingDoor.Play();
     }
 
     public void LockingDoor ()
