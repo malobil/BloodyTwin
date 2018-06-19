@@ -12,6 +12,11 @@ public class Script_Door : NetworkBehaviour {
     private bool opened = false;
     [SyncVar]
     private bool lockedDoor = false;
+	public AudioSource openDoor;
+	public AudioSource closeDoor;
+	public AudioSource lockDoor;
+	public AudioSource verrouillerDoor;
+	public AudioSource destroyDoor;
 
 	// Use this for initialization
 	void Start ()
