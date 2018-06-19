@@ -12,10 +12,12 @@ public class Script_Door : NetworkBehaviour {
     private bool opened = false;
     [SyncVar]
     private bool lockedDoor = false;
+
+    [Header("Audio Door")]
 	public AudioSource openDoor;
 	public AudioSource closeDoor;
-	public AudioSource lockDoor;
-	public AudioSource verrouillerDoor;
+	public AudioSource doorIsLocked;
+	public AudioSource lockingDoor;
 	public AudioSource destroyDoor;
 
 	// Use this for initialization
@@ -30,6 +32,7 @@ public class Script_Door : NetworkBehaviour {
         {
             Debug.Log("DoorOpen");
             doorAnimator.SetTrigger("Open");
+            openDoor.Play();
         }
         else if(!isOpening)
         {
