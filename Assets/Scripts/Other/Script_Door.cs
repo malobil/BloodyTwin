@@ -13,7 +13,7 @@ public class Script_Door : NetworkBehaviour {
     [SyncVar]
     private bool lockedDoor = false;
 
-    [Header("Audio Door")]
+    [Header("Door Audio")]
 	public AudioSource doorSoundPlayer;
     public AudioClip[] doorSounds;
  
