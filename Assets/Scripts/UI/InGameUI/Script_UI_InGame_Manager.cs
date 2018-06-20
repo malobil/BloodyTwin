@@ -30,6 +30,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("BourreauUI")]
     public Image bourreauStaminaImage ;
 
+    [Header("End")]
+    public List<GameObject> dollIndicator = new List<GameObject>();
+
     public GameObject lights;
 
     [SyncVar]
@@ -190,11 +193,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
     }
 
-    public void GetADoll()
+    public void GetADoll() // execute on server
     {
         dollGet++;
 
-        if(dollGet == dollToSpawn)
+        Destroy(dollIndicator[0]);
+        NetworkServer.UnSpawn(dollIndicator[0]);
+        dollIndicator.RemoveAt(0);
+
+        if (dollGet == dollToSpawn)
         {
             Destroy(doorHall);
             NetworkServer.UnSpawn(doorHall);

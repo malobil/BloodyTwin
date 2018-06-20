@@ -409,6 +409,12 @@ MonoBehaviour:
   dollToSpawn: 5
   doorHall: {fileID: 0}
   bourreauStaminaImage: {fileID: 114272773119534502}
+  dollIndicator:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   lights: {fileID: 0}
 --- !u!114 &114064399675701862
 MonoBehaviour:
