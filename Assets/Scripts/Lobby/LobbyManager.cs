@@ -61,7 +61,15 @@ public class LobbyManager : MonoBehaviour
             _playerList.Add(child.gameObject);
         }
 
+        
+        
+    }
+
+    private void Start()
+    {
         spawnPoint = NetworkManager.singleton.startPositions;
+
+        Debug.Log(spawnPoint.Count);
     }
 
     public GameObject GetPlayerListObject()
