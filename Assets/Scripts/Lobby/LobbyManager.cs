@@ -21,8 +21,6 @@ public class LobbyManager : MonoBehaviour
     private PlayerType _type = PlayerType.Undefined;
     private bool _roomReady;
 
-    private List<Transform> spawnPoint = new List<Transform>();
-
     [Header("Game options")]
     [SerializeField] private int _maxExecutioners = 1;
     [SerializeField] private int _maxGhosts = 1;
@@ -60,16 +58,6 @@ public class LobbyManager : MonoBehaviour
         {
             _playerList.Add(child.gameObject);
         }
-
-        
-        
-    }
-
-    private void Start()
-    {
-        spawnPoint = NetworkManager.singleton.startPositions;
-
-        Debug.Log(spawnPoint.Count);
     }
 
     public GameObject GetPlayerListObject()
@@ -300,8 +288,7 @@ public class LobbyManager : MonoBehaviour
 
             if (prefab != null)
             {
-                var spawnedCharacter = Instantiate(prefab, spawnPoint[0].position, Quaternion.identity);
-                spawnPoint.RemoveAt(0);
+                var spawnedCharacter = Instantiate(prefab, networkManager.startPositions[Random.Range(0, networkManager.startPositions.Count - 1)].position, Quaternion.identity);
 
                 NetworkServer.ReplacePlayerForConnection(currClient.connectionToClient, spawnedCharacter, currClient.playerControllerId);
                 NetworkServer.Spawn(spawnedCharacter);
