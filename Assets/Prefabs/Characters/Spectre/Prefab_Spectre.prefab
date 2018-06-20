@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  possessTime: 2
+  possessTime: 1
   feedbackPossessing: {fileID: 1854619131822342}
   sfxAudioSource: {fileID: 82784679763882150}
   possessAudio: {fileID: 8300000, guid: 8625a2bda3f7cba4ba633e6cf6173c39, type: 3}
@@ -1146,6 +1146,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1773f9216b2298842b945e5f231fbb2f, type: 3}
   playerCamera: {fileID: 1220008232580694, guid: c6ae7f769b6fc5b449f60dec700372c3,
     type: 2}
+  poupeeCam: {fileID: 0}
 --- !u!114 &114118656943792600
 MonoBehaviour:
   m_ObjectHideFlags: 1
