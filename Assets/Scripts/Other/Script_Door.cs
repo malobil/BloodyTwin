@@ -14,13 +14,9 @@ public class Script_Door : NetworkBehaviour {
     private bool lockedDoor = false;
 
     [Header("Audio Door")]
-	public AudioSource openingDoor;
-    public AudioSource closingDoor;
-    public AudioSource creakOpen;
-    public AudioSource creakClose;
-	public AudioSource doorIsLocked;
-	public AudioSource lockingDoor;
-	public AudioSource destroyDoor;
+	public AudioSource doorSoundPlayer;
+    public AudioClip[] doorSounds;
+ 
 
 	// Use this for initialization
 	void Start ()
@@ -34,13 +30,13 @@ public class Script_Door : NetworkBehaviour {
         {
             Debug.Log("DoorOpen");
             doorAnimator.SetTrigger("Open");
-            creakOpen.Play();
+            PlayDoorSound(0);
         }
         else if(!isOpening)
         {
             doorAnimator.SetTrigger("Close");
             Debug.Log("DoorClose");
-            creakClose.Play();
+            PlayDoorSound(1);
         }
     }
 
@@ -53,23 +49,28 @@ public class Script_Door : NetworkBehaviour {
         }
         else
         {
-            doorIsLocked.Play();
+            PlayDoorSound(2);
         }
     }
 
     public void OpeningDoor ()
     {
-        openingDoor.Play();
+        PlayDoorSound(3);
     }
 
     public void ClosingDoor()
     {
-        closingDoor.Play();
+        PlayDoorSound(4);
     }
 
     public void LockingDoor ()
     {
         lockedDoor = !lockedDoor;
         Debug.Log("Lock");
+    }
+
+    public void PlayDoorSound (int idx)
+    {
+        doorSoundPlayer.PlayOneShot(doorSounds[idx]);
     }
 }
