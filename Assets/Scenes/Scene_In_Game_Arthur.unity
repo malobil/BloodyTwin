@@ -7021,9 +7021,9 @@ Transform:
   - {fileID: 898938220}
   - {fileID: 2053147140}
   - {fileID: 234240778}
+  - {fileID: 932917590}
   - {fileID: 54506193}
   - {fileID: 1257228296}
-  - {fileID: 932917590}
   - {fileID: 322294957}
   - {fileID: 735512052}
   - {fileID: 88584060}
@@ -13476,7 +13476,7 @@ Transform:
   m_LocalScale: {x: 0.094749995, y: 4.30619, z: 1.4854887}
   m_Children: []
   m_Father: {fileID: 447628960}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &932917591
 MeshRenderer:
