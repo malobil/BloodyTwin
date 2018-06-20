@@ -117,7 +117,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             currentPossessTime = 0;
         }
 
-        if(Input.GetKeyDown("e") && objectToPossess!= null && !tryPossessing)
+        if(Input.GetKeyDown("a") && objectToPossess!= null && !tryPossessing)
         {
             currentPossessTime = possessTime;
             feedbackPossessing.SetActive(true);

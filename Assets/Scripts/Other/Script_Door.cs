@@ -53,6 +53,11 @@ public class Script_Door : NetworkBehaviour {
         }
     }
 
+    public void SpectreChangeState()
+    {
+        opened = !opened;
+    }
+
     public void OpeningDoor ()
     {
         PlayDoorSound(3);

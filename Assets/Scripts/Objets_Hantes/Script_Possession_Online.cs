@@ -27,6 +27,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         if (gameObject.GetComponent<Script_Door>())
         {
             gameObject.GetComponent<Script_Door>().LockingDoor();
+            GetComponent<Script_Spectre_Moves_Door>().enabled = true;
             Debug.Log("Possess a door");
         }
             gameObject.tag = "Possess";
@@ -51,6 +52,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             if (gameObject.GetComponent<Script_Door>())
             {
                 gameObject.GetComponent<Script_Door>().LockingDoor();
+                GetComponent<Script_Spectre_Moves_Door>().enabled = false;
             }
 
             gameObject.tag = "Untagged";
@@ -89,7 +91,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             can_leave = true;
         }
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("a"))
         {
             UnPossessObject();
         }
