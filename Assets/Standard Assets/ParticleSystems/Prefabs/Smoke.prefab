@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 19900000}
   - component: {fileID: 11400000}
   - component: {fileID: 11400002}
+  - component: {fileID: 114794255775833758}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -36.421005, y: 16.782082, z: -4.72394}
+  m_LocalPosition: {x: -60.179333, y: -0.99411345, z: -0.874495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,7 +69,7 @@ ParticleSystem:
   simulationSpeed: 1
   stopAction: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -117,15 +118,15 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 0
+  randomSeed: 1446986476
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 12
-      minScalar: 8
+      scalar: 1.88
+      minScalar: 4.28
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3405,3 +3406,35 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
+--- !u!114 &114794255775833758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 146
+    i1: 26
+    i2: 63
+    i3: 248
+    i4: 136
+    i5: 86
+    i6: 254
+    i7: 4
+    i8: 235
+    i9: 200
+    i10: 107
+    i11: 25
+    i12: 111
+    i13: 216
+    i14: 204
+    i15: 89
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
