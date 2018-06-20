@@ -6,13 +6,16 @@ using UnityEngine.Networking;
 public class Destructible_Wall : MonoBehaviour 
 {
 
-public ParticleSystem boom;
+public GameObject boom;
 public Transform boomPosition;
 public GameObject wall;
+public AudioSource doorDestroyed;
 
  public void DestroyWall()
  {
-	Instantiate(boom, boomPosition);
+    GameObject objectToSpawn = Instantiate(boom, boomPosition.position , Quaternion.identity);
+    NetworkServer.Spawn(objectToSpawn);
+    doorDestroyed.Play();
  	NetworkServer.Destroy(wall);
  	Debug.Log("tg2");
  }
