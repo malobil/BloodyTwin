@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4376156921968038}
   - component: {fileID: 212243211745083936}
-  - component: {fileID: 114293410260053876}
-  - component: {fileID: 114028806157833802}
   m_Layer: 8
   m_Name: Poupee_Indicator
   m_TagString: Untagged
@@ -38,8 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4029090773879722}
   - component: {fileID: 212147365326108078}
-  - component: {fileID: 114639138098931500}
-  - component: {fileID: 114875537351363554}
   m_Layer: 8
   m_Name: Poupee_Indicator
   m_TagString: Untagged
@@ -56,8 +52,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4608845152244028}
   - component: {fileID: 212587400626216934}
-  - component: {fileID: 114175279536406422}
-  - component: {fileID: 114410634689818446}
   m_Layer: 8
   m_Name: Poupee_Indicator
   m_TagString: Untagged
@@ -74,8 +68,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4543807645031218}
   - component: {fileID: 212795625294440548}
-  - component: {fileID: 114518230387083872}
-  - component: {fileID: 114335464659695370}
   m_Layer: 8
   m_Name: Poupee_Indicator (1)
   m_TagString: Untagged
@@ -111,8 +103,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4063192299342058}
   - component: {fileID: 212547122636460412}
-  - component: {fileID: 114759825382316458}
-  - component: {fileID: 114578599528520016}
   m_Layer: 8
   m_Name: Poupee_Indicator
   m_TagString: Untagged
@@ -256,186 +246,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114028806157833802
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111454099352098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114175279536406422
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1483672645129422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 183
-    i1: 132
-    i2: 19
-    i3: 38
-    i4: 79
-    i5: 253
-    i6: 246
-    i7: 116
-    i8: 11
-    i9: 77
-    i10: 227
-    i11: 228
-    i12: 101
-    i13: 19
-    i14: 180
-    i15: 7
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114293410260053876
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111454099352098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 183
-    i1: 132
-    i2: 19
-    i3: 38
-    i4: 79
-    i5: 253
-    i6: 246
-    i7: 116
-    i8: 11
-    i9: 77
-    i10: 227
-    i11: 228
-    i12: 101
-    i13: 19
-    i14: 180
-    i15: 7
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114335464659695370
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1648805263356260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114410634689818446
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1483672645129422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114518230387083872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1648805263356260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 183
-    i1: 132
-    i2: 19
-    i3: 38
-    i4: 79
-    i5: 253
-    i6: 246
-    i7: 116
-    i8: 11
-    i9: 77
-    i10: 227
-    i11: 228
-    i12: 101
-    i13: 19
-    i14: 180
-    i15: 7
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114578599528520016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1732864430969306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114621352494254436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -468,91 +278,6 @@ MonoBehaviour:
     i15: 7
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114639138098931500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1314523127180034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 183
-    i1: 132
-    i2: 19
-    i3: 38
-    i4: 79
-    i5: 253
-    i6: 246
-    i7: 116
-    i8: 11
-    i9: 77
-    i10: 227
-    i11: 228
-    i12: 101
-    i13: 19
-    i14: 180
-    i15: 7
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114759825382316458
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1732864430969306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 183
-    i1: 132
-    i2: 19
-    i3: 38
-    i4: 79
-    i5: 253
-    i6: 246
-    i7: 116
-    i8: 11
-    i9: 77
-    i10: 227
-    i11: 228
-    i12: 101
-    i13: 19
-    i14: 180
-    i15: 7
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114875537351363554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1314523127180034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!212 &212147365326108078
 SpriteRenderer:
   m_ObjectHideFlags: 1
