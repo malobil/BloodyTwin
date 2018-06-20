@@ -27,7 +27,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetKey(KeyCode.A) && gameObject.tag != "door")
+        if(Input.GetButton("Fire1") && gameObject.tag != "door")
         {
             if(ejectionSpeed < maxEjectionSpeed)
             {
@@ -37,7 +37,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
            // Debug.Log(ejectionSpeed);
         }
 
-        if(Input.GetKeyUp(KeyCode.A) && gameObject.tag != "door")
+        if(Input.GetButtonUp("Fire1") && gameObject.tag != "door")
         {
             Project();
         }

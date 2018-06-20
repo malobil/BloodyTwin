@@ -59,12 +59,12 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         Mouvement(); // déplacement perso
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetButtonDown("Fire2"))
         {
             poupeeCam.SetActive(true);
         }
         
-        if(Input.GetKeyUp(KeyCode.F))
+        if(Input.GetButtonUp("Fire2"))
         {
             poupeeCam.SetActive(false);
         }
