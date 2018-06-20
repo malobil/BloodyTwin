@@ -106,13 +106,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 StartCoroutine("Attack");                 
             }
 
-            if (Input.GetButtonDown("Bourreau_Scream") && _screamCooldown <= 0f)
+            /*if (Input.GetButtonDown("Bourreau_Scream") && _screamCooldown <= 0f)
             {
                 _screamCooldown = ScreamCooldown;
                 _isScreaming = true;
                 CmdScream();
                 _isScreaming = false;
-            }
+            }*/
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -121,9 +121,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Input.GetButtonDown("Communication_Come"))
             {
-                
                 if(!comAudioSource.isPlaying)
                 {
+                    PlaySound(0);
                     CmdComSound(0);
                     CmdCommunicationCome();
                 }
@@ -131,28 +131,27 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             else if (Input.GetButtonDown("Communication_GotOne"))
             {
-                
                 if (!comAudioSource.isPlaying)
                 {
+                    PlaySound(1);
                     CmdComSound(1);
                     CmdCommunicationGotOne();
                 }
             }
             else if (Input.GetButtonDown("Communication_HeRunAway"))
             {
-              
                 if (!comAudioSource.isPlaying)
                 {
+                    PlaySound(2);
                     CmdComSound(2);
                     CmdCommunicationHeRun();
                 }
             }
             else if (Input.GetButtonDown("Communication_StayHere"))
             {
-                
-
                 if (!comAudioSource.isPlaying)
                 {
+                    PlaySound(3);
                     CmdComSound(3);
                     CmdCommunicationStay();
                 }
@@ -242,7 +241,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             yield return new WaitForSecondsRealtime(0.5f);
             CmdAttack();
-            Debug.Log("Attack");
         }
 
         [Command]
@@ -252,7 +250,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Debug.Log(doorHit);
         }
 
-        [Command]
+        /*[Command]
         private void CmdScream()
         {
             _screamCooldown = ScreamCooldown;
@@ -264,15 +262,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 //    player.StunForSeconds(ScreamStunTime);
             }
             Debug.Log("Scream");
-        }
+        }*/
 
         [Command]
         private void CmdAttack()
         {
-            GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, Quaternion.identity);
+            GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, transform.rotation);
             NetworkServer.Spawn(tempAttack);
-            Destroy(tempAttack, currentAttackCooldown);
-            //NetworkServer.UnSpawn(tempAttack);
+            Destroy(tempAttack, attackCooldown);
         }
 
         void SetPauseMenu()
@@ -312,7 +309,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         void CmdComSound(int idxToPlay)
         {
             // RpcTargetSound(idxToPlay);
-            PlaySound(idxToPlay);
             if(GameObject.FindGameObjectWithTag("Spectre") != null)
             {
                 GameObject.FindGameObjectWithTag("Spectre").GetComponent<Script_Spectre_Moves_Online>().TakeSound(idxToPlay);

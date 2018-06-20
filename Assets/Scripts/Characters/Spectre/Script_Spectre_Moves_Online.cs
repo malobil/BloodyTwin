@@ -73,6 +73,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             if(!comAudioSource.isPlaying)
             {
+                PlaySound(0);
                 CmdCommunicationCome();
                 CmdcomSoundSpectre(0);
             }
@@ -82,6 +83,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             if (!comAudioSource.isPlaying)
             {
+                PlaySound(1);
                 CmdCommunicationGotOne();
                 CmdcomSoundSpectre(1);
             }
@@ -90,6 +92,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             if (!comAudioSource.isPlaying)
             {
+                PlaySound(2);
                 CmdCommunicationHeRun();
                 CmdcomSoundSpectre(2);
             }
@@ -98,6 +101,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             if (!comAudioSource.isPlaying)
             {
+                PlaySound(3);
                 CmdCommunicationStay();
                 CmdcomSoundSpectre(3);
             }
@@ -263,7 +267,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     void CmdcomSoundSpectre(int idxToPlay)
     {
         //RpcTargetSound(idxToPlay);
-        PlaySound(idxToPlay);
+        //PlaySound(idxToPlay);
         if (GameObject.FindGameObjectWithTag("Bourreau") != null)
         {
             GameObject.FindGameObjectWithTag("Bourreau").GetComponent<Script_Bourreau_Moves>().TakeSound(idxToPlay);
