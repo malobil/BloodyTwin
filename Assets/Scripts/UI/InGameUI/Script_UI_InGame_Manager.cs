@@ -14,7 +14,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     public Text timerText;
     public Text endText;
-    public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI ;
+    public GameObject gameOverPanel, gameWinPanel, gamePauseMenu, bourreauUI, spectreUI, timerPanel ;
 
    
     private int intruderAlive = 2;
@@ -31,6 +31,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public Image bourreauStaminaImage ;
 
     public GameObject lights;
+
+    [SyncVar]
+    private bool gameIsRunning = false;
 
     public static Script_UI_InGame_Manager Instance { get; private set; }
 
@@ -63,7 +66,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     void Timer()
     {
-        if(!isServer)
+        if(!isServer || !gameIsRunning)
         {
             return;
         }
@@ -236,5 +239,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             Debug.Log("NO LIGHT");
         }
+    }
+
+    public void StartGame()
+    {
+        gameIsRunning = true;
+        timerPanel.SetActive(true);
     }
 }

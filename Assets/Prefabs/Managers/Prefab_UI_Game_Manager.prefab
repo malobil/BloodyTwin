@@ -111,7 +111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1306022401008548
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +392,7 @@ MonoBehaviour:
   gamePauseMenu: {fileID: 1698612746327514}
   bourreauUI: {fileID: 1067799828398324}
   spectreUI: {fileID: 1367785476999080}
+  timerPanel: {fileID: 1268631478302886}
   dollSpawnList:
   - {fileID: 0}
   - {fileID: 0}
@@ -405,7 +406,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   dollPrefab: {fileID: 1058157695936908, guid: ec7772e294baee14fb147df570bf4293, type: 2}
-  dollToSpawn: 2
+  dollToSpawn: 5
   doorHall: {fileID: 0}
   bourreauStaminaImage: {fileID: 114272773119534502}
   lights: {fileID: 0}
@@ -855,7 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7941176, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -980,7 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7941176, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1157,7 +1158,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 796a6063bdb30ce4081c2f0cda10ac71, type: 3}
     m_FontSize: 50
-    m_FontStyle: 1
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50

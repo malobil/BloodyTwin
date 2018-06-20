@@ -305,6 +305,7 @@ public class LobbyManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         _waitingLobby.SetActive(false);
+        Script_UI_InGame_Manager.Instance.StartGame();
     }
 
     public void LeaveRoom()
