@@ -319,4 +319,10 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     {
         comAudioSource.PlayOneShot(comSoundBourreau[idxToPlay]);
     }
+
+    [Command]
+    public void CmdLockDoor(GameObject door)
+    {
+        door.GetComponent<Script_Door>().RpcLockingDoor();
+    }
 }
