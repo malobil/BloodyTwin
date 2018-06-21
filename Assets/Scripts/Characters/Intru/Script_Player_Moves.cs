@@ -140,8 +140,6 @@ namespace UnityStandardAssets.Characters
                 {
                     if(hit.collider.gameObject.CompareTag("Doll"))
                     {
-                        Debug.Log("Doll");
-                        //Destroy(hit.collider.gameObject);
                         CmdGetDoll(hit.collider.gameObject);
                     }
                     else if(hit.collider.gameObject.CompareTag("Armory"))
@@ -153,9 +151,6 @@ namespace UnityStandardAssets.Characters
                         hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
                         CmdGetAPile(hit.collider.gameObject);
                     }
-
-
-                    Debug.Log(hit.collider.gameObject.name);
                 }
             }
         }
@@ -174,15 +169,6 @@ namespace UnityStandardAssets.Characters
                 {
                     if (hit.collider.gameObject.CompareTag("Door"))
                     {
-                        Debug.Log("Door");
-                        //if(!isServer)
-                        //{
-                        //    CmdDoor(hit.collider.gameObject);
-                        //}
-                        //else
-                        //{
-                        //    CmdDoor(hit.collider.gameObject);
-                        //}
                         CmdDoor(hit.collider.transform.parent.gameObject);
                     }
                 }

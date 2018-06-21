@@ -197,15 +197,20 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         dollGet++;
 
-        Destroy(dollIndicator[0]);
-        NetworkServer.UnSpawn(dollIndicator[0]);
-        dollIndicator.RemoveAt(0);
+        RpcDestroyIndicator();
 
         if (dollGet == dollToSpawn)
         {
             Destroy(doorHall);
             NetworkServer.UnSpawn(doorHall);
         }
+    }
+
+    [ClientRpc]
+    void RpcDestroyIndicator()
+    {
+        Destroy(dollIndicator[0]);
+        dollIndicator.RemoveAt(0);
     }
 
     public void IntruderDie()
