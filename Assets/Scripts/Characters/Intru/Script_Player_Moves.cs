@@ -277,11 +277,8 @@ namespace UnityStandardAssets.Characters
         {
             if (isLocalPlayer)
             {
-                Debug.Log("DIE");
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderLoose(); // UI
-               
-                
                 Destroy(gameObject);
             }
 
@@ -305,16 +302,14 @@ namespace UnityStandardAssets.Characters
         {
             if (isLocalPlayer)
             {
-                Debug.Log("WIN");
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderWin();
                 CmdIntruderAsWin();
-                //Destroy(gameObject);
             }
             
            
-            Destroy(this.gameObject);
-            NetworkServer.UnSpawn(this.gameObject);
+            Destroy(gameObject);
+            NetworkServer.UnSpawn(gameObject);
         }
 
         [Command]

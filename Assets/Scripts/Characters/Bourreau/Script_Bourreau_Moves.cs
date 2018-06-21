@@ -102,17 +102,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
                 currentAttackCooldown = attackCooldown;
-                Debug.Log(currentAttackCooldown);
+                //Debug.Log(currentAttackCooldown);
                 StartCoroutine("Attack");                 
             }
-
-            /*if (Input.GetButtonDown("Bourreau_Scream") && _screamCooldown <= 0f)
-            {
-                _screamCooldown = ScreamCooldown;
-                _isScreaming = true;
-                CmdScream();
-                _isScreaming = false;
-            }*/
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -249,20 +241,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             doorHit.GetComponent<Script_Door>().ChangeState();
             Debug.Log(doorHit);
         }
-
-        /*[Command]
-        private void CmdScream()
-        {
-            _screamCooldown = ScreamCooldown;
-            var players = GameObject.FindGameObjectsWithTag("Intru");
-
-            foreach (var player in players)
-            {
-                //if (Vector3.Distance(transform.position, player.transform.position) < ScreamRange)
-                //    player.StunForSeconds(ScreamStunTime);
-            }
-            Debug.Log("Scream");
-        }*/
 
         [Command]
         private void CmdAttack()

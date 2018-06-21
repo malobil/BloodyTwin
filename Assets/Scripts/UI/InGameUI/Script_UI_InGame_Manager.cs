@@ -132,7 +132,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
         RpcIntruderWin();
 
-        if (intruderWin >= 2)
+        if (intruderWin >= intruderAlive)
         {
             RpcGameEnd();
         }
@@ -217,6 +217,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
             intruderAlive--;
             RpcIntruderAlive();
+            //Debug.Log(intruderAlive);
             
             if (intruderAlive <= 0)
             {
