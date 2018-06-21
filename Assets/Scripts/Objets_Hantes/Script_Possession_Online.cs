@@ -26,7 +26,7 @@ public class Script_Possession_Online : NetworkBehaviour {
     {
         if (gameObject.GetComponent<Script_Door>())
         {
-            gameObject.GetComponent<Script_Door>().CmdLockingDoor();
+            CmdLockDoor();
             GetComponent<Script_Spectre_Moves_Door>().enabled = true;
             //Debug.Log("Possess a door");
         }
@@ -51,7 +51,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         {
             if (gameObject.GetComponent<Script_Door>())
             {
-                gameObject.GetComponent<Script_Door>().CmdLockingDoor();
+                
                 GetComponent<Script_Spectre_Moves_Door>().enabled = false;
             }
 
@@ -126,6 +126,12 @@ public class Script_Possession_Online : NetworkBehaviour {
     public GameObject ReturnPlayer()
     {
         return player;
+    }
+
+    [Command]
+    void CmdLockDoor()
+    {
+        gameObject.GetComponent<Script_Door>().RpcLockingDoor();
     }
 
     [Command]
