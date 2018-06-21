@@ -15,12 +15,16 @@ public class LobbyPlayer : NetworkBehaviour
     [SyncVar] private bool _isHost;
     [SyncVar] private bool _hasBeenKicked;
 
+    private List<Transform> spawnPoint = new List<Transform>();
+
     public bool IsServerSide { get; private set; }
 
     public override void OnStartClient()
     {
         StartCoroutine(SetupClient(GetComponent<LobbyPlayer>()));
     }
+
+  
 
     public override void OnStartLocalPlayer()
     {
@@ -183,8 +187,8 @@ public class LobbyPlayer : NetworkBehaviour
             return;
 
         var networkManager = NetworkManager.singleton;
-        var spawnedCharacter = Instantiate(prefab, networkManager.startPositions[Random.Range(0, networkManager.startPositions.Count - 1)].position, Quaternion.identity);
-
+        var spawnedCharacter = Instantiate(prefab, LobbyManager.Instance.GetSpawnPoint()[0].position, Quaternion.identity);
+        LobbyManager.Instance.SuprSpawnPoint();
         NetworkServer.ReplacePlayerForConnection(lobbyClient.connectionToClient, spawnedCharacter, lobbyClient.playerControllerId);
         NetworkServer.Spawn(spawnedCharacter);
     }

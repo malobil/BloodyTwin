@@ -45,6 +45,8 @@ public class LobbyManager : MonoBehaviour
 
     private readonly List<GameObject> _playerList = new List<GameObject>();
 
+    private List<Transform> spawnPoint = new List<Transform>();
+
     private void Awake()
     {
         if (Instance != null)
@@ -58,6 +60,11 @@ public class LobbyManager : MonoBehaviour
         {
             _playerList.Add(child.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        spawnPoint = NetworkManager.singleton.startPositions;
     }
 
     public GameObject GetPlayerListObject()
@@ -288,7 +295,8 @@ public class LobbyManager : MonoBehaviour
 
             if (prefab != null)
             {
-                var spawnedCharacter = Instantiate(prefab, networkManager.startPositions[Random.Range(0, networkManager.startPositions.Count - 1)].position, Quaternion.identity);
+                var spawnedCharacter = Instantiate(prefab, spawnPoint[0].position, Quaternion.identity);
+                SuprSpawnPoint();
                 NetworkServer.ReplacePlayerForConnection(currClient.connectionToClient, spawnedCharacter, currClient.playerControllerId);
                 NetworkServer.Spawn(spawnedCharacter);
             }
@@ -395,5 +403,15 @@ public class LobbyManager : MonoBehaviour
             _playerList[i].GetComponentInChildren<Text>().text = username;
             i++;
         }
+    }
+
+    public List<Transform> GetSpawnPoint()
+    {
+        return spawnPoint;
+    }
+
+    public void SuprSpawnPoint()
+    {
+        spawnPoint.RemoveAt(0);
     }
 }
