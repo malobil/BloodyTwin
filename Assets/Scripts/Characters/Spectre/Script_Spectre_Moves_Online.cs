@@ -57,6 +57,16 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetPauseMenu();
+        }
+
+        if (Script_UI_InGame_Manager.Instance.GetIsPause())
+        {
+            return;
+        }
+
         Mouvement(); // déplacement perso
 
         if(Input.GetButtonDown("Fire2"))
@@ -125,10 +135,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             sfxAudioSource.Play();
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            SetPauseMenu();
-        }
+       
 	}
 
     private void Mouvement()

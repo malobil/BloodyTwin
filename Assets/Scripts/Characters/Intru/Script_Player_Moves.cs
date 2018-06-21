@@ -128,12 +128,6 @@ namespace UnityStandardAssets.Characters
                 SetPauseMenu();
             }
 
-            if (Input.GetKeyDown(KeyCode.S))// debug
-            {
-                //Die();
-                //Stun();
-            }
-
             if (Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;

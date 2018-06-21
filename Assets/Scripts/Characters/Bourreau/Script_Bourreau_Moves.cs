@@ -84,6 +84,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 return;
             }
 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetPauseMenu();
+            }
+
+            if (Script_UI_InGame_Manager.Instance.GetIsPause())
+            {
+                return;
+            }
+
             if (currentRunCooldown > 0)
             {
                 currentRunCooldown -= Time.deltaTime;
@@ -103,10 +113,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 StartCoroutine("Attack");                 
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                SetPauseMenu();
-            }
+            
 
             if (Input.GetButtonDown("Communication_Come"))
             {
@@ -152,6 +159,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void FixedUpdate()
         {
             if (!isLocalPlayer)
+            {
+                return;
+            }
+
+            if (Script_UI_InGame_Manager.Instance.GetIsPause())
             {
                 return;
             }

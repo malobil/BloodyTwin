@@ -116,7 +116,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
 
-            
+            if (Script_UI_InGame_Manager.Instance.GetIsPause())
+            {
+                return;
+            }
 
             float speed;
             GetInput(out speed);
