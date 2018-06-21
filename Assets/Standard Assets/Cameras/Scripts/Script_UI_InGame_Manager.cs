@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityStandardAssets.Cameras;
 
 public class Script_UI_InGame_Manager : NetworkBehaviour {
 
@@ -34,6 +35,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public List<GameObject> dollIndicator = new List<GameObject>();
 
     public GameObject lights;
+
+    [Header("Pause")]
+    private bool isPause = false;
 
     [SyncVar]
     private bool gameIsRunning = false;
@@ -88,6 +92,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         if(seconds <= 0 && minutes <= 0)
         {
             RpcGameEnd();
+            EndGame();
         }
     }
 
@@ -135,6 +140,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         if (intruderWin >= intruderAlive)
         {
             RpcGameEnd();
+            EndGame();
         }
     }
 
@@ -148,6 +154,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         Cursor.visible = !gamePauseMenu.activeSelf;
         Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         gamePauseMenu.SetActive(!gamePauseMenu.activeSelf);
+        isPause = !isPause;
+        //Debug.Log(isPause + "PAUSE");
     }
 
     public void DisconnectPlayer()
@@ -226,6 +234,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
             if (intruderAlive <= 0 || intruderWin > 0)
             {
                 RpcGameEnd();
+                EndGame();
             }
     }
 
@@ -257,5 +266,20 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         gameIsRunning = true;
         timerPanel.SetActive(true);
+    }
+
+    public void EndGame()
+    {
+        gameIsRunning = false;
+    }
+
+    public bool GetGameState()
+    {
+        return gameIsRunning;
+    }
+
+    public bool GetIsPause ()
+    {
+        return isPause;
     }
 }

@@ -85,6 +85,7 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
+
             if (currentflashlightCooldown <= 0)
             {
                 if (isServer)

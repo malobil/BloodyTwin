@@ -116,6 +116,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
 
+            
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -201,6 +203,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void UpdateCameraPosition(float speed)
         {
+           
+
             Vector3 newCameraPosition;
             if (!m_UseHeadBob)
             {
@@ -282,6 +286,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            if (Script_UI_InGame_Manager.Instance.GetIsPause())
+            {
+                return;
+            }
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 

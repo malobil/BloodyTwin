@@ -3,7 +3,6 @@ using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 
-
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
     [RequireComponent(typeof (ThirdPersonCharacter))]
@@ -88,7 +87,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (currentRunCooldown > 0)
             {
                 currentRunCooldown -= Time.deltaTime;
-                //Script_UI_InGame_Manager.Instance.UpdateBourreauStamina(currentRunCooldown, runDuration);
             }
 
             if(currentAttackCooldown > 0)
@@ -102,7 +100,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
                 currentAttackCooldown = attackCooldown;
-                //Debug.Log(currentAttackCooldown);
                 StartCoroutine("Attack");                 
             }
 
@@ -214,15 +211,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     Debug.Log(hit);
                     if (hit.collider.gameObject.CompareTag("Door"))
                     {
-                        Debug.Log("Door");
-                        //if(!isServer)
-                        //{
-                        //    CmdDoor(hit.collider.gameObject);
-                        //}
-                        //else
-                        //{
-                        //    CmdDoor(hit.collider.gameObject);
-                        //}
                         CmdDoor(hit.collider.transform.parent.gameObject);
                     }
                 }
@@ -252,7 +240,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void SetPauseMenu()
         {
-            Script_UI_InGame_Manager.Instance.PauseMenu();
+            if(Script_UI_InGame_Manager.Instance.GetGameState())
+            {
+                Script_UI_InGame_Manager.Instance.PauseMenu();
+            }
         }
 
         [Command]
