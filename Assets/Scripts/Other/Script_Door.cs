@@ -78,6 +78,7 @@ public class Script_Door : NetworkBehaviour {
     void RpcLock(bool state)
     {
         lockedDoor = state;
+        Debug.Log("Door state : " + state);
     }
 
     public void PlayDoorSound (int idx)
