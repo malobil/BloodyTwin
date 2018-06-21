@@ -19,5 +19,6 @@ public class Script_Spectre_Moves_Door : NetworkBehaviour {
     void CmdDoor()
     {
         GetComponent<Script_Door>().SpectreChangeState();
+        Debug.Log("FERME LA PORTE ");
     }
 }
