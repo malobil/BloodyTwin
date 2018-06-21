@@ -28,7 +28,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         {
             gameObject.GetComponent<Script_Door>().RpcLockingDoor();
             GetComponent<Script_Spectre_Moves_Door>().enabled = true;
-            Debug.Log("Possess a door");
+            //Debug.Log("Possess a door");
         }
             gameObject.tag = "Possess";
             player.transform.SetParent(transform); // met le spectre en parent de l'objet
@@ -51,7 +51,7 @@ public class Script_Possession_Online : NetworkBehaviour {
         {
             if (gameObject.GetComponent<Script_Door>())
             {
-                gameObject.GetComponent<Script_Door>().RpcLockingDoor();
+                gameObject.GetComponent<Script_Door>().CmdLockingDoor();
                 GetComponent<Script_Spectre_Moves_Door>().enabled = false;
             }
 
@@ -106,7 +106,7 @@ public class Script_Possession_Online : NetworkBehaviour {
             player = other.gameObject;
             player.GetComponent<Script_Spectre_Moves_Online>().SettingPossessTarget(this);
             //Script_UI_InGame_Manager.Instance.EnableSpectreUI();
-            print("Spectre entré" +  can_possession);
+            //print("Spectre entré" +  can_possession);
             can_possession = true;
         }
     }

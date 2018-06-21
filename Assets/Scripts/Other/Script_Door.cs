@@ -68,6 +68,13 @@ public class Script_Door : NetworkBehaviour {
         PlayDoorSound(4);
     }
 
+    [Command]
+    public void CmdLockingDoor()
+    {
+        RpcLockingDoor();
+        //Debug.Log("Lock");
+    }
+
     [ClientRpc]
     public void RpcLockingDoor ()
     {
