@@ -28,14 +28,14 @@ public class Script_Door : NetworkBehaviour {
     {
         if(isOpening)
         {
-            Debug.Log("DoorOpen");
+            //Debug.Log("DoorOpen");
             doorAnimator.SetTrigger("Open");
             PlayDoorSound(0);
         }
         else if(!isOpening)
         {
             doorAnimator.SetTrigger("Close");
-            Debug.Log("DoorClose");
+            //Debug.Log("DoorClose");
             PlayDoorSound(1);
         }
     }
@@ -44,7 +44,7 @@ public class Script_Door : NetworkBehaviour {
     {
         if(!lockedDoor)
         {
-            Debug.Log("ChangeState");
+            //Debug.Log("ChangeState");
             opened = !opened;
         }
         else

@@ -11,7 +11,7 @@ public class Script_Spectre_Moves_Door : NetworkBehaviour {
 		if(Input.GetKeyDown("e"))
         {
             CmdDoor();
-            Debug.Log("state");
+            //Debug.Log("state");
         }
 	}
 
