@@ -162,6 +162,11 @@ namespace UnityStandardAssets.Characters
 
         private void FixedUpdate()
         {
+            if(!isLocalPlayer)
+            {
+                return;
+            }
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;
