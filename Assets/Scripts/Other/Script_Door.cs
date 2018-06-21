@@ -10,7 +10,7 @@ public class Script_Door : NetworkBehaviour {
     private Animation doorAnimation;
     [SyncVar(hook = "DoorState")]
     private bool opened = false;
-    [SyncVar(hook = "RpcLock")]
+    //[SyncVar]
     private bool lockedDoor = false;
 
     [Header("Door Audio")]
@@ -68,20 +68,14 @@ public class Script_Door : NetworkBehaviour {
         PlayDoorSound(4);
     }
 
-    public void LockingDoor ()
+    [ClientRpc]
+    public void RpcLockingDoor ()
     {
         lockedDoor = !lockedDoor;
         Debug.Log("Lock");
     }
 
-    [ClientRpc]
-    void RpcLock(bool state)
-    {
-        lockedDoor = state;
-        Debug.Log("Door state : " + state);
-    }
-
-    public void PlayDoorSound (int idx)
+     public void PlayDoorSound (int idx)
     {
         doorSoundPlayer.PlayOneShot(doorSounds[idx]);
     }
