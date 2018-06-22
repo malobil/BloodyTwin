@@ -77,7 +77,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
 
-                      
+            if (!Script_UI_InGame_Manager.Instance.GetGameState())
+            {
+                return;
+            }
+
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -117,6 +122,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             if (Script_UI_InGame_Manager.Instance.GetIsPause())
+            {
+                return;
+            }
+
+            if (!Script_UI_InGame_Manager.Instance.GetGameState())
             {
                 return;
             }

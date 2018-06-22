@@ -29,6 +29,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         [Header("Attack")]
         public float attackCooldown;
+        public float attackDelay = 0.2f;
         public Transform attackSpawnPoint;
         public GameObject attackZonePrefab;
         private float currentAttackCooldown;
@@ -231,7 +232,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         IEnumerator Attack()
         {
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSecondsRealtime(attackDelay);
             CmdAttack();
         }
 

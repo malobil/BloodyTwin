@@ -121,6 +121,9 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
 
         gameWinPanel.SetActive(true);
+        gamePauseMenu.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
     }
 
