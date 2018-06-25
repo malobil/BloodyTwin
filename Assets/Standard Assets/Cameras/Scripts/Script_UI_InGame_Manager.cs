@@ -64,12 +64,15 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
+        Debug.Log(source.name);
+
         if (isServer)
         {
             SpawnDolls();
         }
 
-        source = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -299,4 +302,5 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         source.PlayOneShot(dollSound);
         Debug.Log("SOUNDPLAYED");
     }
+
 }

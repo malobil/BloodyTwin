@@ -213,8 +213,8 @@ namespace UnityStandardAssets.Characters
         [Command]
         private void CmdGetDoll(GameObject dollToUnspawn)
         {
-            Script_UI_InGame_Manager.Instance.GetADoll();
             Script_UI_InGame_Manager.Instance.RpcPlayDollSound();
+            Script_UI_InGame_Manager.Instance.GetADoll();
             Destroy(dollToUnspawn);
             NetworkServer.UnSpawn(dollToUnspawn);
         }
