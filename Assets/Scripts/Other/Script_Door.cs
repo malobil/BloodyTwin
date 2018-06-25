@@ -49,7 +49,6 @@ public class Script_Door : NetworkBehaviour {
         }
         else
         {
-            PlayDoorSound(2);
             RpcLockedAnimation();
         }
     }
@@ -58,6 +57,7 @@ public class Script_Door : NetworkBehaviour {
     void RpcLockedAnimation()
     {
         doorAnimator.SetTrigger("Locked");
+        PlayDoorSound(2);
     }
 
     public void SpectreChangeState()
