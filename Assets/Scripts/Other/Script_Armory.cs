@@ -10,25 +10,30 @@ public class Script_Armory : NetworkBehaviour {
     [SyncVar(hook = "OpenDoor")]
     private bool isOpen = false;
 
+    private AudioSource source;
+
 	// Use this for initialization
 	void Start ()
     {
-        
+        source = GetComponent<AudioSource>();
 	}
 
 
 	public void OpenArmory()
     {
         isOpen = true;
-        /*myAnimator.SetTrigger("Open");
-        myAnimator.GetComponent<NetworkAnimator>().SetTrigger("Open");
-        GetComponent<BoxCollider>().isTrigger = true;*/
     }
 
     public void OpenDoor(bool toOpen)
     {
         myAnimator.SetBool("OpenArmory",toOpen);
-        Debug.Log("OPEN");
+        RpcPlayOpenSound();
     }
 
+    [ClientRpc]
+    void RpcPlayOpenSound()
+    {
+        source.Play();
+        Destroy(this);
+    }
 }
