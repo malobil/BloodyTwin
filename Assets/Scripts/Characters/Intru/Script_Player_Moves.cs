@@ -134,8 +134,7 @@ namespace UnityStandardAssets.Characters
                 {
                     if(hit.collider.gameObject.CompareTag("Doll"))
                     {
-                        CmdGetDoll(hit.collider.gameObject);
-                        
+                        CmdGetDoll(hit.collider.gameObject);  
                     }
                     else if(hit.collider.gameObject.CompareTag("Armory"))
                     {

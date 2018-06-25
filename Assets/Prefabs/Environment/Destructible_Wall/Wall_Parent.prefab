@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4002801352660284}
-  - component: {fileID: 114151651913602086}
   m_Layer: 0
   m_Name: Wall_Parent
   m_TagString: Untagged
@@ -283,38 +282,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114151651913602086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1067423053221192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 134
-    i1: 88
-    i2: 162
-    i3: 188
-    i4: 160
-    i5: 183
-    i6: 253
-    i7: 148
-    i8: 218
-    i9: 163
-    i10: 6
-    i11: 54
-    i12: 25
-    i13: 117
-    i14: 108
-    i15: 5
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114181475431085952
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -16,7 +16,7 @@ public class Script_Bourreau_Attack_Trigger : MonoBehaviour {
 
         if(other.gameObject.GetComponent<Destructible_Wall>()) //destructible wall
         {
-        	Debug.Log("tg");
+        	//Debug.Log("tg");
         	other.GetComponent<Destructible_Wall>().DestroyWall();
         }
     }

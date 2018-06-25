@@ -17,7 +17,7 @@ public AudioSource doorDestroyed;
     NetworkServer.Spawn(objectToSpawn);
     doorDestroyed.Play();
  	NetworkServer.Destroy(wall);
- 	Debug.Log("tg2");
+ 	//Debug.Log("tg2");
  }
 
 }
