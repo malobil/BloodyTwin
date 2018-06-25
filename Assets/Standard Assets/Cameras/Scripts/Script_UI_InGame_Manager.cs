@@ -140,6 +140,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         endText.text = "You win ! ";
         gameWinPanel.SetActive(true);
         Time.timeScale = 0f;
+        gameObject.SetActive(false);
     }
 
     public void IntruderAsWin() // execute on server
@@ -206,7 +207,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         for(int i = 0; i < dollToSpawn; i++)
         {
             int tempRandom = Random.Range(0, dollSpawnList.Count);
-            GameObject tempDoll = Instantiate(dollPrefab, dollSpawnList[tempRandom].position, Quaternion.identity);
+            GameObject tempDoll = Instantiate(dollPrefab, dollSpawnList[tempRandom].position, dollSpawnList[tempRandom].parent.rotation);
             NetworkServer.Spawn(tempDoll);
             dollSpawnList.RemoveAt(tempRandom);
         }
