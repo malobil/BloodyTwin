@@ -297,5 +297,6 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public void RpcPlayDollSound()
     {
         source.PlayOneShot(dollSound);
+        Debug.Log("SOUNDPLAYED");
     }
 }
