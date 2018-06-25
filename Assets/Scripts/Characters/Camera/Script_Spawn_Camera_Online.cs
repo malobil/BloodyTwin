@@ -15,7 +15,7 @@ public class Script_Spawn_Camera_Online : NetworkBehaviour {
         if (cameraI.GetComponent<FreeLookCam>() != null)
         {
             cameraI.GetComponent<FreeLookCam>().SetCamera(transform);
-            Debug.Log("Camera Set to :" + transform.position);
+           // Debug.Log("Camera Set to :" + transform.position);
         }
 
         if (GetComponent<Script_Spectre_Moves_Online>() != null)

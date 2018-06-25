@@ -70,7 +70,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         }
 
         source = GetComponent<AudioSource>();
-        Debug.Log(source.name);
+       // Debug.Log(source.name);
     }
 
     // Update is called once per frame

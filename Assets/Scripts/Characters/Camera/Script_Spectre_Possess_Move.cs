@@ -39,7 +39,7 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
             if(ejectionSpeed < maxEjectionSpeed)
             {
                 ejectionSpeed += ejectionSpeedAdd * Time.deltaTime ;
-                Debug.Log(ejectionSpeed);
+                //Debug.Log(ejectionSpeed);
             }
             else
             {
