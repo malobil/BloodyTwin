@@ -50,8 +50,14 @@ public class Script_Door : NetworkBehaviour {
         else
         {
             PlayDoorSound(2);
-            doorAnimator.SetTrigger("Locked");
+            RpcLockedAnimation();
         }
+    }
+
+    [ClientRpc]
+    void RpcLockedAnimation()
+    {
+        doorAnimator.SetTrigger("Locked");
     }
 
     public void SpectreChangeState()
