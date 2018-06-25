@@ -503,7 +503,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lights: {fileID: 0}
-  dollSound: {fileID: 8300000, guid: 0793164cacb7c3148a3cc6095ef70e4d, type: 3}
+  dollSound: {fileID: 8300000, guid: ad0c660dac70abc45865565168ef7a8f, type: 3}
 --- !u!114 &114064399675701862
 MonoBehaviour:
   m_ObjectHideFlags: 1

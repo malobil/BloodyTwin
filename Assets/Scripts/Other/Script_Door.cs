@@ -84,6 +84,7 @@ public class Script_Door : NetworkBehaviour {
 
      public void PlayDoorSound (int idx)
     {
+        doorSoundPlayer.Stop();
         doorSoundPlayer.PlayOneShot(doorSounds[idx]);
     }
 }
