@@ -19,6 +19,10 @@ namespace UnityStandardAssets.Characters
         private float currentRunDuration;
         private float currentRunCooldown;
 
+        [Header("Sound")]
+        public AudioSource sourceFx;
+        public AudioClip getSmth;
+
         private FirstPersonController m_Character; // A reference to the main first person character
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
@@ -146,6 +150,7 @@ namespace UnityStandardAssets.Characters
                     else if (hit.collider.gameObject.GetComponent<Script_Piles>())
                     {
                         hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
+                        PlayFxSound(getSmth);
                         CmdGetAPile(hit.collider.gameObject);
                     }
                 }
@@ -172,6 +177,10 @@ namespace UnityStandardAssets.Characters
             }
         }
 
+        void PlayFxSound(AudioClip sound)
+        {
+            sourceFx.PlayOneShot(sound);
+        }
 
         [Command]
         public void CmdDoor(GameObject doorHit)
