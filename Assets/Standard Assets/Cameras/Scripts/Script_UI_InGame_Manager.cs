@@ -39,6 +39,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     [Header("Pause")]
     private bool isPause = false;
 
+    [Header("Sound")]
+    private AudioSource source;
+
+    public AudioClip dollSound;
+
     [SyncVar]
     private bool gameIsRunning = false;
 
@@ -63,6 +68,8 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
         {
             SpawnDolls();
         }
+
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -284,5 +291,11 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     public bool GetIsPause ()
     {
         return isPause;
+    }
+
+    [ClientRpc]
+    public void RpcPlayDollSound()
+    {
+        source.PlayOneShot(dollSound);
     }
 }

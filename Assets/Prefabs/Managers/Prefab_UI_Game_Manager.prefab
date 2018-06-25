@@ -405,6 +405,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dollPrefab: {fileID: 1058157695936908, guid: ec7772e294baee14fb147df570bf4293, type: 2}
   dollToSpawn: 5
   doorHall: {fileID: 0}
@@ -416,6 +422,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lights: {fileID: 0}
+  dollSound: {fileID: 8300000, guid: 0793164cacb7c3148a3cc6095ef70e4d, type: 3}
 --- !u!114 &114064399675701862
 MonoBehaviour:
   m_ObjectHideFlags: 1

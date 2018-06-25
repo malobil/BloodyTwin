@@ -85,9 +85,6 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
-            
-
-
             if (currentflashlightCooldown <= 0)
             {
                 if (isServer)
@@ -138,6 +135,7 @@ namespace UnityStandardAssets.Characters
                     if(hit.collider.gameObject.CompareTag("Doll"))
                     {
                         CmdGetDoll(hit.collider.gameObject);
+                        
                     }
                     else if(hit.collider.gameObject.CompareTag("Armory"))
                     {
@@ -171,6 +169,7 @@ namespace UnityStandardAssets.Characters
                 }
             }
         }
+
 
         [Command]
         public void CmdDoor(GameObject doorHit)
@@ -216,6 +215,7 @@ namespace UnityStandardAssets.Characters
         private void CmdGetDoll(GameObject dollToUnspawn)
         {
             Script_UI_InGame_Manager.Instance.GetADoll();
+            Script_UI_InGame_Manager.Instance.RpcPlayDollSound();
             Destroy(dollToUnspawn);
             NetworkServer.UnSpawn(dollToUnspawn);
         }
