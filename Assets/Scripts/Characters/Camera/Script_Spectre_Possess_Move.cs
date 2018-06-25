@@ -10,6 +10,8 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
     public float moveSpeed;
     public float ejectionSpeedAdd;
     public float maxEjectionSpeed;
+    public ParticleSystem chargingFeedback;
+    public GameObject fullLoadFeedback;
     private float ejectionSpeed = 0f;
     private bool isProject;
 
@@ -26,12 +28,22 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetButtonDown("Fire1") && gameObject.tag != "door")
+        {
+            chargingFeedback.startLifetime = maxEjectionSpeed / ejectionSpeedAdd;
+            chargingFeedback.gameObject.SetActive(true); 
+        }
 
         if(Input.GetButton("Fire1") && gameObject.tag != "door")
         {
             if(ejectionSpeed < maxEjectionSpeed)
             {
                 ejectionSpeed += ejectionSpeedAdd * Time.deltaTime ;
+                Debug.Log(ejectionSpeed);
+            }
+            else
+            {
+                fullLoadFeedback.SetActive(true);
             }
 
            // Debug.Log(ejectionSpeed);
@@ -40,6 +52,8 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
         if(Input.GetButtonUp("Fire1") && gameObject.tag != "door")
         {
             Project();
+            chargingFeedback.gameObject.SetActive(false);
+            fullLoadFeedback.SetActive(false);
         }
     }
 
