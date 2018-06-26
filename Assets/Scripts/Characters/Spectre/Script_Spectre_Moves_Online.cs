@@ -74,7 +74,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
             poupeeCam.SetActive(true);
         }
         
-        if(Input.GetButtonUp("Fire2"))
+        if(Input.GetButtonUp("Fire2") || !Input.GetButton("Fire2"))
         {
             poupeeCam.SetActive(false);
         }

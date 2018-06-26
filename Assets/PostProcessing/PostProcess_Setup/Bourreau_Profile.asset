@@ -134,12 +134,12 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 0.9494563, g: 0.9583844, b: 1, a: 0.39889196}
-          power: {r: 1, g: 0.5964023, b: 0.45326108, a: 0.15512466}
-          offset: {r: 1, g: 0.44599468, b: 0.44075936, a: -0.08864266}
+          slope: {r: 1, g: 0.45711368, b: 0.48998505, a: 0.39889196}
+          power: {r: 1, g: 0.55646074, b: 0.5070958, a: 0.15512466}
+          offset: {r: 1, g: 0.57960695, b: 0.47203153, a: -0.08864266}
         linear:
           lift: {r: 0.965529, g: 1, b: 0.9833079, a: 0}
-          gamma: {r: 0.81611574, g: 1, b: 0.91858375, a: 0}
+          gamma: {r: 0.9741999, g: 1, b: 0.9999995, a: 0}
           gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
@@ -298,7 +298,7 @@ MonoBehaviour:
       mode: 0
       color: {r: 0.5808823, g: 0.25200042, b: 0.25200042, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.611
+      intensity: 0.714
       smoothness: 0.751
       roundness: 0.084
       mask: {fileID: 0}
