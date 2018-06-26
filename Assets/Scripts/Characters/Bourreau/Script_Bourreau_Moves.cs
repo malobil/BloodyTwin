@@ -35,12 +35,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private float currentAttackCooldown;
         private IEnumerator attack;
 
-        [Header("Scream")]
-        public float ScreamRange = 5f;
-        public float ScreamCooldown = 10f;
-        public float ScreamStunTime = 2f;
-        private float _screamCooldown = 0f;
-        private bool _isScreaming = false;
+        [Header("Sounds")]
+        public AudioSource attackASource;
+        public AudioClip[] attackSounds;
 
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
@@ -105,12 +102,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 currentAttackCooldown -= Time.deltaTime;
             }
 
-            if (_screamCooldown > 0)
-                _screamCooldown -= Time.deltaTime;
-
+            
             if (Input.GetButtonDown("Fire1") && currentAttackCooldown <= 0)
             {
                 currentAttackCooldown = attackCooldown;
+                CmdPlayAttackSound(0);
                 StartCoroutine("Attack");                 
             }
 
@@ -169,7 +165,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 return;
             }
 
-            if (currentAttackCooldown <= 0 && !_isScreaming)
+            if (currentAttackCooldown <= 0)
             {
                 // read inputs
                 float h = CrossPlatformInputManager.GetAxis("Horizontal") * speed;
@@ -237,6 +233,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
 
         [Command]
+        void CmdPlayAttackSound(int idx)
+        {
+            RpcPlayAttackSound(idx);
+        }
+
+        [ClientRpc]
+        void RpcPlayAttackSound(int idx)
+        {
+            attackASource.PlayOneShot(attackSounds[idx]);
+        }
+
+        [Command]
         public void CmdDoor(GameObject doorHit)
         {
             doorHit.GetComponent<Script_Door>().ChangeState();
@@ -248,6 +256,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             GameObject tempAttack = Instantiate(attackZonePrefab, attackSpawnPoint.position, transform.rotation);
             NetworkServer.Spawn(tempAttack);
+            RpcPlayAttackSound(1);
             Destroy(tempAttack, attackCooldown);
         }
 
