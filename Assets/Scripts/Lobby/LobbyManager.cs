@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GameObject _intruderPrefab;
 
     [Header("Tuto")]
-    public GameObject bourreauTuto, spectreTuto, intruderTuto;
+    public Text tutoText;
     private GameObject currentTuto;
 
     private readonly List<GameObject> _playerList = new List<GameObject>();
@@ -419,6 +419,11 @@ public class LobbyManager : MonoBehaviour
         }
 
         currentTuto = toShow;
+    }
+
+    public void UpdatePurposeText(string text)
+    {
+        tutoText.text = text;
     }
 
     public List<Transform> GetSpawnPoint()
