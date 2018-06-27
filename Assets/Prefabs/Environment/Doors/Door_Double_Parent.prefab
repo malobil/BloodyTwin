@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 114087037860849832}
   - component: {fileID: 114613735372362808}
   - component: {fileID: 114477981863947932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door_Double
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,16 +198,16 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064827795224722}
-  m_LocalRotation: {x: 0.7071068, y: 0.00000013240823, z: -0.7071068, w: -0.00000013240823}
-  m_LocalPosition: {x: -66.291176, y: 1.7397596, z: -15.710221}
-  m_LocalScale: {x: 0.65000045, y: 0.6500014, z: 0.65000045}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -13.99, y: 1.62, z: 2.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4526972252767592}
   - {fileID: 4446593240506406}
   - {fileID: 4893299953257792}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 90, z: -0.000015258789}
+  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 0}
 --- !u!4 &4446593240506406
 Transform:
   m_ObjectHideFlags: 1
@@ -256,8 +256,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341101637133014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.0579317, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1.1975, z: 0}
+  m_LocalScale: {x: 0.6660838, y: 0.60806245, z: 0.6}
   m_Children:
   - {fileID: 4113814526049972}
   - {fileID: 4085130365201934}
@@ -463,8 +463,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.988015, y: 4.876802, z: 0.17874421}
-  m_Center: {x: -0.000000021308006, y: 2.1716738, z: -0.089372255}
+  m_Size: {x: 4.988015, y: 4.876802, z: 0.67177755}
+  m_Center: {x: -1.6119233e-16, y: 2.1716738, z: -0.048549086}
 --- !u!65 &65894650898167228
 BoxCollider:
   m_ObjectHideFlags: 1
