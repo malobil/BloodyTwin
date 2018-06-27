@@ -134,9 +134,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 0.28633416, g: 0.45612258, b: 1, a: 0}
-          power: {r: 0.17556655, g: 0.44211406, b: 1, a: 0}
-          offset: {r: 0.2054016, g: 0.29149997, b: 1, a: 0.3465704}
+          slope: {r: 0.71921504, g: 0.7661544, b: 1, a: 0}
+          power: {r: 0.7663727, g: 0.97531307, b: 1, a: 0}
+          offset: {r: 0.42226666, g: 0.57250774, b: 1, a: 0.3465704}
         linear:
           lift: {r: 0, g: 0, b: 0, a: 0}
           gamma: {r: 0, g: 0, b: 0, a: 0}
@@ -286,21 +286,21 @@ MonoBehaviour:
       spectralTexture: {fileID: 0}
       intensity: 0.1
   grain:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       colored: 1
-      intensity: 0
-      size: 3
+      intensity: 0.079
+      size: 1.85
       luminanceContribution: 1
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0.13867864, g: 0.14456804, b: 0.99264705, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.332
-      smoothness: 0.265
-      roundness: 1
+      intensity: 0.525
+      smoothness: 0.463
+      roundness: 0.855
       mask: {fileID: 2800000, guid: 49b611e658efbf443b686a4036f74fe3, type: 3}
       opacity: 1
       rounded: 0

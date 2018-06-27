@@ -135,7 +135,7 @@ MonoBehaviour:
         mode: 1
         log:
           slope: {r: 1, g: 0.45711368, b: 0.48998505, a: 0.39889196}
-          power: {r: 1, g: 0.55646074, b: 0.5070958, a: 0.15512466}
+          power: {r: 1, g: 0.5307869, b: 0.48143077, a: 0.15512466}
           offset: {r: 1, g: 0.57960695, b: 0.47203153, a: -0.08864266}
         linear:
           lift: {r: 0.965529, g: 1, b: 0.9833079, a: 0}
@@ -296,11 +296,11 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 0.5808823, g: 0.25200042, b: 0.25200042, a: 1}
+      color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.714
+      intensity: 0.721
       smoothness: 0.751
-      roundness: 0.084
+      roundness: 0.45
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
