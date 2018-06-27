@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
+using cakeslice;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -47,6 +48,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
       
         public Transform detectPoint;
+        private GameObject currentObjectHit;
         
 
 
@@ -222,6 +224,49 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     {
                         CmdDoor(hit.collider.transform.parent.gameObject);
                     }
+                }
+            }
+
+
+            RaycastHit hitting;
+
+            if (Physics.Raycast(detectPoint.transform.position, detectPoint.transform.forward, out hitting, 4.0f))
+            {
+                if (hitting.transform.GetComponent<InteractableObjectBourreau>())
+                {
+                    currentObjectHit = hitting.transform.gameObject;
+                    Debug.Log(currentObjectHit);
+                    foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObjectBourreau>().GetRendererList())
+                    {
+                        if (obj.GetComponent<Outline>() == null)
+                        {
+                            obj.AddComponent<Outline>();
+                        }
+                    }
+                }
+                else
+                {
+                    if (currentObjectHit != null)
+                    {
+                        foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObjectBourreau>().GetRendererList())
+                        {
+                            Destroy(obj.GetComponent<Outline>());
+                        }
+
+                        currentObjectHit = null;
+                    }
+                }
+            }
+            else
+            {
+                if (currentObjectHit != null)
+                {
+                    foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObjectBourreau>().GetRendererList())
+                    {
+                        Destroy(obj.GetComponent<Outline>());
+                    }
+
+                    currentObjectHit = null;
                 }
             }
         }
