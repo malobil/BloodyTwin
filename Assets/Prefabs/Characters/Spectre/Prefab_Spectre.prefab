@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  possessTime: 1
+  possessTime: 0
   feedbackPossessing: {fileID: 1854619131822342}
   sfxAudioSource: {fileID: 82784679763882150}
   possessAudio: {fileID: 8300000, guid: 8625a2bda3f7cba4ba633e6cf6173c39, type: 3}
