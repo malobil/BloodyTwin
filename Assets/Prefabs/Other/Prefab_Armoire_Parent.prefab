@@ -241,8 +241,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291346286785042}
-  m_LocalRotation: {x: -0, y: -0.000001117587, z: -0, w: -1}
-  m_LocalPosition: {x: 5.48, y: 1.18, z: -22.36}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
+  m_LocalPosition: {x: -1.711, y: 1.162, z: -5.799}
   m_LocalScale: {x: 1.445159, y: 1.9320099, z: 1.2917165}
   m_Children:
   - {fileID: 4131862031113810}
@@ -741,8 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 95318532062507358}
-  rendererGo:
-  - {fileID: 1993798152334806}
+  door: {fileID: 1993798152334806}
 --- !u!114 &114292176994758514
 MonoBehaviour:
   m_ObjectHideFlags: 1

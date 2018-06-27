@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class Script_Armory : NetworkBehaviour {
 
     public Animator myAnimator;
-    public List<GameObject> rendererGo;
+    public GameObject door;
 
     [SyncVar(hook = "OpenDoor")]
     private bool isOpen = false;
@@ -34,6 +34,7 @@ public class Script_Armory : NetworkBehaviour {
     [ClientRpc]
     void RpcPlayOpenSound()
     {
+        door.layer = 2;
         source.Play();
         Destroy(this);
     }
