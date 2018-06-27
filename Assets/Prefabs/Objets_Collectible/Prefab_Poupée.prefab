@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4361531183320214}
   - component: {fileID: 65328435434220336}
   - component: {fileID: 114846611291896562}
+  - component: {fileID: 114351795882374092}
   m_Layer: 0
   m_Name: "Prefab_Poup\xE9e"
   m_TagString: Doll
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058157695936908}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -73.05769, y: -0.05263257, z: -16.930706}
+  m_LocalPosition: {x: -32.764015, y: -6.996612e-17, z: 7.2588296}
   m_LocalScale: {x: 0.30823472, y: 0.30823472, z: 0.30823472}
   m_Children:
   - {fileID: 4928429957873802}
@@ -254,6 +255,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114351795882374092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058157695936908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce97869c8af56aa4c97a178c24bffad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererList:
+  - {fileID: 1569740749262040}
+  - {fileID: 1605384015767856}
 --- !u!114 &114846611291896562
 MonoBehaviour:
   m_ObjectHideFlags: 1

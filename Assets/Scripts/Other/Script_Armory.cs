@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class Script_Armory : NetworkBehaviour {
 
     public Animator myAnimator;
+    public List<GameObject> rendererGo;
 
     [SyncVar(hook = "OpenDoor")]
     private bool isOpen = false;

@@ -16,6 +16,9 @@ public class Script_Door : NetworkBehaviour {
     [Header("Door Audio")]
 	public AudioSource doorSoundPlayer;
     public AudioClip[] doorSounds;
+
+    [Header("Higlight")]
+    public List<GameObject> rendererGo;
  
 
 	// Use this for initialization

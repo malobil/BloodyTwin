@@ -5,6 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.Networking;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
+using cakeslice;
 
 namespace UnityStandardAssets.Characters
 {
@@ -42,6 +43,8 @@ namespace UnityStandardAssets.Characters
 
         [Header("Stun")]
         private bool isStun = false;
+
+        private GameObject currentObjectHit;
 
         private void Start()
         {
@@ -164,7 +167,49 @@ namespace UnityStandardAssets.Characters
                 return;
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            RaycastHit hitting;
+            
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hitting, 2.0f))
+            {
+                if(hitting.transform.GetComponent<InteractableObject>())
+                {
+                    currentObjectHit = hitting.transform.gameObject;
+                    Debug.Log(currentObjectHit);
+                    foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObject>().GetRendererList())
+                    {
+                        if (obj.GetComponent<Outline>() == null)
+                        {
+                           obj.AddComponent<Outline>();
+                        }
+                    }
+                }
+                else
+                {
+                    if(currentObjectHit != null)
+                    {
+                        foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObject>().GetRendererList())
+                        {
+                            Destroy(obj.GetComponent<Outline>());
+                        }
+                        
+                        currentObjectHit = null;
+                    }
+                }
+            }
+            else
+            {
+                if (currentObjectHit != null)
+                {
+                    foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObject>().GetRendererList())
+                    {
+                        Destroy(obj.GetComponent<Outline>());
+                    }
+
+                    currentObjectHit = null;
+                }
+            }
+
+                if (Input.GetKeyDown(KeyCode.E))
             {
                 RaycastHit hit;
                 if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 4.0f))

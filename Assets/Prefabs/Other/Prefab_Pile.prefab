@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 23233889026169228}
   - component: {fileID: 114298049921703734}
   - component: {fileID: 114410829365705260}
+  - component: {fileID: 114442327017477330}
   m_Layer: 0
   m_Name: Prefab_Pile
   m_TagString: Untagged
@@ -67,14 +68,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884841699765602}
-  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.228, y: 5.4, z: -18.7}
-  m_LocalScale: {x: 0.16256009, y: 0.07882, z: 0.44204026}
+  m_LocalRotation: {x: -0, y: -0.33121789, z: -0, w: 0.94355434}
+  m_LocalPosition: {x: 64.34, y: -0.696, z: 5.23}
+  m_LocalScale: {x: 0.16256005, y: 0.07882, z: 0.4420401}
   m_Children:
   - {fileID: 4177212741794428}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -104.228004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -38.685, z: 0}
 --- !u!23 &23233889026169228
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -172,6 +173,19 @@ MonoBehaviour:
     i15: 106
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114442327017477330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884841699765602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce97869c8af56aa4c97a178c24bffad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererList:
+  - {fileID: 1884841699765602}
 --- !u!198 &198937189201301658
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -232,7 +246,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -245713217
+  randomSeed: 1514252866
   InitialModule:
     serializedVersion: 3
     enabled: 1

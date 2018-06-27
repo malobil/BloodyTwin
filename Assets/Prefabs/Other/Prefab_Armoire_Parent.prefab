@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 33546819500778462}
   - component: {fileID: 65199918007448722}
   - component: {fileID: 23259106172219508}
+  - component: {fileID: 114292176994758514}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Armory
@@ -240,8 +241,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291346286785042}
-  m_LocalRotation: {x: -0, y: -0.0000022947786, z: -0, w: 1}
-  m_LocalPosition: {x: 3.465, y: 5.617, z: -22.217}
+  m_LocalRotation: {x: -0, y: -0.000001117587, z: -0, w: -1}
+  m_LocalPosition: {x: 5.48, y: 1.18, z: -22.36}
   m_LocalScale: {x: 1.445159, y: 1.9320099, z: 1.2917165}
   m_Children:
   - {fileID: 4131862031113810}
@@ -252,7 +253,7 @@ Transform:
   - {fileID: 4987531414457700}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -360, z: 0}
 --- !u!4 &4563243421604620
 Transform:
   m_ObjectHideFlags: 1
@@ -740,6 +741,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 95318532062507358}
+  rendererGo:
+  - {fileID: 1993798152334806}
+--- !u!114 &114292176994758514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993798152334806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce97869c8af56aa4c97a178c24bffad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererList:
+  - {fileID: 1993798152334806}
 --- !u!114 &114989874711660926
 MonoBehaviour:
   m_ObjectHideFlags: 1
