@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine.Networking;
+using cakeslice;
 
 public class Script_Possession_Online : NetworkBehaviour {
 
+    public List<GameObject> rendererGo;
     private GameObject player;
     private Transform objet_hante;
 
@@ -24,6 +26,11 @@ public class Script_Possession_Online : NetworkBehaviour {
 	
 	public void PossessObject()
     {
+        foreach(GameObject rend in rendererGo)
+        {
+            Destroy(rend.GetComponent<Outline>());
+        }
+        
         if (gameObject.transform.parent.GetComponent<Script_Door>())
         {
             player.GetComponent<Script_Spectre_Moves_Online>().CmdLockDoor(transform.parent.gameObject);
@@ -105,6 +112,15 @@ public class Script_Possession_Online : NetworkBehaviour {
         {
             player = other.gameObject;
             player.GetComponent<Script_Spectre_Moves_Online>().SettingPossessTarget(this);
+
+            if(GetComponent<Outline>() == null)
+            {
+                foreach (GameObject rend in rendererGo)
+                {
+                    rend.AddComponent<Outline>();
+                }
+            }
+
             //Script_UI_InGame_Manager.Instance.EnableSpectreUI();
             //print("Spectre entré" +  can_possession);
             can_possession = true;
@@ -122,8 +138,14 @@ public class Script_Possession_Online : NetworkBehaviour {
         if (other.gameObject.GetComponent<Script_Spectre_Moves_Online>() && !is_possession)
         {
             player.GetComponent<Script_Spectre_Moves_Online>().UnSettingPossessTarget();
-           // Script_UI_InGame_Manager.Instance.EnableSpectreUI();
+            // Script_UI_InGame_Manager.Instance.EnableSpectreUI();
             //player = null;
+
+            foreach (GameObject rend in rendererGo)
+            {
+                Destroy(rend.GetComponent<Outline>());
+            }
+
             print("Spectre sorti");
             can_possession = false;
         }
