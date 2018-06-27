@@ -43,6 +43,10 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GameObject _spectrePrefab;
     [SerializeField] private GameObject _intruderPrefab;
 
+    [Header("Tuto")]
+    public GameObject bourreauTuto, spectreTuto, intruderTuto;
+    private GameObject currentTuto;
+
     private readonly List<GameObject> _playerList = new List<GameObject>();
 
     private List<Transform> spawnPoint = new List<Transform>();
@@ -403,6 +407,18 @@ public class LobbyManager : MonoBehaviour
             _playerList[i].GetComponentInChildren<Text>().text = username;
             i++;
         }
+    }
+
+    public void ShowTuto(GameObject toShow)
+    {
+        toShow.SetActive(true);
+
+        if(currentTuto != null)
+        {
+            currentTuto.SetActive(false);
+        }
+
+        currentTuto = toShow;
     }
 
     public List<Transform> GetSpawnPoint()

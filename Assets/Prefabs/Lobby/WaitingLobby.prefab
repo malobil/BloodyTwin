@@ -951,6 +951,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114281427561219500}
+        m_MethodName: ShowTuto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1518956833018746}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -1055,6 +1066,17 @@ MonoBehaviour:
           m_StringArgument: Bourreau
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114281427561219500}
+        m_MethodName: ShowTuto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1923600103462386}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -1107,6 +1129,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114281427561219500}
+        m_MethodName: ShowTuto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1433028173059598}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1214,6 +1247,9 @@ MonoBehaviour:
     type: 2}
   _intruderPrefab: {fileID: 1192165059592964, guid: cd516bbc439798e40ac4569ab2c0f824,
     type: 2}
+  bourreauTuto: {fileID: 0}
+  spectreTuto: {fileID: 0}
+  intruderTuto: {fileID: 0}
 --- !u!114 &114295592216540544
 MonoBehaviour:
   m_ObjectHideFlags: 1
