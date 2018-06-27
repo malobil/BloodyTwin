@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6137538f5f44d3640828fd5d225420a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   possessTime: 0.1
   feedbackPossessing: {fileID: 1854619131822342}
   sfxAudioSource: {fileID: 82784679763882150}
