@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Destructible_Wall : NetworkBehaviour 
+public class Destructible_Wall : MonoBehaviour 
 {
 
 public GameObject boom;
@@ -13,22 +13,11 @@ public AudioSource doorDestroyed;
 
  public void DestroyWall()
  {
-    RpcCheckPossess();
     GameObject objectToSpawn = Instantiate(boom, boomPosition.position , Quaternion.identity);
     NetworkServer.Spawn(objectToSpawn);
     doorDestroyed.Play();
  	NetworkServer.Destroy(wall);
+ 	//Debug.Log("tg2");
  }
-    [ClientRpc]
-    void RpcCheckPossess()
-    {
-        if(GetComponent<Script_Spectre_Moves_Door>())
-        {
-            if(GetComponent<Script_Spectre_Moves_Door>().enabled)
-            {
-                GetComponent<Script_Possession_Online>().UnPossessObject();
-            }
-        }
-    }
 
 }

@@ -109,6 +109,12 @@ public class Script_Possession_Online : NetworkBehaviour {
             //print("Spectre entré" +  can_possession);
             can_possession = true;
         }
+
+        if (other.GetComponent<Script_Bourreau_Attack_Trigger>())
+        {
+            UnPossessObject();
+            //Debug.Log("Attacked");
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -135,4 +141,5 @@ public class Script_Possession_Online : NetworkBehaviour {
         GetComponent<NetworkIdentity>().RemoveClientAuthority(otherOwner);
         //player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
     }
+
 }
