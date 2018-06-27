@@ -53,7 +53,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4469726802497712}
   - component: {fileID: 65791222294295118}
-  m_Layer: 12
+  - component: {fileID: 114510960663081714}
+  - component: {fileID: 114559225041982998}
+  m_Layer: 2
   m_Name: Possess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +109,6 @@ GameObject:
   - component: {fileID: 114642650902719944}
   - component: {fileID: 114822728624057834}
   - component: {fileID: 114307089105197736}
-  - component: {fileID: 114689280927923086}
   - component: {fileID: 114315974650997194}
   - component: {fileID: 114040654333032572}
   m_Layer: 2
@@ -238,7 +239,7 @@ Transform:
   - {fileID: 4999186912413242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4469726802497712
 Transform:
   m_ObjectHideFlags: 1
@@ -522,8 +523,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.986866, y: 3.966606, z: 0.2008643}
-  m_Center: {x: 0.23590145, y: -0.15215103, z: 0.060521074}
+  m_Size: {x: 2.9868662, y: 3.9666057, z: 3.1553106}
+  m_Center: {x: 0.23590146, y: -0.1521511, z: -0.27119228}
 --- !u!65 &65925311105944018
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -757,6 +758,49 @@ MonoBehaviour:
   boomPosition: {fileID: 4727315800099136}
   wall: {fileID: 1520199140424418}
   doorDestroyed: {fileID: 82903463675967618}
+--- !u!114 &114510960663081714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1158027824481028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 234
+    i1: 156
+    i2: 155
+    i3: 114
+    i4: 245
+    i5: 228
+    i6: 25
+    i7: 244
+    i8: 104
+    i9: 71
+    i10: 23
+    i11: 152
+    i12: 238
+    i13: 142
+    i14: 217
+    i15: 222
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114559225041982998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1158027824481028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad61946a93b985c4a9c7eda5a21d0135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114642650902719944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -789,17 +833,6 @@ MonoBehaviour:
     i15: 222
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114689280927923086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1520199140424418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad61946a93b985c4a9c7eda5a21d0135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114822728624057834
 MonoBehaviour:
   m_ObjectHideFlags: 1
