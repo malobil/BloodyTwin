@@ -323,6 +323,10 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     [Command]
     public void CmdLockDoor(GameObject door)
     {
-        door.GetComponent<Script_Door>().RpcLockingDoor();
+        if(door != null)
+        {
+            door.GetComponent<Script_Door>().RpcLockingDoor();
+        }
+        
     }
 }
