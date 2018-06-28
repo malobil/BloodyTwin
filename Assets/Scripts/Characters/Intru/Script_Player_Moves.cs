@@ -174,7 +174,7 @@ namespace UnityStandardAssets.Characters
                 if(hitting.transform.GetComponent<InteractableObject>())
                 {
                     currentObjectHit = hitting.transform.gameObject;
-                    Debug.Log(currentObjectHit);
+                    //Debug.Log(currentObjectHit);
                     foreach (GameObject obj in currentObjectHit.GetComponent<InteractableObject>().GetRendererList())
                     {
                         if (obj.GetComponent<Outline>() == null)
@@ -349,17 +349,15 @@ namespace UnityStandardAssets.Characters
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderWin();
                 CmdIntruderAsWin();
-            }
-            
-           
-            Destroy(gameObject);
-            NetworkServer.UnSpawn(gameObject);
+            }           
+            Destroy(gameObject); 
         }
 
         [Command]
         void CmdIntruderAsWin()
         {
             Script_UI_InGame_Manager.Instance.IntruderAsWin();
+            NetworkServer.UnSpawn(gameObject);
         }
 
         IEnumerator StunTime()
