@@ -540,7 +540,7 @@ MonoBehaviour:
   runCooldown: 0
   sourceFx: {fileID: 82338999174915414}
   getSmth: {fileID: 8300000, guid: dad68fcda2d2da7418d226b9703244c8, type: 3}
-  flashlightCooldown: 30
+  flashlightCooldown: 50
   lampGO: {fileID: 1540221763709376}
   cameraPrefab: {fileID: 1659406914338794, guid: 9096172803b8d744ca4fc8ca54a0c369,
     type: 2}
