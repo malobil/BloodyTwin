@@ -36,7 +36,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
     private void Awake()
     {
-        gameObject.tag = "Spectre";
+        
     }
 
     private void Start()
@@ -47,7 +47,8 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         }
         //Script_UI_InGame_Manager.Instance.CmdRegisterSpectre();
         Script_UI_InGame_Manager.Instance.LightUp();
-        rb = GetComponent<Rigidbody>();        
+        rb = GetComponent<Rigidbody>();
+        gameObject.tag = "Spectre";
     }
 
     void Update ()
