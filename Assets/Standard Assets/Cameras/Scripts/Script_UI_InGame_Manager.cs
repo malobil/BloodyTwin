@@ -139,7 +139,7 @@ public class Script_UI_InGame_Manager : NetworkBehaviour {
     {
         endText.text = "You win ! ";
         gameWinPanel.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         //gameObject.SetActive(false);
     }
 
