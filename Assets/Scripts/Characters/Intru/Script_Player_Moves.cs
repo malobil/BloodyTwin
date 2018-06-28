@@ -210,7 +210,7 @@ namespace UnityStandardAssets.Characters
             }
 
                 if (Input.GetKeyDown(KeyCode.E))
-            {
+                {
                 RaycastHit hit;
                 if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, 4.0f))
                 {
@@ -244,7 +244,8 @@ namespace UnityStandardAssets.Characters
         void CmdGetAPile(GameObject go)
         {
             //hit.collider.gameObject.GetComponent<Script_Piles>().AddPile(this);
-            go.GetComponent<Script_Piles>().AddPile(this);
+            go.GetComponent<Script_Piles>().UnSpawnObj();
+
         }
 
         private void SetPauseMenu()

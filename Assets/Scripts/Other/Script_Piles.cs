@@ -11,10 +11,10 @@ public class Script_Piles : MonoBehaviour {
 	public void AddPile(Script_Player_Moves player)
     {
         player.AddingPile(valor);
-        UnSpawnObj();
+        //UnSpawnObj();
     }
 
-    private void UnSpawnObj()
+    public void UnSpawnObj()
     {
         NetworkServer.Destroy(this.gameObject);
     }
