@@ -349,16 +349,11 @@ namespace UnityStandardAssets.Characters
                 cameraTransform.parent = null;
                 Script_UI_InGame_Manager.Instance.IntruderWin();
                 CmdIntruderAsWin();
-                CmdUnSpawn();
-                Destroy(gameObject);
-                
             }
-        }
-
-        [Command]
-        void CmdUnSpawn()
-        {
-            NetworkServer.UnSpawn(gameObject);
+            
+           
+            Destroy(gameObject);
+            NetworkServer.Destroy(gameObject);
         }
 
         [Command]
