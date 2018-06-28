@@ -102,7 +102,8 @@ public class Script_Spectre_Possess_Move : MonoBehaviour
             if (collision.gameObject.CompareTag("Intru"))
             {
                 Debug.Log("TOUCH" + collision.gameObject.name);
-                collision.gameObject.GetComponent<Script_Player_Moves>().Stun();// Call here stun function
+                //collision.gameObject.GetComponent<Script_Player_Moves>().Stun();// Call here stun function
+                associateScriptPossesion.ReturnPlayer().GetComponent<Script_Spectre_Moves_Online>().StunIntruder(collision.gameObject);
                 isProject = false;
             }
         }

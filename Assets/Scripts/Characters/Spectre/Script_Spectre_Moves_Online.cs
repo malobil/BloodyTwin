@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityStandardAssets.Cameras;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityStandardAssets.Characters;
 
 public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
@@ -33,11 +34,6 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
     public GameObject poupeeCam;
    
     private Script_Possession_Online objectToPossess;
-
-    private void Awake()
-    {
-        
-    }
 
     private void Start()
     {
@@ -146,15 +142,7 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
 
         transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.up); //déplacement en fonction du regard du spectre && Il faut mettre un VECTOR 3 à la place
 
-        /*transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput); // déplacement Q & D
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput); // déplacement Z & S */
-
-      /* rb.AddForce(Vector3.right * speed * horizontalInput, ForceMode.VelocityChange);
-        rb.AddForce(Vector3.forward * speed * forwardInput, ForceMode.VelocityChange);*/
-
         rb.velocity = transform.right * speed * horizontalInput + transform.forward * speed * forwardInput;
-
-
     }
 
     public void SettingCamera(GameObject camToSet, GameObject camP)
@@ -284,6 +272,17 @@ public class Script_Spectre_Moves_Online : NetworkBehaviour {
         {
             Debug.Log("No Bourreau");
         }
+    }
+
+    public void StunIntruder(GameObject stun)
+    {
+        CmdStunIntruder(stun);
+    }
+
+    [Command]
+    void CmdStunIntruder(GameObject toStun)
+    {
+        toStun.GetComponent<Script_Player_Moves>().RpcStun();
     }
 
     [ClientRpc]
