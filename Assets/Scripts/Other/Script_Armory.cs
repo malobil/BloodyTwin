@@ -23,12 +23,12 @@ public class Script_Armory : NetworkBehaviour {
 	public void OpenArmory()
     {
         isOpen = true;
+        RpcPlayOpenSound();
     }
 
     public void OpenDoor(bool toOpen)
     {
         myAnimator.SetBool("OpenArmory",toOpen);
-        RpcPlayOpenSound();
     }
 
     [ClientRpc]
