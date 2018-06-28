@@ -161,9 +161,9 @@ public class Script_Possession_Online : NetworkBehaviour {
     [Command]
     public void CmdGiveAuthority()
     {
-        var otherOwner = GetComponent<NetworkIdentity>().clientAuthorityOwner;
+        /*var otherOwner = GetComponent<NetworkIdentity>().clientAuthorityOwner;
         GetComponent<NetworkIdentity>().RemoveClientAuthority(otherOwner);
-        //player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+        //player.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);*/
     }
 
 }
