@@ -5763,7 +5763,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'To win, they have to destroy the <color=red> five artefacts </color> hide
-    into differents cabinet.
+    into cabinets and escape through the entrance.
 
     Or to survive untill the end of the countdown.'
 --- !u!222 &1101915316
