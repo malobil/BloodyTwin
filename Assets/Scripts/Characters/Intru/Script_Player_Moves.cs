@@ -309,6 +309,17 @@ namespace UnityStandardAssets.Characters
             lampGO.transform.parent = cameraPop.transform ;
         }
 
+        public void Stun()
+        {
+            CmdStun();
+        }
+
+        [Command]
+        void CmdStun()
+        {
+            RpcStun();
+        }
+
         [ClientRpc]
         public void RpcStun()
         {
