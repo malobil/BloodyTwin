@@ -492,6 +492,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dollPrefab: {fileID: 1058157695936908, guid: ec7772e294baee14fb147df570bf4293, type: 2}
   dollToSpawn: 5
   doorHall: {fileID: 0}

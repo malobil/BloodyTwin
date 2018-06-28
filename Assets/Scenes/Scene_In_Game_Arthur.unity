@@ -44718,11 +44718,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ac89d07f3507e3439657791e9f42ae8, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1467808171 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4857939346794724, guid: 5ac89d07f3507e3439657791e9f42ae8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1467808170}
 --- !u!4 &1467808172 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4431117603916224, guid: 5ac89d07f3507e3439657791e9f42ae8,
@@ -50371,11 +50366,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 99731969}
     m_Modifications:
-    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: dollSpawnList.Array.size
-      value: 19
-      objectReference: {fileID: 0}
     - target: {fileID: 224209665351412796, guid: 3fd6fdffe4e782945ab72cac07c12c29,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -50553,6 +50543,16 @@ Prefab:
       objectReference: {fileID: 857279274}
     - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
         type: 2}
+      propertyPath: dollSpawnList.Array.data[17]
+      value: 
+      objectReference: {fileID: 1128380355}
+    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
+        type: 2}
+      propertyPath: dollSpawnList.Array.data[18]
+      value: 
+      objectReference: {fileID: 1422776585}
+    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
+        type: 2}
       propertyPath: doorHall
       value: 
       objectReference: {fileID: 382068761}
@@ -50586,25 +50586,6 @@ Prefab:
       propertyPath: lights
       value: 
       objectReference: {fileID: 1482476979}
-    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: dollSpawnList.Array.data[17]
-      value: 
-      objectReference: {fileID: 1128380355}
-    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: dollSpawnList.Array.data[18]
-      value: 
-      objectReference: {fileID: 1422776585}
-    - target: {fileID: 114009472680470234, guid: 3fd6fdffe4e782945ab72cac07c12c29,
-        type: 2}
-      propertyPath: dollSpawnList.Array.data[19]
-      value: 
-      objectReference: {fileID: 1467808171}
-    - target: {fileID: 1321824628162694, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fd6fdffe4e782945ab72cac07c12c29, type: 2}
   m_IsPrefabParent: 0
