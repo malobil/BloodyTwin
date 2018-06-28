@@ -31,10 +31,10 @@ public class Script_Possession_Online : NetworkBehaviour {
             Destroy(rend.GetComponent<Outline>());
         }
         
-        if (gameObject.transform.parent.GetComponent<Script_Door>())
+        if (gameObject.GetComponent<Script_Door>())
         {
-            player.GetComponent<Script_Spectre_Moves_Online>().CmdLockDoor(transform.parent.gameObject);
-            transform.parent.GetComponent<Script_Spectre_Moves_Door>().enabled = true;
+            player.GetComponent<Script_Spectre_Moves_Online>().CmdLockDoor(transform.gameObject);
+            transform.GetComponent<Script_Spectre_Moves_Door>().enabled = true;
             //Debug.Log("Possess a door");
         }
             gameObject.tag = "Possess";
@@ -56,10 +56,10 @@ public class Script_Possession_Online : NetworkBehaviour {
         //si on sort de l'objet en possession
         if (can_leave)
         {
-            if (gameObject.transform.parent.GetComponent<Script_Door>())
+            if (gameObject.transform.GetComponent<Script_Door>())
             {
-                player.GetComponent<Script_Spectre_Moves_Online>().CmdLockDoor(transform.parent.gameObject);
-                transform.parent.GetComponent<Script_Spectre_Moves_Door>().enabled = false;
+                player.GetComponent<Script_Spectre_Moves_Online>().CmdLockDoor(transform.gameObject);
+                transform.GetComponent<Script_Spectre_Moves_Door>().enabled = false;
             }
 
             gameObject.tag = "Untagged";
