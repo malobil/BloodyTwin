@@ -113,17 +113,19 @@ public class Script_Possession_Online : NetworkBehaviour {
             player = other.gameObject;
             player.GetComponent<Script_Spectre_Moves_Online>().SettingPossessTarget(this);
 
-            if(GetComponent<Outline>() == null)
-            {
-                foreach (GameObject rend in rendererGo)
-                {
-                    rend.AddComponent<Outline>();
-                }
-            }
+          
 
             //Script_UI_InGame_Manager.Instance.EnableSpectreUI();
             //print("Spectre entré" +  can_possession);
             can_possession = true;
+        }
+
+        if (GetComponent<Outline>() == null && other.CompareTag("Spectre"))
+        {
+            foreach (GameObject rend in rendererGo)
+            {
+                rend.AddComponent<Outline>();
+            }
         }
 
         if (other.GetComponent<Script_Bourreau_Attack_Trigger>())
