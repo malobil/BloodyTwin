@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  ejectionSpeedAdd: 10
+  ejectionSpeedAdd: 8
   maxEjectionSpeed: 50
   chargingFeedback: {fileID: 198046335173185528}
   fullLoadFeedback: {fileID: 1957173267923172}

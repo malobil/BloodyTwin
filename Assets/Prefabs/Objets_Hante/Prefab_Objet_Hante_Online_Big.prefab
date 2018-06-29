@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad61946a93b985c4a9c7eda5a21d0135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rendererGo: []
 --- !u!114 &114628821362343208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   ejectionSpeedAdd: 10
-  maxEjectionSpeed: 100
+  maxEjectionSpeed: 70
   chargingFeedback: {fileID: 198045122931791520}
   fullLoadFeedback: {fileID: 1321585476107290}
 --- !u!198 &198045122931791520
